@@ -8,6 +8,9 @@
     <router-link to="/blog">Blog</router-link>
   </div>
   <router-view />
+  <div id="footer">
+    <p>footer</p>
+  </div>
 </template>
 
 <style>
