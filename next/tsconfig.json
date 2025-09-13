@@ -9,10 +9,11 @@
     "jsx": "preserve",
     "strict": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "types": ["node", "react", "react-dom"]
   },
   "include": ["next-env.d.ts", "src/**/*", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
-

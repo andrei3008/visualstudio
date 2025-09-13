@@ -6,4 +6,7 @@ services:
       dockerfile: Dockerfile.next
     ports:
       - "8007:3000"
+    environment:
+      - NEXTAUTH_URL=${NEXTAUTH_URL:-http://localhost:8007}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
     restart: unless-stopped
