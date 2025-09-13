@@ -14,5 +14,5 @@ services:
     ports:
       - "8007:80"
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy:/etc/caddy
     restart: unless-stopped
