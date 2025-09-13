@@ -7,3 +7,6 @@ npm-debug.log*
 nuxt/node_modules
 nuxt/.nuxt
 nuxt/.output
+next/node_modules
+next/.next
+next/out

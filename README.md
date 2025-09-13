@@ -1,14 +1,12 @@
-# Client Portal (Monolith Nuxt 3)
+# Client Portal (Monolith Next.js 14)
 
-Monolit Nuxt 3 (SSR + API routes) cu Caddy ca reverse proxy. Deploy prin Docker Compose / Portainer. Expus pe port `8007` pentru integrarea cu Cloudflare Tunnel.
+Next.js 14 (App Router) monolit cu API Routes. Deploy prin Docker Compose / Portainer. Expus pe port `8007` pentru integrarea cu Cloudflare Tunnel.
 
 ## Structură
-- `nuxt/` — aplicația principală (Nuxt 3)
-  - `pages/` — rute UI (`index`, `projects`, `login`)
-  - `server/api/` — API demo (`/api/health`, `/api/projects`)
-  - `Dockerfile.nuxt` — build/runtime image
-- `caddy/Caddyfile` — reverse proxy HTTP către `app:3000`
-- `docker-compose.yml` — stack local (app + caddy, `8007:80`)
+- `next/` — aplicația principală (Next.js 14)
+  - `src/app/` — pagini (`page.tsx`, `login`, `projects`) și API (`/api/health`, `/api/projects`)
+  - `Dockerfile.next` — build/runtime image (standalone)
+- `docker-compose.yml` — stack local (mapare `8007:3000`)
 - `docker-compose.prod.yml` — stack pentru Portainer (prod)
 
 ## Rulare locală
@@ -20,8 +18,8 @@ docker compose up -d --build
 
 ## Deploy (Portainer)
 - Stacks → Add stack → conținut `docker-compose.prod.yml`
-- Mapare Cloudflare Tunnel: hostname → `http://localhost:8007`
+- Cloudflare Tunnel: hostname → `http://localhost:8007`
 
 ## Note
-- Nginx și vechiul proiect Vue CLI au fost eliminate.
-- Pentru extensii: adăugați Auth, Postgres + Prisma, uploads S3/MinIO, Stripe.
+- Am înlocuit Nuxt + Caddy cu Next.js (serverul propriu).
+- Pentru extindere: Auth, Postgres + Prisma, uploads S3/MinIO, Stripe.

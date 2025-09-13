@@ -1,18 +1,9 @@
 services:
-  app:
-    image: client-portal:latest
+  web:
+    image: client-portal-next:latest
     build:
-      context: ./nuxt
-      dockerfile: Dockerfile.nuxt
-    expose:
-      - "3000"
-    restart: unless-stopped
-  caddy:
-    image: caddy:2-alpine
-    depends_on:
-      - app
+      context: ./next
+      dockerfile: Dockerfile.next
     ports:
-      - "8007:80"
-    volumes:
-      - ./caddy:/etc/caddy
+      - "8007:3000"
     restart: unless-stopped
