@@ -1,0 +1,14 @@
+{
+  "name": "client-portal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev -p 3000 -H 0.0.0.0",
+    "build": "nuxt build",
+    "start": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "nuxt": "^3.12.4"
+  }
+}
+

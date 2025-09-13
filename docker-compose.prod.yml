@@ -1,10 +1,9 @@
 services:
   web:
-    image: proiect-vue:latest
+    image: client-portal:latest
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./nuxt
+      dockerfile: Dockerfile.nuxt
     ports:
-      - "8007:80"
+      - "8007:3000"
     restart: unless-stopped
-
