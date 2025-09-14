@@ -2,13 +2,6 @@
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Înregistrare',
-  robots: { index: false, follow: false },
-  alternates: { canonical: '/register' },
-}
 
 export default function RegisterPage() {
   const [loading, setLoading] = useState(false)

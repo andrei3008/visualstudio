@@ -27,7 +27,8 @@ export async function POST(req: Request, ctx: { params: { id: string } }) {
   if (!project) return NextResponse.json({ error: 'Not found' }, { status: 404 })
 
   const form = await req.formData()
-  const file = form.get('file') as File | null
+  type UploadFile = { name: string; type: string; arrayBuffer: () => Promise<ArrayBuffer> }
+  const file = form.get('file') as unknown as UploadFile | null
   if (!file) return NextResponse.json({ error: 'Lipsește fișierul' }, { status: 400 })
   const isInternal = form.get('isInternal') === 'true'
   const buf = Buffer.from(await file.arrayBuffer())
@@ -50,4 +51,3 @@ export async function POST(req: Request, ctx: { params: { id: string } }) {
   })
   return NextResponse.json(rec, { status: 201 })
 }
-
