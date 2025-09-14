@@ -17,6 +17,7 @@ model User {
   assignedTasks Task[]   @relation("TaskAssignee")
   role         UserRole  @default(client)
   messages     Message[]
+  notifications Notification[]
 }
 
 enum UserRole {
@@ -100,6 +101,18 @@ model Message {
 
   @@index([projectId])
   @@index([authorId])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  type      String
+  payload   Json?
+  readAt    DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([userId, readAt])
 }
 
 enum ProposalStatus {

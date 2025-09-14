@@ -2,6 +2,13 @@
 node_modules
 /dist
 
+# Next.js build output
+next/.next
+
+# App storage (local JSON/files)
+/storage/*
+!/storage/.gitkeep
+
 
 # local env files
 .env.local

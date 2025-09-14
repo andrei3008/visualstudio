@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { notifyProposalApproved } from '@/lib/notify'
+import { createNotification } from '@/lib/notifications'
 
 export async function POST(_req: Request, ctx: { params: { token: string } }) {
   const prop = await prisma.proposal.findUnique({ where: { publicToken: ctx.params.token } })
@@ -21,5 +22,10 @@ export async function POST(_req: Request, ctx: { params: { token: string } }) {
     title: prop.title,
     totalCents,
   })
+  // notify project owner
+  const project = await prisma.project.findUnique({ where: { id: prop.projectId }, select: { userId: true, name: true } })
+  if (project) {
+    createNotification(project.userId, 'proposal.approved', { id: prop.id, title: prop.title, projectId: prop.projectId, projectName: project.name, totalCents })
+  }
   return NextResponse.json(updated)
 }

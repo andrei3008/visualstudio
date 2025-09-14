@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
 import { prisma } from '@/lib/prisma'
 import { findUserByEmail } from '@/lib/users'
+import { notifyAdmins } from '@/lib/notifications'
 
 export async function POST(_req: Request, ctx: { params: { proposalId: string } }) {
   const session = await getServerSession(authOptions)
@@ -19,6 +20,7 @@ export async function POST(_req: Request, ctx: { params: { proposalId: string } 
     data: { status: 'submitted', submittedAt: new Date() },
     select: { id: true, status: true, submittedAt: true },
   })
+  // notify admins
+  notifyAdmins('proposal.submitted', { id: prop.id, title: prop.title, projectId: prop.projectId })
   return NextResponse.json(updated)
 }
-

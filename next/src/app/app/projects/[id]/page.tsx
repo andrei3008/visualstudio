@@ -7,8 +7,11 @@ import NewTaskForm from '@/components/NewTaskForm'
 import NewMilestoneForm from '@/components/NewMilestoneForm'
 import TaskRow from '@/components/TaskRow'
 import MilestoneRow from '@/components/MilestoneRow'
+import Card from '@/components/ui/Card'
 import NewProposalForm from '@/components/NewProposalForm'
 import Link from 'next/link'
+import Tabs from '@/components/ui/Tabs'
+import Breadcrumb from '@/components/ui/Breadcrumb'
 
 export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
   const session = await getServerSession(authOptions)
@@ -27,12 +30,23 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
   return (
     <main className="mx-auto max-w-5xl px-6 py-10 lg:px-8">
       <div className="flex items-center justify-between gap-4">
-        <h1 className="text-2xl font-bold">{project.name}</h1>
+        <div>
+          <Breadcrumb items={[{ label: 'Dashboard', href: '/app' }, { label: 'Proiecte', href: '/app' }, { label: project.name }]} />
+          <h1 className="mt-1 text-2xl font-bold">{project.name}</h1>
+        </div>
         <Link href="/app" className="text-sm text-primary-700 hover:underline">← Înapoi la dashboard</Link>
       </div>
 
+      <Tabs className="mt-6" tabs={[
+        { id: 'tasks', label: 'Tasks' },
+        { id: 'milestones', label: 'Milestones' },
+        { id: 'proposals', label: 'Proposals' },
+        { id: 'messages', label: 'Mesaje', href: `/app/admin/projects/${project.id}` },
+        { id: 'files', label: 'Fișiere', disabled: true },
+      ]} />
+
       <div className="mt-8 grid gap-6 md:grid-cols-2">
-        <section className="rounded-xl border border-slate-200 p-5">
+        <Card id="tasks">
           <h2 className="text-lg font-semibold text-slate-900">Tasks</h2>
           <div className="mt-4"><NewTaskForm projectId={project.id} /></div>
           <ul className="mt-6 space-y-3">
@@ -48,9 +62,9 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
               ))
             )}
           </ul>
-        </section>
+        </Card>
 
-        <section className="rounded-xl border border-slate-200 p-5">
+        <Card id="milestones">
           <h2 className="text-lg font-semibold text-slate-900">Milestones</h2>
           <div className="mt-4"><NewMilestoneForm projectId={project.id} /></div>
           <ul className="mt-6 space-y-3">
@@ -66,10 +80,10 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
               ))
             )}
           </ul>
-        </section>
+        </Card>
       </div>
 
-      <section className="mt-8 rounded-xl border border-slate-200 p-5">
+      <Card className="mt-8" id="proposals">
         <h2 className="text-lg font-semibold text-slate-900">Proposals</h2>
         <div className="mt-4"><NewProposalForm projectId={project.id} /></div>
         <ul className="mt-6 space-y-3">
@@ -95,7 +109,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
             })
           )}
         </ul>
-      </section>
+      </Card>
     </main>
   )
 }

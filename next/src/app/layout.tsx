@@ -6,6 +6,8 @@ import { authOptions } from '@/lib/authOptions'
 import SignOutButton from '@/components/SignOutButton'
 import ToasterClient from '@/components/ToasterClient'
 import { prisma } from '@/lib/prisma'
+import dynamic from 'next/dynamic'
+const NotificationBell = dynamic(() => import('@/components/NotificationBell'), { ssr: false })
 
 export const metadata: Metadata = {
   title: 'Client Portal',
@@ -44,6 +46,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   <Link href="/app" className="hover:text-primary-700">Dashboard</Link>
                   {isAdmin && <Link href="/app/admin" className="hover:text-primary-700">Admin</Link>}
                   <Link href="/account" className="hover:text-primary-700">Contul meu</Link>
+                  <NotificationBell />
                   <span className="hidden sm:inline text-slate-500">{session.user.email}</span>
                   <SignOutButton />
                 </div>

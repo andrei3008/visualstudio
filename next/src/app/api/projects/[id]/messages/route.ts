@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
 import { prisma } from '@/lib/prisma'
+import { createNotification, notifyAdmins } from '@/lib/notifications'
 
 export async function GET(_req: Request, ctx: { params: { id: string } }) {
   const session = await getServerSession(authOptions)
@@ -32,6 +33,15 @@ export async function POST(req: Request, ctx: { params: { id: string } }) {
   // Clients cannot post internal notes
   const createInternal = user.role === 'admin' ? isInternal : false
   const msg = await prisma.message.create({ data: { projectId: project.id, authorId: user.id, body, isInternal: createInternal } })
+  // notifications
+  if (!createInternal) {
+    if (user.role === 'admin') {
+      // notify project owner
+      createNotification(project.userId, 'message.new', { projectId: project.id, projectName: project.name })
+    } else {
+      // notify admins
+      notifyAdmins('message.new', { projectId: project.id, projectName: project.name })
+    }
+  }
   return NextResponse.json(msg, { status: 201 })
 }
-
