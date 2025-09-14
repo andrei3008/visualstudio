@@ -1,6 +1,50 @@
 #!/bin/sh
 set -eu
 
+echo "[start] Bootstrapping environment"
+
+# Load runtime env file if present
+if [ -f .env.runtime ]; then
+  set -a
+  . ./.env.runtime
+  set +a
+fi
+
+# Generate NEXTAUTH_SECRET if missing
+if [ -z "${NEXTAUTH_SECRET:-}" ]; then
+  if command -v node >/dev/null 2>&1; then
+    NEXTAUTH_SECRET=$(node -e "console.log(require('crypto').randomBytes(32).toString('base64'))" 2>/dev/null || true)
+  fi
+  if [ -z "$NEXTAUTH_SECRET" ] && command -v openssl >/dev/null 2>&1; then
+    NEXTAUTH_SECRET=$(openssl rand -base64 32 2>/dev/null || true)
+  fi
+  NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-devsecret}
+  export NEXTAUTH_SECRET
+fi
+
+# Compose DATABASE_URL from POSTGRES_PASSWORD if empty
+if [ -z "${DATABASE_URL:-}" ] && [ -n "${POSTGRES_PASSWORD:-}" ]; then
+  export DATABASE_URL="postgresql://postgres:${POSTGRES_PASSWORD}@db:5432/client_portal?schema=public"
+fi
+
+# Default NEXTAUTH_URL if empty
+if [ -z "${NEXTAUTH_URL:-}" ]; then
+  export NEXTAUTH_URL="http://localhost:3000"
+fi
+
+# Create a materialized runtime env file for debugging/reference
+if [ ! -f .env.runtime ] && [ -f .env.prod.example ]; then
+  cat > .env.runtime <<EOF
+NEXTAUTH_URL=${NEXTAUTH_URL}
+NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+DATABASE_URL=${DATABASE_URL}
+POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+SEED_ADMIN_EMAIL=${SEED_ADMIN_EMAIL}
+SEED_ADMIN_PASSWORD=${SEED_ADMIN_PASSWORD}
+SEED_ADMIN_NAME=${SEED_ADMIN_NAME}
+EOF
+fi
+
 echo "[start] DATABASE_URL=${DATABASE_URL:-<unset>}"
 
 # Parse DATABASE_URL: postgresql://user:pass@host:port/db?...
