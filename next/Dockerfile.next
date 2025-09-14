@@ -11,6 +11,8 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
+# Prisma engines need OpenSSL; install runtime libs in build stage too
+RUN apk add --no-cache openssl libc6-compat
 # Generate Prisma Client (no DB needed)
 RUN npx prisma generate || (echo "Skipping prisma generate" && true)
 RUN npm run build
@@ -24,6 +26,8 @@ ENV NODE_ENV=production \
 
 # Install Prisma CLI globally to avoid npx downloads at runtime
 RUN npm i -g prisma@5.19.1
+# Install OpenSSL and glibc compatibility for Prisma engines
+RUN apk add --no-cache openssl libc6-compat
 
 # Copy standalone output
 COPY --from=builder /app/.next/standalone ./
