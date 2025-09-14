@@ -33,6 +33,27 @@ body {
 .dark .card .text-slate-600 { color: #CBD5E1; } /* slate-300 */
 .dark .card .text-slate-500 { color: #94A3B8; } /* slate-400 */
 
+/* 2025 subtle motion accents */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); opacity: 0.7; }
+  50% { transform: translateY(-6px); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.glow-line {
+  background-image: linear-gradient(90deg, transparent, rgba(14,165,233,0.35), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-line { animation: none; }
+}
+
 
 /* Utility component styles */
 /* Tailwind's built-in `.container` utility is used directly in markup. */

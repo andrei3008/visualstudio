@@ -66,7 +66,8 @@ export default function HomePage() {
               <span>Portal clienți complet</span>
             </div>
             <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
-              <span className="bg-gradient-to-r from-primary-600 to-sky-500 bg-clip-text text-transparent">Construim software clar, rapid și transparent</span>
+              <span className="block bg-gradient-to-r from-primary-600 to-sky-500 bg-clip-text text-transparent">Construim software</span>
+              <span className="block bg-gradient-to-r from-sky-500 to-primary-600 bg-clip-text text-transparent">clar, rapid și transparent</span>
             </h1>
             <p className="mt-5 text-lg text-slate-600">
               Platformă completă pentru clienți: intake, ofertare, execuție, status live și facturare – totul într-un singur loc.
@@ -75,9 +76,38 @@ export default function HomePage() {
               <Link href="/login"><Button className="px-5 py-3">Intră în portal</Button></Link>
               <Link href="/projects" className="rounded-md px-5 py-3 font-semibold text-primary-700 ring-1 ring-primary-200 hover:bg-primary-50">Vezi proiecte demo</Link>
             </div>
+            {/* Product preview showcase */}
+            <div className="relative mx-auto mt-10 max-w-5xl rounded-2xl border border-slate-200 bg-white/60 p-1 shadow-card backdrop-blur dark:border-slate-800 dark:bg-slate-900/50">
+              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <div className="flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+                </div>
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  {/* Left mock: card with title, subtitle and chart placeholder */}
+                  <div className="rounded-lg border border-slate-200 p-3 dark:border-slate-800">
+                    <div className="h-4 w-1/3 rounded bg-slate-200 dark:bg-slate-700" />
+                    <div className="mt-2 h-3 w-2/3 rounded bg-slate-100 dark:bg-slate-800" />
+                    <div className="mt-4 h-32 rounded bg-slate-100 dark:bg-slate-800" />
+                  </div>
+                  {/* Right mock: list + button */}
+                  <div className="rounded-lg border border-slate-200 p-3 dark:border-slate-800">
+                    <div className="h-4 w-1/2 rounded bg-slate-200 dark:bg-slate-700" />
+                    <div className="mt-2 space-y-2">
+                      <div className="h-3 rounded bg-slate-100 dark:bg-slate-800" />
+                      <div className="h-3 rounded bg-slate-100 dark:bg-slate-800" />
+                      <div className="h-3 rounded bg-slate-100 dark:bg-slate-800" />
+                    </div>
+                    <div className="mt-3 h-10 rounded bg-slate-100 dark:bg-slate-800" />
+                  </div>
+                </div>
+                <div className="glow-line mt-4 h-px w-full" />
+              </div>
+            </div>
             {/* Logos */}
             <div className="mt-12">
-              <p className="text-xs uppercase tracking-widest text-slate-500">De încredere de echipe</p>
+              <p className="text-xs uppercase tracking-widest text-slate-500">De încredere pentru</p>
               <div className="mt-3 grid grid-cols-3 items-center justify-items-center gap-6 opacity-80 sm:grid-cols-5">
                 {[ 
                   { src: '/logos/acme.svg', alt: 'ACME' },
@@ -129,23 +159,47 @@ export default function HomePage() {
       {/* Stats band */}
       <section>
         <Container>
-          <div className="grid gap-6 rounded-xl border border-slate-200 bg-white p-6 text-center shadow-subtle sm:grid-cols-3">
+          <div className="grid gap-6 rounded-xl border border-slate-200 bg-white p-6 text-center shadow-subtle sm:grid-cols-3 dark:border-slate-800 dark:bg-slate-900">
             {[
               { k: 'SLA mediu', v: '24h' },
               { k: 'Livrabile/lună', v: '50+' },
               { k: 'Satisfacție', v: '99%' },
             ].map((s) => (
               <div key={s.k}>
-                <div className="text-3xl font-extrabold text-slate-900">{s.v}</div>
-                <div className="text-sm text-slate-600">{s.k}</div>
+                <div className="text-3xl font-extrabold text-slate-900 dark:text-white">{s.v}</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">{s.k}</div>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
+      {/* Integrations */}
+      <section className="py-14">
+        <Container>
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-subtle dark:border-slate-800 dark:bg-slate-900">
+            <h2 className="text-center text-2xl font-bold text-slate-900 dark:text-white">Integrări</h2>
+            <p className="mt-2 text-center text-slate-600 dark:text-slate-300">Ne conectăm cu tool‑urile tale preferate</p>
+            <div className="mt-6 grid grid-cols-3 items-center justify-items-center gap-6 sm:grid-cols-6">
+              {[
+                { src: '/logos/stripe.svg', alt: 'Stripe' },
+                { src: '/logos/github.svg', alt: 'GitHub' },
+                { src: '/logos/slack.svg', alt: 'Slack' },
+                { src: '/logos/acme.svg', alt: 'ACME' },
+                { src: '/logos/apex.svg', alt: 'APEX' },
+                { src: '/logos/zen.svg', alt: 'ZEN' },
+              ].map((l) => (
+                <span key={l.alt} className="text-slate-400 dark:text-slate-500">
+                  <img src={l.src} alt={l.alt} className="h-7 w-auto" />
+                </span>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* Pricing */}
-      <section className="bg-slate-50">
+      <section className="bg-slate-50 dark:bg-slate-950">
         <Container>
           <div className="py-16">
             <h2 className="text-center text-3xl font-bold text-slate-900">Abonamente</h2>
@@ -161,7 +215,7 @@ export default function HomePage() {
                 </ul>
                 <Link href="/login"><Button className="mt-6 w-full">Începe</Button></Link>
               </Card>
-              <Card className="border-primary-600 relative">
+              <Card className="relative border-primary-600">
                 <span className="absolute -top-3 right-4 rounded-full bg-primary-600 px-2 py-0.5 text-xs font-bold text-white">Popular</span>
                 <h3 className="text-lg font-semibold text-slate-900">Growth</h3>
                 <p className="mt-1 text-slate-600">30 ore/lună · SLA 24h</p>
@@ -217,10 +271,10 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16">
+      <section className="py-20">
         <Container>
           <h2 className="text-center text-3xl font-bold text-slate-900">Întrebări frecvente</h2>
-          <div className="mx-auto mt-8 max-w-3xl divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
+          <div className="mx-auto mt-10 max-w-3xl divide-y divide-slate-200 rounded-2xl border border-transparent bg-white/70 dark:bg-slate-900/60">
             {[
               { q: 'Cât de repede putem începe?', a: 'De regulă în 3–5 zile lucrătoare. Începem cu un scurt discovery și definim primul sprint.' },
               { q: 'Cum se facturează?', a: 'Pe bază de abonament lunar (retainer) sau per proiect. Integrare Stripe este disponibilă.' },
