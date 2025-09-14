@@ -24,13 +24,13 @@ export default function Tabs({ tabs, className, activeId }: { tabs: Tab[]; class
             aria-current={isActive ? 'page' : undefined}
             className={clsx(
               'relative px-4 py-2 text-sm font-semibold rounded-t transition-colors',
-              t.disabled && 'pointer-events-none text-slate-400',
-              !t.disabled && (isActive ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50')
+              t.disabled && 'pointer-events-none text-slate-400 dark:text-slate-600',
+              !t.disabled && (isActive ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800')
             )}
           >
             {t.label}
             {!t.disabled && isActive && (
-              <span className="pointer-events-none absolute inset-x-0 -bottom-[1px] h-0.5 bg-primary-600" />
+              <span className="pointer-events-none absolute inset-x-0 -bottom-[1px] h-0.5 bg-primary-600 dark:bg-primary-400" />
             )}
           </a>
         )

@@ -1,26 +1,46 @@
+import Container from '@/components/ui/Container'
+import Card from '@/components/ui/Card'
+import Button from '@/components/ui/Button'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+import Script from 'next/script'
 
-export const metadata = { title: 'Prețuri — Client Portal' }
+export const metadata: Metadata = {
+  title: 'Prețuri',
+  description: 'Abonamente & prețuri — retainer lunar pentru mentenanță și dezvoltare continuă.',
+  alternates: { canonical: '/pricing' },
+}
 
 export default function PricingPage() {
   return (
-    <main className="bg-slate-50">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h1 className="text-3xl font-bold text-slate-900 text-center">Abonamente</h1>
-        <p className="mt-2 text-center text-slate-600">Retainer lunar pentru mentenanță și dezvoltare continuă</p>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h3 className="text-lg font-semibold text-slate-900">Basic</h3>
+    <main className="py-14">
+      <Container>
+        <Script id="ld-breadcrumb-pricing" type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Acasă', item: (process.env.NEXTAUTH_URL || 'http://localhost:3000').replace(/\/$/, '') + '/' },
+              { '@type': 'ListItem', position: 2, name: 'Prețuri', item: (process.env.NEXTAUTH_URL || 'http://localhost:3000').replace(/\/$/, '') + '/pricing' },
+            ],
+          }) }}
+        />
+        <h1 className="text-3xl font-bold text-slate-900">Prețuri</h1>
+        <p className="mt-2 text-slate-600">Alege pachetul potrivit echipei tale.</p>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <Card>
+            <h2 className="text-lg font-semibold">Basic</h2>
             <p className="mt-1 text-slate-600">10 ore/lună · SLA 48h</p>
             <p className="mt-4 text-3xl font-bold text-slate-900">€X<span className="text-base font-medium text-slate-600">/lună</span></p>
             <ul className="mt-4 space-y-2 text-sm text-slate-600">
               <li>– Mentenanță & bugfix</li>
               <li>– Mică dezvoltare</li>
             </ul>
-            <Link href="/contact" className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-primary-600 px-4 py-2 font-semibold text-white hover:bg-primary-700">Începe</Link>
-          </div>
-          <div className="rounded-2xl border-2 border-primary-600 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-900">Growth</h3>
+            <Link href="/login"><Button className="mt-6 w-full">Începe</Button></Link>
+          </Card>
+          <Card className="border-primary-600">
+            <h2 className="text-lg font-semibold">Growth</h2>
             <p className="mt-1 text-slate-600">30 ore/lună · SLA 24h</p>
             <p className="mt-4 text-3xl font-bold text-slate-900">€Y<span className="text-base font-medium text-slate-600">/lună</span></p>
             <ul className="mt-4 space-y-2 text-sm text-slate-600">
@@ -28,10 +48,10 @@ export default function PricingPage() {
               <li>– Optimizări & A/B</li>
               <li>– PM inclus</li>
             </ul>
-            <Link href="/contact" className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-primary-600 px-4 py-2 font-semibold text-white hover:bg-primary-700">Alege planul</Link>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h3 className="text-lg font-semibold text-slate-900">Pro</h3>
+            <Link href="/login"><Button className="mt-6 w-full">Alege planul</Button></Link>
+          </Card>
+          <Card>
+            <h2 className="text-lg font-semibold">Pro</h2>
             <p className="mt-1 text-slate-600">60+ ore/lună · SLA 8h</p>
             <p className="mt-4 text-3xl font-bold text-slate-900">€Z<span className="text-base font-medium text-slate-600">/lună</span></p>
             <ul className="mt-4 space-y-2 text-sm text-slate-600">
@@ -39,11 +59,10 @@ export default function PricingPage() {
               <li>– Integrare CI/CD</li>
               <li>– Suport prioritar</li>
             </ul>
-            <Link href="/contact" className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-primary-600 px-4 py-2 font-semibold text-white hover:bg-primary-700">Contactează-ne</Link>
-          </div>
+            <Link href="/login"><Button className="mt-6 w-full">Contactează-ne</Button></Link>
+          </Card>
         </div>
-      </div>
+      </Container>
     </main>
   )
 }
-

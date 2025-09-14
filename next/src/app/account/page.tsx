@@ -1,4 +1,4 @@
-export const metadata = { title: 'Contul meu — Client Portal' }
+export const metadata = { title: 'Contul meu' }
 
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'

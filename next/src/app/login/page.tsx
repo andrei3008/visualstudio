@@ -4,6 +4,13 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { toast } from 'react-hot-toast'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Autentificare',
+  robots: { index: false, follow: false },
+  alternates: { canonical: '/login' },
+}
 
 export default function LoginPage() {
   const [loading, setLoading] = useState(false)

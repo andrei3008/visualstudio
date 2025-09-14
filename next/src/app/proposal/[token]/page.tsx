@@ -1,6 +1,12 @@
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 import PublicApproveButton from '@/components/PublicApproveButton'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Propunere',
+  robots: { index: false, follow: false },
+}
 
 export default async function PublicProposalPage({ params }: { params: { token: string } }) {
   const prop = await prisma.proposal.findUnique({ where: { publicToken: params.token }, include: { project: true, items: { orderBy: { createdAt: 'asc' } } } })
@@ -48,7 +54,7 @@ export default async function PublicProposalPage({ params }: { params: { token: 
       </div>
 
       <div className="mt-6 text-sm text-slate-500">
-        <Link href="/" className="text-primary-700 hover:underline">© Client Portal</Link>
+        <Link href="/" className="text-primary-700 hover:underline">© Visual Studio</Link>
       </div>
     </main>
   )

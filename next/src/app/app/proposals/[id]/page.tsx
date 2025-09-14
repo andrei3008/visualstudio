@@ -7,6 +7,12 @@ import Link from 'next/link'
 import NewProposalItemForm from '@/components/NewProposalItemForm'
 import SubmitProposalButton from '@/components/SubmitProposalButton'
 import DeleteProposalItemButton from '@/components/DeleteProposalItemButton'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const p = await prisma.proposal.findUnique({ where: { id: params.id }, select: { title: true } })
+  return { title: p?.title ? `Propunere — ${p.title}` : 'Propunere' }
+}
 
 export default async function ProposalDetailPage({ params }: { params: { id: string } }) {
   const session = await getServerSession(authOptions)

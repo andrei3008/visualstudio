@@ -1,8 +1,15 @@
 import { redirect } from 'next/navigation'
 import { addIntake } from '@/lib/intakeStore'
 import NotifyOnMount from '@/components/NotifyOnMount'
+import type { Metadata } from 'next'
+import Script from 'next/script'
 
-export const metadata = { title: 'Contact — Client Portal' }
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'Contactează echipa Visual Studio pentru proiecte software la comandă.',
+  alternates: { canonical: '/contact' },
+}
+
 
 type Props = { searchParams?: { success?: string } }
 
@@ -28,6 +35,16 @@ export default function ContactPage({ searchParams }: Props) {
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-14 lg:px-8">
+      <Script id="ld-breadcrumb-contact" type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Acasă', item: (process.env.NEXTAUTH_URL || 'http://localhost:3000').replace(/\/$/, '') + '/' },
+            { '@type': 'ListItem', position: 2, name: 'Contact', item: (process.env.NEXTAUTH_URL || 'http://localhost:3000').replace(/\/$/, '') + '/contact' },
+          ],
+        }) }}
+      />
       <h1 className="text-3xl font-bold text-slate-900">Contact</h1>
       <p className="mt-2 text-slate-600">Spune-ne pe scurt ce ai nevoie și revenim rapid.</p>
 

@@ -17,6 +17,12 @@ import FilesList from './FilesList'
 import Link from 'next/link'
 import Tabs from '@/components/ui/Tabs'
 import Breadcrumb from '@/components/ui/Breadcrumb'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const proj = await prisma.project.findUnique({ where: { id: params.id }, select: { name: true } })
+  return { title: proj?.name ? `Proiect — ${proj.name}` : 'Proiect' }
+}
 
 export default async function ProjectDetailPage({ params, searchParams }: { params: { id: string }; searchParams?: { tab?: string } }) {
   const session = await getServerSession(authOptions)

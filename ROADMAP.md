@@ -1,4 +1,4 @@
-# Roadmap — Client Portal
+# Roadmap — Visual Studio
 
 Aceasta este lista de task-uri propusă pentru dezvoltarea platformei, în ordine logică. Bifăm pe măsură ce implementăm.
 
@@ -39,4 +39,3 @@ Aceasta este lista de task-uri propusă pentru dezvoltarea platformei, în ordin
 - [ ] Dashboard KPI: lead time, ore estimate vs. consumate, on‑time
 
 — Actualizăm și reordonăm pe parcurs în funcție de nevoi.
-

@@ -1,4 +1,4 @@
-# Client Portal (Monolith Next.js 14)
+# Visual Studio (Monolith Next.js 14)
 
 Next.js 14 (App Router) monolit cu API Routes. Deploy prin Docker Compose / Portainer. Expus pe port `8007` pentru integrarea cu Cloudflare Tunnel.
 

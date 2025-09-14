@@ -15,10 +15,9 @@ export default function Button({ variant = 'primary', size = 'md', className, ..
   }[size]
   const variants = {
     primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600',
-    secondary: 'bg-slate-100 text-slate-900 hover:bg-slate-200 focus:ring-slate-300',
-    ghost: 'bg-transparent text-primary-700 hover:bg-primary-50 focus:ring-primary-200',
+    secondary: 'bg-slate-100 text-slate-900 hover:bg-slate-200 focus:ring-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700',
+    ghost: 'bg-transparent text-primary-700 hover:bg-primary-50 focus:ring-primary-200 dark:text-primary-300 dark:hover:bg-slate-800',
     danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-600',
   }[variant]
   return <button className={clsx(base, sizes, variants, className)} {...props} />
 }
-

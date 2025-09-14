@@ -5,21 +5,34 @@
 /* Page background with subtle gradient like CF aesthetic */
 html, body { height: 100%; }
 body {
-  @apply bg-white text-slate-800 antialiased;
+  @apply bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200;
   background-image: radial-gradient(1200px 600px at 50% -200px, rgba(14,165,233,0.08), transparent),
     radial-gradient(800px 400px at 0% 0%, rgba(14,165,233,0.05), transparent),
     radial-gradient(800px 400px at 100% 0%, rgba(14,165,233,0.05), transparent);
+}
+
+.dark body {
+  background-image: radial-gradient(1200px 600px at 50% -200px, rgba(14,165,233,0.10), transparent),
+    radial-gradient(800px 400px at 0% 0%, rgba(14,165,233,0.06), transparent),
+    radial-gradient(800px 400px at 100% 0%, rgba(14,165,233,0.06), transparent);
 }
 
 ::selection { @apply bg-primary-200 text-slate-900; }
 
 /* Headings */
 @layer base {
-  h1 { @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900; }
-  h2 { @apply text-2xl sm:text-3xl font-bold tracking-tight text-slate-900; }
-  h3 { @apply text-xl font-semibold text-slate-900; }
-  a { @apply text-primary-700 hover:text-primary-800 underline-offset-4 hover:underline; }
+  h1 { @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white; }
+  h2 { @apply text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white; }
+  h3 { @apply text-xl font-semibold text-slate-900 dark:text-white; }
+  a { @apply text-primary-700 hover:text-primary-800 underline-offset-4 hover:underline dark:text-primary-300 dark:hover:text-primary-200; }
+  input, textarea, select { @apply rounded border border-slate-300 bg-white text-slate-900 placeholder-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder-slate-500; }
 }
+
+/* Dark contrast fixes inside cards */
+.dark .card .text-slate-700 { color: #E2E8F0; } /* slate-200 */
+.dark .card .text-slate-600 { color: #CBD5E1; } /* slate-300 */
+.dark .card .text-slate-500 { color: #94A3B8; } /* slate-400 */
+
 
 /* Utility component styles */
 /* Tailwind's built-in `.container` utility is used directly in markup. */

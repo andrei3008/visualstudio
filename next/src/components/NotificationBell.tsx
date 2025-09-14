@@ -45,25 +45,25 @@ export default function NotificationBell() {
 
   return (
     <div className="relative">
-      <button onClick={() => setOpen(v => !v)} className="relative rounded p-2 hover:bg-slate-100">
+      <button onClick={() => setOpen(v => !v)} className="relative rounded p-2 hover:bg-slate-100 dark:hover:bg-slate-800">
         <span aria-hidden>🔔</span>
         {unread > 0 && <span className="absolute -right-1 -top-1 rounded-full bg-red-600 px-1.5 py-0.5 text-[10px] font-bold text-white">{unread}</span>}
       </button>
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-80 rounded-lg border border-slate-200 bg-white shadow-lg">
-          <div className="flex items-center justify-between px-3 py-2 border-b border-slate-100">
+        <div className="absolute right-0 z-50 mt-2 w-80 rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex items-center justify-between px-3 py-2 border-b border-slate-100 dark:border-slate-800">
             <span className="text-sm font-semibold">Notificări</span>
             <button onClick={markAll} className="text-xs text-primary-700 hover:underline">Marchează toate ca citite</button>
           </div>
           <ul className="max-h-80 overflow-auto">
             {items.length === 0 ? (
-              <li className="px-3 py-4 text-sm text-slate-600">Nu ai notificări.</li>
+              <li className="px-3 py-4 text-sm text-slate-600 dark:text-slate-400">Nu ai notificări.</li>
             ) : (
               items.map((it) => (
-                <li key={it.id} className={clsx('px-3 py-2 text-sm border-b border-slate-100', !it.readAt && 'bg-slate-50')}>
+                <li key={it.id} className={clsx('px-3 py-2 text-sm border-b border-slate-100 dark:border-slate-800', !it.readAt && 'bg-slate-50 dark:bg-slate-800/60')}>
                   <div className="flex items-center justify-between">
-                    <span>{label(it)}</span>
-                    <span className="text-[11px] text-slate-400">{new Date(it.createdAt).toLocaleString('ro-RO')}</span>
+                    <span className="dark:text-slate-200">{label(it)}</span>
+                    <span className="text-[11px] text-slate-400 dark:text-slate-500">{new Date(it.createdAt).toLocaleString('ro-RO')}</span>
                   </div>
                 </li>
               ))
@@ -74,4 +74,3 @@ export default function NotificationBell() {
     </div>
   )
 }
-
