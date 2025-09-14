@@ -22,11 +22,16 @@ ENV NODE_ENV=production \
     HOSTNAME=0.0.0.0 \
     NEXT_TELEMETRY_DISABLED=1
 
+# Install Prisma CLI globally to avoid npx downloads at runtime
+RUN npm i -g prisma@5.19.1
+
 # Copy standalone output
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/start.sh ./start.sh
+RUN chmod +x ./start.sh
 
 EXPOSE 3000
-CMD ["sh", "-lc", "npx prisma migrate deploy && node prisma/seed.js && node server.js"]
+CMD ["./start.sh"]
