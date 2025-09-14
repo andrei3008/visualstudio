@@ -18,7 +18,8 @@ services:
     volumes:
       - storage:/app/storage
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       appnet:
         aliases:
@@ -36,6 +37,11 @@ services:
       appnet:
         aliases:
           - db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
 volumes:
   storage:
   pg_data:
