@@ -6,8 +6,8 @@ import { authOptions } from '@/lib/authOptions'
 import SignOutButton from '@/components/SignOutButton'
 import ToasterClient from '@/components/ToasterClient'
 import { prisma } from '@/lib/prisma'
-import dynamic from 'next/dynamic'
-const NotificationBell = dynamic(() => import('@/components/NotificationBell'), { ssr: false })
+import NextDynamic from 'next/dynamic'
+const NotificationBell = NextDynamic(() => import('@/components/NotificationBell'), { ssr: false })
 import ThemeInit from '@/components/ThemeInit'
 import ThemeToggle from '@/components/ThemeToggle'
 import Container from '@/components/ui/Container'
