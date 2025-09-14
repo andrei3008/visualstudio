@@ -19,6 +19,10 @@ services:
       - storage:/app/storage
     depends_on:
       - db
+    networks:
+      appnet:
+        aliases:
+          - web
 
   db:
     image: postgres:16-alpine
@@ -28,6 +32,12 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - pg_data:/var/lib/postgresql/data
+    networks:
+      appnet:
+        aliases:
+          - db
 volumes:
   storage:
   pg_data:
+networks:
+  appnet:
