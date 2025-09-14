@@ -3,13 +3,28 @@ set -eu
 
 echo "[start] DATABASE_URL=${DATABASE_URL:-<unset>}"
 
-echo "[start] Resolving DB host..."
-getent hosts db || true
+# Parse DATABASE_URL: postgresql://user:pass@host:port/db?...
+URL_NO_SCHEME=${DATABASE_URL#postgresql://}
+UPH=${URL_NO_SCHEME%%/*}
+DBQ=${URL_NO_SCHEME#*/}
+DB=${DBQ%%\?*}
+USERPASS=${UPH%@*}
+HOSTPORT=${UPH#*@}
+DB_USER=${USERPASS%%:*}
+DB_PASS=${USERPASS#*:}
+DB_HOST=${HOSTPORT%%:*}
+DB_PORT=${HOSTPORT#*:}
+[ "$DB_HOST" = "$HOSTPORT" ] && DB_PORT=5432
 
-echo "[start] Waiting for database readiness (pg_isready)..."
+echo "[start] Parsed DB → host=$DB_HOST port=$DB_PORT db=$DB user=$DB_USER"
+
+echo "[start] DNS lookup for host: $DB_HOST"
+nslookup "$DB_HOST" 2>/dev/null || true
+
+echo "[start] Waiting for database readiness (psql ping)..."
 ATTEMPTS=0
-MAX_ATTEMPTS=60 # ~2-3 minutes
-until pg_isready -h db -p 5432 >/dev/null 2>&1; do
+MAX_ATTEMPTS=60
+until PGPASSWORD="$DB_PASS" psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB" -c 'SELECT 1' -tA >/dev/null 2>&1; do
   ATTEMPTS=$((ATTEMPTS+1))
   if [ "$ATTEMPTS" -ge "$MAX_ATTEMPTS" ]; then
     echo "[start] DB not ready after $ATTEMPTS attempts. Exiting."
