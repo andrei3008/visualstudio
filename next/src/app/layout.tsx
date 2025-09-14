@@ -40,6 +40,9 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+// Ensure pages are rendered dynamically at runtime (avoid build-time execution of auth/session)
+export const dynamic = 'force-dynamic'
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession(authOptions)
   let isAdmin = false
