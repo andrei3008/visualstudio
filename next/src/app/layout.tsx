@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/authOptions'
 import SignOutButton from '@/components/SignOutButton'
 import ToasterClient from '@/components/ToasterClient'
+import { prisma } from '@/lib/prisma'
 
 export const metadata: Metadata = {
   title: 'Client Portal',
@@ -17,6 +18,11 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession(authOptions)
+  let isAdmin = false
+  if (session?.user?.email) {
+    const u = await prisma.user.findUnique({ where: { email: session.user.email }, select: { role: true } })
+    isAdmin = u?.role === 'admin'
+  }
   return (
     <html lang="ro">
       <head>
@@ -36,6 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               {session?.user ? (
                 <div className="flex items-center gap-3">
                   <Link href="/app" className="hover:text-primary-700">Dashboard</Link>
+                  {isAdmin && <Link href="/app/admin" className="hover:text-primary-700">Admin</Link>}
                   <Link href="/account" className="hover:text-primary-700">Contul meu</Link>
                   <span className="hidden sm:inline text-slate-500">{session.user.email}</span>
                   <SignOutButton />

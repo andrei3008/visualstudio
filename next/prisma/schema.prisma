@@ -15,6 +15,14 @@ model User {
   createdAt    DateTime  @default(now())
   projects     Project[]
   assignedTasks Task[]   @relation("TaskAssignee")
+  role         UserRole  @default(client)
+  messages     Message[]
+}
+
+enum UserRole {
+  client
+  staff
+  admin
 }
 
 enum ProjectStatus {
@@ -34,6 +42,8 @@ model Project {
   createdAt DateTime       @default(now())
   tasks     Task[]
   milestones Milestone[]
+  messages   Message[]
+  proposals  Proposal[]
 
   @@index([userId])
 }
@@ -76,4 +86,52 @@ model Milestone {
   createdAt  DateTime         @default(now())
 
   @@index([projectId])
+}
+
+model Message {
+  id         String    @id @default(cuid())
+  project    Project   @relation(fields: [projectId], references: [id])
+  projectId  String
+  author     User      @relation(fields: [authorId], references: [id])
+  authorId   String
+  body       String
+  isInternal Boolean   @default(false)
+  createdAt  DateTime  @default(now())
+
+  @@index([projectId])
+  @@index([authorId])
+}
+
+enum ProposalStatus {
+  draft
+  submitted
+  approved
+  rejected
+}
+
+model Proposal {
+  id           String          @id @default(cuid())
+  project      Project         @relation(fields: [projectId], references: [id])
+  projectId    String
+  title        String
+  status       ProposalStatus  @default(draft)
+  publicToken  String          @unique
+  submittedAt  DateTime?
+  approvedAt   DateTime?
+  createdAt    DateTime        @default(now())
+  items        ProposalItem[]
+
+  @@index([projectId])
+}
+
+model ProposalItem {
+  id              String    @id @default(cuid())
+  proposal        Proposal  @relation(fields: [proposalId], references: [id])
+  proposalId      String
+  description     String
+  qty             Int
+  unitPriceCents  Int
+  createdAt       DateTime  @default(now())
+
+  @@index([proposalId])
 }

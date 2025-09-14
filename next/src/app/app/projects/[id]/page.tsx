@@ -7,6 +7,7 @@ import NewTaskForm from '@/components/NewTaskForm'
 import NewMilestoneForm from '@/components/NewMilestoneForm'
 import TaskRow from '@/components/TaskRow'
 import MilestoneRow from '@/components/MilestoneRow'
+import NewProposalForm from '@/components/NewProposalForm'
 import Link from 'next/link'
 
 export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
@@ -17,9 +18,10 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
   const project = await prisma.project.findFirst({ where: { id: params.id, userId: user.id } })
   if (!project) redirect('/app')
 
-  const [tasks, milestones] = await Promise.all([
+  const [tasks, milestones, proposals] = await Promise.all([
     prisma.task.findMany({ where: { projectId: project.id }, orderBy: [{ status: 'asc' }, { dueAt: 'asc' }, { createdAt: 'desc' }] }),
     prisma.milestone.findMany({ where: { projectId: project.id }, orderBy: [{ status: 'asc' }, { dueAt: 'asc' }, { createdAt: 'desc' }] }),
+    prisma.proposal.findMany({ where: { projectId: project.id }, include: { items: true }, orderBy: { createdAt: 'desc' } }),
   ])
 
   return (
@@ -66,6 +68,34 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
           </ul>
         </section>
       </div>
+
+      <section className="mt-8 rounded-xl border border-slate-200 p-5">
+        <h2 className="text-lg font-semibold text-slate-900">Proposals</h2>
+        <div className="mt-4"><NewProposalForm projectId={project.id} /></div>
+        <ul className="mt-6 space-y-3">
+          {proposals.length === 0 ? (
+            <li className="text-slate-600">Nu există propuneri încă.</li>
+          ) : (
+            proposals.map((p: any) => {
+              const total = p.items.reduce((s: number, it: any) => s + it.qty * it.unitPriceCents, 0)
+              return (
+                <li key={p.id} className="rounded border border-slate-200 p-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-medium text-slate-900">{p.title}</div>
+                      <div className="text-xs text-slate-500">Status: {String(p.status)}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="font-semibold">{(total/100).toFixed(2)} EUR</div>
+                      <Link href={`/app/proposals/${p.id}`} className="text-sm text-primary-700 hover:underline">Deschide →</Link>
+                    </div>
+                  </div>
+                </li>
+              )
+            })
+          )}
+        </ul>
+      </section>
     </main>
   )
 }

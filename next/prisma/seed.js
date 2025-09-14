@@ -12,7 +12,7 @@ async function main() {
   const user = await prisma.user.upsert({
     where: { email },
     update: {},
-    create: { email, name, passwordHash },
+    create: { email, name, passwordHash, role: 'admin' },
   })
 
   const existingProjects = await prisma.project.count({ where: { userId: user.id } })
@@ -30,4 +30,3 @@ main().catch(async (e) => {
   console.error('[seed] failed:', e)
   process.exit(1)
 })
-
