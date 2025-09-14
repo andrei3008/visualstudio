@@ -164,7 +164,6 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
           <FileDropzone projectId={project.id} />
         </div>
         <Suspense>
-          {/* @ts-expect-error Async Server Component */}
           <FilesList projectId={project.id} />
         </Suspense>
         </Card>
