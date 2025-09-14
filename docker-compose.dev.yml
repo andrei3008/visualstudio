@@ -11,7 +11,7 @@ services:
       - NEXTAUTH_URL=http://localhost:8007
       - NEXTAUTH_SECRET=devsecret
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/client_portal?schema=public
-    command: sh -lc "npm i --silent && npx prisma generate && npm run dev"
+    command: sh -lc "npm i --silent && npx prisma generate && npx prisma migrate deploy && npm run dev"
     depends_on:
       - db
 

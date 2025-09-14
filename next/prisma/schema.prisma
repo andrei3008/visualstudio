@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider   = "prisma-client-js"
+  engineType = "library"
 }
 
 datasource db {
@@ -18,6 +19,7 @@ model User {
   role         UserRole  @default(client)
   messages     Message[]
   notifications Notification[]
+  uploadedFiles File[]
 }
 
 enum UserRole {
@@ -45,6 +47,7 @@ model Project {
   milestones Milestone[]
   messages   Message[]
   proposals  Proposal[]
+  files      File[]
 
   @@index([userId])
 }
@@ -101,6 +104,23 @@ model Message {
 
   @@index([projectId])
   @@index([authorId])
+}
+
+model File {
+  id           String    @id @default(cuid())
+  project      Project   @relation(fields: [projectId], references: [id])
+  projectId    String
+  uploader     User      @relation(fields: [uploaderId], references: [id])
+  uploaderId   String
+  originalName String
+  mimeType     String
+  size         Int
+  isInternal   Boolean   @default(false)
+  path         String    // absolute or relative path on disk
+  createdAt    DateTime  @default(now())
+
+  @@index([projectId])
+  @@index([uploaderId])
 }
 
 model Notification {

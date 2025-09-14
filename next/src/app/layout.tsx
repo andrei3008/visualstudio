@@ -8,6 +8,7 @@ import ToasterClient from '@/components/ToasterClient'
 import { prisma } from '@/lib/prisma'
 import dynamic from 'next/dynamic'
 const NotificationBell = dynamic(() => import('@/components/NotificationBell'), { ssr: false })
+import Container from '@/components/ui/Container'
 
 export const metadata: Metadata = {
   title: 'Client Portal',
@@ -34,18 +35,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className="font-sans">
         <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <nav className="container flex items-center justify-between py-4">
             <Link href="/" className="text-lg font-extrabold tracking-tight text-slate-900">Client Portal</Link>
-            <div className="flex items-center gap-6 text-sm font-semibold text-slate-700">
-              <Link href="/services" className="hover:text-primary-700">Servicii</Link>
-              <Link href="/pricing" className="hover:text-primary-700">Prețuri</Link>
-              <Link href="/contact" className="hover:text-primary-700">Contact</Link>
-              <Link href="/projects" className="hidden sm:inline hover:text-primary-700">Proiecte</Link>
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+              <Link href="/services" className="px-3 py-2 rounded hover:bg-slate-100">Servicii</Link>
+              <Link href="/pricing" className="px-3 py-2 rounded hover:bg-slate-100">Prețuri</Link>
+              <Link href="/contact" className="px-3 py-2 rounded hover:bg-slate-100">Contact</Link>
+              <Link href="/projects" className="hidden sm:inline px-3 py-2 rounded hover:bg-slate-100">Proiecte</Link>
               {session?.user ? (
                 <div className="flex items-center gap-3">
-                  <Link href="/app" className="hover:text-primary-700">Dashboard</Link>
+                  <Link href="/app" className="px-3 py-2 rounded hover:bg-slate-100">Dashboard</Link>
                   {isAdmin && <Link href="/app/admin" className="hover:text-primary-700">Admin</Link>}
-                  <Link href="/account" className="hover:text-primary-700">Contul meu</Link>
+                  <Link href="/account" className="px-3 py-2 rounded hover:bg-slate-100">Contul meu</Link>
                   <NotificationBell />
                   <span className="hidden sm:inline text-slate-500">{session.user.email}</span>
                   <SignOutButton />
@@ -53,14 +54,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               ) : (
                 <>
                   <Link href="/login" className="rounded-md bg-primary-600 px-3 py-2 text-white hover:bg-primary-700">Intră în portal</Link>
-                  <Link href="/register" className="hidden sm:inline hover:text-primary-700">Înregistrare</Link>
+                  <Link href="/register" className="hidden sm:inline px-3 py-2 rounded hover:bg-slate-100">Înregistrare</Link>
                 </>
               )}
             </div>
           </nav>
         </header>
         <ToasterClient />
-        <main>{children}</main>
+        <main className="min-h-[60vh]">{children}</main>
         <footer className="mt-16 border-t border-slate-200 py-8 text-center text-sm text-slate-500">
           © {new Date().getFullYear()} Client Portal. Toate drepturile rezervate.
         </footer>

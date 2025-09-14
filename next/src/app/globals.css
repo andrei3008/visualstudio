@@ -2,5 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body { @apply bg-white text-slate-800 antialiased; }
+/* Page background with subtle gradient like CF aesthetic */
+html, body { height: 100%; }
+body {
+  @apply bg-white text-slate-800 antialiased;
+  background-image: radial-gradient(1200px 600px at 50% -200px, rgba(14,165,233,0.08), transparent),
+    radial-gradient(800px 400px at 0% 0%, rgba(14,165,233,0.05), transparent),
+    radial-gradient(800px 400px at 100% 0%, rgba(14,165,233,0.05), transparent);
+}
 
+::selection { @apply bg-primary-200 text-slate-900; }
+
+/* Headings */
+@layer base {
+  h1 { @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900; }
+  h2 { @apply text-2xl sm:text-3xl font-bold tracking-tight text-slate-900; }
+  h3 { @apply text-xl font-semibold text-slate-900; }
+  a { @apply text-primary-700 hover:text-primary-800 underline-offset-4 hover:underline; }
+}
+
+/* Utility component styles */
+/* Tailwind's built-in `.container` utility is used directly in markup. */

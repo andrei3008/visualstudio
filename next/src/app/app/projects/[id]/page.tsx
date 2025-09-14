@@ -9,11 +9,16 @@ import TaskRow from '@/components/TaskRow'
 import MilestoneRow from '@/components/MilestoneRow'
 import Card from '@/components/ui/Card'
 import NewProposalForm from '@/components/NewProposalForm'
+import NewMessageForm from '@/components/NewMessageForm'
+import NewFileUploadForm from '@/components/NewFileUploadForm'
+import FileDropzone from '@/components/FileDropzone'
+import { Suspense } from 'react'
+import FilesList from './FilesList'
 import Link from 'next/link'
 import Tabs from '@/components/ui/Tabs'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 
-export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
+export default async function ProjectDetailPage({ params, searchParams }: { params: { id: string }; searchParams?: { tab?: string } }) {
   const session = await getServerSession(authOptions)
   if (!session?.user?.email) redirect('/login')
   const user = await findUserByEmail(session.user.email)
@@ -21,11 +26,14 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
   const project = await prisma.project.findFirst({ where: { id: params.id, userId: user.id } })
   if (!project) redirect('/app')
 
-  const [tasks, milestones, proposals] = await Promise.all([
+  const [tasks, milestones, proposals, messages] = await Promise.all([
     prisma.task.findMany({ where: { projectId: project.id }, orderBy: [{ status: 'asc' }, { dueAt: 'asc' }, { createdAt: 'desc' }] }),
     prisma.milestone.findMany({ where: { projectId: project.id }, orderBy: [{ status: 'asc' }, { dueAt: 'asc' }, { createdAt: 'desc' }] }),
     prisma.proposal.findMany({ where: { projectId: project.id }, include: { items: true }, orderBy: { createdAt: 'desc' } }),
+    prisma.message.findMany({ where: { projectId: project.id, isInternal: false }, orderBy: { createdAt: 'asc' }, include: { author: { select: { email: true } } } }),
   ])
+
+  const tab = (searchParams?.tab as string) || 'tasks'
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-10 lg:px-8">
@@ -37,16 +45,21 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
         <Link href="/app" className="text-sm text-primary-700 hover:underline">← Înapoi la dashboard</Link>
       </div>
 
-      <Tabs className="mt-6" tabs={[
-        { id: 'tasks', label: 'Tasks' },
-        { id: 'milestones', label: 'Milestones' },
-        { id: 'proposals', label: 'Proposals' },
-        { id: 'messages', label: 'Mesaje', href: `/app/admin/projects/${project.id}` },
-        { id: 'files', label: 'Fișiere', disabled: true },
-      ]} />
+      <Tabs
+        className="mt-6"
+        activeId={tab}
+        tabs={[
+          { id: 'tasks', label: 'Tasks', href: `?tab=tasks` },
+          { id: 'milestones', label: 'Milestones', href: `?tab=milestones` },
+          { id: 'proposals', label: 'Proposals', href: `?tab=proposals` },
+          { id: 'files', label: 'Fișiere', href: `?tab=files` },
+          { id: 'messages', label: 'Mesaje', href: `/app/admin/projects/${project.id}` },
+        ]}
+      />
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2">
-        <Card id="tasks">
+      {tab === 'tasks' && (
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <Card>
           <h2 className="text-lg font-semibold text-slate-900">Tasks</h2>
           <div className="mt-4"><NewTaskForm projectId={project.id} /></div>
           <ul className="mt-6 space-y-3">
@@ -62,9 +75,9 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
               ))
             )}
           </ul>
-        </Card>
+          </Card>
 
-        <Card id="milestones">
+          <Card>
           <h2 className="text-lg font-semibold text-slate-900">Milestones</h2>
           <div className="mt-4"><NewMilestoneForm projectId={project.id} /></div>
           <ul className="mt-6 space-y-3">
@@ -80,10 +93,12 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
               ))
             )}
           </ul>
-        </Card>
-      </div>
+          </Card>
+        </div>
+      )}
 
-      <Card className="mt-8" id="proposals">
+      {tab === 'proposals' && (
+        <Card className="mt-8">
         <h2 className="text-lg font-semibold text-slate-900">Proposals</h2>
         <div className="mt-4"><NewProposalForm projectId={project.id} /></div>
         <ul className="mt-6 space-y-3">
@@ -109,7 +124,45 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
             })
           )}
         </ul>
-      </Card>
+        </Card>
+      )}
+
+      {tab === 'messages' && (
+        <Card className="mt-8">
+        <h2 className="text-lg font-semibold text-slate-900">Mesaje</h2>
+        <ul className="mt-4 divide-y divide-slate-100 rounded-md">
+          {messages.length === 0 ? (
+            <li className="py-4 text-slate-600">Nu există mesaje încă.</li>
+          ) : (
+            messages.map((m: any) => (
+              <li key={m.id} className="py-3 px-2 -mx-2 odd:bg-slate-50">
+                <div className="flex items-center justify-between text-xs text-slate-500">
+                  <span className="truncate pr-2">{m.author.email}</span>
+                  <span>{new Date(m.createdAt).toLocaleString('ro-RO')}</span>
+                </div>
+                <div className="mt-1 whitespace-pre-wrap text-sm">{m.body}</div>
+              </li>
+            ))
+          )}
+        </ul>
+        <div className="mt-4">
+          <NewMessageForm projectId={project.id} />
+        </div>
+        </Card>
+      )}
+
+      {tab === 'files' && (
+        <Card className="mt-8">
+        <h2 className="text-lg font-semibold text-slate-900">Fișiere</h2>
+        <div className="mt-4">
+          <FileDropzone projectId={project.id} />
+        </div>
+        <Suspense>
+          {/* @ts-expect-error Async Server Component */}
+          <FilesList projectId={project.id} />
+        </Suspense>
+        </Card>
+      )}
     </main>
   )
 }
