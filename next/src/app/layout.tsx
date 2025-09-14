@@ -36,6 +36,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               {session?.user ? (
                 <div className="flex items-center gap-3">
                   <Link href="/app" className="hover:text-primary-700">Dashboard</Link>
+                  <Link href="/account" className="hover:text-primary-700">Contul meu</Link>
                   <span className="hidden sm:inline text-slate-500">{session.user.email}</span>
                   <SignOutButton />
                 </div>

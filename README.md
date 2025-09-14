@@ -26,6 +26,14 @@ docker compose up -d --build
   - `NEXTAUTH_SECRET`: un secret criptografic puternic.
 - Prod: copiați fișierul `.env.prod.example` în `.env.prod`, completați valorile, apoi porniți stack-ul. `docker-compose.prod.yml` încarcă automat `.env.prod`.
 
+### Seed utilizator inițial (opțional)
+- Pentru primul deploy poți seta în `.env.prod` următoarele (sunt idempotente):
+  - `SEED_ADMIN_EMAIL` — email admin inițial (ex: `admin@firma.ro`)
+  - `SEED_ADMIN_PASSWORD` — parolă inițială (schimb-o după primul login)
+  - `SEED_ADMIN_NAME` — nume afișat (ex: `Admin`)
+- Containerul rulează automat migrarea și seed-ul la pornire. Dacă userul există deja, nu se creează duplicate.
+- După ce ai creat contul și ai schimbat parola, poți elimina aceste variabile din `.env.prod`.
+
 Comenzi utile pentru generarea secretului:
 ```
 openssl rand -base64 32

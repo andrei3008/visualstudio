@@ -9,4 +9,23 @@ services:
     environment:
       - NEXTAUTH_URL=http://localhost:8007
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-devsecret}
+      - DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres@db:5432/client_portal?schema=public}
     restart: unless-stopped
+    volumes:
+      - ./storage:/app/storage
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_DB=client_portal
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5435:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
