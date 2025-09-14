@@ -20,6 +20,26 @@ docker compose up -d --build
 - Stacks → Add stack → conținut `docker-compose.prod.yml`
 - Cloudflare Tunnel: hostname → `http://localhost:8007`
 
+## Mediu (NextAuth)
+- În producție, `next-auth` necesită două variabile de mediu:
+  - `NEXTAUTH_URL`: URL-ul public complet al aplicației (ex: `https://portal.exemplu.ro`).
+  - `NEXTAUTH_SECRET`: un secret criptografic puternic.
+- Prod: copiați fișierul `.env.prod.example` în `.env.prod`, completați valorile, apoi porniți stack-ul. `docker-compose.prod.yml` încarcă automat `.env.prod`.
+
+Comenzi utile pentru generarea secretului:
+```
+openssl rand -base64 32
+# sau
+node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+```
+
+Exemplu rulare (prod):
+```
+cp .env.prod.example .env.prod
+# editați .env.prod cu valorile corecte
+docker compose -f docker-compose.prod.yml --env-file .env.prod up -d --build
+```
+
 ## Note
 - Am înlocuit Nuxt + Caddy cu Next.js (serverul propriu).
 - Pentru extindere: Auth, Postgres + Prisma, uploads S3/MinIO, Stripe.
