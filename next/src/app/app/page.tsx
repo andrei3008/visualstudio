@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation'
 import { findUserByEmail } from '@/lib/users'
 import { listProjectsByUserId } from '@/lib/projects'
 import NewProjectForm from '@/components/NewProjectForm'
+import Link from 'next/link'
 
 export default async function AppDashboard() {
   const session = await getServerSession(authOptions)
@@ -34,6 +35,9 @@ export default async function AppDashboard() {
                   <span className="rounded bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700">{p.status}</span>
                 </div>
                 <p className="mt-2 text-sm text-slate-600">Creat la: {new Date(p.createdAt).toLocaleDateString('ro-RO')}</p>
+                <div className="mt-3">
+                  <Link href={`/app/projects/${p.id}`} className="text-sm text-primary-700 hover:underline">Deschide proiectul →</Link>
+                </div>
               </div>
             ))
           )}

@@ -13,8 +13,8 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 # Prisma engines need OpenSSL; install runtime libs in build stage too
 RUN apk add --no-cache openssl libc6-compat
-# Generate Prisma Client (no DB needed)
-RUN npx prisma generate || (echo "Skipping prisma generate" && true)
+# Generate Prisma Client (no DB needed) using local CLI
+RUN ./node_modules/.bin/prisma generate
 RUN npm run build
 
 FROM node:20-alpine AS runner
@@ -28,6 +28,10 @@ ENV NODE_ENV=production \
 RUN npm i -g prisma@5.19.1
 # Install OpenSSL and glibc compatibility for Prisma engines
 RUN apk add --no-cache openssl libc6-compat postgresql-client
+## Ensure seed dependencies exist at runtime (standalone doesn't include dev deps)
+# bcryptjs is used in prisma/seed.js to hash the initial password
+RUN npm init -y >/dev/null 2>&1 || true \
+ && npm i --no-audit --silent bcryptjs@2.4.3
 
 # Copy standalone output
 COPY --from=builder /app/.next/standalone ./

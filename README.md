@@ -51,3 +51,6 @@ docker compose -f docker-compose.prod.yml --env-file .env.prod up -d --build
 ## Note
 - Am înlocuit Nuxt + Caddy cu Next.js (serverul propriu).
 - Pentru extindere: Auth, Postgres + Prisma, uploads S3/MinIO, Stripe.
+
+## Roadmap
+- Vezi `ROADMAP.md` pentru lista de task-uri propusă și starea lor.

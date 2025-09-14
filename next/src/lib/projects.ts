@@ -25,7 +25,7 @@ async function ensureStore() {
 export async function listProjectsByUserId(userId: string): Promise<Project[]> {
   if (process.env.DATABASE_URL) {
     const rows = await prisma.project.findMany({ where: { userId }, orderBy: { createdAt: 'desc' } })
-    return rows.map(r => ({ id: r.id, userId: r.userId, name: r.name, status: (r.status as any).replace('_', '-') as any, createdAt: r.createdAt.toISOString() }))
+    return rows.map((r: any) => ({ id: r.id, userId: r.userId, name: r.name, status: (r.status as any).replace('_', '-') as any, createdAt: r.createdAt.toISOString() }))
   }
   await ensureStore()
   const raw = await fs.readFile(projectsFile, 'utf-8')

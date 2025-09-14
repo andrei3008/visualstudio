@@ -26,7 +26,7 @@ async function ensureStore() {
 export async function listUsers(): Promise<User[]> {
   if (process.env.DATABASE_URL) {
     const users = await prisma.user.findMany({ orderBy: { createdAt: 'asc' } })
-    return users.map(u => ({ id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, createdAt: u.createdAt.toISOString() }))
+    return users.map((u: any) => ({ id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, createdAt: u.createdAt.toISOString() }))
   }
   await ensureStore()
   const raw = await fs.readFile(usersFile, 'utf-8')
