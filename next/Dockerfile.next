@@ -27,7 +27,7 @@ ENV NODE_ENV=production \
 # Install Prisma CLI globally to avoid npx downloads at runtime
 RUN npm i -g prisma@5.19.1
 # Install OpenSSL and glibc compatibility for Prisma engines
-RUN apk add --no-cache openssl libc6-compat
+RUN apk add --no-cache openssl libc6-compat postgresql-client
 
 # Copy standalone output
 COPY --from=builder /app/.next/standalone ./
