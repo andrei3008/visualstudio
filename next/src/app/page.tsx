@@ -94,7 +94,12 @@ export default function HomePage() {
                   </div>
                   <div className="mt-4">
                     <button
-                      onClick={() => document.getElementById('video-modal').showModal()}
+                      onClick={() => {
+                        const modal = document.getElementById('video-modal');
+                        if (modal) {
+                          (modal as HTMLDialogElement).showModal();
+                        }
+                      }}
                       className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
                     >
                       Vezi ce facem
