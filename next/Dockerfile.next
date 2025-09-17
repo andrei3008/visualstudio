@@ -13,6 +13,8 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 # Prisma engines need OpenSSL; install runtime libs in build stage too
 RUN apk add --no-cache openssl libc6-compat
+# Clean any existing .next directory to avoid permission issues
+RUN rm -rf .next || true
 # Generate Prisma Client (no DB needed) using local CLI
 RUN ./node_modules/.bin/prisma generate
 RUN npm run build
