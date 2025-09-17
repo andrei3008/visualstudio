@@ -1,9 +1,10 @@
-import Container from '@/components/ui/Container'
-import Card from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
+
+
+import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Card } from "@/components/ui/card"
 
 export const metadata: Metadata = {
   title: 'Prețuri',
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <main className="py-14">
-      <Container>
+      <div className="container">
         <Script id="ld-breadcrumb-pricing" type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             '@context': 'https://schema.org',
@@ -62,7 +63,7 @@ export default function PricingPage() {
             <Link href="/login"><Button className="mt-6 w-full">Contactează-ne</Button></Link>
           </Card>
         </div>
-      </Container>
+      </div>
     </main>
   )
 }

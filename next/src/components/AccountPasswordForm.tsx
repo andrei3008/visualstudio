@@ -1,6 +1,10 @@
 "use client"
 import { useState, useTransition } from 'react'
 import { toast } from 'react-hot-toast'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function AccountPasswordForm() {
   const [currentPassword, setCurrentPassword] = useState('')
@@ -33,44 +37,55 @@ export default function AccountPasswordForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-3 max-w-md">
-      <label className="grid gap-1">
-        <span>Parola curentă</span>
-        <input
-          type="password"
-          value={currentPassword}
-          onChange={(e) => setCurrentPassword(e.target.value)}
-          required
-          className="rounded border px-3 py-2"
-        />
-      </label>
-      <label className="grid gap-1">
-        <span>Parolă nouă</span>
-        <input
-          type="password"
-          value={newPassword}
-          onChange={(e) => setNewPassword(e.target.value)}
-          required
-          className="rounded border px-3 py-2"
-        />
-      </label>
-      <label className="grid gap-1">
-        <span>Confirmă parola nouă</span>
-        <input
-          type="password"
-          value={confirm}
-          onChange={(e) => setConfirm(e.target.value)}
-          required
-          className="rounded border px-3 py-2"
-        />
-      </label>
-      <button
-        disabled={pending}
-        className="w-max rounded bg-primary-600 px-4 py-2 font-semibold text-white hover:bg-primary-700 disabled:opacity-60"
-      >
-        {pending ? 'Se salvează...' : 'Schimbă parola'}
-      </button>
-    </form>
+    <Card className="w-full max-w-md">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-lg font-semibold">Schimbă Parolă</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={onSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="currentPassword">Parola curentă</Label>
+            <Input
+              id="currentPassword"
+              type="password"
+              value={currentPassword}
+              onChange={(e) => setCurrentPassword(e.target.value)}
+              required
+              disabled={pending}
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="newPassword">Parolă nouă</Label>
+            <Input
+              id="newPassword"
+              type="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              required
+              disabled={pending}
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="confirm">Confirmă parola nouă</Label>
+            <Input
+              id="confirm"
+              type="password"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+              required
+              disabled={pending}
+            />
+          </div>
+          <Button
+            type="submit"
+            disabled={pending}
+            className="w-full"
+          >
+            {pending ? 'Se salvează...' : 'Schimbă parola'}
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   )
 }
 

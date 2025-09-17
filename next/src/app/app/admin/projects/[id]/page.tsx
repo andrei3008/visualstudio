@@ -4,9 +4,9 @@ import { redirect } from 'next/navigation'
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 import NewMessageForm from '@/components/NewMessageForm'
-import Card from '@/components/ui/Card'
+import { Card } from "@/components/ui/card"
 import DeleteFileButton from '@/components/DeleteFileButton'
-import Badge from '@/components/ui/Badge'
+import { Badge } from '@/components/ui/badge'
 import FileDropzone from '@/components/FileDropzone'
 
 export default async function AdminProjectMessages({ params }: { params: { id: string } }) {

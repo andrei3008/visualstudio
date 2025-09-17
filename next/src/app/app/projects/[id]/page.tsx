@@ -7,7 +7,7 @@ import NewTaskForm from '@/components/NewTaskForm'
 import NewMilestoneForm from '@/components/NewMilestoneForm'
 import TaskRow from '@/components/TaskRow'
 import MilestoneRow from '@/components/MilestoneRow'
-import Card from '@/components/ui/Card'
+
 import NewProposalForm from '@/components/NewProposalForm'
 import NewMessageForm from '@/components/NewMessageForm'
 import NewFileUploadForm from '@/components/NewFileUploadForm'
@@ -15,9 +15,12 @@ import FileDropzone from '@/components/FileDropzone'
 import { Suspense } from 'react'
 import FilesList from './FilesList'
 import Link from 'next/link'
-import Tabs from '@/components/ui/Tabs'
-import Breadcrumb from '@/components/ui/Breadcrumb'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import type { Metadata } from 'next'
+import { CheckCircle, Clock, FileText, MessageSquare, FolderOpen, Calendar, ArrowRight, Sparkles, BarChart3, Target } from 'lucide-react'
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const proj = await prisma.project.findUnique({ where: { id: params.id }, select: { name: true } })
@@ -42,132 +45,445 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
   const tab = (searchParams?.tab as string) || 'tasks'
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-10 lg:px-8">
-      <div className="flex items-center justify-between gap-4">
-        <div>
-          <Breadcrumb items={[{ label: 'Dashboard', href: '/app' }, { label: 'Proiecte', href: '/app' }, { label: project.name }]} />
-          <h1 className="mt-1 text-2xl font-bold">{project.name}</h1>
-        </div>
-        <Link href="/app" className="text-sm text-primary-700 hover:underline">← Înapoi la dashboard</Link>
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-400/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-400/5 rounded-full blur-3xl animate-float"></div>
       </div>
 
-      <Tabs
-        className="mt-6"
-        activeId={tab}
-        tabs={[
-          { id: 'tasks', label: 'Tasks', href: `?tab=tasks` },
-          { id: 'milestones', label: 'Milestones', href: `?tab=milestones` },
-          { id: 'proposals', label: 'Proposals', href: `?tab=proposals` },
-          { id: 'files', label: 'Fișiere', href: `?tab=files` },
-          { id: 'messages', label: 'Mesaje', href: `/app/admin/projects/${project.id}` },
-        ]}
-      />
-
-      {tab === 'tasks' && (
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <Card>
-          <h2 className="text-lg font-semibold text-slate-900">Tasks</h2>
-          <div className="mt-4"><NewTaskForm projectId={project.id} /></div>
-          <ul className="mt-6 space-y-3">
-            {tasks.length === 0 ? (
-              <li className="text-slate-600">Nu există task-uri încă.</li>
-            ) : (
-              tasks.map((t: any) => (
-                <TaskRow
-                  key={t.id}
-                  projectId={project.id}
-                  task={{ id: t.id, title: t.title, status: t.status as any, dueAt: (t.dueAt as any)?.toString() ?? null, estimateH: t.estimateH as any }}
-                />
-              ))
-            )}
-          </ul>
-          </Card>
-
-          <Card>
-          <h2 className="text-lg font-semibold text-slate-900">Milestones</h2>
-          <div className="mt-4"><NewMilestoneForm projectId={project.id} /></div>
-          <ul className="mt-6 space-y-3">
-            {milestones.length === 0 ? (
-              <li className="text-slate-600">Nu există milestones încă.</li>
-            ) : (
-              milestones.map((m: any) => (
-                <MilestoneRow
-                  key={m.id}
-                  projectId={project.id}
-                  item={{ id: m.id, title: m.title, status: m.status as any, dueAt: (m.dueAt as any)?.toString() ?? null }}
-                />
-              ))
-            )}
-          </ul>
-          </Card>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Header */}
+        <div className="flex items-center justify-between gap-4 mb-8">
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <div className="flex gap-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+              </div>
+              <div>
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  {project.name}
+                </h1>
+                <Badge variant={String(project.status) === 'active' ? 'default' : 'secondary'} className={String(project.status) === 'active' ? 'bg-green-100 text-green-700 border-green-300' : 'bg-gray-100 text-gray-700 border-gray-300'}>
+                  {String(project.status)}
+                </Badge>
+              </div>
+            </div>
+            <p className="text-sm text-gray-500">
+              Creat la: {new Date(project.createdAt).toLocaleDateString('ro-RO')}
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <Button variant="outline" size="sm" className="border-gray-300 hover:border-blue-400 hover:bg-blue-50 transform transition-all duration-300 hover:scale-105">
+              <Link href="/app" className="flex items-center gap-2">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Înapoi la dashboard
+              </Link>
+            </Button>
+            <Button size="sm" variant="default" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform transition-all duration-300 hover:scale-105">
+              <Link href="/app/projects/new" className="flex items-center gap-2">
+                <FolderOpen className="h-4 w-4" />
+                Proiect nou
+              </Link>
+            </Button>
+          </div>
         </div>
-      )}
 
-      {tab === 'proposals' && (
-        <Card className="mt-8">
-        <h2 className="text-lg font-semibold text-slate-900">Proposals</h2>
-        <div className="mt-4"><NewProposalForm projectId={project.id} /></div>
-        <ul className="mt-6 space-y-3">
-          {proposals.length === 0 ? (
-            <li className="text-slate-600">Nu există propuneri încă.</li>
-          ) : (
-            proposals.map((p: any) => {
-              const total = p.items.reduce((s: number, it: any) => s + it.qty * it.unitPriceCents, 0)
-              return (
-                <li key={p.id} className="rounded border border-slate-200 p-3">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-medium text-slate-900">{p.title}</div>
-                      <div className="text-xs text-slate-500">Status: {String(p.status)}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-semibold">{(total/100).toFixed(2)} EUR</div>
-                      <Link href={`/app/proposals/${p.id}`} className="text-sm text-primary-700 hover:underline">Deschide →</Link>
-                    </div>
-                  </div>
-                </li>
-              )
-            })
-          )}
-        </ul>
-        </Card>
-      )}
-
-      {tab === 'messages' && (
-        <Card className="mt-8">
-        <h2 className="text-lg font-semibold text-slate-900">Mesaje</h2>
-        <ul className="mt-4 divide-y divide-slate-100 rounded-md">
-          {messages.length === 0 ? (
-            <li className="py-4 text-slate-600">Nu există mesaje încă.</li>
-          ) : (
-            messages.map((m: any) => (
-              <li key={m.id} className="py-3 px-2 -mx-2 odd:bg-slate-50">
-                <div className="flex items-center justify-between text-xs text-slate-500">
-                  <span className="truncate pr-2">{m.author.email}</span>
-                  <span>{new Date(m.createdAt).toLocaleString('ro-RO')}</span>
+        {/* Quick Stats */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-blue-100 rounded-xl">
+                  <FolderOpen className="h-5 w-5 text-blue-600" />
                 </div>
-                <div className="mt-1 whitespace-pre-wrap text-sm">{m.body}</div>
-              </li>
-            ))
-          )}
-        </ul>
-        <div className="mt-4">
-          <NewMessageForm projectId={project.id} />
-        </div>
-        </Card>
-      )}
+                <CardTitle className="text-sm font-medium text-gray-600">Task-uri</CardTitle>
+              </div>
+              <div className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{tasks.length}</div>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-2">
+                <BarChart3 className="h-4 w-4 text-green-500" />
+                <p className="text-xs text-gray-500">
+                  {tasks.filter(t => t.status === 'done').length} finalizate
+                </p>
+              </div>
+            </CardContent>
+          </Card>
 
-      {tab === 'files' && (
-        <Card className="mt-8">
-        <h2 className="text-lg font-semibold text-slate-900">Fișiere</h2>
-        <div className="mt-4">
-          <FileDropzone projectId={project.id} />
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-green-100 rounded-xl">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                </div>
+                <CardTitle className="text-sm font-medium text-gray-600">Milestones</CardTitle>
+              </div>
+              <div className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">{milestones.filter(m => m.status === 'done').length}</div>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-2">
+                <Target className="h-4 w-4 text-purple-500" />
+                <p className="text-xs text-gray-500">
+                  din {milestones.length} total
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-purple-100 rounded-xl">
+                  <FileText className="h-5 w-5 text-purple-600" />
+                </div>
+                <CardTitle className="text-sm font-medium text-gray-600">Proposals</CardTitle>
+              </div>
+              <div className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">{proposals.length}</div>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-4 w-4 text-yellow-500" />
+                <p className="text-xs text-gray-500">
+                  Propuneri create
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-orange-100 rounded-xl">
+                  <MessageSquare className="h-5 w-5 text-orange-600" />
+                </div>
+                <CardTitle className="text-sm font-medium text-gray-600">Mesaje</CardTitle>
+              </div>
+              <div className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">{messages.length}</div>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-blue-500" />
+                <p className="text-xs text-gray-500">
+                  Comunicări
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-        <Suspense>
-          <FilesList projectId={project.id} />
-        </Suspense>
-        </Card>
-      )}
+
+        {/* Main Content */}
+        <Tabs value={tab} className="w-full">
+          <TabsList className="grid w-full grid-cols-5 bg-gray-100 p-1 rounded-lg border border-gray-200 mb-6">
+            <TabsTrigger
+              value="tasks"
+              className="data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+            >
+              <FolderOpen className="h-4 w-4" />
+              Tasks
+            </TabsTrigger>
+            <TabsTrigger
+              value="milestones"
+              className="data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+            >
+              <CheckCircle className="h-4 w-4" />
+              Milestones
+            </TabsTrigger>
+            <TabsTrigger
+              value="proposals"
+              className="data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+            >
+              <FileText className="h-4 w-4" />
+              Proposals
+            </TabsTrigger>
+            <TabsTrigger
+              value="files"
+              className="data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+            >
+              <Clock className="h-4 w-4" />
+              Fișiere
+            </TabsTrigger>
+            <TabsTrigger
+              value="messages"
+              className="data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+            >
+              <MessageSquare className="h-4 w-4" />
+              Mesaje
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="tasks" className="mt-6">
+            <div className="grid gap-6 lg:grid-cols-3">
+              {/* Tasks Form */}
+              <Card className="lg:col-span-1 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-lg text-gray-900 flex items-center gap-2">
+                    <Sparkles className="h-5 w-5 text-blue-600" />
+                    Adaugă Task
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">Creează un task nou pentru acest proiect</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <NewTaskForm projectId={project.id} />
+                </CardContent>
+              </Card>
+
+              {/* Tasks List */}
+              <Card className="lg:col-span-2 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-lg text-gray-900 flex items-center gap-2">
+                    <BarChart3 className="h-5 w-5 text-green-600" />
+                    Task-uri Active
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {tasks.length} task-uri · {tasks.filter(t => t.status === 'done').length} finalizate
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {tasks.length === 0 ? (
+                    <div className="text-center py-12">
+                      <div className="mx-auto h-16 w-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
+                        <FolderOpen className="h-8 w-8 text-blue-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Nu există task-uri încă</h3>
+                      <p className="text-gray-600 mb-6">
+                        Creează primul task pentru începutul lucrului
+                      </p>
+                      <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform transition-all duration-300 hover:scale-105">
+                        <Link href="/app/projects/new">
+                          <span className="flex items-center gap-2">
+                            <ArrowRight className="h-4 w-4" />
+                            Creează Task
+                          </span>
+                        </Link>
+                      </Button>
+                    </div>
+                  ) : (
+                    <ul className="space-y-3">
+                      {tasks.map((t: any) => (
+                        <TaskRow
+                          key={t.id}
+                          projectId={project.id}
+                          task={{ id: t.id, title: t.title, status: t.status as any, dueAt: (t.dueAt as any)?.toString() ?? null, estimateH: t.estimateH as any }}
+                        />
+                      ))}
+                    </ul>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="milestones" className="mt-6">
+            <div className="grid gap-6 lg:grid-cols-3">
+              {/* Milestones Form */}
+              <Card className="lg:col-span-1 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-lg text-gray-900 flex items-center gap-2">
+                    <Target className="h-5 w-5 text-green-600" />
+                    Adaugă Milestone
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">Creează un milestone pentru a urmări progresul</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <NewMilestoneForm projectId={project.id} />
+                </CardContent>
+              </Card>
+
+              {/* Milestones List */}
+              <Card className="lg:col-span-2 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-lg text-gray-900 flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-purple-600" />
+                    Milestones
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {milestones.length} milestones · {milestones.filter(m => m.status === 'done').length} finalizate
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {milestones.length === 0 ? (
+                    <div className="text-center py-12">
+                      <div className="mx-auto h-16 w-16 bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
+                        <CheckCircle className="h-8 w-8 text-green-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Nu există milestones încă</h3>
+                      <p className="text-gray-600 mb-6">
+                        Setează obiective și etape importante
+                      </p>
+                      <Button asChild className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white transform transition-all duration-300 hover:scale-105">
+                        <Link href="/app/projects/new">
+                          <span className="flex items-center gap-2">
+                            <ArrowRight className="h-4 w-4" />
+                            Creează Milestone
+                          </span>
+                        </Link>
+                      </Button>
+                    </div>
+                  ) : (
+                    <ul className="space-y-3">
+                      {milestones.map((m: any) => (
+                        <MilestoneRow
+                          key={m.id}
+                          projectId={project.id}
+                          item={{ id: m.id, title: m.title, status: m.status as any, dueAt: (m.dueAt as any)?.toString() ?? null }}
+                        />
+                      ))}
+                    </ul>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="proposals" className="mt-6">
+            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-lg text-gray-900 flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-purple-600" />
+                  Propuneri
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Gestionează propunerile de proiect și bugete
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <NewProposalForm projectId={project.id} />
+                </div>
+
+                {proposals.length === 0 ? (
+                  <div className="text-center py-12">
+                    <div className="mx-auto h-16 w-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
+                      <FileText className="h-8 w-8 text-purple-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Nu există propuneri încă</h3>
+                    <p className="text-gray-600 mb-6">
+                      Creează prima propunere pentru proiectul tău
+                    </p>
+                    <Button asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white transform transition-all duration-300 hover:scale-105">
+                      <Link href="/app/projects/new">
+                        <span className="flex items-center gap-2">
+                          <ArrowRight className="h-4 w-4" />
+                          Creează Propunere
+                        </span>
+                      </Link>
+                    </Button>
+                  </div>
+                ) : (
+                  <ul className="space-y-4">
+                    {proposals.map((p: any) => {
+                      const total = p.items.reduce((s: number, it: any) => s + it.qty * it.unitPriceCents, 0)
+                      return (
+                        <li key={p.id} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 rounded-xl p-5 hover:-translate-y-1">
+                          <div className="flex items-center justify-between">
+                            <div className="flex-1">
+                              <div className="flex items-center gap-3 mb-3">
+                                <h4 className="font-semibold text-gray-900 text-lg">{p.title}</h4>
+                                <Badge variant={p.status === 'approved' ? 'default' : p.status === 'submitted' ? 'secondary' : 'outline'} className={p.status === 'approved' ? 'bg-green-100 text-green-700 border-green-300' : p.status === 'submitted' ? 'bg-yellow-100 text-yellow-700 border-yellow-300' : 'bg-gray-100 text-gray-700 border-gray-300'}>
+                                  {String(p.status)}
+                                </Badge>
+                              </div>
+                              <div className="text-sm text-gray-500">
+                                Creat la: {new Date(p.createdAt).toLocaleDateString('ro-RO')}
+                              </div>
+                            </div>
+                            <div className="text-right ml-6">
+                              <div className="font-semibold text-xl mb-2 text-gray-900">
+                                {(total/100).toFixed(2)} EUR
+                              </div>
+                              <Button asChild variant="outline" size="sm" className="border-gray-300 hover:border-blue-400 hover:bg-blue-50 transform transition-all duration-300 hover:scale-105">
+                                <Link href={`/app/proposals/${p.id}`} className="flex items-center gap-1">
+                                  Deschide
+                                  <ArrowRight className="h-4 w-4" />
+                                </Link>
+                              </Button>
+                            </div>
+                          </div>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="messages" className="mt-6">
+            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-lg text-gray-900 flex items-center gap-2">
+                  <MessageSquare className="h-5 w-5 text-orange-600" />
+                  Mesaje
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Comunică cu echipa de proiect
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="mb-6 divide-y divide-gray-100 rounded-lg max-h-96 overflow-y-auto">
+                  {messages.length === 0 ? (
+                    <li className="py-8 text-center">
+                      <div className="h-16 w-16 bg-gradient-to-br from-orange-100 to-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse-slow">
+                        <MessageSquare className="h-8 w-8 text-orange-600" />
+                      </div>
+                      <p className="text-gray-600">Nu există mesaje încă.</p>
+                    </li>
+                  ) : (
+                    messages.map((m: any) => (
+                      <li key={m.id} className="py-4 px-3 hover:bg-gray-50 transition-colors duration-150">
+                        <div className="flex items-start justify-between mb-2">
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium text-sm text-gray-900">{m.author.email}</span>
+                            <span className="text-xs text-gray-500">
+                              {new Date(m.createdAt).toLocaleString('ro-RO')}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="text-sm text-gray-700 whitespace-pre-line">
+                          {m.body}
+                        </div>
+                      </li>
+                    ))
+                  )}
+                </ul>
+
+                <div className="border-t pt-4">
+                  <NewMessageForm projectId={project.id} />
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="files" className="mt-6">
+            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-lg text-gray-900 flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-blue-600" />
+                  Fișiere
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Încarcă și gestionează fișierele proiectului
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <FileDropzone projectId={project.id} />
+                </div>
+
+                <Suspense fallback={<div className="text-center py-8">Se încarcă...</div>}>
+                  <FilesList projectId={project.id} />
+                </Suspense>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      </div>
     </main>
   )
 }

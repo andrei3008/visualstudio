@@ -1,6 +1,6 @@
 import { prisma } from '@/lib/prisma'
 import DeleteFileButton from '@/components/DeleteFileButton'
-import Badge from '@/components/ui/Badge'
+import { Badge } from '@/components/ui/badge'
 
 export default async function FilesList({ projectId }: { projectId: string }) {
   const files = await prisma.file.findMany({ where: { projectId, isInternal: false }, orderBy: { createdAt: 'desc' } })

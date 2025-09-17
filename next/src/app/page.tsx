@@ -1,315 +1,408 @@
-import Link from 'next/link'
-import Container from '@/components/ui/Container'
-import Card from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
-import type { Metadata } from 'next'
-import Script from 'next/script'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Acasă',
-  description: 'Visual Studio — portal clienți pentru servicii software la comandă: intake, ofertare, execuție, status live și facturare.',
-  alternates: { canonical: '/' },
-  openGraph: {
-    title: 'Visual Studio — Portal clienți',
-    description: 'Platformă completă: intake, ofertare, execuție, status live și facturare.',
-    type: 'website',
-  },
-}
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { ArrowRight, BarChart3, Users, Zap, Sparkles, Rocket, Shield, TrendingUp, Settings, Palette } from 'lucide-react'
 
 export default function HomePage() {
   return (
-    <div>
-      <Script id="ld-org" type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: 'Visual Studio',
-          url: (process.env.NEXTAUTH_URL || 'http://localhost:3000').replace(/\/$/, ''),
-          logo: (process.env.NEXTAUTH_URL || 'http://localhost:3000').replace(/\/$/, '') + '/logo.png'
-        }) }}
-      />
-      <Script id="ld-website" type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          name: 'Visual Studio',
-          url: (process.env.NEXTAUTH_URL || 'http://localhost:3000').replace(/\/$/, ''),
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: (process.env.NEXTAUTH_URL || 'http://localhost:3000').replace(/\/$/, '') + '/?q={search_term_string}',
-            'query-input': 'required name=search_term_string'
-          }
-        }) }}
-      />
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        {/* Decorative background */}
-        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          {/* soft blobs */}
-          <div className="absolute left-1/2 top-[-10%] h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-gradient-to-r from-primary-200/60 to-sky-200/60 blur-3xl dark:from-primary-400/20 dark:to-sky-400/20" />
-          <div className="absolute right-[-10%] bottom-[-10%] h-[300px] w-[600px] rounded-full bg-gradient-to-tr from-sky-100/60 to-primary-100/60 blur-3xl dark:from-sky-300/15 dark:to-primary-300/15" />
-          {/* grid only in light theme (too distracting in dark) */}
-          <svg className="absolute inset-0 h-full w-full opacity-[0.06] text-slate-400 dark:hidden" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
+    <div className="min-h-screen bg-white">
+      {/* Minimal Hero Section with Dashboard Colors */}
+      <section className="relative min-h-screen">
+        <div className="relative max-w-full mx-auto px-6 py-24 text-center md:max-w-[90vw]">
+          <div className="space-y-8">
+            {/* Badge with Dashboard Colors */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-lg">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-blue-700">Visual Studio Platform 2025</span>
+            </div>
+
+            {/* Main Title with Dashboard Typography */}
+            <div className="space-y-4">
+              <div className="text-center">
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tight heading-two-line">
+                  <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Construim Infrastructură Tehnică
+                  </span>
+                  <span className="block text-gray-900">
+                    pentru Viitorul Afacerilor
+                  </span>
+                </h1>
+              </div>
+              <p className="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto text-pretty">
+              De la aplicații web personalizate la soluții mobile avansate, dezvoltăm instrumentele care ajută afacerile să se adapteze și să crească.
+              </p>
+            </div>
+
+            {/* Subtitle with Dashboard Voice */}
+            {/* Newsletter Section */}
+            <div className="space-y-3">
+              <p className="text-sm text-gray-600">Nu rata noutățile</p>
+              <div className="relative max-w-[320px] mx-auto">
+                <input
+                  type="email"
+                  placeholder="adresa@exemplu.com"
+                  className="w-full h-12 pl-10 pr-14 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300 text-gray-700 placeholder-gray-500 text-sm"
+                />
+                <div className="absolute inset-y-0 left-0 flex items-center justify-center pl-3">
+                  <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <button className="absolute top-1.5 right-1.5 bottom-1.5 w-9 h-9 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center">
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+              <p className="text-xs text-gray-400 text-center">Nu vom distribui niciodată adresa ta de email.</p>
+            </div>
+          </div>
         </div>
-        <Container>
-          <div className="mx-auto max-w-3xl text-center pt-20 pb-16 lg:pt-28">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700">
-              <span>Nou</span>
-              <span className="h-1 w-1 rounded-full bg-primary-600" />
-              <span>Portal clienți complet</span>
-            </div>
-            <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
-              <span className="block bg-gradient-to-r from-primary-600 to-sky-500 bg-clip-text text-transparent">Construim software</span>
-              <span className="block bg-gradient-to-r from-sky-500 to-primary-600 bg-clip-text text-transparent">clar, rapid și transparent</span>
-            </h1>
-            <p className="mt-5 text-lg text-slate-600">
-              Platformă completă pentru clienți: intake, ofertare, execuție, status live și facturare – totul într-un singur loc.
-            </p>
-            <div className="mt-8 flex items-center justify-center gap-3">
-              <Link href="/login"><Button className="px-5 py-3">Intră în portal</Button></Link>
-              <Link href="/projects" className="rounded-md px-5 py-3 font-semibold text-primary-700 ring-1 ring-primary-200 hover:bg-primary-50">Vezi proiecte demo</Link>
-            </div>
-            {/* Product preview showcase */}
-            <div className="relative mx-auto mt-10 max-w-5xl rounded-2xl border border-slate-200 bg-white/60 p-1 shadow-card backdrop-blur dark:border-slate-800 dark:bg-slate-900/50">
-              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
-                <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+
+        {/* Dashboard Preview - 4 Column Layout */}
+        <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6 pb-24">
+          <div className="p-8 bg-gray-50 rounded-xl border border-gray-200">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-blue-100 rounded-xl">
+                  <Sparkles className="h-6 w-6 text-blue-600" />
                 </div>
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  {/* Left mock: card with title, subtitle and chart placeholder */}
-                  <div className="rounded-lg border border-slate-200 p-3 dark:border-slate-800">
-                    <div className="h-4 w-1/3 rounded bg-slate-200 dark:bg-slate-700" />
-                    <div className="mt-2 h-3 w-2/3 rounded bg-slate-100 dark:bg-slate-800" />
-                    <div className="mt-4 h-32 rounded bg-slate-100 dark:bg-slate-800" />
-                  </div>
-                  {/* Right mock: list + button */}
-                  <div className="rounded-lg border border-slate-200 p-3 dark:border-slate-800">
-                    <div className="h-4 w-1/2 rounded bg-slate-200 dark:bg-slate-700" />
-                    <div className="mt-2 space-y-2">
-                      <div className="h-3 rounded bg-slate-100 dark:bg-slate-800" />
-                      <div className="h-3 rounded bg-slate-100 dark:bg-slate-800" />
-                      <div className="h-3 rounded bg-slate-100 dark:bg-slate-800" />
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">Dashboard Preview</h3>
+                  <span className="text-sm text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full">AI Enhanced</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span>Real-time</span>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Visual Studio Explicat Card */}
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                <div className="p-6 h-full flex flex-col">
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Visual Studio Explicat</h4>
+                    <div className="h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center">
+                      <div className="text-center">
+                        <Sparkles className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                        <span className="text-sm text-gray-600">Platformă modernă</span>
+                      </div>
                     </div>
-                    <div className="mt-3 h-10 rounded bg-slate-100 dark:bg-slate-800" />
+                  </div>
+                  <div className="mt-4">
+                    <button
+                      onClick={() => document.getElementById('video-modal').showModal()}
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                    >
+                      Vezi ce facem
+                    </button>
                   </div>
                 </div>
-                <div className="glow-line mt-4 h-px w-full" />
               </div>
-            </div>
-            {/* Logos */}
-            <div className="mt-12">
-              <p className="text-xs uppercase tracking-widest text-slate-500">De încredere pentru</p>
-              <div className="mt-3 grid grid-cols-3 items-center justify-items-center gap-6 opacity-80 sm:grid-cols-5">
-                {[ 
-                  { src: '/logos/acme.svg', alt: 'ACME' },
-                  { src: '/logos/apex.svg', alt: 'APEX' },
-                  { src: '/logos/zen.svg', alt: 'ZEN' },
-                  { src: '/logos/hyper.svg', alt: 'HYPER' },
-                  { src: '/logos/nova.svg', alt: 'NOVA' },
-                ].map(l => (
-                  <span key={l.alt} className="text-slate-400 dark:text-slate-500">
-                    <img src={l.src} alt={l.alt} className="h-6 w-auto" />
-                  </span>
-                ))}
+
+              {/* Stats Card */}
+              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-blue-100 rounded-xl">
+                      <BarChart3 className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Proiecte Active</h4>
+                      <p className="text-xs text-blue-600 font-medium">Real-time analytics</p>
+                    </div>
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900">12</div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-gray-600">75% Complete</span>
+                    <span className="text-xs font-medium text-blue-600">În lucru</span>
+                  </div>
+                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style={{width: '75%'}}></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tasks Card */}
+              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-purple-100 rounded-xl">
+                      <Zap className="h-5 w-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Task-uri Active</h4>
+                      <p className="text-xs text-purple-600 font-medium">AI powered workflow</p>
+                    </div>
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900">8</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 p-2 bg-green-50 rounded-lg">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-sm text-gray-700 font-medium">UI Design Complete</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 bg-blue-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-gray-700 font-medium">Backend in Progress</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Placeholder Card */}
+              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-green-100 rounded-xl">
+                      <Users className="h-5 w-5 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Echipa Activă</h4>
+                      <p className="text-xs text-green-600 font-medium">5 developeri</p>
+                    </div>
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900">5</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                    <span className="text-sm text-gray-600">În pregătire</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                    <span className="text-sm text-gray-600">Sprint nou</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </Container>
+        </div>
+
+        {/* Video Modal */}
+        <dialog id="video-modal" className="modal backdrop-blur-sm">
+          <div className="modal-box max-w-4xl p-0">
+            <div className="relative">
+              <iframe
+                width="100%"
+                height="450"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="rounded-lg"
+              ></iframe>
+            </div>
+            <div className="modal-action">
+              <form method="dialog">
+                <button className="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
 
-      {/* Features */}
-      <section className="py-14">
-        <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Enhanced Features Section */}
+      <section className="py-20 bg-white relative">
+        {/* Subtle background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white"></div>
+
+        <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 border border-blue-200 rounded-full mb-6">
+              <Rocket className="h-4 w-4 text-blue-600" />
+              <span className="text-sm font-medium text-blue-700">Capabilități Platformă</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                AI-Powered Development Tools
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-pretty">
+              Instrumente avansate care alimentează viitorul dezvoltării software cu capabilități AI-Powered
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: 'Transparență totală', desc: 'Board, milestones și progres în timp real pentru fiecare proiect.' },
-              { title: 'Comunicare integrată', desc: 'Mesaje și fișiere în portal, notificări email/in-app.' },
-              { title: 'Facturare simplă', desc: 'Oferte, facturi și plăți Stripe, toate într-un singur loc.' },
-              { title: 'KPI & rapoarte', desc: 'Vedere clară pe cost, timp și progres.' },
-              { title: 'Securitate', desc: 'Autentificare, ACL, audit log, rate limiting.' },
-              { title: 'Scalabil', desc: 'Arhitectură pregătită pentru creștere.' },
-            ].map((f) => (
-              <Card key={f.title} className="transition hover:-translate-y-0.5 hover:shadow-card">
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-700">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
-                      <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">{f.title}</h3>
-                    <p className="mt-2 text-slate-600">{f.desc}</p>
+              {
+                icon: Rocket,
+                title: 'AI-Powered Development',
+                desc: 'Intelligent code generation, bug detection, and optimization suggestions powered by advanced AI.'
+              },
+              {
+                icon: BarChart3,
+                title: 'Real-time Analytics',
+                desc: 'Advanced analytics and insights with real-time data visualization and performance metrics.'
+              },
+              {
+                icon: Users,
+                title: 'Collaboration Suite',
+                desc: 'Seamless team collaboration with real-time editing, video calls, and integrated communication.'
+              },
+              {
+                icon: Shield,
+                title: 'Enterprise Security',
+                desc: 'Bank-level encryption, advanced authentication, and compliance with global security standards.'
+              },
+              {
+                icon: Zap,
+                title: 'Lightning Fast',
+                desc: 'Optimized performance with 99.9% uptime and sub-second response times for all operations.'
+              },
+              {
+                icon: Settings,
+                title: 'Custom Workflows',
+                desc: 'Configurable workflows and automation tools tailored to your specific development process.'
+              },
+              {
+                icon: TrendingUp,
+                title: 'Scalable Architecture',
+                desc: 'Built to scale from startups to enterprises with microservices and cloud-native design.'
+              },
+              {
+                icon: Palette,
+                title: 'Custom UI Themes',
+                desc: 'Beautiful, customizable themes and dark mode support for personalized development experience.'
+              }
+            ].map((feature, index) => (
+              <Card key={feature.title} className="p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-blue-100 rounded-xl">
+                    <feature.icon className="h-6 w-6 text-blue-600" />
                   </div>
+                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">{feature.desc}</p>
+                <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000" style={{width: `${(index + 1) * 12.5}%`}}></div>
                 </div>
               </Card>
             ))}
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* Stats band */}
-      <section>
-        <Container>
-          <div className="grid gap-6 rounded-xl border border-slate-200 bg-white p-6 text-center shadow-subtle sm:grid-cols-3 dark:border-slate-800 dark:bg-slate-900">
+      {/* Enhanced Stats Section */}
+      <section className="py-20 bg-gray-50 relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50"></div>
+
+        <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 border border-blue-200 rounded-full mb-6">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-blue-700">Trusted by Innovators</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Join the Revolution
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-pretty">
+              Thousands of teams building the future with our cutting-edge platform
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { k: 'SLA mediu', v: '24h' },
-              { k: 'Livrabile/lună', v: '50+' },
-              { k: 'Satisfacție', v: '99%' },
-            ].map((s) => (
-              <div key={s.k}>
-                <div className="text-3xl font-extrabold text-slate-900 dark:text-white">{s.v}</div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">{s.k}</div>
-              </div>
+              {
+                value: '99.9%',
+                label: 'Uptime SLA',
+                description: 'Always online, always available',
+                icon: Shield,
+                color: 'bg-blue-500'
+              },
+              {
+                value: '50K+',
+                label: 'Active Users',
+                description: 'Growing community daily',
+                icon: Users,
+                color: 'bg-purple-500'
+              },
+              {
+                value: '24h',
+                label: 'Response Time',
+                description: 'Lightning fast support',
+                icon: Zap,
+                color: 'bg-green-500'
+              }
+            ].map((stat, index) => (
+              <Card key={stat.label} className="p-8 text-center border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="flex justify-center mb-4">
+                  <div className="p-4 bg-blue-100 rounded-xl">
+                    <stat.icon className="h-8 w-8 text-blue-600" />
+                  </div>
+                </div>
+                <div className="text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    {stat.value}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{stat.label}</h3>
+                <p className="text-sm text-gray-600">{stat.description}</p>
+                <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden mt-4">
+                  <div className={`h-full ${stat.color} rounded-full transition-all duration-1000`} style={{width: `${(index + 1) * 33.33}%`}}></div>
+                </div>
+              </Card>
             ))}
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* Integrations */}
-      <section className="py-14">
-        <Container>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-subtle dark:border-slate-800 dark:bg-slate-900">
-            <h2 className="text-center text-2xl font-bold text-slate-900 dark:text-white">Integrări</h2>
-            <p className="mt-2 text-center text-slate-600 dark:text-slate-300">Ne conectăm cu tool‑urile tale preferate</p>
-            <div className="mt-6 grid grid-cols-3 items-center justify-items-center gap-6 sm:grid-cols-6">
-              {[
-                { src: '/logos/stripe.svg', alt: 'Stripe' },
-                { src: '/logos/github.svg', alt: 'GitHub' },
-                { src: '/logos/slack.svg', alt: 'Slack' },
-                { src: '/logos/acme.svg', alt: 'ACME' },
-                { src: '/logos/apex.svg', alt: 'APEX' },
-                { src: '/logos/zen.svg', alt: 'ZEN' },
-              ].map((l) => (
-                <span key={l.alt} className="text-slate-400 dark:text-slate-500">
-                  <img src={l.src} alt={l.alt} className="h-7 w-auto" />
+      {/* Enhanced CTA Section */}
+      <section className="py-20 bg-white relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50"></div>
+
+        <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6 text-center">
+          <div className="relative p-8 border border-blue-200 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+            {/* Background pattern */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50/50 via-transparent to-transparent pointer-events-none"></div>
+
+            <div className="relative">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 border border-blue-200 rounded-full mb-6">
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-blue-700">Get Started Today</span>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Ready to Build the Future?
                 </span>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+              </h2>
 
-      {/* Pricing */}
-      <section className="bg-slate-50 dark:bg-slate-950">
-        <Container>
-          <div className="py-16">
-            <h2 className="text-center text-3xl font-bold text-slate-900">Abonamente</h2>
-            <p className="mt-2 text-center text-slate-600">Retainer lunar pentru mentenanță și dezvoltare continuă</p>
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              <Card>
-                <h3 className="text-lg font-semibold text-slate-900">Basic</h3>
-                <p className="mt-1 text-slate-600">10 ore/lună · SLA 48h</p>
-                <p className="mt-4 text-3xl font-bold text-slate-900">€X<span className="text-base font-medium text-slate-600">/lună</span></p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                  <li>– Mentenanță & bugfix</li>
-                  <li>– Mică dezvoltare</li>
-                </ul>
-                <Link href="/login"><Button className="mt-6 w-full">Începe</Button></Link>
-              </Card>
-              <Card className="relative border-primary-600">
-                <span className="absolute -top-3 right-4 rounded-full bg-primary-600 px-2 py-0.5 text-xs font-bold text-white">Popular</span>
-                <h3 className="text-lg font-semibold text-slate-900">Growth</h3>
-                <p className="mt-1 text-slate-600">30 ore/lună · SLA 24h</p>
-                <p className="mt-4 text-3xl font-bold text-slate-900">€Y<span className="text-base font-medium text-slate-600">/lună</span></p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                  <li>– Iterații feature</li>
-                  <li>– Optimizări & A/B</li>
-                  <li>– PM inclus</li>
-                </ul>
-                <Link href="/login"><Button className="mt-6 w-full">Alege planul</Button></Link>
-              </Card>
-              <Card>
-                <h3 className="text-lg font-semibold text-slate-900">Pro</h3>
-                <p className="mt-1 text-slate-600">60+ ore/lună · SLA 8h</p>
-                <p className="mt-4 text-3xl font-bold text-slate-900">€Z<span className="text-base font-medium text-slate-600">/lună</span></p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                  <li>– Roadmap dedicat</li>
-                  <li>– Integrare CI/CD</li>
-                  <li>– Suport prioritar</li>
-                </ul>
-                <Link href="/login"><Button className="mt-6 w-full">Contactează-ne</Button></Link>
-              </Card>
-            </div>
-          </div>
-        </Container>
-      </section>
+              <p className="text-lg text-gray-600 mb-10 text-pretty max-w-2xl mx-auto">
+                Join thousands of developers and teams creating amazing applications with our next-generation AI-powered platform.
+              </p>
 
-      {/* Testimonials */}
-      <section className="py-16">
-        <Container>
-          <h2 className="text-center text-3xl font-bold text-slate-900">Ce spun clienții</h2>
-          <div className="mx-auto mt-8 grid max-w-5xl gap-6 md:grid-cols-3">
-            {[
-              { name: 'Ana Popescu', role: 'COO, Acme', text: 'Am pornit în 2 săptămâni cu un prototip funcțional și am livrat la timp fiecare milestone.' },
-              { name: 'Mihai Ionescu', role: 'CTO, FinTech', text: 'Claritate și execuție. Dashboard-ul ne ajută să urmărim progresul zilnic.' },
-              { name: 'Ioana Georgescu', role: 'Founder, Marketplace', text: 'Recomand fără rezerve: comunicare excelentă și rezultate peste așteptări.' },
-            ].map((t) => (
-              <Card key={t.name} className="h-full">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700">
-                    {t.name.split(' ').map(s=>s[0]).slice(0,2).join('')}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-900">{t.name}</div>
-                    <div className="text-xs text-slate-500">{t.role}</div>
-                  </div>
-                </div>
-                <p className="mt-3 text-slate-700">“{t.text}”</p>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20">
-        <Container>
-          <h2 className="text-center text-3xl font-bold text-slate-900">Întrebări frecvente</h2>
-          <div className="mx-auto mt-10 max-w-3xl divide-y divide-slate-200 rounded-2xl border border-transparent bg-white/70 dark:bg-slate-900/60">
-            {[
-              { q: 'Cât de repede putem începe?', a: 'De regulă în 3–5 zile lucrătoare. Începem cu un scurt discovery și definim primul sprint.' },
-              { q: 'Cum se facturează?', a: 'Pe bază de abonament lunar (retainer) sau per proiect. Integrare Stripe este disponibilă.' },
-              { q: 'Cum urmărim progresul?', a: 'Prin portal: milestones, task-uri, mesaje, fișiere și KPI-uri vizibile în timp real.' },
-            ].map((f, i) => (
-              <details key={i} className="group px-4 py-3">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900">
-                  {f.q}
-                  <span className="text-slate-400 group-open:rotate-180 transition">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5"><path d="M6 9l6 6 6-6" /></svg>
-                  </span>
-                </summary>
-                <p className="mt-2 text-slate-600">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA band */}
-      <section className="py-16">
-        <Container>
-          <div className="mx-auto max-w-4xl rounded-2xl bg-gradient-to-r from-primary-600 to-sky-500 p-1 shadow-card">
-            <div className="rounded-2xl bg-white px-6 py-8 text-center dark:bg-slate-950">
-              <h3 className="text-2xl font-extrabold text-slate-900">Gata să pornim?</h3>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Vorbește cu noi și îți organizăm rapid primul sprint.</p>
-              <div className="mt-4 flex items-center justify-center gap-3">
-                <Link href="/contact"><Button>Contactează-ne</Button></Link>
-                <Link href="/login" className="px-4 py-2 text-sm font-semibold text-primary-700 ring-1 ring-primary-200 rounded hover:bg-primary-50">Intră în portal</Link>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl hover:-translate-y-1 group relative overflow-hidden">
+                  <span>Start Free Trial</span>
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </button>
+                <button className="border border-blue-500 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300 hover:border-blue-600 hover:shadow-md hover:-translate-y-1">
+                  Book a Demo
+                </button>
               </div>
+
+              <p className="text-sm text-gray-500 mt-8">
+                <span className="inline-flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green-500 rounded-full inline-block"></span>
+                  No credit card required • 14-day free trial • Cancel anytime
+                </span>
+              </p>
             </div>
           </div>
-        </Container>
+        </div>
       </section>
-
     </div>
   )
 }

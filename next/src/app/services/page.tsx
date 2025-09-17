@@ -1,7 +1,8 @@
-import Container from '@/components/ui/Container'
-import Card from '@/components/ui/Card'
+
+
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Card } from "@/components/ui/card"
 
 export const metadata: Metadata = {
   title: 'Servicii',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main className="py-14">
-      <Container>
+      <div className="container">
         <Script id="ld-breadcrumb-services" type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             '@context': 'https://schema.org',
@@ -76,7 +77,7 @@ export default function ServicesPage() {
             </ul>
           </Card>
         </div>
-      </Container>
+      </div>
     </main>
   )
 }

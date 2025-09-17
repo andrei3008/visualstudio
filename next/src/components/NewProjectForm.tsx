@@ -2,6 +2,9 @@
 import { useState, useTransition } from 'react'
 import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function NewProjectForm() {
   const [name, setName] = useState('')
@@ -29,20 +32,28 @@ export default function NewProjectForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-2 sm:flex-row sm:items-center">
-      <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Nume proiect"
-        className="rounded border px-3 py-2 flex-1"
-      />
-      <button
-        disabled={pending}
-        className="rounded bg-primary-600 px-4 py-2 font-semibold text-white hover:bg-primary-700 disabled:opacity-60"
-      >
-        {pending ? 'Se creează...' : 'Adaugă proiect'}
-      </button>
-    </form>
+    <Card className="w-full max-w-md">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-lg font-semibold">Adaugă Proiect Nou</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={onSubmit} className="flex flex-col gap-3">
+          <Input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Nume proiect"
+            disabled={pending}
+          />
+          <Button
+            type="submit"
+            disabled={pending}
+            className="w-full"
+          >
+            {pending ? 'Se creează...' : 'Adaugă proiect'}
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   )
 }
 

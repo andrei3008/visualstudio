@@ -1,13 +1,18 @@
 "use client"
 import { signOut } from 'next-auth/react'
 
-export default function SignOutButton() {
+interface SignOutButtonProps {
+  className?: string
+  children?: React.ReactNode
+}
+
+export default function SignOutButton({ className, children }: SignOutButtonProps) {
   return (
     <button
       onClick={() => signOut({ callbackUrl: '/' })}
-      className="rounded-md border px-3 py-2 hover:bg-slate-50"
+      className={`rounded-md border px-3 py-2 hover:bg-slate-50 transition-all duration-200 ${className || ''}`}
     >
-      Ieșire
+      {children || 'Ieșire'}
     </button>
   )
 }

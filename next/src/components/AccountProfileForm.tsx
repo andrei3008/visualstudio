@@ -2,6 +2,10 @@
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-hot-toast'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function AccountProfileForm({ initialName }: { initialName?: string }) {
   const [name, setName] = useState(initialName || '')
@@ -27,23 +31,32 @@ export default function AccountProfileForm({ initialName }: { initialName?: stri
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-3">
-      <label className="grid gap-1">
-        <span>Nume afișat</span>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Nume"
-          className="rounded border px-3 py-2"
-        />
-      </label>
-      <button
-        disabled={pending}
-        className="w-max rounded bg-primary-600 px-4 py-2 font-semibold text-white hover:bg-primary-700 disabled:opacity-60"
-      >
-        {pending ? 'Se salvează...' : 'Salvează'}
-      </button>
-    </form>
+    <Card className="w-full max-w-md">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-lg font-semibold">Profil Cont</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={onSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">Nume afișat</Label>
+            <Input
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Nume"
+              disabled={pending}
+            />
+          </div>
+          <Button
+            type="submit"
+            disabled={pending}
+            className="w-full"
+          >
+            {pending ? 'Se salvează...' : 'Salvează'}
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   )
 }
 

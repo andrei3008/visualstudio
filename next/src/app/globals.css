@@ -2,41 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Page background with subtle gradient like CF aesthetic */
+/* Modern page background with gradients */
 html, body { height: 100%; }
 body {
-  @apply bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200;
-  background-image: radial-gradient(1200px 600px at 50% -200px, rgba(14,165,233,0.08), transparent),
-    radial-gradient(800px 400px at 0% 0%, rgba(14,165,233,0.05), transparent),
-    radial-gradient(800px 400px at 100% 0%, rgba(14,165,233,0.05), transparent);
+  @apply bg-gradient-to-br from-background via-background/95 to-background text-foreground antialiased;
 }
 
-.dark body {
-  background-image: radial-gradient(1200px 600px at 50% -200px, rgba(14,165,233,0.10), transparent),
-    radial-gradient(800px 400px at 0% 0%, rgba(14,165,233,0.06), transparent),
-    radial-gradient(800px 400px at 100% 0%, rgba(14,165,233,0.06), transparent);
+/* Vibrant background with subtle gradients */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
+  animation: backgroundFloat 30s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
 }
 
-::selection { @apply bg-primary-200 text-slate-900; }
-
-/* Headings */
-@layer base {
-  h1 { @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white; }
-  h2 { @apply text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white; }
-  h3 { @apply text-xl font-semibold text-slate-900 dark:text-white; }
-  a { @apply text-primary-700 hover:text-primary-800 underline-offset-4 hover:underline dark:text-primary-300 dark:hover:text-primary-200; }
-  input, textarea, select { @apply rounded border border-slate-300 bg-white text-slate-900 placeholder-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder-slate-500; }
+@keyframes backgroundFloat {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
 }
 
-/* Dark contrast fixes inside cards */
-.dark .card .text-slate-700 { color: #E2E8F0; } /* slate-200 */
-.dark .card .text-slate-600 { color: #CBD5E1; } /* slate-300 */
-.dark .card .text-slate-500 { color: #94A3B8; } /* slate-400 */
+::selection {
+  @apply bg-primary-200 text-primary-900 dark:bg-primary-800 dark:text-primary-100;
+}
 
-/* 2025 subtle motion accents */
-@keyframes floaty {
-  0%, 100% { transform: translateY(0px); opacity: 0.7; }
-  50% { transform: translateY(-6px); opacity: 1; }
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slide-in-left {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
+
+/* Modern glass effect */
+.glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Vibrant gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.gradient-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+/* Modern typography */
+.heading-gradient {
+  @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, currentColor 0%, currentColor 20%, transparent 20.5%, transparent 80%, currentColor 80.5%, currentColor);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
 }
 
 @keyframes shimmer {
@@ -44,16 +119,193 @@ body {
   100% { background-position: 200% 50%; }
 }
 
-.glow-line {
-  background-image: linear-gradient(90deg, transparent, rgba(14,165,233,0.35), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .glow-line { animation: none; }
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
 
-/* Utility component styles */
-/* Tailwind's built-in `.container` utility is used directly in markup. */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Modern card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Enhanced base styles */
+@layer base {
+  h1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground;
+    line-height: 1.1;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight text-foreground;
+    line-height: 1.2;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-foreground;
+    line-height: 1.3;
+  }
+
+  h4 {
+    @apply text-xl font-semibold text-foreground;
+    line-height: 1.4;
+  }
+
+  a {
+    @apply text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+
+  input, textarea, select {
+    @apply rounded-lg border border-input bg-background text-foreground placeholder-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+
+  button {
+    @apply transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+
+  /* Vibrant but professional theme */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 210 40% 96%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 48 96% 89%;
+    --accent-foreground: 24 95% 4.1%;
+    --emerald: 163 56% 47%;
+    --emerald-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 40% 96%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 12px;
+    --radius-lg: 16px;
+    --radius-md: calc(var(--radius) - 4px);
+    --radius-sm: calc(var(--radius) - 8px);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 48 96% 89%;
+    --accent-foreground: 24 95% 4.1%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 48 96% 89%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/* Modern components */
+@layer components {
+  .container-custom {
+    @apply relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/80 text-secondary-foreground font-medium py-2 px-4 rounded-lg transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-border hover:bg-accent hover:text-accent-foreground font-medium py-2 px-4 rounded-lg transition-all duration-200;
+  }
+
+  .card-modern {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .input-modern {
+    @apply bg-background border border-border rounded-lg px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200;
+  }
+
+  .badge-modern {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium transition-all duration-200;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+}
+
+/* Responsive text sizes */
+@media (max-width: 768px) {
+  h1 { @apply text-3xl sm:text-4xl; }
+  h2 { @apply text-2xl sm:text-3xl; }
+  h3 { @apply text-xl sm:text-2xl; }
+}
+
+/* Two-line heading */
+.heading-two-line {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
