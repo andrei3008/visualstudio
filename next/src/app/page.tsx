@@ -11,7 +11,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       {/* Minimal Hero Section with Dashboard Colors */}
       <section className="relative min-h-screen">
-        <div className="relative max-w-full mx-auto px-6 py-24 text-center md:max-w-[90vw]">
+        <div className="relative max-w-full mx-auto px-6 pt-40 pb-24 text-center md:max-w-[90vw]">
           <div className="space-y-8">
             {/* Badge with Dashboard Colors */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-lg">
