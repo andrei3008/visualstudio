@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 export default <Partial<Config>>{
-  darkMode: ['class', 'class'],
+  darkMode: 'class',
   content: [
     './src/app/**/*.{ts,tsx}',
     './src/components/**/*.{ts,tsx}'

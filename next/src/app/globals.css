@@ -5,7 +5,8 @@
 /* Modern page background with gradients */
 html, body { height: 100%; }
 body {
-  @apply bg-gradient-to-br from-background via-background/95 to-background text-foreground antialiased;
+  @apply bg-background text-foreground antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Vibrant background with subtle gradients */

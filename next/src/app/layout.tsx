@@ -98,14 +98,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Navbar session={session} isAdmin={isAdmin} />
         <ToasterClient />
         <ConditionalMainLayout>{children}</ConditionalMainLayout>
-        <footer className="mt-16 border-t border-gray-200 py-8 text-center text-sm text-gray-500">
+        <footer className="mt-16 border-t border-gray-200 dark:border-border py-8 text-center text-sm text-gray-500 dark:text-gray-400">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <Sparkles className="h-4 w-4 text-gray-600" />
-              <span className="font-semibold text-gray-700">© {new Date().getFullYear()} Visual Studio</span>
-              <Sparkles className="h-4 w-4 text-gray-600" />
+              <Sparkles className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+              <span className="font-semibold text-gray-700 dark:text-gray-300">© {new Date().getFullYear()} Visual Studio</span>
+              <Sparkles className="h-4 w-4 text-gray-600 dark:text-gray-400" />
             </div>
-            <p className="text-gray-500">Toate drepturile rezervate. Platformă modernă pentru dezvoltare software 2025.</p>
+            <p className="text-gray-500 dark:text-gray-400">Toate drepturile rezervate. Platformă modernă pentru dezvoltare software 2025.</p>
           </div>
         </footer>
       </body>
