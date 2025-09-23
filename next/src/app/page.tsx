@@ -382,7 +382,7 @@ export default function HomePage() {
             <div className="p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Video Info */}
-                <div class="space-y-4">
+                <div className="space-y-4">
                   <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Transformă Afacerea Ta cu Tehnologie AI-Powered</h4>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                     Descoperă cum platforma noastră revoluționară ajută companiile să își digitalizeze operațiunile,
