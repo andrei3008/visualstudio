@@ -329,7 +329,7 @@ export default function HomePage() {
         </dialog>
       </section>
 
-      {/* Enhanced Features Section */}
+      {/* Enhanced Features Section - AI-Powered Development Tools */}
       <section className="py-20 bg-white dark:bg-background relative">
         {/* Subtle background decoration */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
@@ -338,7 +338,7 @@ export default function HomePage() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded-full mb-6">
               <Rocket className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Capabilități Platformă</span>
+              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Partener Tehnic pentru Afacerea Ta</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -346,7 +346,7 @@ export default function HomePage() {
               </span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-pretty">
-              Instrumente avansate care alimentează viitorul dezvoltării software cu capabilități AI-Powered
+              Suntem mai mult decât o agenție de dezvoltare - suntem partenerul tău strategic în transformarea digitală
             </p>
           </div>
 
@@ -354,46 +354,67 @@ export default function HomePage() {
             {[
               {
                 icon: Rocket,
-                title: 'AI-Powered Development',
-                desc: 'Intelligent code generation, bug detection, and optimization suggestions powered by advanced AI.'
-              },
-              {
-                icon: BarChart3,
-                title: 'Real-time Analytics',
-                desc: 'Advanced analytics and insights with real-time data visualization and performance metrics.'
-              },
-              {
-                icon: Users,
-                title: 'Collaboration Suite',
-                desc: 'Seamless team collaboration with real-time editing, video calls, and integrated communication.'
+                title: 'Dezvoltare AI-Powered',
+                desc: 'Soluții inteligente care cresc odată cu afacerea ta',
+                features: ['Automatizare procese', 'Detectare proactivă erori', 'Optimizare performanță'],
+                highlight: true
               },
               {
                 icon: Shield,
-                title: 'Enterprise Security',
-                desc: 'Bank-level encryption, advanced authentication, and compliance with global security standards.'
-              },
-              {
-                icon: Zap,
-                title: 'Lightning Fast',
-                desc: 'Optimized performance with 99.9% uptime and sub-second response times for all operations.'
-              },
-              {
-                icon: Settings,
-                title: 'Custom Workflows',
-                desc: 'Configurable workflows and automation tools tailored to your specific development process.'
+                title: 'Security by Design',
+                desc: 'Securitate enterprise pentru aplicațiile tale critice',
+                features: ['Criptare end-to-end', 'Conformitate GDPR', 'Monitorizare 24/7'],
+                highlight: true
               },
               {
                 icon: TrendingUp,
-                title: 'Scalable Architecture',
-                desc: 'Built to scale from startups to enterprises with microservices and cloud-native design.'
+                title: 'Scalare Infinită',
+                desc: 'Arhitectură modernă care suportă creșterea ta',
+                features: ['Cloud-native', 'Microservicii', 'Load balancing automat'],
+                highlight: false
+              },
+              {
+                icon: Users,
+                title: 'Echipă Dedicată',
+                desc: 'Profesioniști care înțeleg business-ul tău',
+                features: ['DevOps experți', 'Arhitecți software', 'Support 24/7'],
+                highlight: false
+              },
+              {
+                icon: Zap,
+                title: 'Performance Optimizată',
+                desc: 'Viteză și fiabilitate pentru utilizatori mulțumiți',
+                features: ['99.9% uptime', 'Sub-second response', 'CDN global'],
+                highlight: false
+              },
+              {
+                icon: Settings,
+                title: 'Monitorizare Proactivă',
+                desc: 'Prevenim problemele înainte să apară',
+                features: ['Alerte inteligente', 'Auto-healing', 'Backup automat'],
+                highlight: true
+              },
+              {
+                icon: BarChart3,
+                title: 'Analytics Avansate',
+                desc: 'Datele tale transformate în insight-uri valoroase',
+                features: ['Real-time monitoring', 'Predictive analytics', 'Custom dashboards'],
+                highlight: false
               },
               {
                 icon: Palette,
-                title: 'Custom UI Themes',
-                desc: 'Beautiful, customizable themes and dark mode support for personalized development experience.'
+                title: 'UI/UX Modern',
+                desc: 'Experiențe digitale care impresionează',
+                features: ['Design responsive', 'Accesibilitate WCAG', 'Performance optimizată'],
+                highlight: false
               }
             ].map((feature, index) => (
-              <Card key={feature.title} className="p-6 border border-gray-200 dark:border-border hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+              <Card key={feature.title} className={`p-6 border border-gray-200 dark:border-border hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden ${feature.highlight ? 'ring-2 ring-blue-500/20' : ''}`}>
+                {feature.highlight && (
+                  <div className="absolute top-2 right-2">
+                    <Badge className="bg-blue-500 text-white text-xs">Premium</Badge>
+                  </div>
+                )}
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-blue-100 dark:bg-blue-950/50 rounded-xl">
                     <feature.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
@@ -401,11 +422,32 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-foreground">{feature.title}</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{feature.desc}</p>
+
+                {/* Features list */}
+                <div className="space-y-2 mb-4">
+                  {feature.features.map((feat, featIndex) => (
+                    <div key={featIndex} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                      <span className="text-xs text-gray-600 dark:text-gray-400">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+
                 <div className="w-full h-1 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                   <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000" style={{width: `${(index + 1) * 12.5}%`}}></div>
                 </div>
               </Card>
             ))}
+          </div>
+
+          {/* Trust Badge Section */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border border-blue-200 dark:border-blue-800 rounded-full">
+              <Shield className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                200+ companii au ales deja parteneriatul nostru tehnic
+              </span>
+            </div>
           </div>
         </div>
       </section>
