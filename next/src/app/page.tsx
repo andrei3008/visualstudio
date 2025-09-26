@@ -237,15 +237,13 @@ export default function HomePage() {
                   className="bg-white dark:bg-card border border-gray-200 dark:border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center gap-2">
-                    <div className={`w-2 h-2 bg-${task.color}-500 rounded-full ${task.progress < 100 ? 'animate-pulse' : ''}`}></div>
+                    <div className={`w-2 h-2 ${task.color === 'green' ? 'bg-green-500' : task.color === 'blue' ? 'bg-blue-500' : task.color === 'yellow' ? 'bg-yellow-500' : 'bg-purple-500'} rounded-full ${task.progress < 100 ? 'animate-pulse' : ''}`}></div>
                     <span className="text-sm font-medium text-gray-900 dark:text-foreground">{task.name}</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400 ml-auto">{task.progress}%</span>
                   </div>
-                  {task.progress < 100 && (
-                    <div className="mt-2 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                      <div className={`h-full bg-${task.color}-500 rounded-full transition-all duration-1000`} style={{width: `${task.progress}%`}}></div>
-                    </div>
-                  )}
+                  <div className="mt-2 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div className={`h-full ${task.color === 'green' ? 'bg-green-500' : task.color === 'blue' ? 'bg-blue-500' : task.color === 'yellow' ? 'bg-yellow-500' : 'bg-purple-500'} rounded-full transition-all duration-1000`} style={{width: `${task.progress}%`}}></div>
+                  </div>
                 </div>
               ))}
             </div>
