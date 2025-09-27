@@ -80,12 +80,12 @@ export default function HomePage() {
 
   // Integration icons with floating animation
   const integrations = [
-    { name: 'Gmail', icon: Mail, color: 'bg-red-500' },
-    { name: 'Google Sheets', icon: FileSpreadsheet, color: 'bg-green-500' },
-    { name: 'Slack', icon: MessageSquare, color: 'bg-purple-500' },
-    { name: 'GitHub', icon: Github, color: 'bg-gray-800' },
-    { name: 'Figma', icon: Figma, color: 'bg-pink-500' },
-    { name: 'API', icon: Zap, color: 'bg-orange-500' }
+    { name: 'Gmail', icon: Mail, color: 'bg-gradient-to-br from-red-500 to-red-600' },
+    { name: 'Google Sheets', icon: FileSpreadsheet, color: 'bg-gradient-to-br from-green-500 to-emerald-600' },
+    { name: 'Slack', icon: MessageSquare, color: 'bg-gradient-to-br from-purple-500 to-pink-600' },
+    { name: 'GitHub', icon: Github, color: 'bg-gradient-to-br from-gray-800 to-gray-900' },
+    { name: 'Figma', icon: Figma, color: 'bg-gradient-to-br from-pink-500 to-rose-600' },
+    { name: 'API', icon: Zap, color: 'bg-gradient-to-br from-orange-500 to-amber-600' }
   ]
 
   // Create crazy glitter effect
@@ -188,7 +188,7 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <button className="absolute top-1.5 right-1.5 bottom-1.5 w-9 h-9 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center">
+                <button className="absolute top-1.5 right-1.5 bottom-1.5 w-9 h-9 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg  transition-all duration-300 flex items-center justify-center">
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
@@ -220,7 +220,7 @@ export default function HomePage() {
                         (modal as HTMLDialogElement).showModal();
                       }
                     }}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600  text-white py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
                   >
                     Vezi ce facem
                   </button>
@@ -250,33 +250,56 @@ export default function HomePage() {
             </div>
 
             {/* Integration Hub Column */}
-            <div className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-border shadow-sm overflow-hidden space-y-3 p-6">
-              <div className="text-center pt-4">
+            <div className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-border shadow-sm overflow-hidden space-y-6 p-6">
+              <div className="text-center pt-2">
                 <div className="relative inline-block">
                   {/* Floating integration circles */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     {integrations.map((integration, index) => {
                       const angle = (index / integrations.length) * 2 * Math.PI
-                      const radius = 45
+                      const baseRadius = 70
+                      // Add organic variation to radius and position
+                      const radiusVariation = Math.sin(index * 1.5) * 10
+                      const radius = baseRadius + radiusVariation
+                      // Add some organic variation to Y position
+                      const yVariation = Math.cos(index * 2.3) * 15
 
                       return (
                         <div
                           key={index}
-                          className="absolute w-8 h-8 bg-white dark:bg-card rounded-full shadow-md flex items-center justify-center pointer-events-auto hover:scale-110 transition-transform duration-300 cursor-pointer"
+                          className={`absolute w-12 h-12 ${integration.color} rounded-2xl shadow-lg flex items-center justify-center pointer-events-auto hover:scale-125 transition-all duration-500 cursor-pointer backdrop-blur-sm border-2 border-white/20`}
                           style={{
-                            transform: `translate(${radius * Math.cos(angle)}px, ${radius * Math.sin(angle)}px)`,
-                            zIndex: 10
+                            transform: `translate(${radius * Math.cos(angle)}px, ${(radius * Math.sin(angle)) + yVariation}px)`,
+                            zIndex: 10,
+                            transition: 'transform 0.3s ease'
                           }}
                         >
-                          <integration.icon className="h-4 w-4 text-gray-700 dark:text-gray-300" />
+                          <div className="relative">
+                            <integration.icon className="h-6 w-6 text-white drop-shadow-lg" />
+                            <div className="absolute inset-0 bg-white/20 rounded-xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                          </div>
+                          {/* Glowing effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-2xl opacity-50 animate-pulse"></div>
                         </div>
                       )
                     })}
                   </div>
-                  <div className="w-32 h-32 flex items-center justify-center"></div>
+                  <div className="w-36 h-36 flex items-center justify-center">
+                    {/* Central connection hub */}
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-4 border-white/30 backdrop-blur-sm">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                          <div className="w-4 h-4 bg-white rounded-full animate-pulse"></div>
+                        </div>
+                      </div>
+                      {/* Animated ring around center */}
+                      <div className="absolute inset-0 w-16 h-16 border-2 border-blue-400/30 rounded-full animate-ping"></div>
+                      <div className="absolute inset-0 w-20 h-20 border border-purple-400/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-center pb-4">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-foreground mb-1">Integrări nelimitate</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Orice integrare îți imaginezi</p>
               </div>
@@ -304,7 +327,7 @@ export default function HomePage() {
                 {/* Central magic element */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
-                    <div className="w-20 h-20 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-purple-500/20 flex items-center justify-center ">
                       <div className="text-3xl">{isCelebrating ? '🎉' : '✨'}</div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity scale-110"></div>
@@ -424,7 +447,7 @@ export default function HomePage() {
                     </p>
 
                     <div className="space-y-3">
-                      <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                      <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600  text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
                         <Calendar className="h-4 w-4" />
                         Programează Demo
                       </button>
@@ -496,9 +519,9 @@ export default function HomePage() {
           {/* Dashboard-style Services Cards */}
           <div className="space-y-12">
             {/* Aplicații Web & Mobile */}
-            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden group cursor-pointer transform hover:scale-[1.02]">
+            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/10 dark:via-purple-900/10 dark:to-pink-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/10 dark:via-purple-900/10 dark:to-pink-900/10 opacity-0"></div>
 
               {/* Floating particles */}
               <div className="absolute inset-0 overflow-hidden">
@@ -521,7 +544,7 @@ export default function HomePage() {
                 <div className="space-y-8">
                   {/* Header */}
                   <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
                       <span className="text-3xl">🚀</span>
                     </div>
                     <div>
@@ -532,8 +555,8 @@ export default function HomePage() {
 
                   {/* Interactive Metrics */}
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                      <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-blue-100 text-sm font-medium">Proiecte livrate</span>
@@ -555,8 +578,8 @@ export default function HomePage() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                      <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-purple-100 text-sm font-medium">Satisfacție clienți</span>
@@ -590,16 +613,16 @@ export default function HomePage() {
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600  text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-5 w-5 " />
                   </Link>
                 </div>
 
                 {/* Right side - Visual */}
                 <div className="relative">
                   {/* Interactive device mockup */}
-                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl transform group-hover:rotate-3 transition-transform duration-500">
+                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl ">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
 
                     {/* Screen content */}
@@ -627,9 +650,9 @@ export default function HomePage() {
             </div>
 
             {/* E-Commerce */}
-            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden group cursor-pointer transform hover:scale-[1.02]">
+            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-green-900/10 dark:via-blue-900/10 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-green-900/10 dark:via-blue-900/10 dark:to-purple-900/10 opacity-0 opacity-0"></div>
 
               {/* Shopping cart animation */}
               <div className="absolute inset-0 overflow-hidden">
@@ -642,7 +665,7 @@ export default function HomePage() {
                 <div className="space-y-8">
                   {/* Header */}
                   <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                    <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl flex items-center justify-center group- shadow-lg">
                       <span className="text-3xl">🛒</span>
                     </div>
                     <div>
@@ -653,8 +676,8 @@ export default function HomePage() {
 
                   {/* Interactive Metrics */}
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                      <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-green-100 text-sm font-medium">Vânzări generate</span>
@@ -676,8 +699,8 @@ export default function HomePage() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                      <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-blue-100 text-sm font-medium">Conversie</span>
@@ -708,17 +731,17 @@ export default function HomePage() {
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-blue-600  text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-5 w-5 " />
                   </Link>
                 </div>
 
                 {/* Right side - Visual */}
                 <div className="relative">
                   {/* Interactive shopping interface */}
-                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl transform group-hover:-rotate-3 transition-transform duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl">
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl opacity-20"></div>
 
                     {/* Store interface */}
                     <div className="relative bg-white rounded-2xl h-64 overflow-hidden">
@@ -755,9 +778,9 @@ export default function HomePage() {
             </div>
 
             {/* E-Learning */}
-            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden group cursor-pointer transform hover:scale-[1.02]">
+            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-900/10 dark:via-pink-900/10 dark:to-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-900/10 dark:via-pink-900/10 dark:to-blue-900/10 opacity-0 opacity-0"></div>
 
               {/* Education elements */}
               <div className="absolute inset-0 overflow-hidden">
@@ -770,7 +793,7 @@ export default function HomePage() {
                 <div className="space-y-8">
                   {/* Header */}
                   <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                    <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center group- shadow-lg">
                       <span className="text-3xl">🎓</span>
                     </div>
                     <div>
@@ -781,8 +804,8 @@ export default function HomePage() {
 
                   {/* Interactive Metrics */}
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                      <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-purple-100 text-sm font-medium">Studenți activi</span>
@@ -804,8 +827,8 @@ export default function HomePage() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-pink-500 to-pink-600 rounded-2xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="bg-gradient-to-r from-pink-500 to-pink-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                      <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-pink-100 text-sm font-medium">Cursuri disponibile</span>
@@ -836,16 +859,16 @@ export default function HomePage() {
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600  text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-5 w-5 " />
                   </Link>
                 </div>
 
                 {/* Right side - Visual */}
                 <div className="relative">
                   {/* Interactive learning interface */}
-                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl transform group-hover:rotate-3 transition-transform duration-500">
+                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl ">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
 
                     {/* Learning interface */}
@@ -915,11 +938,11 @@ export default function HomePage() {
               <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
                   {
-                    label: 'Ani experiență',
-                    value: '8+',
+                    label: 'Ani de expertiză',
+                    value: '20+',
                     color: 'blue',
                     icon: '🚀',
-                    description: 'De la fondare'
+                    description: 'Echipă dedicată'
                   },
                   {
                     label: 'Clienți fericiți',
@@ -949,7 +972,7 @@ export default function HomePage() {
                       <div className={`absolute inset-0 bg-gradient-to-r ${stat.color === 'blue' ? 'from-blue-500 to-purple-500' : stat.color === 'purple' ? 'from-purple-500 to-pink-500' : stat.color === 'green' ? 'from-green-500 to-blue-500' : 'from-orange-500 to-red-500'} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
 
                       {/* Icon */}
-                      <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-4xl mb-3 transform ">
                         {stat.icon}
                       </div>
 
@@ -1173,7 +1196,7 @@ export default function HomePage() {
                     }
                   ].map((business, index) => (
                     <div key={index} className="bg-white dark:bg-gray-800/50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group border border-gray-200 dark:border-gray-700">
-                      <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">{business.icon}</div>
+                      <div className="text-4xl mb-3 transform ">{business.icon}</div>
                       <h5 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{business.title}</h5>
                       <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{business.description}</p>
                       <div className={`mt-4 h-1 bg-gradient-to-r ${business.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
@@ -1206,117 +1229,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Clienți și Soluții - Structura Modall.ca */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900/20 relative">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-blue-950/20 dark:via-background dark:to-purple-950/20"></div>
-        {/* Animated floating elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-2xl opacity-20 animate-bounce" style={{animationDelay: '0s'}}></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-2xl opacity-20 animate-bounce" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-green-200 dark:bg-green-900/20 rounded-full blur-2xl opacity-20 animate-bounce" style={{animationDelay: '2s'}}></div>
-        </div>
-
-        <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
-          {/* Companii cu care am lucrat - ca pe modall.ca */}
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Am colaborat cu companii extraordinare
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-pretty">
-              Parteneriate care au transformat afaceri prin tehnologie inovatoare
-            </p>
-          </div>
-
-          {/* Logo-uri companii */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-20">
-            {[
-              { name: 'TechCorp', initials: 'T', color: 'from-blue-500 to-blue-600' },
-              { name: 'InnovateLab', initials: 'I', color: 'from-purple-500 to-purple-600' },
-              { name: 'DataFlow', initials: 'D', color: 'from-green-500 to-green-600' },
-              { name: 'CloudVision', initials: 'C', color: 'from-yellow-500 to-yellow-600' },
-              { name: 'SmartSolutions', initials: 'S', color: 'from-red-500 to-red-600' },
-              { name: 'FutureTech', initials: 'F', color: 'from-indigo-500 to-indigo-600' }
-            ].map((company, index) => (
-              <div key={index} className="flex items-center justify-center group">
-                <div className="bg-white dark:bg-card border border-gray-200 dark:border-gray-700 rounded-xl w-24 h-24 flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-blue-300 dark:hover:border-blue-600 relative overflow-hidden">
-                  {/* Gradient overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${company.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                  <span className="text-2xl font-bold text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{company.initials}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Soluțiile noastre - ca pe modall.ca */}
-          <div className="bg-white dark:bg-card rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-            {/* Background pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/30 to-pink-50/30 dark:from-blue-900/10 dark:via-purple-900/10 dark:to-pink-900/10"></div>
-            <div className="relative">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                  Construim software personalizat pentru afacerea ta să prospere
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-lg">
-                  Soluțiile noastre
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  {
-                    title: 'Platforme online personalizate',
-                    description: 'Aplicații web create special pentru nevoile afacerii tale',
-                    icon: '🌐',
-                    color: 'from-blue-400 to-blue-600'
-                  },
-                  {
-                    title: 'Sisteme de management business',
-                    description: 'Soluții complete pentru organizarea și optimizarea operațiunilor',
-                    icon: '⚙️',
-                    color: 'from-purple-400 to-purple-600'
-                  },
-                  {
-                    title: 'Aplicații mobile',
-                    description: 'Experiențe mobile native și cross-platform de înaltă calitate',
-                    icon: '📱',
-                    color: 'from-green-400 to-green-600'
-                  },
-                  {
-                    title: 'Integrare AI și Machine Learning',
-                    description: 'Transformă datele în insight-uri valoroase cu inteligență artificială',
-                    icon: '🤖',
-                    color: 'from-yellow-400 to-yellow-600'
-                  },
-                  {
-                    title: 'Cloud și infrastructură',
-                    description: 'Soluții scalabile și securizate pentru nevoile tale tehnice',
-                    icon: '☁️',
-                    color: 'from-red-400 to-red-600'
-                  },
-                  {
-                    title: 'Consultanță tehnică',
-                    description: 'Expertiză pentru a ghida transformarea digitală a afacerii tale',
-                    icon: '💡',
-                    color: 'from-indigo-400 to-indigo-600'
-                  }
-                ].map((solution, index) => (
-                  <div key={index} className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group cursor-pointer relative overflow-hidden">
-                    {/* Gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${solution.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                    <div className="relative">
-                      <div className="text-3xl mb-3 transform group-hover:scale-110 transition-transform duration-300">{solution.icon}</div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{solution.title}</h4>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{solution.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+  
       {/* Call-to-action Final - Structura Modall.ca */}
       <section className="py-20 bg-white dark:bg-background relative">
         {/* Background decoration */}
