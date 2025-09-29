@@ -143,7 +143,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 { href: "/gdpr", label: "GDPR" },
                 { href: "/terms", label: "Termeni" },
                 { href: "/despre-noi", label: "Despre" },
-                { href: "/servicii", label: "Servicii" },
+                { href: "/services", label: "Servicii" },
                 { href: "/contact", label: "Contact" }
               ].map((link, index) => (
                 <div key={link.href} className="flex items-center">
