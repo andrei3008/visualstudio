@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { FileText, Shield, CheckCircle, AlertTriangle, Clock, Money, Mail, Phone } from 'lucide-react'
+import { FileText, Shield, CheckCircle, AlertTriangle, Clock, Mail, Phone } from 'lucide-react'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
