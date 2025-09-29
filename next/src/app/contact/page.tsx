@@ -114,16 +114,6 @@ export default function ContactPage({ searchParams }: Props) {
         }) }}
       />
 
-      {/* Breadcrumb Navigation */}
-      <div className="bg-gray-50 dark:bg-gray-900/20 border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-[90vw] md:max-w-full mx-auto px-6 py-4">
-          <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Acasă</Link>
-            <span>/</span>
-            <span className="text-gray-900 dark:text-white">Contact</span>
-          </div>
-        </div>
-      </div>
 
       {/* Header Section */}
       <section className="py-20 bg-white dark:bg-background relative">

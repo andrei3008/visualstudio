@@ -91,17 +91,7 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-background">
-      {/* Breadcrumb Navigation */}
-      <div className="bg-gray-50 dark:bg-gray-900/20 border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-[90vw] md:max-w-full mx-auto px-6 py-4">
-          <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Acasă</Link>
-            <span>/</span>
-            <span className="text-gray-900 dark:text-white">Prețuri</span>
-          </div>
-        </div>
-      </div>
-
+  
       {/* Header Section */}
       <section className="py-20 bg-white dark:bg-background relative">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
