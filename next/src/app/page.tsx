@@ -181,7 +181,7 @@ export default function HomePage() {
                 <input
                   type="email"
                   placeholder="adresa@exemplu.com"
-                  className="w-full h-12 pl-10 pr-14 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300 text-gray-700 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 text-sm"
+                  className="w-full h-12 pl-10 pr-14 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300 text-gray-700 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 text-sm"
                 />
                 <div className="absolute inset-y-0 left-0 flex items-center justify-center pl-3">
                   <svg className="h-4 w-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -201,11 +201,11 @@ export default function HomePage() {
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6 pb-24">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Visual Studio Explicat Card */}
-            <div className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm overflow-hidden">
               <div className="p-6 h-full flex flex-col">
                 <div className="flex-1">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Visual Studio Explicat</h4>
-                  <div className="h-32 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                  <div className="h-32 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center">
                     <div className="text-center">
                       <Sparkles className="h-8 w-8 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
                       <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">Platformă modernă</span>
@@ -234,14 +234,14 @@ export default function HomePage() {
               {tasks.map((task, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-card border border-gray-200 dark:border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center gap-2">
                     <div className={`w-2 h-2 ${task.color === 'green' ? 'bg-green-500' : task.color === 'blue' ? 'bg-blue-500' : task.color === 'yellow' ? 'bg-yellow-500' : 'bg-orange-500'} rounded-full ${task.progress < 100 ? 'animate-pulse' : ''}`}></div>
-                    <span className="text-sm font-medium text-gray-900 dark:text-foreground">{task.name}</span>
+                    <span className="text-sm font-medium text-gray-900 dark:text-white">{task.name}</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400 ml-auto">{task.progress}%</span>
                   </div>
-                  <div className="mt-2 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div className="mt-2 h-1 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                     <div className={`h-full ${task.color === 'green' ? 'bg-green-500' : task.color === 'blue' ? 'bg-blue-500' : task.color === 'yellow' ? 'bg-yellow-500' : 'bg-orange-500'} rounded-full transition-all duration-1000`} style={{width: `${task.progress}%`}}></div>
                   </div>
                 </div>
@@ -250,7 +250,7 @@ export default function HomePage() {
             </div>
 
             {/* Integration Hub Column */}
-            <div className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-border shadow-sm overflow-hidden space-y-6 p-6">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm overflow-hidden space-y-6 p-6">
               <div className="text-center pt-2">
                 <div className="relative inline-block">
                   {/* Floating integration circles */}
@@ -279,7 +279,7 @@ export default function HomePage() {
                             <div className="absolute inset-0 bg-white/20 rounded-xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                           </div>
                           {/* Glowing effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-2xl opacity-50 animate-pulse"></div>
+                          <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-50 animate-pulse"></div>
                         </div>
                       )
                     })}
@@ -300,7 +300,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="text-center pb-4">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-foreground mb-1">Integrări nelimitate</h4>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Integrări nelimitate</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Orice integrare îți imaginezi</p>
               </div>
             </div>
@@ -327,7 +327,7 @@ export default function HomePage() {
                 {/* Central magic element */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
-                    <div className="w-20 h-20 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-blue-500/20 flex items-center justify-center ">
+                    <div className="w-20 h-20 bg-white dark:bg-slate-800 rounded-full shadow-lg dark:shadow-blue-500/20 flex items-center justify-center ">
                       <div className="text-3xl">{isCelebrating ? '🎉' : '✨'}</div>
                     </div>
                     <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity scale-110"></div>
@@ -349,9 +349,9 @@ export default function HomePage() {
 
         {/* Enhanced Video Modal */}
         <dialog id="video-modal" className="modal backdrop-blur-sm">
-          <div className="modal-box max-w-6xl p-0 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden">
+          <div className="modal-box max-w-6xl p-0 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-2xl overflow-hidden">
             {/* Modal Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-700">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
                   <Sparkles className="h-5 w-5 text-blue-600 dark:text-blue-400" />
@@ -362,7 +362,7 @@ export default function HomePage() {
                 </div>
               </div>
               <form method="dialog">
-                <button className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200">
+                <button className="p-2 hover:bg-gray-100 dark:hover:bg-slate-900 rounded-lg transition-colors duration-200">
                   <svg className="h-5 w-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -392,7 +392,7 @@ export default function HomePage() {
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                     LIVE
                   </div>
-                  <div className="px-3 py-1 bg-gray-900/80 text-white text-xs font-medium rounded-full">
+                  <div className="px-3 py-1 bg-slate-900/80 text-white text-xs font-medium rounded-full">
                     HD
                   </div>
                 </div>
@@ -452,7 +452,7 @@ export default function HomePage() {
                         Programează Demo
                       </button>
 
-                      <button className="w-full border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                      <button className="w-full border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-slate-900 text-gray-700 dark:text-gray-300 py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
                         <Download className="h-4 w-4" />
                         Descarcă Broșură
                       </button>
@@ -474,14 +474,14 @@ export default function HomePage() {
             </div>
 
             {/* Modal Footer */}
-            <div className="flex items-center justify-between p-6 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between p-6 bg-gray-50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-slate-700">
               <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                 <span>🔒 Confidențialitate asigurată</span>
                 <span>•</span>
                 <span>⏱️ 14 zile trial gratuit</span>
               </div>
               <form method="dialog">
-                <button className="px-6 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium transition-colors duration-200">
+                <button className="px-6 py-2 bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 dark:hover:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-lg font-medium transition-colors duration-200">
                   Închide
                 </button>
               </form>
@@ -519,16 +519,16 @@ export default function HomePage() {
           {/* Dashboard-style Services Cards */}
           <div className="space-y-12">
             {/* Aplicații Web & Mobile */}
-            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
+            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-blue-50 dark:from-blue-900/10 dark:to-blue-900/20 opacity-0"></div>
+              <div className="absolute inset-0 bg-blue-50 dark:bg-blue-900/20 opacity-0"></div>
 
               {/* Floating particles */}
               <div className="absolute inset-0 overflow-hidden">
                 {[...Array(15)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-30"
+                    className="absolute w-1 h-1 bg-blue-400 dark:bg-blue-300 rounded-full opacity-30 dark:opacity-20"
                     style={{
                       left: `${Math.random() * 100}%`,
                       top: `${Math.random() * 100}%`,
@@ -650,9 +650,9 @@ export default function HomePage() {
             </div>
 
             {/* E-Commerce */}
-            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
+            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-green-50 dark:from-green-900/10 dark:to-green-900/20 opacity-0"></div>
+              <div className="absolute inset-0 bg-green-50 dark:bg-green-900/20 opacity-0"></div>
 
               {/* Shopping cart animation */}
               <div className="absolute inset-0 overflow-hidden">
@@ -778,9 +778,9 @@ export default function HomePage() {
             </div>
 
             {/* E-Learning */}
-            <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
+            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-orange-50 dark:from-orange-900/10 dark:to-orange-900/20 opacity-0"></div>
+              <div className="absolute inset-0 bg-orange-50 dark:bg-orange-900/20 opacity-0"></div>
 
               {/* Education elements */}
               <div className="absolute inset-0 overflow-hidden">
@@ -967,7 +967,7 @@ export default function HomePage() {
                   }
                 ].map((stat, index) => (
                   <div key={index} className="group">
-                    <div className="bg-white dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 text-center hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-gray-200/50 dark:border-gray-700/50 relative overflow-hidden">
+                    <div className="bg-white dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 text-center hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-gray-200/50 dark:border-slate-700/50 relative overflow-hidden">
                       {/* Gradient overlay on hover */}
                       <div className={`absolute inset-0 ${stat.color === 'blue' ? 'bg-blue-500' : stat.color === 'green' ? 'bg-green-500' : 'bg-orange-500'} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
 
@@ -1029,7 +1029,7 @@ export default function HomePage() {
           </div>
 
           {/* Dashboard-uri Personalizate pentru Afaceri */}
-          <div className="bg-white dark:bg-card rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
             {/* Background pattern */}
             <div className="absolute inset-0 bg-blue-50/50 dark:from-blue-900/10 dark:to-blue-900/20"></div>
             {/* Floating elements */}
@@ -1072,7 +1072,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Chart Performantă Afaceri */}
-                <div className="lg:col-span-2 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/20 rounded-xl p-6 relative overflow-hidden group cursor-pointer">
+                <div className="lg:col-span-2 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-700 dark:to-blue-900/20 rounded-xl p-6 relative overflow-hidden group cursor-pointer">
                   {/* Chart Header */}
                   <div className="flex items-center justify-between mb-6">
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Performanța Afacerii Dumneavoastră</h4>
@@ -1088,7 +1088,7 @@ export default function HomePage() {
                     {/* Grid lines */}
                     <div className="absolute inset-0">
                       {[...Array(5)].map((_, i) => (
-                        <div key={i} className="absolute w-full border-t border-gray-200 dark:border-gray-600" style={{top: `${(i + 1) * 20}%`}}></div>
+                        <div key={i} className="absolute w-full border-t border-gray-200 dark:border-slate-600" style={{top: `${(i + 1) * 20}%`}}></div>
                       ))}
                     </div>
 
@@ -1138,7 +1138,7 @@ export default function HomePage() {
                     </svg>
 
                     {/* Floating stats pe chart */}
-                    <div className="absolute top-4 right-4 bg-white dark:bg-gray-800 rounded-lg p-3 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div className="absolute top-4 right-4 bg-white dark:bg-slate-800 rounded-lg p-3 shadow-lg border border-gray-200 dark:border-slate-700">
                       <div className="text-xs text-gray-500 dark:text-gray-400">Performanță Maximă</div>
                       <div className="text-lg font-bold text-green-600 dark:text-green-400">96.8%</div>
                     </div>
@@ -1195,7 +1195,7 @@ export default function HomePage() {
                       color: 'from-orange-500 to-orange-600'
                     }
                   ].map((business, index) => (
-                    <div key={index} className="bg-white dark:bg-gray-800/50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group border border-gray-200 dark:border-gray-700">
+                    <div key={index} className="bg-white dark:bg-slate-800/50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group border border-gray-200 dark:border-slate-700">
                       <div className="text-4xl mb-3 transform ">{business.icon}</div>
                       <h5 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{business.title}</h5>
                       <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{business.description}</p>
@@ -1213,7 +1213,7 @@ export default function HomePage() {
                   { label: 'Valoare Mediu Comandă', value: '347 RON', change: '+12.8%', color: 'blue' },
                   { label: 'Clienți Noi', value: '423', change: '+18.9%', color: 'orange' }
                 ].map((metric, index) => (
-                  <div key={index} className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 hover:shadow-md transition-all duration-300 cursor-pointer group">
+                  <div key={index} className="bg-gray-50 dark:bg-slate-900/50 rounded-lg p-4 hover:shadow-md transition-all duration-300 cursor-pointer group">
                     <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">{metric.label}</div>
                     <div className="flex items-center justify-between">
                       <span className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{metric.value}</span>
@@ -1242,7 +1242,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6 text-center">
-          <div className="relative p-12 border border-blue-200 dark:border-blue-800 rounded-2xl bg-white dark:bg-card shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:scale-[1.02]">
+          <div className="relative p-12 border border-blue-200 dark:border-blue-800 rounded-2xl bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:scale-[1.02]">
             {/* Background pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50/50 via-blue-100/30 to-transparent pointer-events-none"></div>
             {/* Animated grid pattern */}
@@ -1279,7 +1279,7 @@ export default function HomePage() {
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
-                <button className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/50 px-10 py-5 text-xl font-bold rounded-2xl transition-all duration-500 hover:border-blue-600 hover:shadow-xl hover:-translate-y-2 hover:scale-105 relative overflow-hidden group">
+                <button className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900 px-10 py-5 text-xl font-bold rounded-2xl transition-all duration-500 hover:border-blue-600 hover:shadow-xl hover:-translate-y-2 hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Programează un Demo</span>
                   {/* Blue overlay on hover */}
                   <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>

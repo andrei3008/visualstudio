@@ -26,10 +26,10 @@ export default async function AppDashboard() {
   ])
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-blue-50">
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-blue-50 dark:bg-gradient-to-br dark:from-slate-800 dark:via-slate-800 dark:to-slate-800">
       {/* Animated Header */}
-      <div className="relative overflow-hidden bg-blue-600">
-        <div className="absolute inset-0 bg-black/10"></div>
+      <div className="relative overflow-hidden bg-blue-600 dark:bg-blue-700">
+        <div className="absolute inset-0 bg-black/10 dark:bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center justify-between">
             <div className="space-y-2 animate-slide-up">
@@ -43,12 +43,12 @@ export default async function AppDashboard() {
                   Bun venit, {session.user.name || session.user.email}!
                 </h1>
               </div>
-              <p className="text-blue-100">
+              <p className="text-blue-100 dark:text-blue-200">
                 Managează-ți proiectele cu AI-powered insights
               </p>
             </div>
             <div className="flex items-center gap-3 animate-slide-up" style={{animationDelay: '0.1s'}}>
-              <Button size="sm" variant="default" className="bg-white text-blue-600 hover:bg-gray-100 transform transition-all duration-300 hover:scale-105">
+              <Button size="sm" variant="default" className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-slate-700 dark:text-blue-300 dark:hover:bg-slate-600 transform transition-all duration-300 hover:scale-105">
                 <Link href="/app/projects/new" className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4" />
                   Nou Proiect
@@ -62,80 +62,80 @@ export default async function AppDashboard() {
       {/* Stats Cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-blue-100 rounded-xl">
-                  <FolderOpen className="h-5 w-5 text-blue-600" />
+                <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-xl">
+                  <FolderOpen className="h-5 w-5 text-blue-600 dark:text-blue-300" />
                 </div>
-                <CardTitle className="text-sm font-medium text-gray-600">Proiecte Active</CardTitle>
+                <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-300">Proiecte Active</CardTitle>
               </div>
-              <div className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{projects.length}</div>
+              <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{projects.length}</div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-green-500" />
-                <p className="text-xs text-gray-500">
+                <TrendingUp className="h-4 w-4 text-green-500 dark:text-green-400" />
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   {projects.length > 0 ? "Active în acest moment" : "Nu ai proiecte active"}
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-green-100 rounded-xl">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
+                <div className="p-3 bg-green-100 dark:bg-green-900 rounded-xl">
+                  <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-300" />
                 </div>
-                <CardTitle className="text-sm font-medium text-gray-600">Proposals Aprobate</CardTitle>
+                <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-300">Proposals Aprobate</CardTitle>
               </div>
-              <div className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">{approvedCount}</div>
+              <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">{approvedCount}</div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-green-500" />
-                <p className="text-xs text-gray-500">
+                <Sparkles className="h-4 w-4 text-green-500 dark:text-green-400" />
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   Pregătite pentru dezvoltare
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-yellow-100 rounded-xl">
-                  <Clock className="h-5 w-5 text-yellow-600" />
+                <div className="p-3 bg-yellow-100 dark:bg-yellow-900 rounded-xl">
+                  <Clock className="h-5 w-5 text-yellow-600 dark:text-yellow-300" />
                 </div>
-                <CardTitle className="text-sm font-medium text-gray-600">Proposals în Așteptare</CardTitle>
+                <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-300">Proposals în Așteptare</CardTitle>
               </div>
-              <div className="text-2xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">{submittedCount}</div>
+              <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">{submittedCount}</div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
-                <Rocket className="h-4 w-4 text-yellow-500" />
-                <p className="text-xs text-gray-500">
+                <Rocket className="h-4 w-4 text-yellow-500 dark:text-yellow-400" />
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   În revizuire
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-orange-100 rounded-xl">
-                  <Zap className="h-5 w-5 text-orange-600" />
+                <div className="p-3 bg-orange-100 dark:bg-orange-900 rounded-xl">
+                  <Zap className="h-5 w-5 text-orange-600 dark:text-orange-300" />
                 </div>
-                <CardTitle className="text-sm font-medium text-gray-600">Task-uri Active</CardTitle>
+                <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-300">Task-uri Active</CardTitle>
               </div>
-              <div className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">{openTasks}</div>
+              <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">{openTasks}</div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-blue-500" />
-                <p className="text-xs text-gray-500">
+                <BarChart3 className="h-4 w-4 text-blue-500 dark:text-blue-400" />
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   În lucru
                 </p>
               </div>
@@ -144,21 +144,21 @@ export default async function AppDashboard() {
         </div>
 
         {/* Projects Section */}
-        <Card className="border-0 bg-white shadow-xl group hover:shadow-2xl transition-all duration-500">
+        <Card className="border-0 bg-white dark:bg-slate-800 shadow-xl group hover:shadow-2xl transition-all duration-500">
           <CardHeader className="pb-6">
             <div className="flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-3">
-                  <h3 className="text-xl font-bold text-gray-900">Proiectele Mele</h3>
-                  <Badge className="bg-blue-100 text-blue-700 border-blue-300">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Proiectele Mele</h3>
+                  <Badge className="bg-blue-100 text-blue-700 border-blue-300 dark:bg-blue-900 dark:text-blue-300 dark:border-blue-700">
                     {projects.length} Proiecte
                   </Badge>
                 </div>
-                <p className="text-gray-600 mt-1">
+                <p className="text-gray-600 dark:text-gray-400 mt-1">
                   Gestionează-ți proiectele cu AI insights
                 </p>
               </div>
-              <Button size="sm" variant="outline" className="border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 transform transition-all duration-300 hover:scale-105">
+              <Button size="sm" variant="outline" className="border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 dark:border-slate-600 dark:hover:border-blue-500 dark:hover:bg-slate-700 transform transition-all duration-300 hover:scale-105">
                 <Link href="/app/projects/new">
                   <span className="flex items-center gap-2">
                     <Sparkles className="h-4 w-4" />
@@ -171,14 +171,14 @@ export default async function AppDashboard() {
           <CardContent>
             {projects.length === 0 ? (
               <div className="text-center py-12">
-                <div className="mx-auto h-16 w-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
-                  <FolderOpen className="h-8 w-8 text-blue-600" />
+                <div className="mx-auto h-16 w-16 bg-blue-100 dark:bg-blue-900 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
+                  <FolderOpen className="h-8 w-8 text-blue-600 dark:text-blue-300" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Nu ai proiecte încă</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Nu ai proiecte încă</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Începe prin a-ți adăuga primul proiect și începe să lucrezi
                 </p>
-                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white transform transition-all duration-300 hover:scale-105">
+                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-700 dark:hover:bg-blue-600 transform transition-all duration-300 hover:scale-105">
                   <Link href="/app/projects/new">
                     <span className="flex items-center gap-2">
                       <Rocket className="h-4 w-4" />
@@ -190,30 +190,30 @@ export default async function AppDashboard() {
             ) : (
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {projects.map((p: any, index) => (
-                  <Card key={p.id} className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg overflow-hidden">
+                  <Card key={p.id} className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg overflow-hidden">
                     <div className="h-1 bg-blue-500"></div>
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
                         <div>
-                          <h4 className="text-lg font-bold text-gray-900 mb-1">{p.name}</h4>
-                          <p className="text-xs text-gray-500">
+                          <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{p.name}</h4>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
                             Creat la: {new Date(p.createdAt).toLocaleDateString('ro-RO')}
                           </p>
                         </div>
-                        <Badge className={String(p.status) === 'active' ? 'bg-green-100 text-green-700 border-green-300' : 'bg-gray-100 text-gray-700 border-gray-300'}>
+                        <Badge className={String(p.status) === 'active' ? 'bg-green-100 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-700' : 'bg-gray-100 text-gray-700 border-gray-300 dark:bg-slate-700 dark:text-gray-300 dark:border-slate-600'}>
                           {String(p.status)}
                         </Badge>
                       </div>
                     </CardHeader>
                     <CardContent className="pt-0">
-                      <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-slate-700">
                         <div className="flex items-center gap-3">
-                          <Users className="h-4 w-4 text-gray-400" />
-                          <span className="text-sm text-gray-600">
+                          <Users className="h-4 w-4 text-gray-400 dark:text-gray-500" />
+                          <span className="text-sm text-gray-600 dark:text-gray-400">
                             {p.tasks?.length || 0} task-uri
                           </span>
                         </div>
-                        <Button asChild variant="outline" size="sm" className="border-gray-300 hover:border-blue-400 hover:bg-blue-50 transform transition-all duration-300 hover:scale-105">
+                        <Button asChild variant="outline" size="sm" className="border-gray-300 hover:border-blue-400 hover:bg-blue-50 dark:border-slate-600 dark:hover:border-blue-500 dark:hover:bg-slate-700 transform transition-all duration-300 hover:scale-105">
                           <Link href={`/app/projects/${p.id}`} className="flex items-center gap-1">
                             Deschide
                             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
