@@ -26,9 +26,9 @@ export default async function AppDashboard() {
   ])
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-blue-50">
       {/* Animated Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600">
+      <div className="relative overflow-hidden bg-blue-600">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center justify-between">
@@ -37,7 +37,7 @@ export default async function AppDashboard() {
                 <div className="flex gap-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                 </div>
                 <h1 className="text-3xl font-bold text-white">
                   Bun venit, {session.user.name || session.user.email}!
@@ -125,16 +125,16 @@ export default async function AppDashboard() {
           <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-purple-100 rounded-xl">
-                  <Zap className="h-5 w-5 text-purple-600" />
+                <div className="p-3 bg-orange-100 rounded-xl">
+                  <Zap className="h-5 w-5 text-orange-600" />
                 </div>
                 <CardTitle className="text-sm font-medium text-gray-600">Task-uri Active</CardTitle>
               </div>
-              <div className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">{openTasks}</div>
+              <div className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">{openTasks}</div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-purple-500" />
+                <BarChart3 className="h-4 w-4 text-blue-500" />
                 <p className="text-xs text-gray-500">
                   În lucru
                 </p>
@@ -150,7 +150,7 @@ export default async function AppDashboard() {
               <div>
                 <div className="flex items-center gap-3">
                   <h3 className="text-xl font-bold text-gray-900">Proiectele Mele</h3>
-                  <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-300">
+                  <Badge className="bg-blue-100 text-blue-700 border-blue-300">
                     {projects.length} Proiecte
                   </Badge>
                 </div>
@@ -171,14 +171,14 @@ export default async function AppDashboard() {
           <CardContent>
             {projects.length === 0 ? (
               <div className="text-center py-12">
-                <div className="mx-auto h-16 w-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
+                <div className="mx-auto h-16 w-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
                   <FolderOpen className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Nu ai proiecte încă</h3>
                 <p className="text-gray-600 mb-6">
                   Începe prin a-ți adăuga primul proiect și începe să lucrezi
                 </p>
-                <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform transition-all duration-300 hover:scale-105">
+                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white transform transition-all duration-300 hover:scale-105">
                   <Link href="/app/projects/new">
                     <span className="flex items-center gap-2">
                       <Rocket className="h-4 w-4" />
@@ -191,7 +191,7 @@ export default async function AppDashboard() {
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {projects.map((p: any, index) => (
                   <Card key={p.id} className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg overflow-hidden">
-                    <div className="h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                    <div className="h-1 bg-blue-500"></div>
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
                         <div>

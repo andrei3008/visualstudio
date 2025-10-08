@@ -90,7 +90,7 @@ export default function ContactPage({ searchParams }: Props) {
       title: 'Locație',
       value: 'România',
       description: 'Lucrăm 100% remote',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Clock,
@@ -120,7 +120,7 @@ export default function ContactPage({ searchParams }: Props) {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
@@ -130,7 +130,7 @@ export default function ContactPage({ searchParams }: Props) {
               <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Contact Rapid</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                 Hai să vorbim despre proiectul tău
               </span>
             </h1>
@@ -279,7 +279,7 @@ export default function ContactPage({ searchParams }: Props) {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                   >
                     {isSubmitting ? (
                       <>
@@ -299,7 +299,7 @@ export default function ContactPage({ searchParams }: Props) {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-2xl p-6 border border-blue-100 dark:border-blue-800">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-2xl p-6 border border-blue-100 dark:border-blue-800">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Informații Contact</h3>
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
@@ -338,7 +338,7 @@ export default function ContactPage({ searchParams }: Props) {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center text-white">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 text-center text-white">
             <h3 className="text-2xl font-bold mb-4">Ai o întrebare urgentă?</h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
               Sună-ne acum sau trimite un email direct pentru consultanță imediată.

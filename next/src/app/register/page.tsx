@@ -189,10 +189,10 @@ export default function RegisterPage() {
                     type="checkbox"
                     id="terms"
                     required
-                    className="w-4 h-4 border border-white/20 rounded text-purple-600 bg-white/10 focus:ring-purple-500 focus:border-purple-500 backdrop-blur-sm"
+                    className="w-4 h-4 border border-white/20 rounded text-blue-600 bg-white/10 focus:ring-blue-500 focus:border-blue-500 backdrop-blur-sm"
                   />
                   <Label htmlFor="terms" className="text-sm text-white/80 leading-relaxed">
-                    Accept <span className="text-purple-300 font-medium">termenii și condițiile</span> și <span className="text-purple-300 font-medium">politica de confidențialitate</span>
+                    Accept <span className="text-blue-300 font-medium">termenii și condițiile</span> și <span className="text-blue-300 font-medium">politica de confidențialitate</span>
                   </Label>
                 </div>
 

@@ -91,9 +91,9 @@ export default function PrivacyPolicyPage() {
                   <li>• Documente încărcate (CV, specificații proiect)</li>
                 </ul>
               </div>
-              <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
-                <h3 className="font-semibold text-purple-900 dark:text-purple-300 mb-3">Date colectate automat</h3>
-                <ul className="space-y-2 text-purple-800 dark:text-purple-200">
+              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3">Date colectate automat</h3>
+                <ul className="space-y-2 text-blue-800 dark:text-blue-200">
                   <li>• Adresă IP</li>
                   <li>• Tip și versiune browser</li>
                   <li>• Sistem de operare</li>
@@ -131,7 +131,7 @@ export default function PrivacyPolicyPage() {
                   title: "Pentru a îmbunătăți serviciile noastre",
                   description: "Analiza datelor pentru optimizarea experienței utilizatorului și dezvoltarea de noi funcționalități",
                   icon: Database,
-                  color: "text-purple-600"
+                  color: "text-blue-600"
                 },
                 {
                   title: "Pentru marketing și comunicare",
@@ -320,8 +320,8 @@ export default function PrivacyPolicyPage() {
               <Globe className="h-6 w-6 text-green-600" />
               10. Utilizarea cookie-urilor
             </h2>
-            <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
-              <p className="text-purple-800 dark:text-purple-200 mb-4">
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <p className="text-blue-800 dark:text-blue-200 mb-4">
                 Site-ul nostru utilizează cookie-uri pentru a vă oferi cea mai bună experiență. Cookie-urile sunt fișiere mici
                 care sunt stocate pe dispozitivul dumneavoastră și care ne ajută să:
               </p>
@@ -333,13 +333,13 @@ export default function PrivacyPolicyPage() {
                   { purpose: "Să oferim funcționalități de securitate" }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-purple-600" />
-                    <span className="text-purple-800 dark:text-purple-200">{item.purpose}</span>
+                    <CheckCircle className="h-5 w-5 text-blue-600" />
+                    <span className="text-blue-800 dark:text-blue-200">{item.purpose}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-4">
-                <Link href="/cookie-policy" className="text-purple-600 hover:text-purple-800 dark:text-purple-400 font-medium">
+                <Link href="/cookie-policy" className="text-blue-600 hover:text-purple-800 dark:text-purple-400 font-medium">
                   Vezi politica detaliată de cookies →
                 </Link>
               </div>
@@ -461,14 +461,14 @@ export default function PrivacyPolicyPage() {
               <div className="flex items-center justify-center gap-4">
                 <Link
                   href="mailto:dpo@visualstudio.ro"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   Contactați DPO
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 border border-green-600 text-green-600 hover:bg-green-50 px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors"
                 >
                   📞 Suport
                 </Link>

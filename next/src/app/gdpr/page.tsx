@@ -7,7 +7,7 @@ export default function GDPRPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-16">
         <div className="container mx-auto px-6">
           <div className="flex items-center gap-3 mb-4">
             <Shield className="h-8 w-8" />
@@ -68,9 +68,9 @@ export default function GDPRPage() {
                   <li>• Funcție/rol în cadrul companiei</li>
                 </ul>
               </div>
-              <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
-                <h3 className="font-semibold text-purple-900 dark:text-purple-300 mb-3">Date de contact și comunicare</h3>
-                <ul className="space-y-2 text-purple-800 dark:text-purple-200">
+              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3">Date de contact și comunicare</h3>
+                <ul className="space-y-2 text-blue-800 dark:text-blue-200">
                   <li>• Adresă IP</li>
                   <li>• Date de navigare (cookies)</li>
                   <li>• Istoric comunicări</li>
@@ -248,7 +248,7 @@ export default function GDPRPage() {
               <Mail className="h-6 w-6 text-blue-600" />
               9. Responsabil Protecția Datelor (DPO)
             </h2>
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Contact DPO:</h4>

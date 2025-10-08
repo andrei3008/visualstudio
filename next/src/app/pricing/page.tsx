@@ -45,7 +45,7 @@ export default function PricingPage() {
         '3 proiecte active',
         'Raport săptămânal'
       ],
-      color: 'from-blue-500 to-purple-600',
+      color: 'from-blue-500 to-blue-600',
       icon: '⚡'
     },
     {
@@ -63,7 +63,7 @@ export default function PricingPage() {
         'Dedicated team lead',
         'Raport zilnic'
       ],
-      color: 'from-purple-500 to-pink-600',
+      color: 'from-blue-600 to-blue-700',
       icon: '👑'
     }
   ]
@@ -97,7 +97,7 @@ export default function PricingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
@@ -107,7 +107,7 @@ export default function PricingPage() {
               <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Pachete de Servicii</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                 Prețuri Transparente
               </span>
             </h1>
@@ -144,7 +144,7 @@ export default function PricingPage() {
                 {/* Popular Badge */}
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
                       <Star className="h-4 w-4" />
                       Cel Mai Popular
                     </div>
@@ -186,7 +186,7 @@ export default function PricingPage() {
                     </div>
                     <Link
                       href={plan.name === 'Pro' ? '/contact' : '/login'}
-                      className={`w-full py-4 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl' : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white'}`}
+                      className={`w-full py-4 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl' : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white'}`}
                     >
                       {plan.name === 'Pro' ? 'Contactează-ne' : plan.name === 'Growth' ? 'Alege Planul' : 'Începe'}
                       <ArrowRight className="h-4 w-4" />
@@ -228,13 +228,13 @@ export default function PricingPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-12 text-center">
+          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-12 text-center">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Nu ești sigur ce pachet să alegi?</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
               Contactează-ne pentru o consultanță gratuită și îți vom recomanda cea mai bună soluție pentru afacerea ta.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl">
+              <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl">
                 <Headphones className="h-5 w-5" />
                 Consultanță Gratuită
               </Link>

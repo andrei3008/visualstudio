@@ -81,19 +81,19 @@ export default function CookiePolicyPage() {
                   <strong>Durată:</strong> 12 luni
                 </p>
               </div>
-              <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
-                <h3 className="font-semibold text-purple-900 dark:text-purple-300 mb-3 flex items-center gap-2">
+              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3 flex items-center gap-2">
                   <Settings className="h-5 w-5" />
                   Cookie-uri Funcționale
                 </h3>
-                <ul className="space-y-2 text-purple-800 dark:text-purple-200">
+                <ul className="space-y-2 text-blue-800 dark:text-blue-200">
                   <li>• Preferințe limbă</li>
                   <li>• Setări vizualizare</li>
                   <li>• Conținut personalizat</li>
                   <li>• Salvare preferințe utilizator</li>
                   <li>• Theme preferences</li>
                 </ul>
-                <p className="text-sm text-purple-700 dark:text-purple-300 mt-3">
+                <p className="text-sm text-blue-700 dark:text-blue-300 mt-3">
                   <strong>Durată:</strong> 6 luni
                 </p>
               </div>

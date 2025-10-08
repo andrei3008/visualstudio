@@ -75,17 +75,17 @@ export default function HomePage() {
     { name: 'UI Design Complete', progress: 100, color: 'green' },
     { name: 'Backend API Development', progress: 75, color: 'blue' },
     { name: 'Database Schema Design', progress: 45, color: 'yellow' },
-    { name: 'Testing Setup', progress: 20, color: 'purple' }
+    { name: 'Testing Setup', progress: 20, color: 'orange' }
   ]
 
   // Integration icons with floating animation
   const integrations = [
-    { name: 'Gmail', icon: Mail, color: 'bg-gradient-to-br from-red-500 to-red-600' },
-    { name: 'Google Sheets', icon: FileSpreadsheet, color: 'bg-gradient-to-br from-green-500 to-emerald-600' },
-    { name: 'Slack', icon: MessageSquare, color: 'bg-gradient-to-br from-purple-500 to-pink-600' },
-    { name: 'GitHub', icon: Github, color: 'bg-gradient-to-br from-gray-800 to-gray-900' },
-    { name: 'Figma', icon: Figma, color: 'bg-gradient-to-br from-pink-500 to-rose-600' },
-    { name: 'API', icon: Zap, color: 'bg-gradient-to-br from-orange-500 to-amber-600' }
+    { name: 'Gmail', icon: Mail, color: 'bg-red-500' },
+    { name: 'Google Sheets', icon: FileSpreadsheet, color: 'bg-green-500' },
+    { name: 'Slack', icon: MessageSquare, color: 'bg-blue-500' },
+    { name: 'GitHub', icon: Github, color: 'bg-gray-800' },
+    { name: 'Figma', icon: Figma, color: 'bg-orange-500' },
+    { name: 'API', icon: Zap, color: 'bg-orange-500' }
   ]
 
   // Create crazy glitter effect
@@ -98,7 +98,7 @@ export default function HomePage() {
         delay: Math.random() * 1.5,
         duration: 0.8 + Math.random() * 1.5,
         size: 6 + Math.random() * 8,
-        color: ['#fbbf24', '#f59e0b', '#ec4899', '#8b5cf6', '#3b82f6', '#06b6d4', '#f97316', '#84cc16'][Math.floor(Math.random() * 8)]
+        color: ['#fbbf24', '#f59e0b', '#f97316', '#3b82f6', '#06b6d4', '#10b981', '#84cc16', '#0ea5e9'][Math.floor(Math.random() * 8)]
       })
     }
     return glitter
@@ -160,7 +160,7 @@ export default function HomePage() {
             <div className="space-y-4">
               <div className="text-center">
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight heading-two-line">
-                  <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="block text-blue-600">
                     Construim Infrastructură Tehnică
                   </span>
                   <span className="block text-gray-900 dark:text-white">
@@ -188,7 +188,7 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <button className="absolute top-1.5 right-1.5 bottom-1.5 w-9 h-9 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg  transition-all duration-300 flex items-center justify-center">
+                <button className="absolute top-1.5 right-1.5 bottom-1.5 w-9 h-9 bg-blue-600 hover:bg-blue-700 text-white rounded-lg  transition-all duration-300 flex items-center justify-center">
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
               <div className="p-6 h-full flex flex-col">
                 <div className="flex-1">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Visual Studio Explicat</h4>
-                  <div className="h-32 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center">
+                  <div className="h-32 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
                     <div className="text-center">
                       <Sparkles className="h-8 w-8 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
                       <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">Platformă modernă</span>
@@ -220,7 +220,7 @@ export default function HomePage() {
                         (modal as HTMLDialogElement).showModal();
                       }
                     }}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600  text-white py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
                   >
                     Vezi ce facem
                   </button>
@@ -237,12 +237,12 @@ export default function HomePage() {
                   className="bg-white dark:bg-card border border-gray-200 dark:border-border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center gap-2">
-                    <div className={`w-2 h-2 ${task.color === 'green' ? 'bg-green-500' : task.color === 'blue' ? 'bg-blue-500' : task.color === 'yellow' ? 'bg-yellow-500' : 'bg-purple-500'} rounded-full ${task.progress < 100 ? 'animate-pulse' : ''}`}></div>
+                    <div className={`w-2 h-2 ${task.color === 'green' ? 'bg-green-500' : task.color === 'blue' ? 'bg-blue-500' : task.color === 'yellow' ? 'bg-yellow-500' : 'bg-orange-500'} rounded-full ${task.progress < 100 ? 'animate-pulse' : ''}`}></div>
                     <span className="text-sm font-medium text-gray-900 dark:text-foreground">{task.name}</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400 ml-auto">{task.progress}%</span>
                   </div>
                   <div className="mt-2 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className={`h-full ${task.color === 'green' ? 'bg-green-500' : task.color === 'blue' ? 'bg-blue-500' : task.color === 'yellow' ? 'bg-yellow-500' : 'bg-purple-500'} rounded-full transition-all duration-1000`} style={{width: `${task.progress}%`}}></div>
+                    <div className={`h-full ${task.color === 'green' ? 'bg-green-500' : task.color === 'blue' ? 'bg-blue-500' : task.color === 'yellow' ? 'bg-yellow-500' : 'bg-orange-500'} rounded-full transition-all duration-1000`} style={{width: `${task.progress}%`}}></div>
                   </div>
                 </div>
               ))}
@@ -287,14 +287,14 @@ export default function HomePage() {
                   <div className="w-36 h-36 flex items-center justify-center">
                     {/* Central connection hub */}
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-4 border-white/30 backdrop-blur-sm">
+                      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white/30 backdrop-blur-sm">
                         <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                           <div className="w-4 h-4 bg-white rounded-full animate-pulse"></div>
                         </div>
                       </div>
                       {/* Animated ring around center */}
                       <div className="absolute inset-0 w-16 h-16 border-2 border-blue-400/30 rounded-full animate-ping"></div>
-                      <div className="absolute inset-0 w-20 h-20 border border-purple-400/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute inset-0 w-20 h-20 border border-blue-400/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                     </div>
                   </div>
                 </div>
@@ -307,13 +307,13 @@ export default function HomePage() {
 
             {/* Magic Surprise Column */}
             <div className="space-y-3">
-              <div className="h-48 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 dark:from-purple-900/40 dark:via-pink-900/30 dark:to-blue-900/40 rounded-xl relative overflow-hidden group cursor-pointer border border-purple-200/50 dark:border-purple-700/30 shadow-sm" onClick={handleMagicClick}>
+              <div className="h-48 bg-blue-100 dark:bg-blue-900/40 rounded-xl relative overflow-hidden group cursor-pointer border border-blue-200/50 dark:border-blue-700/30 shadow-sm" onClick={handleMagicClick}>
                 {/* Magic particles background */}
                 <div className="absolute inset-0">
                   {[...Array(20)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute w-1 h-1 bg-purple-400 dark:bg-purple-400 rounded-full opacity-60"
+                      className="absolute w-1 h-1 bg-blue-400 dark:bg-blue-400 rounded-full opacity-60"
                       style={{
                         left: `${Math.random() * 100}%`,
                         top: `${Math.random() * 100}%`,
@@ -327,16 +327,16 @@ export default function HomePage() {
                 {/* Central magic element */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
-                    <div className="w-20 h-20 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-purple-500/20 flex items-center justify-center ">
+                    <div className="w-20 h-20 bg-white dark:bg-gray-800 rounded-full shadow-lg dark:shadow-blue-500/20 flex items-center justify-center ">
                       <div className="text-3xl">{isCelebrating ? '🎉' : '✨'}</div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity scale-110"></div>
+                    <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity scale-110"></div>
                   </div>
                 </div>
 
                 {/* Hidden message */}
                 <div className="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="text-sm font-medium text-purple-800 dark:text-purple-300">Click pentru magie!</p>
+                  <p className="text-sm font-medium text-blue-800 dark:text-blue-300">Click pentru magie!</p>
                 </div>
               </div>
               <div className="text-center">
@@ -428,8 +428,8 @@ export default function HomePage() {
                       <span className="text-sm text-gray-700 dark:text-gray-300">Integrare seamless cu sistemele existente</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="p-1.5 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                        <svg className="h-4 w-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="p-1.5 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                        <svg className="h-4 w-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
@@ -440,14 +440,14 @@ export default function HomePage() {
 
                 {/* Action Buttons */}
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6">
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/40 rounded-xl p-6">
                     <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Gata să începem?</h5>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                       Programează un demo gratuită și vezi cum putem transforma afacerea ta.
                     </p>
 
                     <div className="space-y-3">
-                      <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600  text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
                         <Calendar className="h-4 w-4" />
                         Programează Demo
                       </button>
@@ -463,7 +463,7 @@ export default function HomePage() {
                   <div className="flex items-center justify-center gap-4 py-3">
                     <div className="flex -space-x-2">
                       <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-medium">A</div>
-                      <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs font-medium">M</div>
+                      <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-medium">M</div>
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-medium">R</div>
                       <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs font-medium">+200</div>
                     </div>
@@ -497,7 +497,7 @@ export default function HomePage() {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-200 dark:bg-green-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
@@ -507,7 +507,7 @@ export default function HomePage() {
               <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Servicii Cheie</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-blue-600">
                 Soluții Esențiale pentru Afacerea Ta
               </span>
             </h2>
@@ -521,7 +521,7 @@ export default function HomePage() {
             {/* Aplicații Web & Mobile */}
             <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/10 dark:via-purple-900/10 dark:to-pink-900/10 opacity-0"></div>
+              <div className="absolute inset-0 bg-blue-50 dark:from-blue-900/10 dark:to-blue-900/20 opacity-0"></div>
 
               {/* Floating particles */}
               <div className="absolute inset-0 overflow-hidden">
@@ -544,7 +544,7 @@ export default function HomePage() {
                 <div className="space-y-8">
                   {/* Header */}
                   <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
                       <span className="text-3xl">🚀</span>
                     </div>
                     <div>
@@ -578,15 +578,15 @@ export default function HomePage() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
                       <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
-                          <span className="text-purple-100 text-sm font-medium">Satisfacție clienți</span>
+                          <span className="text-blue-100 text-sm font-medium">Satisfacție clienți</span>
                           <span className="text-xs bg-white/20 px-3 py-1 rounded-full">+12%</span>
                         </div>
                         <div className="text-4xl font-bold mb-2">98%</div>
-                        <div className="text-purple-100 text-sm">ratenă de succes</div>
+                        <div className="text-blue-100 text-sm">ratenă de succes</div>
                         <div className="mt-3 flex justify-center">
                           {[...Array(5)].map((_, i) => (
                             <span key={i} className="text-yellow-300 text-lg mx-0.5">⭐</span>
@@ -613,7 +613,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600  text-white px-8 py-4 rounded-xl font-medium shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
                     <ArrowRight className="h-5 w-5 " />
                   </Link>
@@ -623,15 +623,15 @@ export default function HomePage() {
                 <div className="relative">
                   {/* Interactive device mockup */}
                   <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl ">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-blue-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
 
                     {/* Screen content */}
                     <div className="relative bg-white rounded-2xl h-64 overflow-hidden">
-                      <div className="h-full bg-gradient-to-br from-blue-50 to-purple-50 p-4">
+                      <div className="h-full bg-blue-50 p-4">
                         <div className="space-y-3">
                           <div className="h-3 bg-blue-200 rounded w-3/4"></div>
-                          <div className="h-3 bg-purple-200 rounded w-1/2"></div>
-                          <div className="h-20 bg-gradient-to-r from-blue-200 to-purple-200 rounded-lg mt-4"></div>
+                          <div className="h-3 bg-blue-300 rounded w-1/2"></div>
+                          <div className="h-20 bg-blue-200 rounded-lg mt-4"></div>
                           <div className="grid grid-cols-3 gap-2 mt-4">
                             {[...Array(6)].map((_, i) => (
                               <div key={i} className="h-8 bg-gray-200 rounded"></div>
@@ -652,7 +652,7 @@ export default function HomePage() {
             {/* E-Commerce */}
             <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-green-900/10 dark:via-blue-900/10 dark:to-purple-900/10 opacity-0 opacity-0"></div>
+              <div className="absolute inset-0 bg-green-50 dark:from-green-900/10 dark:to-green-900/20 opacity-0"></div>
 
               {/* Shopping cart animation */}
               <div className="absolute inset-0 overflow-hidden">
@@ -731,7 +731,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-blue-600  text-white px-8 py-4 rounded-xl font-medium shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
                     <ArrowRight className="h-5 w-5 " />
                   </Link>
@@ -741,11 +741,11 @@ export default function HomePage() {
                 <div className="relative">
                   {/* Interactive shopping interface */}
                   <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl">
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl opacity-20"></div>
+                    <div className="absolute inset-0 bg-green-600 rounded-3xl opacity-20"></div>
 
                     {/* Store interface */}
                     <div className="relative bg-white rounded-2xl h-64 overflow-hidden">
-                      <div className="h-full bg-gradient-to-br from-green-50 to-blue-50 p-4">
+                      <div className="h-full bg-green-50 p-4">
                         <div className="flex justify-between items-start mb-4">
                           <div className="w-8 h-8 bg-gray-200 rounded"></div>
                           <div className="flex gap-1">
@@ -759,7 +759,7 @@ export default function HomePage() {
                         <div className="grid grid-cols-2 gap-3">
                           {[...Array(4)].map((_, i) => (
                             <div key={i} className="bg-white rounded-lg p-2 shadow-sm">
-                              <div className="h-12 bg-gradient-to-r from-green-200 to-blue-200 rounded mb-2"></div>
+                              <div className="h-12 bg-green-200 rounded mb-2"></div>
                               <div className="h-2 bg-gray-200 rounded w-3/4"></div>
                               <div className="h-2 bg-gray-200 rounded w-1/2 mt-1"></div>
                             </div>
@@ -780,7 +780,7 @@ export default function HomePage() {
             {/* E-Learning */}
             <div className="bg-white dark:bg-card rounded-3xl border border-gray-200 dark:border-gray-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-900/10 dark:via-pink-900/10 dark:to-blue-900/10 opacity-0 opacity-0"></div>
+              <div className="absolute inset-0 bg-orange-50 dark:from-orange-900/10 dark:to-orange-900/20 opacity-0"></div>
 
               {/* Education elements */}
               <div className="absolute inset-0 overflow-hidden">
@@ -793,7 +793,7 @@ export default function HomePage() {
                 <div className="space-y-8">
                   {/* Header */}
                   <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center group- shadow-lg">
+                    <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center group- shadow-lg">
                       <span className="text-3xl">🎓</span>
                     </div>
                     <div>
@@ -804,15 +804,15 @@ export default function HomePage() {
 
                   {/* Interactive Metrics */}
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
                       <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
-                          <span className="text-purple-100 text-sm font-medium">Studenți activi</span>
+                          <span className="text-orange-100 text-sm font-medium">Studenți activi</span>
                           <span className="text-xs bg-white/20 px-3 py-1 rounded-full">+89%</span>
                         </div>
                         <div className="text-4xl font-bold mb-2">25K+</div>
-                        <div className="text-purple-100 text-sm">pe platforme noastre</div>
+                        <div className="text-orange-100 text-sm">pe platforme noastre</div>
                         <div className="mt-3 h-8">
                           <svg className="w-full h-full" viewBox="0 0 100 30">
                             <path
@@ -827,15 +827,15 @@ export default function HomePage() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-pink-500 to-pink-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white cursor-pointer relative overflow-hidden group">
                       <div className="absolute inset-0 bg-white/10 opacity-0"></div>
                       <div className="relative">
                         <div className="flex items-center justify-between mb-3">
-                          <span className="text-pink-100 text-sm font-medium">Cursuri disponibile</span>
+                          <span className="text-blue-100 text-sm font-medium">Cursuri disponibile</span>
                           <span className="text-xs bg-white/20 px-3 py-1 rounded-full">+45</span>
                         </div>
                         <div className="text-4xl font-bold mb-2">350+</div>
-                        <div className="text-pink-100 text-sm">varietate de conținut</div>
+                        <div className="text-blue-100 text-sm">varietate de conținut</div>
                         <div className="mt-3 flex justify-center">
                           <span className="text-2xl">🎯</span>
                         </div>
@@ -852,14 +852,14 @@ export default function HomePage() {
                   {/* Interactive Features */}
                   <div className="flex flex-wrap gap-3">
                     {['Video', 'Quizuri', 'Certificate', 'Progress'].map((feature, index) => (
-                      <span key={index} className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors cursor-pointer">
+                      <span key={index} className="px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium hover:bg-orange-200 dark:hover:bg-orange-900/50 transition-colors cursor-pointer">
                         {feature}
                       </span>
                     ))}
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600  text-white px-8 py-4 rounded-xl font-medium shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
                     <ArrowRight className="h-5 w-5 " />
                   </Link>
@@ -869,15 +869,15 @@ export default function HomePage() {
                 <div className="relative">
                   {/* Interactive learning interface */}
                   <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl ">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-orange-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
 
                     {/* Learning interface */}
                     <div className="relative bg-white rounded-2xl h-64 overflow-hidden">
-                      <div className="h-full bg-gradient-to-br from-purple-50 to-pink-50 p-4">
+                      <div className="h-full bg-orange-50 p-4">
                         <div className="flex justify-between items-start mb-4">
                           <div className="flex gap-2">
-                            <div className="w-8 h-8 bg-purple-200 rounded-full flex items-center justify-center text-sm">👨‍🎓</div>
-                            <div className="w-8 h-8 bg-pink-200 rounded-full flex items-center justify-center text-sm">👩‍🏫</div>
+                            <div className="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center text-sm">👨‍🎓</div>
+                            <div className="w-8 h-8 bg-orange-300 rounded-full flex items-center justify-center text-sm">👩‍🏫</div>
                           </div>
                           <div className="w-12 h-6 bg-gray-200 rounded-full"></div>
                         </div>
@@ -914,7 +914,7 @@ export default function HomePage() {
                         </div>
 
                         {/* Play button */}
-                        <div className="absolute bottom-4 right-4 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white">
+                        <div className="absolute bottom-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white">
                           ▶️
                         </div>
                       </div>
@@ -927,12 +927,12 @@ export default function HomePage() {
 
           {/* Additional Quick Stats */}
           <div className="mt-12">
-            <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 rounded-2xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/40 rounded-2xl p-8 relative overflow-hidden">
               {/* Animated background */}
               <div className="absolute inset-0 opacity-30">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-blue-200 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-200 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-pink-200 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-green-200 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-orange-200 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
               </div>
 
               <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -947,7 +947,7 @@ export default function HomePage() {
                   {
                     label: 'Clienți fericiți',
                     value: '200+',
-                    color: 'purple',
+                    color: 'blue',
                     icon: '😊',
                     description: 'Parteneri de încredere'
                   },
@@ -969,7 +969,7 @@ export default function HomePage() {
                   <div key={index} className="group">
                     <div className="bg-white dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 text-center hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-gray-200/50 dark:border-gray-700/50 relative overflow-hidden">
                       {/* Gradient overlay on hover */}
-                      <div className={`absolute inset-0 bg-gradient-to-r ${stat.color === 'blue' ? 'from-blue-500 to-purple-500' : stat.color === 'purple' ? 'from-purple-500 to-pink-500' : stat.color === 'green' ? 'from-green-500 to-blue-500' : 'from-orange-500 to-red-500'} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                      <div className={`absolute inset-0 ${stat.color === 'blue' ? 'bg-blue-500' : stat.color === 'green' ? 'bg-green-500' : 'bg-orange-500'} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
 
                       {/* Icon */}
                       <div className="text-4xl mb-3 transform ">
@@ -977,7 +977,7 @@ export default function HomePage() {
                       </div>
 
                       {/* Value */}
-                      <div className={`text-3xl font-bold mb-2 bg-gradient-to-r ${stat.color === 'blue' ? 'from-blue-600 to-purple-600' : stat.color === 'purple' ? 'from-purple-600 to-pink-600' : stat.color === 'green' ? 'from-green-600 to-blue-600' : 'from-orange-600 to-red-600'} bg-clip-text text-transparent`}>
+                      <div className={`text-3xl font-bold mb-2 ${stat.color === 'blue' ? 'text-blue-600' : stat.color === 'green' ? 'text-green-600' : 'text-orange-600'}`}>
                         {stat.value}
                       </div>
 
@@ -992,7 +992,7 @@ export default function HomePage() {
                       </div>
 
                       {/* Animated line */}
-                      <div className={`mt-3 h-0.5 bg-gradient-to-r ${stat.color === 'blue' ? 'from-blue-400 to-purple-400' : stat.color === 'purple' ? 'from-purple-400 to-pink-400' : stat.color === 'green' ? 'from-green-400 to-blue-400' : 'from-orange-400 to-red-400'} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
+                      <div className={`mt-3 h-0.5 ${stat.color === 'blue' ? 'bg-blue-400' : stat.color === 'green' ? 'bg-green-400' : 'bg-orange-400'} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
                     </div>
                   </div>
                 ))}
@@ -1009,7 +1009,7 @@ export default function HomePage() {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
@@ -1019,7 +1019,7 @@ export default function HomePage() {
               <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Dashboard-uri Customizate</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-blue-600">
                 Creăm Dashboard-uri pentru Orice Afacere
               </span>
             </h2>
@@ -1031,11 +1031,11 @@ export default function HomePage() {
           {/* Dashboard-uri Personalizate pentru Afaceri */}
           <div className="bg-white dark:bg-card rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
             {/* Background pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/50 to-pink-50/50 dark:from-blue-900/10 dark:via-purple-900/10 dark:to-pink-900/10"></div>
+            <div className="absolute inset-0 bg-blue-50/50 dark:from-blue-900/10 dark:to-blue-900/20"></div>
             {/* Floating elements */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-xl opacity-20 animate-pulse"></div>
-              <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-2xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute bottom-10 right-10 w-32 h-32 bg-green-200 dark:bg-green-900/20 rounded-full blur-2xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
             </div>
 
             <div className="relative">
@@ -1052,13 +1052,13 @@ export default function HomePage() {
                     <div className="text-blue-100 text-xs">vs 213.256 RON luna trecută</div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer group">
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer group">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-purple-100 text-sm font-medium">Clienți Activi</span>
+                      <span className="text-blue-100 text-sm font-medium">Clienți Activi</span>
                       <span className="text-xs bg-white/20 px-2 py-1 rounded-full group-hover:bg-white/30 transition-colors">+22.1%</span>
                     </div>
                     <div className="text-3xl font-bold mb-1">1.847</div>
-                    <div className="text-purple-100 text-xs">vs 1.513 clienți luna trecută</div>
+                    <div className="text-blue-100 text-xs">vs 1.513 clienți luna trecută</div>
                   </div>
 
                   <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white transform hover:scale-105 transition-all duration-300 cursor-pointer group">
@@ -1152,7 +1152,7 @@ export default function HomePage() {
                         <span>Vânzări</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                         <span>Clienți</span>
                       </div>
                     </div>
@@ -1180,7 +1180,7 @@ export default function HomePage() {
                       icon: '🏭',
                       title: 'Producție & Industrie',
                       description: 'Monitorizați eficiența producției și costuri',
-                      color: 'from-purple-500 to-purple-600'
+                      color: 'from-blue-500 to-blue-600'
                     },
                     {
                       icon: '🏥',
@@ -1210,7 +1210,7 @@ export default function HomePage() {
                 {[
                   { label: 'Vizualizări Pagină', value: '128.5K', change: '+23.7%', color: 'blue' },
                   { label: 'Rata de Retenție', value: '87.3%', change: '+4.2%', color: 'green' },
-                  { label: 'Valoare Mediu Comandă', value: '347 RON', change: '+12.8%', color: 'purple' },
+                  { label: 'Valoare Mediu Comandă', value: '347 RON', change: '+12.8%', color: 'blue' },
                   { label: 'Clienți Noi', value: '423', change: '+18.9%', color: 'orange' }
                 ].map((metric, index) => (
                   <div key={index} className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 hover:shadow-md transition-all duration-300 cursor-pointer group">
@@ -1233,18 +1233,18 @@ export default function HomePage() {
       {/* Call-to-action Final - Structura Modall.ca */}
       <section className="py-20 bg-white dark:bg-background relative">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 dark:from-blue-950/20 dark:via-purple-950/20 dark:to-blue-950/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-950/40"></div>
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-3xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-200 dark:bg-pink-900/20 rounded-full blur-2xl opacity-10 animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-200 dark:bg-green-900/20 rounded-full blur-3xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-200 dark:bg-orange-900/20 rounded-full blur-2xl opacity-10 animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6 text-center">
           <div className="relative p-12 border border-blue-200 dark:border-blue-800 rounded-2xl bg-white dark:bg-card shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:scale-[1.02]">
             {/* Background pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50/50 via-purple-50/30 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50/50 via-blue-100/30 to-transparent pointer-events-none"></div>
             {/* Animated grid pattern */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" style={{
@@ -1256,13 +1256,13 @@ export default function HomePage() {
 
             <div className="relative">
               {/* Badge with animation */}
-              <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-950/50 dark:to-purple-950/50 border border-blue-200 dark:border-blue-800 rounded-full mb-8 animate-pulse hover:animate-none transition-all duration-300">
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-950/50 dark:to-blue-950/80 border border-blue-200 dark:border-blue-800 rounded-full mb-8 animate-pulse hover:animate-none transition-all duration-300">
                 <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">Începe Astăzi</span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient-x">
+                <span className="text-blue-600">
                   Pregătit să Construiești Viitorul Afacerilor Tale?
                 </span>
               </h2>
@@ -1272,17 +1272,17 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                <button className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-10 py-5 text-xl font-bold rounded-2xl transition-all duration-500 flex items-center gap-4 shadow-2xl hover:shadow-3xl hover:-translate-y-2 group relative overflow-hidden transform hover:scale-105">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 text-xl font-bold rounded-2xl transition-all duration-500 flex items-center gap-4 shadow-2xl hover:shadow-3xl hover:-translate-y-2 group relative overflow-hidden transform hover:scale-105">
                   <span className="relative z-10">Începe Perioada Gratuită</span>
                   <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
                 <button className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/50 px-10 py-5 text-xl font-bold rounded-2xl transition-all duration-500 hover:border-blue-600 hover:shadow-xl hover:-translate-y-2 hover:scale-105 relative overflow-hidden group">
                   <span className="relative z-10">Programează un Demo</span>
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  {/* Blue overlay on hover */}
+                  <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                 </button>
               </div>
 
@@ -1303,7 +1303,7 @@ export default function HomePage() {
                     99.9% Uptime
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                     24/7 Support
                   </span>
                 </div>

@@ -97,7 +97,7 @@ export default function LoginPage() {
                     <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
                     <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                   </div>
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">
+                  <h1 className="text-3xl font-bold bg-blue-600 bg-clip-text text-transparent">
                     Autentificare
                   </h1>
                 </div>
@@ -167,7 +167,7 @@ export default function LoginPage() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 relative overflow-hidden group"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 relative overflow-hidden group"
                 >
                   {loading ? (
                     <div className="flex items-center gap-2">
@@ -180,7 +180,7 @@ export default function LoginPage() {
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-blue-600 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
                 </Button>
 
                 {/* Registration Link */}

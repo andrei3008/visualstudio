@@ -27,11 +27,11 @@ export default async function AdminHome() {
   ])
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-blue-50">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-400/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-orange-400/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-400/5 rounded-full blur-3xl animate-float"></div>
       </div>
 
@@ -43,9 +43,9 @@ export default async function AdminHome() {
               <div className="flex gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
               </div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-green-600 bg-clip-text text-transparent">
                 Admin Panel
               </h1>
             </div>
@@ -60,7 +60,7 @@ export default async function AdminHome() {
                 Înapoi la App
               </Link>
             </Button>
-            <Button size="sm" variant="default" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform transition-all duration-300 hover:scale-105">
+            <Button size="sm" variant="default" className="bg-blue-600 hover:bg-blue-700 text-white transform transition-all duration-300 hover:scale-105">
               <Link href="/app/admin/projects/new" className="flex items-center gap-2">
                 <FolderOpen className="h-4 w-4" />
                 Proiect nou
@@ -103,7 +103,7 @@ export default async function AdminHome() {
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-purple-500" />
+                <BarChart3 className="h-4 w-4 text-blue-500" />
                 <p className="text-xs text-gray-500">
                   Proiecte active
                 </p>
@@ -134,12 +134,12 @@ export default async function AdminHome() {
           <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-purple-100 rounded-xl">
-                  <CheckCircle className="h-5 w-5 text-purple-600" />
+                <div className="p-3 bg-green-100 rounded-xl">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
                 </div>
                 <CardTitle className="text-sm font-medium text-gray-600">Proposals Aprobate</CardTitle>
               </div>
-              <div className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">{proposalsApproved}</div>
+              <div className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">{proposalsApproved}</div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
@@ -235,7 +235,7 @@ export default async function AdminHome() {
               <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-lg text-gray-900 flex items-center gap-2">
-                    <FileText className="h-5 w-5 text-purple-600" />
+                    <FileText className="h-5 w-5 text-blue-600" />
                     Proposals Recente
                   </CardTitle>
                   <CardDescription className="text-gray-600">

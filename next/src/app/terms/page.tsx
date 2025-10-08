@@ -16,13 +16,13 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-16">
         <div className="container mx-auto px-6">
           <div className="flex items-center gap-3 mb-4">
             <FileText className="h-8 w-8" />
             <h1 className="text-4xl font-bold text-white">Terms and Conditions</h1>
           </div>
-          <p className="text-xl text-purple-100 max-w-3xl">
+          <p className="text-xl text-blue-100 max-w-3xl">
             Terms and conditions for using the services provided by VISUAL STUDIO CONCEPT SRL
           </p>
         </div>
@@ -32,10 +32,10 @@ export default function TermsPage() {
       <div className="bg-gray-50 dark:bg-gray-800 border-b">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-center gap-4">
-            <Link href="/terms" className="px-4 py-2 bg-purple-600 text-white rounded-lg">
+            <Link href="/terms" className="px-4 py-2 bg-blue-600 text-white rounded-lg">
               English
             </Link>
-            <Link href="/termeni-si-conditii" className="px-4 py-2 border border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50">
+            <Link href="/termeni-si-conditii" className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50">
               Română
             </Link>
           </div>
@@ -48,10 +48,10 @@ export default function TermsPage() {
           {/* Introduction */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <FileText className="h-6 w-6 text-purple-600" />
+              <FileText className="h-6 w-6 text-blue-600" />
               1. Introduction and Acceptance
             </h2>
-            <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 These Terms and Conditions govern the use of the website <strong>www.visualstudio.ro</strong>
                 and the services provided by <strong>VISUAL STUDIO CONCEPT SRL</strong> ("we", "the company" or "Visual Studio").
@@ -71,7 +71,7 @@ export default function TermsPage() {
           {/* Services */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <CheckCircle className="h-6 w-6 text-purple-600" />
+              <CheckCircle className="h-6 w-6 text-blue-600" />
               2. Services Provided
             </h2>
             <div className="space-y-4">
@@ -112,7 +112,7 @@ export default function TermsPage() {
           {/* Client Obligations */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <AlertTriangle className="h-6 w-6 text-purple-600" />
+              <AlertTriangle className="h-6 w-6 text-blue-600" />
               3. Client Obligations
             </h2>
             <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-6">
@@ -136,7 +136,7 @@ export default function TermsPage() {
           {/* Intellectual Property */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <Shield className="h-6 w-6 text-purple-600" />
+              <Shield className="h-6 w-6 text-blue-600" />
               4. Intellectual Property
             </h2>
             <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
@@ -191,10 +191,10 @@ export default function TermsPage() {
           {/* Contact */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <Mail className="h-6 w-6 text-purple-600" />
+              <Mail className="h-6 w-6 text-blue-600" />
               5. Contact
             </h2>
-            <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 For questions or clarifications regarding these Terms and Conditions, please contact us:
               </p>
@@ -231,14 +231,14 @@ export default function TermsPage() {
               <div className="flex items-center justify-center gap-4">
                 <Link
                   href="mailto:contact@visualstudio.ro"
-                  className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   Contact us
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 border border-purple-600 text-purple-600 hover:bg-purple-50 px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors"
                 >
                   📞 Support
                 </Link>

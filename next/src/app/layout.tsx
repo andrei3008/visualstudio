@@ -101,31 +101,34 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ConditionalMainLayout>{children}</ConditionalMainLayout>
         <CookieConsent />
         <footer className="mt-12 relative overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30"></div>
+        {/* Clean background */}
+        <div className="absolute inset-0 bg-blue-50 dark:bg-blue-950/30"></div>
 
-        {/* Decorative elements */}
+        {/* Clean decorative elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-purple-400 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-3/4 w-20 h-20 bg-pink-400 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-green-400 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-3/4 w-20 h-20 bg-orange-400 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
 
-        {/* Border top with gradient */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-30"></div>
+        {/* Clean border top */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-blue-200 dark:bg-blue-800 opacity-30"></div>
 
         <div className="relative container mx-auto px-4 py-8">
           {/* Main content */}
           <div className="text-center mb-6">
-            {/* Logo/Brand with glow effect */}
-            <div className="inline-flex items-center justify-center mb-4">
+            {/* Premium Clean Logo/Brand */}
+            <div className="inline-flex items-center justify-center mb-4 group">
               <div className="relative">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">VS</span>
+                {/* Elegant shadow */}
+                <div className="absolute inset-0 bg-blue-500 rounded-lg blur-md opacity-25 group-hover:opacity-40 transition-opacity duration-300"></div>
+
+                {/* Main icon with subtle border */}
+                <div className="relative w-8 h-8 bg-blue-600 border border-blue-700/30 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 hover:shadow-blue-500/25 hover:scale-105 hover:bg-blue-700">
+                  <span className="text-white font-bold text-sm tracking-tight">VS</span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg blur-md opacity-50 animate-pulse"></div>
               </div>
-              <span className="ml-2 text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="ml-3 text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all duration-300">
                 Visual Studio
               </span>
             </div>
@@ -166,9 +169,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </p>
           </div>
 
-          {/* Bottom accent line */}
+          {/* Clean bottom accent line */}
           <div className="relative">
-            <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent opacity-30"></div>
+            <div className="h-px bg-gray-300 dark:bg-gray-700 opacity-30"></div>
           </div>
         </div>
       </footer>

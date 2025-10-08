@@ -16,13 +16,13 @@ export default function TermeniSiConditiiPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-16">
         <div className="container mx-auto px-6">
           <div className="flex items-center gap-3 mb-4">
             <FileText className="h-8 w-8" />
             <h1 className="text-4xl font-bold text-white">Termeni și Condiții</h1>
           </div>
-          <p className="text-xl text-purple-100 max-w-3xl">
+          <p className="text-xl text-blue-100 max-w-3xl">
             Termenii și condițiile de utilizare a serviciilor oferite de VISUAL STUDIO CONCEPT SRL
           </p>
         </div>
@@ -35,10 +35,10 @@ export default function TermeniSiConditiiPage() {
           {/* Introducere */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <FileText className="h-6 w-6 text-purple-600" />
+              <FileText className="h-6 w-6 text-blue-600" />
               1. Introducere și Acceptare
             </h2>
-            <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Acești termeni și condiții ("Termeni") guvernează utilizarea site-ului <strong>www.visualstudio.ro</strong>
                 și a serviciilor oferite de <strong>VISUAL STUDIO CONCEPT SRL</strong> ("noi", "compania" sau "Visual Studio").
@@ -58,7 +58,7 @@ export default function TermeniSiConditiiPage() {
           {/* Definiții */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <FileText className="h-6 w-6 text-purple-600" />
+              <FileText className="h-6 w-6 text-blue-600" />
               2. Definiții
             </h2>
             <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -104,7 +104,7 @@ export default function TermeniSiConditiiPage() {
           {/* Serviciile oferite */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <CheckCircle className="h-6 w-6 text-purple-600" />
+              <CheckCircle className="h-6 w-6 text-blue-600" />
               3. Serviciile Oferite
             </h2>
             <div className="space-y-4">
@@ -145,7 +145,7 @@ export default function TermeniSiConditiiPage() {
           {/* Obligațiile clientului */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <AlertTriangle className="h-6 w-6 text-purple-600" />
+              <AlertTriangle className="h-6 w-6 text-blue-600" />
               4. Obligațiile Clientului
             </h2>
             <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-6">
@@ -173,7 +173,7 @@ export default function TermeniSiConditiiPage() {
           {/* Proprietate intelectuală */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <Shield className="h-6 w-6 text-purple-600" />
+              <Shield className="h-6 w-6 text-blue-600" />
               5. Proprietate Intelectuală
             </h2>
             <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
@@ -204,7 +204,7 @@ export default function TermeniSiConditiiPage() {
           {/* Prețuri și plată */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <DollarSign className="h-6 w-6 text-purple-600" />
+              <DollarSign className="h-6 w-6 text-blue-600" />
               6. Prețuri și Condiții de Plată
             </h2>
             <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-6">
@@ -234,11 +234,11 @@ export default function TermeniSiConditiiPage() {
           {/* Termeni de livrare */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <Clock className="h-6 w-6 text-purple-600" />
+              <Clock className="h-6 w-6 text-blue-600" />
               7. Termeni de Livrare și Acceptanță
             </h2>
-            <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
-              <div className="space-y-4 text-purple-800 dark:text-purple-200">
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="space-y-4 text-blue-800 dark:text-blue-200">
                 <div>
                   <h4 className="font-semibold mb-2">Estimări de timp:</h4>
                   <p>Termenii de livrare sunt estimați și pot fi afectați de complexitatea proiectului și disponibilitatea informațiilor din partea clientului.</p>
@@ -265,7 +265,7 @@ export default function TermeniSiConditiiPage() {
           {/* Suport și mentenanță */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <CheckCircle className="h-6 w-6 text-purple-600" />
+              <CheckCircle className="h-6 w-6 text-blue-600" />
               8. Suport Tehnic și Mentenanță
             </h2>
             <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-6">
@@ -298,7 +298,7 @@ export default function TermeniSiConditiiPage() {
           {/* Limitarea răspunderii */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <AlertTriangle className="h-6 w-6 text-purple-600" />
+              <AlertTriangle className="h-6 w-6 text-blue-600" />
               9. Limitarea Răspunderii
             </h2>
             <div className="bg-red-50 dark:bg-red-900/20 rounded-lg p-6">
@@ -330,7 +330,7 @@ export default function TermeniSiConditiiPage() {
           {/* Încetarea contractului */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <FileText className="h-6 w-6 text-purple-600" />
+              <FileText className="h-6 w-6 text-blue-600" />
               10. Încetarea Contractului
             </h2>
             <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -361,7 +361,7 @@ export default function TermeniSiConditiiPage() {
           {/* Politica de confidențialitate */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <Shield className="h-6 w-6 text-purple-600" />
+              <Shield className="h-6 w-6 text-blue-600" />
               11. Confidențialitate
             </h2>
             <div className="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-6">
@@ -390,7 +390,7 @@ export default function TermeniSiConditiiPage() {
           {/* Dispoziții finale */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <FileText className="h-6 w-6 text-purple-600" />
+              <FileText className="h-6 w-6 text-blue-600" />
               12. Dispoziții Finale
             </h2>
             <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -424,10 +424,10 @@ export default function TermeniSiConditiiPage() {
           {/* Contact */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <Mail className="h-6 w-6 text-purple-600" />
+              <Mail className="h-6 w-6 text-blue-600" />
               13. Contact
             </h2>
-            <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Pentru întrebări sau clarificări privind acești Termeni și Condiții, vă rugăm să ne contactați:
               </p>
@@ -495,14 +495,14 @@ export default function TermeniSiConditiiPage() {
               <div className="flex items-center justify-center gap-4">
                 <Link
                   href="mailto:contact@visualstudio.ro"
-                  className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   Contactați-ne
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 border border-purple-600 text-purple-600 hover:bg-purple-50 px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors"
                 >
                   📞 Suport
                 </Link>

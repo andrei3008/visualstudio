@@ -28,8 +28,8 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-pink-200 dark:bg-pink-900/20 rounded-full blur-2xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-cyan-200 dark:bg-cyan-900/20 rounded-full blur-2xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
@@ -39,7 +39,7 @@ export default function ServicesPage() {
               <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Servicii Profesionale</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent">
                 Serviciile Noastre
               </span>
             </h1>
@@ -112,16 +112,16 @@ export default function ServicesPage() {
                   transition: 'transform 0.3s ease'
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/10 dark:to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/10 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300" style={{
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300" style={{
                       transform: hoveredCard === 'mobile-native' ? 'scale(1.1) rotate(5deg)' : 'scale(1)',
                       transition: 'transform 0.3s ease'
                     }}>
                       <Smartphone className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 transition-colors">Aplicații Mobile Native</h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Aplicații Mobile Native</h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                     Aplicații native iOS și Android cu performanță maximă și UX excepțional.
@@ -135,8 +135,8 @@ export default function ServicesPage() {
                     ))}
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-purple-600">80+</span>
-                    <Link href="/contact" className="text-purple-600 hover:text-purple-700 font-medium flex items-center gap-1">
+                    <span className="text-2xl font-bold text-blue-600">80+</span>
+                    <Link href="/contact" className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1">
                       Detalii <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
           {/* Business Solutions - Enhanced */}
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
                 <BarChart3 className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -225,10 +225,10 @@ export default function ServicesPage() {
 
               <Card className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-all duration-500 group cursor-pointer">
                 <div className="text-center mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Lightbulb className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors">AI Integration</h3>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">AI Integration</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                   Soluții inteligente pentru analiză și predicții business
@@ -239,14 +239,14 @@ export default function ServicesPage() {
 
           {/* De la idee la soluție functională */}
           <div className="mb-20">
-            <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 rounded-3xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-50 via-blue-100 to-cyan-50 dark:from-blue-900/20 dark:via-blue-900/20 dark:to-cyan-900/20 rounded-3xl p-8 relative overflow-hidden">
               <div className="absolute inset-0">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-blue-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-                <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-400 rounded-full blur-3xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-cyan-400 rounded-full blur-3xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
               <div className="relative text-center">
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                     De la idee la soluție functională
                   </span>
                 </h2>
@@ -258,14 +258,14 @@ export default function ServicesPage() {
                     <button
                       key={category.id}
                       onClick={() => setSelectedCategory(category.id)}
-                      className={`px-4 py-2 rounded-full flex items-center gap-2 transition-all duration-300 ${selectedCategory === category.id ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-md'}`}
+                      className={`px-4 py-2 rounded-full flex items-center gap-2 transition-all duration-300 ${selectedCategory === category.id ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-md'}`}
                     >
                       <span>{category.icon}</span>
                       <span>{category.name}</span>
                     </button>
                   ))}
                 </div>
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   Discutăm proiectul tău
                   <ArrowRight className="h-5 w-5" />
                 </Link>
@@ -306,10 +306,10 @@ export default function ServicesPage() {
               </Card>
               <Card className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300 group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">🏢</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 transition-colors">Imobiliare</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Imobiliare</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Platforme pentru gestionarea proprietăților, programări vizionări, portaluri pentru agenți imobiliari și sisteme de evaluare automată a proprietăților.
@@ -339,10 +339,10 @@ export default function ServicesPage() {
               </Card>
               <Card className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300 group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">💳</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors">Fintech</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Fintech</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Soluții financiare securizate cu procesare plăți, management portofoliu, analize investiționale și platforme de trading cu respectarea regulamentelor.
@@ -415,10 +415,10 @@ export default function ServicesPage() {
                 <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
                   #2 POPULAR
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="text-center mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-3xl">🎓</span>
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Platformă Cursuri Online</h3>
@@ -446,7 +446,7 @@ export default function ServicesPage() {
                     <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                       Perfect pentru: Instructori, academii, formatori, experți
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
+                    <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
                       Cere Ofertă
                       <ArrowRight className="h-4 w-4" />
                     </Link>
@@ -456,17 +456,17 @@ export default function ServicesPage() {
 
               {/* Site Prezentare Profesional */}
               <Card className="bg-white dark:bg-card rounded-2xl border border-gray-200 dark:border-gray-700 p-8 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden cursor-pointer">
-                <div className="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
+                <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
                   #3 ACCESIBIL
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="text-center mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-3xl">🏢</span>
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Site Prezentare Profesional</h3>
-                    <div className="text-2xl font-bold text-purple-600 mb-2">1.000 - 2.500 €</div>
+                    <div className="text-2xl font-bold text-blue-600 mb-2">1.000 - 2.500 €</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Livrare: 1-2 săptămâni</div>
                   </div>
 
@@ -490,7 +490,7 @@ export default function ServicesPage() {
                     <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                       Perfect pentru: Companii, freelanceri, consultanți
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
+                    <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
                       Cere Ofertă
                       <ArrowRight className="h-4 w-4" />
                     </Link>
@@ -503,7 +503,7 @@ export default function ServicesPage() {
           {/* Consultanță & Mentenanță */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-lg font-bold">🛠️</span>
               </div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Consultanță & Mentenanță</h2>
@@ -522,10 +522,10 @@ export default function ServicesPage() {
               </Card>
               <Card className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300 group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-pink-100 dark:bg-pink-900/30 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">🔧</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-pink-600 transition-colors">Mentenanță & Support</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Mentenanță & Support</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Asigurăm mentenanță continuă pentru aplicațiile dezvoltate, inclusiv actualizări, securitate, optimizare performanță și suport tehnic 24/7 pentru a asigura funcționarea impecabilă.
@@ -558,7 +558,7 @@ export default function ServicesPage() {
 
           {/* Enhanced CTA Section */}
           <div className="mt-20">
-            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-center relative overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 rounded-3xl p-12 text-center relative overflow-hidden">
               <div className="absolute inset-0">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>

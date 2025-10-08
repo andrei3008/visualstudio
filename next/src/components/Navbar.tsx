@@ -80,36 +80,28 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
             <Link href="/" className="flex items-center gap-3 group relative">
               {/* Animated Icon */}
               <div className="relative">
-                {/* Outer glow ring */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full opacity-60 blur-md group-hover:opacity-80 transition-opacity duration-300 animate-pulse"></div>
+                {/* Clean modern logo */}
+                <div className="relative">
+                  {/* Simple shadow/glow */}
+                  <div className="absolute inset-0 bg-blue-500 rounded-2xl blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
 
-                {/* Main icon container */}
-                <div className="relative w-10 h-10 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 rounded-2xl flex items-center justify-center transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 shadow-2xl group-hover:shadow-blue-500/25 overflow-hidden">
-                  {/* Animated background pattern */}
-                  <div className="absolute inset-0 opacity-20">
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 animate-pulse"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-600 to-pink-500 animate-pulse delay-300"></div>
+                  {/* Main icon container */}
+                  <div className="relative w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-2xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-105 shadow-lg group-hover:shadow-blue-500/25">
+                    {/* VS initials */}
+                    <div className="relative z-10 flex items-center justify-center">
+                      <span className="text-white font-bold text-xs tracking-tighter leading-none">
+                        <span className="block">VS</span>
+                      </span>
+                    </div>
                   </div>
 
-                  {/* VS initials with tech effect */}
-                  <div className="relative z-10 flex items-center justify-center">
-                    <span className="text-white font-bold text-xs tracking-tighter leading-none">
-                      <span className="block">VS</span>
-                    </span>
-                  </div>
-
-                  {/* Animated corner accents */}
-                  <div className="absolute top-0 left-0 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
-                  <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping delay-500"></div>
+                  {/* Subtle corner accent */}
+                  <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-
-                {/* Floating particles */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-cyan-400 rounded-full opacity-60 group-hover:animate-ping"></div>
-                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-60 group-hover:animate-ping delay-300"></div>
               </div>
 
-              {/* Animated Text */}
-              <span className="text-xl font-bold bg-gradient-to-r from-foreground via-blue-800 to-purple-800 bg-clip-text text-transparent hover:from-cyan-600 hover:via-blue-600 hover:to-purple-600 transition-all duration-300 dark:from-cyan-400 dark:via-blue-400 dark:to-purple-400">
+              {/* Clean modern text */}
+              <span className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300">
                 Visual Studio
               </span>
             </Link>
@@ -126,7 +118,7 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
               }`}
             >
               Servicii
-              <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 ${
+              <div className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
                 pathname === '/services' ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></div>
             </Link>
@@ -134,12 +126,12 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
               href="/pricing"
               className={`text-sm font-medium transition-colors relative group ${
                 pathname === '/pricing'
-                  ? 'text-purple-600'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400'
+                  ? 'text-blue-600'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
               }`}
             >
               Prețuri
-              <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 ${
+              <div className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
                 pathname === '/pricing' ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></div>
             </Link>
@@ -152,7 +144,7 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
               }`}
             >
               Contact
-              <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 ${
+              <div className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
                 pathname === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></div>
             </Link>
@@ -165,7 +157,7 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
               }`}
             >
               Proiecte
-              <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 ${
+              <div className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
                 pathname === '/projects' ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></div>
             </Link>
@@ -219,7 +211,7 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
                   </Button>
 
                   {/* Dropdown Menu */}
-                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-card rounded-xl shadow-lg border border-blue-100 dark:border-blue-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-card rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
                     <div className="py-2">
                       <Link href="/account">
                         <Button
@@ -232,10 +224,10 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
                         </Button>
                       </Link>
 
-                      <div className="border-t border-blue-100 dark:border-blue-800 my-2"></div>
+                      <div className="border-t border-gray-200 dark:border-gray-700 my-2"></div>
 
-                      <div className="flex items-center gap-2 px-3 py-2 text-xs text-gray-500 dark:text-gray-400 bg-blue-50 dark:bg-blue-950/50 rounded-lg mx-2 mb-2">
-                        <Bell className="h-3 w-3 text-blue-500 dark:text-blue-400" />
+                      <div className="flex items-center gap-2 px-3 py-2 text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800 rounded-lg mx-2 mb-2">
+                        <Bell className="h-3 w-3 text-gray-500 dark:text-gray-400" />
                         <NotificationBell />
                         <span className="ml-2">Notificări</span>
                       </div>
@@ -264,7 +256,7 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
                   <Button
                     size="sm"
                     variant="default"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     Înregistrare
                   </Button>
