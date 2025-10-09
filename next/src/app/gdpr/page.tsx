@@ -58,7 +58,7 @@ export default function GDPRPage() {
               2. Tipuri de date cu caracter personal colectate
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3">Date de identificare</h3>
                 <ul className="space-y-2 text-blue-800 dark:text-blue-200">
                   <li>• Nume și prenume</li>
@@ -68,7 +68,7 @@ export default function GDPRPage() {
                   <li>• Funcție/rol în cadrul companiei</li>
                 </ul>
               </div>
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3">Date de contact și comunicare</h3>
                 <ul className="space-y-2 text-blue-800 dark:text-blue-200">
                   <li>• Adresă IP</li>

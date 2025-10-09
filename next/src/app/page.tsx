@@ -151,9 +151,9 @@ export default function HomePage() {
         <div className="relative max-w-full mx-auto px-6 pt-40 pb-24 text-center md:max-w-[90vw]">
           <div className="space-y-8">
             {/* Badge with Dashboard Colors */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded-lg">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-zinc-950/50 border border-blue-200 dark:border-zinc-800 rounded-lg">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Visual Studio Platform 2025</span>
+              <span className="text-sm font-medium text-blue-700 dark:text-zinc-300">Visual Studio Platform 2025</span>
             </div>
 
             {/* Main Title with Dashboard Typography */}
@@ -205,10 +205,10 @@ export default function HomePage() {
               <div className="p-6 h-full flex flex-col">
                 <div className="flex-1">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Visual Studio Explicat</h4>
-                  <div className="h-32 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center">
+                  <div className="h-32 bg-blue-100 dark:bg-zinc-900/40 rounded-lg flex items-center justify-center">
                     <div className="text-center">
-                      <Sparkles className="h-8 w-8 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">Platformă modernă</span>
+                      <Sparkles className="h-8 w-8 text-blue-600 dark:text-zinc-400 mx-auto mb-2" />
+                      <span className="text-sm text-gray-700 dark:text-zinc-300 font-medium">Platformă modernă</span>
                     </div>
                   </div>
                 </div>
@@ -293,8 +293,8 @@ export default function HomePage() {
                         </div>
                       </div>
                       {/* Animated ring around center */}
-                      <div className="absolute inset-0 w-16 h-16 border-2 border-blue-400/30 rounded-full animate-ping"></div>
-                      <div className="absolute inset-0 w-20 h-20 border border-blue-400/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute inset-0 w-16 h-16 border-2 border-zinc-400/30 rounded-full animate-ping"></div>
+                      <div className="absolute inset-0 w-20 h-20 border border-zinc-400/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                     </div>
                   </div>
                 </div>
@@ -307,13 +307,13 @@ export default function HomePage() {
 
             {/* Magic Surprise Column */}
             <div className="space-y-3">
-              <div className="h-48 bg-blue-100 dark:bg-blue-900/40 rounded-xl relative overflow-hidden group cursor-pointer border border-blue-200/50 dark:border-blue-700/30 shadow-sm" onClick={handleMagicClick}>
+              <div className="h-48 bg-blue-100 dark:bg-zinc-900/40 rounded-xl relative overflow-hidden group cursor-pointer border border-blue-200/50 dark:border-zinc-700/30 shadow-sm" onClick={handleMagicClick}>
                 {/* Magic particles background */}
                 <div className="absolute inset-0">
                   {[...Array(20)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute w-1 h-1 bg-blue-400 dark:bg-blue-400 rounded-full opacity-60"
+                      className="absolute w-1 h-1 bg-blue-400 dark:bg-zinc-400 rounded-full opacity-60"
                       style={{
                         left: `${Math.random() * 100}%`,
                         top: `${Math.random() * 100}%`,
@@ -327,16 +327,16 @@ export default function HomePage() {
                 {/* Central magic element */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
-                    <div className="w-20 h-20 bg-white dark:bg-slate-800 rounded-full shadow-lg dark:shadow-blue-500/20 flex items-center justify-center ">
+                    <div className="w-20 h-20 bg-white dark:bg-slate-800 rounded-full shadow-lg dark:shadow-zinc-500/20 flex items-center justify-center ">
                       <div className="text-3xl">{isCelebrating ? '🎉' : '✨'}</div>
                     </div>
-                    <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity scale-110"></div>
+                    <div className="absolute inset-0 bg-zinc-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity scale-110"></div>
                   </div>
                 </div>
 
                 {/* Hidden message */}
                 <div className="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="text-sm font-medium text-blue-800 dark:text-blue-300">Click pentru magie!</p>
+                  <p className="text-sm font-medium text-blue-800 dark:text-zinc-300">Click pentru magie!</p>
                 </div>
               </div>
               <div className="text-center">
@@ -353,8 +353,8 @@ export default function HomePage() {
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-700">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                  <Sparkles className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                <div className="p-2 bg-blue-100 dark:bg-zinc-900/30 rounded-lg">
+                  <Sparkles className="h-5 w-5 text-blue-600 dark:text-zinc-400" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Visual Studio Platform</h3>
@@ -420,27 +420,27 @@ export default function HomePage() {
                       <span className="text-sm text-gray-700 dark:text-gray-300">Dezvoltare rapidă și eficientă</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="p-1.5 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                        <svg className="h-4 w-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="p-1.5 bg-blue-100 dark:bg-zinc-900/30 rounded-lg">
+                        <svg className="h-4 w-4 text-blue-600 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-700 dark:text-gray-300">Integrare seamless cu sistemele existente</span>
+                      <span className="text-sm text-gray-700 dark:text-zinc-300">Integrare seamless cu sistemele existente</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="p-1.5 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                        <svg className="h-4 w-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="p-1.5 bg-blue-100 dark:bg-zinc-900/30 rounded-lg">
+                        <svg className="h-4 w-4 text-blue-600 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-700 dark:text-gray-300">Suport tehnic 24/7 dedicat</span>
+                      <span className="text-sm text-gray-700 dark:text-zinc-300">Suport tehnic 24/7 dedicat</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/40 rounded-xl p-6">
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-zinc-900/20 dark:to-zinc-900/40 rounded-xl p-6">
                     <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Gata să începem?</h5>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                       Programează un demo gratuită și vezi cum putem transforma afacerea ta.
@@ -493,18 +493,18 @@ export default function HomePage() {
       {/* Servicii Cheie - Stil Dashboard */}
       <section className="py-20 bg-white dark:bg-background relative">
         {/* Subtle background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-zinc-950/20 dark:to-background"></div>
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-200 dark:bg-green-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded-full mb-6 animate-pulse">
-              <Settings className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Servicii Cheie</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-zinc-950/50 border border-blue-200 dark:border-zinc-800 rounded-full mb-6 animate-pulse">
+              <Settings className="h-4 w-4 text-blue-600 dark:text-zinc-400" />
+              <span className="text-sm font-medium text-blue-700 dark:text-zinc-300">Servicii Cheie</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               <span className="text-blue-600">
@@ -521,14 +521,14 @@ export default function HomePage() {
             {/* Aplicații Web & Mobile */}
             <div className="bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 p-12 shadow-lg relative overflow-hidden group cursor-pointer">
               {/* Animated background */}
-              <div className="absolute inset-0 bg-blue-50 dark:bg-blue-900/20 opacity-0"></div>
+              <div className="absolute inset-0 bg-blue-50 dark:bg-zinc-900/20 opacity-0"></div>
 
               {/* Floating particles */}
               <div className="absolute inset-0 overflow-hidden">
                 {[...Array(15)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-1 h-1 bg-blue-400 dark:bg-blue-300 rounded-full opacity-30 dark:opacity-20"
+                    className="absolute w-1 h-1 bg-blue-400 dark:bg-zinc-300 rounded-full opacity-30 dark:opacity-20"
                     style={{
                       left: `${Math.random() * 100}%`,
                       top: `${Math.random() * 100}%`,
@@ -606,14 +606,14 @@ export default function HomePage() {
                   {/* Interactive Features */}
                   <div className="flex flex-wrap gap-3">
                     {['React Native', 'Next.js', 'TypeScript', 'Cloud Deploy'].map((tech, index) => (
-                      <span key={index} className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors cursor-pointer">
+                      <span key={index} className="px-4 py-2 bg-blue-100 dark:bg-zinc-900/30 text-blue-700 dark:text-zinc-300 rounded-full text-sm font-medium hover:bg-blue-200 dark:hover:bg-zinc-900/50 transition-colors cursor-pointer">
                         {tech}
                       </span>
                     ))}
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-medium shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white dark:text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
                     <ArrowRight className="h-5 w-5 " />
                   </Link>
@@ -622,27 +622,73 @@ export default function HomePage() {
                 {/* Right side - Visual */}
                 <div className="relative">
                   {/* Interactive device mockup */}
-                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl ">
-                    <div className="absolute inset-0 bg-blue-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="relative bg-gray-900 dark:bg-zinc-800 rounded-3xl p-8 shadow-2xl transform transition-all duration-500 group-hover:scale-105">
+                    {/* Device frame details */}
+                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-700 dark:bg-zinc-600 rounded-full"></div>
 
                     {/* Screen content */}
-                    <div className="relative bg-white rounded-2xl h-64 overflow-hidden">
-                      <div className="h-full bg-blue-50 p-4">
-                        <div className="space-y-3">
-                          <div className="h-3 bg-blue-200 rounded w-3/4"></div>
-                          <div className="h-3 bg-blue-300 rounded w-1/2"></div>
-                          <div className="h-20 bg-blue-200 rounded-lg mt-4"></div>
-                          <div className="grid grid-cols-3 gap-2 mt-4">
-                            {[...Array(6)].map((_, i) => (
-                              <div key={i} className="h-8 bg-gray-200 rounded"></div>
-                            ))}
+                    <div className="relative bg-white dark:bg-zinc-900 rounded-2xl h-72 overflow-hidden shadow-inner">
+                      {/* App header */}
+                      <div className="h-12 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 px-4 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 bg-white/20 rounded-full"></div>
+                          <div className="h-2 bg-white/30 rounded w-16"></div>
+                        </div>
+                        <div className="flex gap-1">
+                          <div className="w-2 h-2 bg-white/40 rounded-full"></div>
+                          <div className="w-2 h-2 bg-white/40 rounded-full"></div>
+                          <div className="w-2 h-2 bg-white/40 rounded-full"></div>
+                        </div>
+                      </div>
+
+                      {/* App content */}
+                      <div className="h-full bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-zinc-800 dark:to-zinc-900 p-6">
+                        <div className="space-y-4">
+                          {/* Navigation */}
+                          <div className="flex gap-2">
+                            <div className="h-6 bg-blue-600 dark:bg-blue-700 rounded px-3 flex items-center">
+                              <span className="text-white text-xs font-medium">Dashboard</span>
+                            </div>
+                            <div className="h-6 bg-white dark:bg-zinc-700 rounded px-3 flex items-center">
+                              <span className="text-gray-600 dark:text-zinc-400 text-xs">Analytics</span>
+                            </div>
+                            <div className="h-6 bg-white dark:bg-zinc-700 rounded px-3 flex items-center">
+                              <span className="text-gray-600 dark:text-zinc-400 text-xs">Settings</span>
+                            </div>
+                          </div>
+
+                          {/* Stats cards */}
+                          <div className="grid grid-cols-2 gap-3">
+                            <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm border border-blue-100 dark:border-zinc-700">
+                              <div className="text-blue-600 dark:text-blue-400 text-lg font-bold">2,547</div>
+                              <div className="text-gray-600 dark:text-zinc-400 text-xs">Users</div>
+                              <div className="mt-2 h-1 bg-green-500 rounded-full"></div>
+                            </div>
+                            <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm border border-purple-100 dark:border-zinc-700">
+                              <div className="text-purple-600 dark:text-purple-400 text-lg font-bold">89%</div>
+                              <div className="text-gray-600 dark:text-zinc-400 text-xs">Growth</div>
+                              <div className="mt-2 h-1 bg-green-500 rounded-full"></div>
+                            </div>
+                          </div>
+
+                          {/* Chart area */}
+                          <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm">
+                            <div className="h-16 flex items-end gap-1">
+                              {[40, 65, 45, 80, 55, 90, 70].map((height, i) => (
+                                <div key={i} className="flex-1 bg-gradient-to-t from-blue-600 to-blue-400 rounded-t" style={{height: `${height}%`}}></div>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
 
                       {/* Floating elements */}
-                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
-                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-green-400 rounded-full animate-ping"></div>
+                      <div className="absolute -top-4 -right-4 w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                        <span className="text-white text-lg">✨</span>
+                      </div>
+                      <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                        <span className="text-white text-sm">📈</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -731,7 +777,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-medium shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white dark:text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
                     <ArrowRight className="h-5 w-5 " />
                   </Link>
@@ -740,35 +786,72 @@ export default function HomePage() {
                 {/* Right side - Visual */}
                 <div className="relative">
                   {/* Interactive shopping interface */}
-                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl">
-                    <div className="absolute inset-0 bg-green-600 rounded-3xl opacity-20"></div>
+                  <div className="relative bg-gray-900 dark:bg-zinc-800 rounded-3xl p-8 shadow-2xl transform transition-all duration-500 group-hover:scale-105">
+                    {/* Device frame details */}
+                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-700 dark:bg-zinc-600 rounded-full"></div>
 
                     {/* Store interface */}
-                    <div className="relative bg-white rounded-2xl h-64 overflow-hidden">
-                      <div className="h-full bg-green-50 p-4">
-                        <div className="flex justify-between items-start mb-4">
-                          <div className="w-8 h-8 bg-gray-200 rounded"></div>
-                          <div className="flex gap-1">
-                            <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <div className="relative bg-white dark:bg-zinc-900 rounded-2xl h-72 overflow-hidden shadow-inner">
+                      {/* Store header */}
+                      <div className="h-14 bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-700 dark:to-emerald-700 px-4 flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                            <span className="text-white">🛒</span>
                           </div>
+                          <div className="text-white font-bold">ShopStore</div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs">🔍</span>
+                          </div>
+                          <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs">👤</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Store content */}
+                      <div className="h-full bg-gradient-to-br from-green-50 to-emerald-50 dark:from-zinc-800 dark:to-zinc-900 p-4">
+                        {/* Search bar */}
+                        <div className="bg-white dark:bg-zinc-800 rounded-lg p-2 mb-4 flex items-center gap-2 border border-green-200 dark:border-zinc-700">
+                          <span className="text-green-600 dark:text-green-400">🔍</span>
+                          <div className="h-3 bg-gray-200 dark:bg-zinc-700 rounded flex-1"></div>
                         </div>
 
                         {/* Product grid */}
-                        <div className="grid grid-cols-2 gap-3">
-                          {[...Array(4)].map((_, i) => (
-                            <div key={i} className="bg-white rounded-lg p-2 shadow-sm">
-                              <div className="h-12 bg-green-200 rounded mb-2"></div>
-                              <div className="h-2 bg-gray-200 rounded w-3/4"></div>
-                              <div className="h-2 bg-gray-200 rounded w-1/2 mt-1"></div>
+                        <div className="grid grid-cols-2 gap-3 mb-4">
+                          {[
+                            { color: 'blue', price: '299', rating: 4.5 },
+                            { color: 'purple', price: '599', rating: 5 },
+                            { color: 'orange', price: '199', rating: 4 },
+                            { color: 'pink', price: '399', rating: 4.8 }
+                          ].map((product, i) => (
+                            <div key={i} className="bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm hover:shadow-md transition-shadow">
+                              <div className={`h-16 bg-gradient-to-br from-${product.color}-200 to-${product.color}-300 dark:from-zinc-700 dark:to-zinc-600 rounded mb-2 flex items-center justify-center`}>
+                                <span className="text-2xl">
+                                  {product.color === 'blue' ? '👕' : product.color === 'purple' ? '💻' : product.color === 'orange' ? '⌚' : '🎧'}
+                                </span>
+                              </div>
+                              <div className="space-y-1">
+                                <div className="flex justify-between items-center">
+                                  <span className="text-green-600 dark:text-green-400 font-bold text-sm">€{product.price}</span>
+                                  <div className="flex text-yellow-400">
+                                    {[...Array(5)].map((_, i) => (
+                                      <span key={i} className="text-xs">{i < Math.floor(product.rating) ? '⭐' : '☆'}</span>
+                                    ))}
+                                  </div>
+                                </div>
+                                <div className="h-2 bg-gray-200 dark:bg-zinc-700 rounded w-3/4"></div>
+                                <div className="h-2 bg-gray-200 dark:bg-zinc-700 rounded w-1/2"></div>
+                              </div>
                             </div>
                           ))}
                         </div>
 
-                        {/* Cart icon */}
-                        <div className="absolute bottom-4 right-4 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
-                          3
+                        {/* Cart floating button */}
+                        <div className="absolute bottom-4 right-4 w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg hover:scale-110 transition-transform">
+                          <span className="text-sm">3</span>
+                          <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center text-xs">!</span>
                         </div>
                       </div>
                     </div>
@@ -859,7 +942,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Action */}
-                  <Link href="/services" className="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-medium shadow-lg">
+                  <Link href="/services" className="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700 text-white dark:text-white px-8 py-4 rounded-xl font-medium shadow-lg">
                     Explorează serviciile
                     <ArrowRight className="h-5 w-5 " />
                   </Link>
@@ -868,48 +951,48 @@ export default function HomePage() {
                 {/* Right side - Visual */}
                 <div className="relative">
                   {/* Interactive learning interface */}
-                  <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl ">
-                    <div className="absolute inset-0 bg-orange-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="relative bg-gray-900 dark:bg-zinc-800 rounded-3xl p-8 shadow-2xl">
+                    <div className="absolute inset-0 bg-zinc-600 dark:bg-zinc-700 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
 
                     {/* Learning interface */}
-                    <div className="relative bg-white rounded-2xl h-64 overflow-hidden">
-                      <div className="h-full bg-orange-50 p-4">
+                    <div className="relative bg-white dark:bg-zinc-900 rounded-2xl h-64 overflow-hidden">
+                      <div className="h-full bg-orange-50 dark:bg-zinc-800 p-4">
                         <div className="flex justify-between items-start mb-4">
                           <div className="flex gap-2">
-                            <div className="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center text-sm">👨‍🎓</div>
-                            <div className="w-8 h-8 bg-orange-300 rounded-full flex items-center justify-center text-sm">👩‍🏫</div>
+                            <div className="w-8 h-8 bg-orange-200 dark:bg-zinc-700 rounded-full flex items-center justify-center text-sm">👨‍🎓</div>
+                            <div className="w-8 h-8 bg-orange-300 dark:bg-zinc-600 rounded-full flex items-center justify-center text-sm">👩‍🏫</div>
                           </div>
-                          <div className="w-12 h-6 bg-gray-200 rounded-full"></div>
+                          <div className="w-12 h-6 bg-gray-200 dark:bg-zinc-700 rounded-full"></div>
                         </div>
 
                         {/* Course progress */}
                         <div className="space-y-3">
-                          <div className="bg-white rounded-lg p-3 shadow-sm">
+                          <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm">
                             <div className="flex justify-between items-center mb-2">
-                              <span className="text-sm font-medium">Module 1</span>
-                              <span className="text-xs text-green-600">✓ Complet</span>
+                              <span className="text-sm font-medium text-gray-900 dark:text-white">Module 1</span>
+                              <span className="text-xs text-green-600 dark:text-green-400">✓ Complet</span>
                             </div>
-                            <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div className="h-2 bg-gray-200 dark:bg-zinc-700 rounded-full overflow-hidden">
                               <div className="h-full bg-green-500 rounded-full" style={{width: '100%'}}></div>
                             </div>
                           </div>
 
-                          <div className="bg-white rounded-lg p-3 shadow-sm">
+                          <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm">
                             <div className="flex justify-between items-center mb-2">
-                              <span className="text-sm font-medium">Module 2</span>
-                              <span className="text-xs text-blue-600">75%</span>
+                              <span className="text-sm font-medium text-gray-900 dark:text-white">Module 2</span>
+                              <span className="text-xs text-blue-600 dark:text-blue-400">75%</span>
                             </div>
-                            <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div className="h-2 bg-gray-200 dark:bg-zinc-700 rounded-full overflow-hidden">
                               <div className="h-full bg-blue-500 rounded-full" style={{width: '75%'}}></div>
                             </div>
                           </div>
 
-                          <div className="bg-white rounded-lg p-3 shadow-sm">
+                          <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm">
                             <div className="flex justify-between items-center mb-2">
-                              <span className="text-sm font-medium">Module 3</span>
-                              <span className="text-xs text-gray-500">În curând</span>
+                              <span className="text-sm font-medium text-gray-900 dark:text-white">Module 3</span>
+                              <span className="text-xs text-gray-500 dark:text-gray-400">În curând</span>
                             </div>
-                            <div className="h-2 bg-gray-200 rounded-full"></div>
+                            <div className="h-2 bg-gray-200 dark:bg-zinc-700 rounded-full"></div>
                           </div>
                         </div>
 
@@ -927,7 +1010,7 @@ export default function HomePage() {
 
           {/* Additional Quick Stats */}
           <div className="mt-12">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/40 rounded-2xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-zinc-900/20 dark:to-zinc-900/40 rounded-2xl p-8 relative overflow-hidden">
               {/* Animated background */}
               <div className="absolute inset-0 opacity-30">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-blue-200 rounded-full blur-3xl animate-pulse"></div>
@@ -1005,18 +1088,18 @@ export default function HomePage() {
       {/* Soluții AI-Powered - Dashboard-uri Personalizate */}
       <section className="py-20 bg-white dark:bg-background relative">
         {/* Subtle background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-zinc-950/20 dark:to-background"></div>
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded-full mb-6 animate-pulse">
-              <BarChart3 className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Dashboard-uri Customizate</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-zinc-950/50 border border-blue-200 dark:border-zinc-800 rounded-full mb-6 animate-pulse">
+              <BarChart3 className="h-4 w-4 text-blue-600 dark:text-zinc-400" />
+              <span className="text-sm font-medium text-blue-700 dark:text-zinc-300">Dashboard-uri Customizate</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               <span className="text-blue-600">
@@ -1031,10 +1114,10 @@ export default function HomePage() {
           {/* Dashboard-uri Personalizate pentru Afaceri */}
           <div className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
             {/* Background pattern */}
-            <div className="absolute inset-0 bg-blue-50/50 dark:from-blue-900/10 dark:to-blue-900/20"></div>
+            <div className="absolute inset-0 bg-blue-50/50 dark:bg-zinc-900/15"></div>
             {/* Floating elements */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-xl opacity-20 animate-pulse"></div>
+              <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-xl opacity-20 animate-pulse"></div>
               <div className="absolute bottom-10 right-10 w-32 h-32 bg-green-200 dark:bg-green-900/20 rounded-full blur-2xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
             </div>
 
@@ -1072,12 +1155,12 @@ export default function HomePage() {
                 </div>
 
                 {/* Chart Performantă Afaceri */}
-                <div className="lg:col-span-2 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-700 dark:to-blue-900/20 rounded-xl p-6 relative overflow-hidden group cursor-pointer">
+                <div className="lg:col-span-2 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-800 dark:to-zinc-900/20 rounded-xl p-6 relative overflow-hidden group cursor-pointer">
                   {/* Chart Header */}
                   <div className="flex items-center justify-between mb-6">
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Performanța Afacerii Dumneavoastră</h4>
                     <div className="flex gap-2">
-                      <span className="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">7 Zile</span>
+                      <span className="text-xs bg-blue-100 dark:bg-zinc-900/30 text-blue-700 dark:text-zinc-300 px-3 py-1 rounded-full">7 Zile</span>
                       <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-3 py-1 rounded-full">30 Zile</span>
                       <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-3 py-1 rounded-full">90 Zile</span>
                     </div>
@@ -1139,13 +1222,13 @@ export default function HomePage() {
 
                     {/* Floating stats pe chart */}
                     <div className="absolute top-4 right-4 bg-white dark:bg-slate-800 rounded-lg p-3 shadow-lg border border-gray-200 dark:border-slate-700">
-                      <div className="text-xs text-gray-500 dark:text-gray-400">Performanță Maximă</div>
+                      <div className="text-xs text-gray-500 dark:text-zinc-400">Performanță Maximă</div>
                       <div className="text-lg font-bold text-green-600 dark:text-green-400">96.8%</div>
                     </div>
                   </div>
 
                   {/* Chart footer */}
-                  <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
+                  <div className="flex items-center justify-between text-sm text-gray-600 dark:text-zinc-400">
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
@@ -1156,7 +1239,7 @@ export default function HomePage() {
                         <span>Clienți</span>
                       </div>
                     </div>
-                    <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded">Date Live</span>
+                    <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-zinc-300 px-2 py-1 rounded">Date Live</span>
                   </div>
                 </div>
               </div>
@@ -1197,7 +1280,7 @@ export default function HomePage() {
                   ].map((business, index) => (
                     <div key={index} className="bg-white dark:bg-slate-800/50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group border border-gray-200 dark:border-slate-700">
                       <div className="text-4xl mb-3 transform ">{business.icon}</div>
-                      <h5 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{business.title}</h5>
+                      <h5 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-zinc-400 transition-colors">{business.title}</h5>
                       <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{business.description}</p>
                       <div className={`mt-4 h-1 bg-gradient-to-r ${business.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                     </div>
@@ -1214,9 +1297,9 @@ export default function HomePage() {
                   { label: 'Clienți Noi', value: '423', change: '+18.9%', color: 'orange' }
                 ].map((metric, index) => (
                   <div key={index} className="bg-gray-50 dark:bg-slate-900/50 rounded-lg p-4 hover:shadow-md transition-all duration-300 cursor-pointer group">
-                    <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">{metric.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-zinc-400 mb-1">{metric.label}</div>
                     <div className="flex items-center justify-between">
-                      <span className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{metric.value}</span>
+                      <span className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-zinc-400 transition-colors">{metric.value}</span>
                       <span className={`text-xs px-2 py-1 rounded-full ${metric.change.startsWith('+') ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'}`}>
                         {metric.change}
                       </span>
@@ -1233,32 +1316,24 @@ export default function HomePage() {
       {/* Call-to-action Final - Structura Modall.ca */}
       <section className="py-20 bg-white dark:bg-background relative">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-950/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-zinc-950/20 dark:to-zinc-950/40"></div>
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-3xl opacity-20 animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-200 dark:bg-green-900/20 rounded-full blur-3xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-200 dark:bg-orange-900/20 rounded-full blur-2xl opacity-10 animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6 text-center">
-          <div className="relative p-12 border border-blue-200 dark:border-blue-800 rounded-2xl bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:scale-[1.02]">
-            {/* Background pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50/50 via-blue-100/30 to-transparent pointer-events-none"></div>
-            {/* Animated grid pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute inset-0" style={{
-                backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)',
-                backgroundSize: '50px 50px',
-                animation: 'gridMove 20s linear infinite'
-              }}></div>
-            </div>
+          <div className="relative p-12 border border-blue-200 dark:border-zinc-700 rounded-2xl bg-white dark:bg-slate-950 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:scale-[1.02]">
+            {/* Background pattern - dark mode compatible */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50/50 via-blue-100/30 to-transparent dark:from-blue-950/20 dark:via-slate-900/10 dark:to-transparent pointer-events-none"></div>
 
             <div className="relative">
               {/* Badge with animation */}
-              <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-950/50 dark:to-blue-950/80 border border-blue-200 dark:border-blue-800 rounded-full mb-8 animate-pulse hover:animate-none transition-all duration-300">
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-zinc-950/50 dark:to-zinc-950/80 border border-blue-200 dark:border-zinc-800 rounded-full mb-8 animate-pulse hover:animate-none transition-all duration-300">
                 <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">Începe Astăzi</span>
+                <span className="text-sm font-semibold text-blue-700 dark:text-zinc-300">Începe Astăzi</span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">

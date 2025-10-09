@@ -25,18 +25,18 @@ export default function ServicesPage() {
       {/* Header Section */}
       <section className="py-20 bg-white dark:bg-background relative">
         {/* Animated background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-zinc-950/20 dark:to-background"></div>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-cyan-200 dark:bg-cyan-900/20 rounded-full blur-2xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-cyan-200 dark:bg-zinc-900/20 rounded-full blur-2xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded-full mb-6 animate-pulse">
-              <Settings className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Servicii Profesionale</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-zinc-950/50 border border-blue-200 dark:border-zinc-800 rounded-full mb-6 animate-pulse">
+              <Settings className="h-4 w-4 text-blue-600 dark:text-zinc-400" />
+              <span className="text-sm font-medium text-blue-700 dark:text-zinc-300">Servicii Profesionale</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent">
@@ -72,7 +72,7 @@ export default function ServicesPage() {
                   transition: 'transform 0.3s ease'
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/10 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-zinc-900/10 dark:to-zinc-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300" style={{
@@ -112,7 +112,7 @@ export default function ServicesPage() {
                   transition: 'transform 0.3s ease'
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/10 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-zinc-900/10 dark:to-zinc-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300" style={{
@@ -239,7 +239,7 @@ export default function ServicesPage() {
 
           {/* De la idee la soluție functională */}
           <div className="mb-20">
-            <div className="bg-gradient-to-r from-blue-50 via-blue-100 to-cyan-50 dark:from-blue-900/20 dark:via-blue-900/20 dark:to-cyan-900/20 rounded-3xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-50 via-blue-100 to-cyan-50 dark:from-zinc-900/20 dark:via-zinc-900/20 dark:to-zinc-900/20 rounded-3xl p-8 relative overflow-hidden">
               <div className="absolute inset-0">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-blue-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
                 <div className="absolute bottom-0 right-0 w-40 h-40 bg-cyan-400 rounded-full blur-3xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
@@ -284,7 +284,7 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300 group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-zinc-900/30 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">🎓</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Educație</h3>
@@ -306,7 +306,7 @@ export default function ServicesPage() {
               </Card>
               <Card className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300 group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-zinc-900/30 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">🏢</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Imobiliare</h3>
@@ -339,7 +339,7 @@ export default function ServicesPage() {
               </Card>
               <Card className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300 group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-zinc-900/30 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">💳</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Fintech</h3>
@@ -415,7 +415,7 @@ export default function ServicesPage() {
                 <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
                   #2 POPULAR
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-zinc-900/10 dark:to-zinc-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="text-center mb-6">
                     <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -459,7 +459,7 @@ export default function ServicesPage() {
                 <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
                   #3 ACCESIBIL
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-zinc-900/10 dark:to-zinc-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="text-center mb-6">
                     <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -522,7 +522,7 @@ export default function ServicesPage() {
               </Card>
               <Card className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300 group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-zinc-900/30 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">🔧</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Mentenanță & Support</h3>

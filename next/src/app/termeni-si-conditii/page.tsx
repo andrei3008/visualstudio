@@ -38,7 +38,7 @@ export default function TermeniSiConditiiPage() {
               <FileText className="h-6 w-6 text-blue-600" />
               1. Introducere și Acceptare
             </h2>
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Acești termeni și condiții ("Termeni") guvernează utilizarea site-ului <strong>www.visualstudio.ro</strong>
                 și a serviciilor oferite de <strong>VISUAL STUDIO CONCEPT SRL</strong> ("noi", "compania" sau "Visual Studio").
@@ -176,7 +176,7 @@ export default function TermeniSiConditiiPage() {
               <Shield className="h-6 w-6 text-blue-600" />
               5. Proprietate Intelectuală
             </h2>
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
               <div className="space-y-4 text-blue-800 dark:text-blue-200">
                 <div>
                   <h4 className="font-semibold mb-2">Drepturile noastre:</h4>
@@ -237,7 +237,7 @@ export default function TermeniSiConditiiPage() {
               <Clock className="h-6 w-6 text-blue-600" />
               7. Termeni de Livrare și Acceptanță
             </h2>
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
               <div className="space-y-4 text-blue-800 dark:text-blue-200">
                 <div>
                   <h4 className="font-semibold mb-2">Estimări de timp:</h4>
@@ -427,7 +427,7 @@ export default function TermeniSiConditiiPage() {
               <Mail className="h-6 w-6 text-blue-600" />
               13. Contact
             </h2>
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-zinc-900/20 dark:to-zinc-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Pentru întrebări sau clarificări privind acești Termeni și Condiții, vă rugăm să ne contactați:
               </p>

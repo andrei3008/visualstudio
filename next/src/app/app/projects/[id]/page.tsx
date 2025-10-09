@@ -45,12 +45,12 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
   const tab = (searchParams?.tab as string) || 'tasks'
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-blue-50 dark:bg-gradient-to-br dark:from-slate-800 dark:via-slate-800 dark:to-slate-800">
+    <main className="min-h-screen bg-gradient-to-br from-zinc-50 via-zinc-50 to-zinc-50 dark:bg-gradient-to-br dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-900">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/10 dark:bg-blue-600/5 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-orange-400/10 dark:bg-orange-600/5 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-400/5 dark:bg-green-600/3 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-zinc-400/10 dark:bg-zinc-600/5 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-zinc-400/10 dark:bg-zinc-600/5 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-zinc-400/5 dark:bg-zinc-600/3 rounded-full blur-3xl animate-float"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -67,7 +67,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-green-600 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-400 dark:to-green-400">
                   {project.name}
                 </h1>
-                <Badge variant={String(project.status) === 'active' ? 'default' : 'secondary'} className={String(project.status) === 'active' ? 'bg-green-100 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-700' : 'bg-gray-100 text-gray-700 border-gray-300 dark:bg-slate-700 dark:text-gray-300 dark:border-slate-600'}>
+                <Badge variant={String(project.status) === 'active' ? 'default' : 'secondary'} className={String(project.status) === 'active' ? 'bg-green-100 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-700' : 'bg-gray-100 text-gray-700 border-gray-300 dark:bg-zinc-700 dark:text-gray-300 dark:border-zinc-600'}>
                   {String(project.status)}
                 </Badge>
               </div>
@@ -77,7 +77,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="border-gray-300 hover:border-blue-400 hover:bg-blue-50 dark:border-slate-600 dark:hover:border-blue-500 dark:hover:bg-slate-700 transform transition-all duration-300 hover:scale-105">
+            <Button variant="outline" size="sm" className="border-gray-300 hover:border-zinc-400 hover:bg-zinc-50 dark:border-zinc-600 dark:hover:border-zinc-500 dark:hover:bg-zinc-700 transform transition-all duration-300 hover:scale-105">
               <Link href="/app" className="flex items-center gap-2">
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -96,15 +96,15 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
 
         {/* Quick Stats */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-xl">
-                  <FolderOpen className="h-5 w-5 text-blue-600 dark:text-blue-300" />
+                <div className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-xl">
+                  <FolderOpen className="h-5 w-5 text-zinc-600 dark:text-zinc-300" />
                 </div>
                 <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-300">Task-uri</CardTitle>
               </div>
-              <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{tasks.length}</div>
+              <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors">{tasks.length}</div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
                 <div className="p-3 bg-green-100 dark:bg-green-900 rounded-xl">
@@ -136,7 +136,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
                 <div className="p-3 bg-orange-100 dark:bg-orange-900 rounded-xl">
@@ -156,7 +156,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
+          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex items-center gap-3">
                 <div className="p-3 bg-orange-100 dark:bg-orange-900 rounded-xl">
@@ -179,38 +179,38 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
 
         {/* Main Content */}
         <Tabs value={tab} className="w-full">
-          <TabsList className="grid w-full grid-cols-5 bg-gray-100 dark:bg-slate-700 p-1 rounded-lg border border-gray-200 dark:border-slate-700 mb-6">
+          <TabsList className="grid w-full grid-cols-5 bg-gray-100 dark:bg-zinc-700 p-1 rounded-lg border border-gray-200 dark:border-zinc-700 mb-6">
             <TabsTrigger
               value="tasks"
-              className="data-[state=active]:bg-white data-[state=active]:dark:bg-slate-800 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+              className="data-[state=active]:bg-white data-[state=active]:dark:bg-zinc-800 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
             >
               <FolderOpen className="h-4 w-4" />
               Tasks
             </TabsTrigger>
             <TabsTrigger
               value="milestones"
-              className="data-[state=active]:bg-white data-[state=active]:dark:bg-gray-900 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+              className="data-[state=active]:bg-white data-[state=active]:dark:bg-zinc-900 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
             >
               <CheckCircle className="h-4 w-4" />
               Milestones
             </TabsTrigger>
             <TabsTrigger
               value="proposals"
-              className="data-[state=active]:bg-white data-[state=active]:dark:bg-gray-900 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+              className="data-[state=active]:bg-white data-[state=active]:dark:bg-zinc-900 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
             >
               <FileText className="h-4 w-4" />
               Proposals
             </TabsTrigger>
             <TabsTrigger
               value="files"
-              className="data-[state=active]:bg-white data-[state=active]:dark:bg-gray-900 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+              className="data-[state=active]:bg-white data-[state=active]:dark:bg-zinc-900 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
             >
               <Clock className="h-4 w-4" />
               Fișiere
             </TabsTrigger>
             <TabsTrigger
               value="messages"
-              className="data-[state=active]:bg-white data-[state=active]:dark:bg-gray-900 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+              className="data-[state=active]:bg-white data-[state=active]:dark:bg-zinc-900 data-[state=active]:shadow-sm rounded-md transition-all duration-200 flex items-center gap-2 text-sm font-medium"
             >
               <MessageSquare className="h-4 w-4" />
               Mesaje
@@ -220,10 +220,10 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
           <TabsContent value="tasks" className="mt-6">
             <div className="grid gap-6 lg:grid-cols-3">
               {/* Tasks Form */}
-              <Card className="lg:col-span-1 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-gray-900 shadow-lg">
+              <Card className="lg:col-span-1 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-900 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-lg text-gray-900 dark:text-white flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    <Sparkles className="h-5 w-5 text-zinc-600 dark:text-zinc-400" />
                     Adaugă Task
                   </CardTitle>
                   <CardDescription className="text-gray-600 dark:text-gray-400">Creează un task nou pentru acest proiect</CardDescription>
@@ -234,7 +234,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
               </Card>
 
               {/* Tasks List */}
-              <Card className="lg:col-span-2 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-gray-900 shadow-lg">
+              <Card className="lg:col-span-2 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-900 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-lg text-gray-900 dark:text-white flex items-center gap-2">
                     <BarChart3 className="h-5 w-5 text-green-600 dark:text-green-400" />
@@ -247,8 +247,8 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
                 <CardContent>
                   {tasks.length === 0 ? (
                     <div className="text-center py-12">
-                      <div className="mx-auto h-16 w-16 bg-blue-100 dark:bg-blue-900 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
-                        <FolderOpen className="h-8 w-8 text-blue-600 dark:text-blue-300" />
+                      <div className="mx-auto h-16 w-16 bg-zinc-100 dark:bg-zinc-900 rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
+                        <FolderOpen className="h-8 w-8 text-zinc-600 dark:text-zinc-300" />
                       </div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Nu există task-uri încă</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -282,7 +282,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
           <TabsContent value="milestones" className="mt-6">
             <div className="grid gap-6 lg:grid-cols-3">
               {/* Milestones Form */}
-              <Card className="lg:col-span-1 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-gray-900 shadow-lg">
+              <Card className="lg:col-span-1 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-900 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-lg text-gray-900 dark:text-white flex items-center gap-2">
                     <Target className="h-5 w-5 text-green-600 dark:text-green-400" />
@@ -296,7 +296,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
               </Card>
 
               {/* Milestones List */}
-              <Card className="lg:col-span-2 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-gray-900 shadow-lg">
+              <Card className="lg:col-span-2 group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-900 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-lg text-gray-900 dark:text-white flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400" />
@@ -342,7 +342,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
           </TabsContent>
 
           <TabsContent value="proposals" className="mt-6">
-            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
+            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-lg text-gray-900 dark:text-white flex items-center gap-2">
                   <FileText className="h-5 w-5 text-orange-600 dark:text-orange-400" />
@@ -380,12 +380,12 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
                     {proposals.map((p: any) => {
                       const total = p.items.reduce((s: number, it: any) => s + it.qty * it.unitPriceCents, 0)
                       return (
-                        <li key={p.id} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 rounded-xl p-5 hover:-translate-y-1 dark:bg-slate-700">
+                        <li key={p.id} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-zinc-700 rounded-xl p-5 hover:-translate-y-1 dark:bg-zinc-700">
                           <div className="flex items-center justify-between">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-3">
                                 <h4 className="font-semibold text-gray-900 dark:text-white text-lg">{p.title}</h4>
-                                <Badge variant={p.status === 'approved' ? 'default' : p.status === 'submitted' ? 'secondary' : 'outline'} className={p.status === 'approved' ? 'bg-green-100 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-700' : p.status === 'submitted' ? 'bg-yellow-100 text-yellow-700 border-yellow-300 dark:bg-yellow-900 dark:text-yellow-300 dark:border-yellow-700' : 'bg-gray-100 text-gray-700 border-gray-300 dark:bg-slate-700 dark:text-gray-300 dark:border-slate-600'}>
+                                <Badge variant={p.status === 'approved' ? 'default' : p.status === 'submitted' ? 'secondary' : 'outline'} className={p.status === 'approved' ? 'bg-green-100 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-700' : p.status === 'submitted' ? 'bg-yellow-100 text-yellow-700 border-yellow-300 dark:bg-yellow-900 dark:text-yellow-300 dark:border-yellow-700' : 'bg-gray-100 text-gray-700 border-gray-300 dark:bg-zinc-700 dark:text-gray-300 dark:border-zinc-600'}>
                                   {String(p.status)}
                                 </Badge>
                               </div>
@@ -397,7 +397,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
                               <div className="font-semibold text-xl mb-2 text-gray-900 dark:text-white">
                                 {(total/100).toFixed(2)} EUR
                               </div>
-                              <Button asChild variant="outline" size="sm" className="border-gray-300 hover:border-blue-400 hover:bg-blue-50 dark:border-slate-600 dark:hover:border-blue-500 dark:hover:bg-slate-600 transform transition-all duration-300 hover:scale-105">
+                              <Button asChild variant="outline" size="sm" className="border-gray-300 hover:border-blue-400 hover:bg-blue-50 dark:border-zinc-600 dark:hover:border-zinc-500 dark:hover:bg-zinc-600 transform transition-all duration-300 hover:scale-105">
                                 <Link href={`/app/proposals/${p.id}`} className="flex items-center gap-1">
                                   Deschide
                                   <ArrowRight className="h-4 w-4" />
@@ -415,7 +415,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
           </TabsContent>
 
           <TabsContent value="messages" className="mt-6">
-            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
+            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-lg text-gray-900 dark:text-white flex items-center gap-2">
                   <MessageSquare className="h-5 w-5 text-orange-600 dark:text-orange-400" />
@@ -426,7 +426,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="mb-6 divide-y divide-gray-100 dark:divide-slate-700 rounded-lg max-h-96 overflow-y-auto">
+                <ul className="mb-6 divide-y divide-gray-100 dark:divide-zinc-700 rounded-lg max-h-96 overflow-y-auto">
                   {messages.length === 0 ? (
                     <li className="py-8 text-center">
                       <div className="h-16 w-16 bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-orange-900 dark:to-yellow-900 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse-slow">
@@ -436,7 +436,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
                     </li>
                   ) : (
                     messages.map((m: any) => (
-                      <li key={m.id} className="py-4 px-3 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors duration-150">
+                      <li key={m.id} className="py-4 px-3 hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors duration-150">
                         <div className="flex items-start justify-between mb-2">
                           <div className="flex items-center gap-2">
                             <span className="font-medium text-sm text-gray-900 dark:text-white">{m.author.email}</span>
@@ -453,7 +453,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
                   )}
                 </ul>
 
-                <div className="border-t border-gray-100 dark:border-slate-700 pt-4">
+                <div className="border-t border-gray-100 dark:border-zinc-700 pt-4">
                   <NewMessageForm projectId={project.id} />
                 </div>
               </CardContent>
@@ -461,7 +461,7 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
           </TabsContent>
 
           <TabsContent value="files" className="mt-6">
-            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-slate-800 shadow-lg">
+            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-lg text-gray-900 dark:text-white flex items-center gap-2">
                   <Clock className="h-5 w-5 text-blue-600 dark:text-blue-400" />

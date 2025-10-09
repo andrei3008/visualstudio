@@ -51,7 +51,7 @@ export default function TermsPage() {
               <FileText className="h-6 w-6 text-blue-600" />
               1. Introduction and Acceptance
             </h2>
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 These Terms and Conditions govern the use of the website <strong>www.visualstudio.ro</strong>
                 and the services provided by <strong>VISUAL STUDIO CONCEPT SRL</strong> ("we", "the company" or "Visual Studio").
@@ -139,7 +139,7 @@ export default function TermsPage() {
               <Shield className="h-6 w-6 text-blue-600" />
               4. Intellectual Property
             </h2>
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
               <div className="space-y-4 text-blue-800 dark:text-blue-200">
                 <div>
                   <h4 className="font-semibold mb-2">Our rights:</h4>
@@ -194,7 +194,7 @@ export default function TermsPage() {
               <Mail className="h-6 w-6 text-blue-600" />
               5. Contact
             </h2>
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-zinc-900/20 dark:to-zinc-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 For questions or clarifications regarding these Terms and Conditions, please contact us:
               </p>

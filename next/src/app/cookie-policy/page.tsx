@@ -29,7 +29,7 @@ export default function CookiePolicyPage() {
               <Cookie className="h-6 w-6 text-orange-600" />
               1. Ce sunt cookie-urile?
             </h2>
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Cookie-urile sunt fișiere text mici care sunt stocate pe dispozitivul dumneavoastră (computer, tabletă, telefon mobil)
                 atunci când vizitați un site web. Acestea conțin informații care sunt transferate către dispozitivul dumneavoastră
@@ -65,7 +65,7 @@ export default function CookiePolicyPage() {
                   <strong>Durată:</strong> Până la închiderea browser-ului
                 </p>
               </div>
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3 flex items-center gap-2">
                   <Eye className="h-5 w-5" />
                   Cookie-uri de Performanță
@@ -81,7 +81,7 @@ export default function CookiePolicyPage() {
                   <strong>Durată:</strong> 12 luni
                 </p>
               </div>
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3 flex items-center gap-2">
                   <Settings className="h-5 w-5" />
                   Cookie-uri Funcționale
@@ -276,7 +276,7 @@ export default function CookiePolicyPage() {
               <FileText className="h-6 w-6 text-orange-600" />
               7. Actualizări ale politicii
             </h2>
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Această politică poate fi actualizată periodic pentru a reflecta schimbări în legislație,
                 în serviciile noastre sau în practicile industriei.

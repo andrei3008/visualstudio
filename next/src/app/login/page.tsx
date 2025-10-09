@@ -54,12 +54,12 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-primary-50 via-accent-50/30 to-emerald-50 relative overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-br from-zinc-50 via-gray-50/30 to-slate-50 relative overflow-hidden dark:from-zinc-950 dark:via-zinc-900/30 dark:to-slate-950">
       {/* Vibrant Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-300/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-accent-300/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-300/15 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-zinc-300/20 rounded-full blur-3xl animate-pulse-slow dark:bg-zinc-700/20"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gray-300/20 rounded-full blur-3xl animate-pulse-slow dark:bg-gray-700/20" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-slate-300/15 rounded-full blur-3xl animate-float dark:bg-slate-700/15"></div>
       </div>
 
       {/* Floating Particles */}
@@ -67,7 +67,7 @@ export default function LoginPage() {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-primary-200/40 rounded-full animate-float"
+            className="absolute w-2 h-2 bg-zinc-200/40 rounded-full animate-float dark:bg-zinc-600/40"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -81,28 +81,28 @@ export default function LoginPage() {
       <div className="relative min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-md animate-fade-in">
           {/* Vibrant Card */}
-          <Card className="border-0 bg-white/95 backdrop-blur-sm shadow-xl border border-primary-100 transform transition-all duration-500 hover:scale-[1.02]">
+          <Card className="border-0 bg-white/95 backdrop-blur-sm shadow-xl border border-zinc-100 dark:bg-zinc-900/95 dark:border-zinc-800 transform transition-all duration-500 hover:scale-[1.02]">
             <CardHeader className="text-center pb-8">
               {/* Logo */}
               <div className="relative inline-flex items-center justify-center mb-6">
-                <div className="relative p-4 bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl border border-primary-200 shadow-lg">
-                  <Shield className="h-10 w-10 text-primary-600 animate-pulse-slow" />
+                <div className="relative p-4 bg-gradient-to-br from-zinc-100 to-gray-100 rounded-2xl border border-zinc-200 shadow-lg dark:from-zinc-800 dark:to-gray-800 dark:border-zinc-700">
+                  <Shield className="h-10 w-10 text-zinc-600 animate-pulse-slow dark:text-zinc-400" />
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-2">
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-                    <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                    <div className="w-2 h-2 bg-zinc-500 rounded-full animate-pulse dark:bg-zinc-400"></div>
+                    <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse dark:bg-gray-400" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-2 h-2 bg-slate-500 rounded-full animate-pulse dark:bg-slate-400" style={{animationDelay: '0.4s'}}></div>
                   </div>
                   <h1 className="text-3xl font-bold bg-blue-600 bg-clip-text text-transparent">
                     Autentificare
                   </h1>
                 </div>
 
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-600 text-center dark:text-gray-400">
                   Accesează platforma noastră de dezvoltare 2025
                 </p>
               </div>
@@ -112,7 +112,7 @@ export default function LoginPage() {
               <form onSubmit={onSubmit} className="space-y-6">
                 {/* Email Input */}
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium text-white/90 flex items-center gap-2">
+                  <Label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -126,14 +126,14 @@ export default function LoginPage() {
                     disabled={loading}
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:border-blue-400 focus:ring-blue-400 backdrop-blur-sm"
+                    className="border border-zinc-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-zinc-400 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:text-gray-100 dark:placeholder:text-gray-500 dark:focus:border-zinc-400"
                     placeholder="exemplu@companie.ro"
                   />
                 </div>
 
                 {/* Password Input */}
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium text-white/90 flex items-center gap-2">
+                  <Label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
                     <Shield className="h-4 w-4" />
                     Parolă
                   </Label>
@@ -146,13 +146,13 @@ export default function LoginPage() {
                       disabled={loading}
                       value={formData.password}
                       onChange={handleInputChange}
-                      className="border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:border-blue-400 focus:ring-blue-400 backdrop-blur-sm pr-10"
+                      className="border border-zinc-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-zinc-400 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:text-gray-100 dark:placeholder:text-gray-500 dark:focus:border-zinc-400 pr-10"
                       placeholder="••••••••"
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-white/60 hover:text-white transition-colors"
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-gray-200"
                     >
                       {showPassword ? (
                         <EyeOff className="h-4 w-4" />
@@ -185,10 +185,10 @@ export default function LoginPage() {
 
                 {/* Registration Link */}
                 <div className="text-center">
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Nu ai cont?{' '}
                     <Link
-                      className="text-blue-300 hover:text-white font-medium transition-colors flex items-center gap-1 inline-block"
+                      className="text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1 inline-block dark:text-blue-400 dark:hover:text-blue-300"
                       href="/register"
                     >
                       <Sparkles className="h-3 w-3" />
@@ -202,9 +202,9 @@ export default function LoginPage() {
 
           {/* Decorative Elements */}
           <div className="mt-8 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-xs text-white/70">Securitate Enterprise</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 dark:bg-zinc-800/20 dark:border-zinc-700">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse dark:bg-green-500"></div>
+              <span className="text-xs text-gray-700 dark:text-gray-400">Securitate Enterprise</span>
             </div>
           </div>
         </div>

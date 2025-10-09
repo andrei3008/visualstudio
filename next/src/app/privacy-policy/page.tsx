@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
               3. Ce date cu caracter personal colectăm
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3">Date pe care ni le furnizați direct</h3>
                 <ul className="space-y-2 text-blue-800 dark:text-blue-200">
                   <li>• Nume și prenume</li>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
                   <li>• Documente încărcate (CV, specificații proiect)</li>
                 </ul>
               </div>
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3">Date colectate automat</h3>
                 <ul className="space-y-2 text-blue-800 dark:text-blue-200">
                   <li>• Adresă IP</li>
@@ -200,7 +200,7 @@ export default function PrivacyPolicyPage() {
                   Nu vindem, nu închiriem și nu comercializăm datele dumneavoastră personale către terți.
                 </p>
               </div>
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-3">Partajare controlată</h3>
                 <p className="text-blue-800 dark:text-blue-200">
                   Partajăm datele doar cu furnizori de servicii care ne ajută să operăm afacerea,
@@ -320,7 +320,7 @@ export default function PrivacyPolicyPage() {
               <Globe className="h-6 w-6 text-green-600" />
               10. Utilizarea cookie-urilor
             </h2>
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <div className="bg-blue-50 dark:bg-zinc-900/20 rounded-lg p-6">
               <p className="text-blue-800 dark:text-blue-200 mb-4">
                 Site-ul nostru utilizează cookie-uri pentru a vă oferi cea mai bună experiență. Cookie-urile sunt fișiere mici
                 care sunt stocate pe dispozitivul dumneavoastră și care ne ajută să:

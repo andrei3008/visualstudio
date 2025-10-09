@@ -94,17 +94,17 @@ export default function PricingPage() {
   
       {/* Header Section */}
       <section className="py-20 bg-white dark:bg-background relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-zinc-950/20 dark:to-background"></div>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-zinc-900/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="relative max-w-[90vw] md:max-w-full mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded-full mb-6 animate-pulse">
-              <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Pachete de Servicii</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-zinc-950/50 border border-blue-200 dark:border-zinc-800 rounded-full mb-6 animate-pulse">
+              <Sparkles className="h-4 w-4 text-blue-600 dark:text-zinc-400" />
+              <span className="text-sm font-medium text-blue-700 dark:text-zinc-300">Pachete de Servicii</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
@@ -228,7 +228,7 @@ export default function PricingPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-12 text-center">
+          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-zinc-900/20 dark:to-zinc-900/20 rounded-2xl p-12 text-center">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Nu ești sigur ce pachet să alegi?</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
               Contactează-ne pentru o consultanță gratuită și îți vom recomanda cea mai bună soluție pentru afacerea ta.

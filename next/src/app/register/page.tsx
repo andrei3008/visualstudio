@@ -54,12 +54,12 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-primary-50/30 to-accent-50 relative overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-br from-zinc-50 via-gray-50/30 to-slate-50 relative overflow-hidden dark:from-zinc-950 dark:via-zinc-900/30 dark:to-slate-950">
       {/* Vibrant Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-300/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary-300/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent-300/15 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-zinc-300/20 rounded-full blur-3xl animate-pulse-slow dark:bg-zinc-700/20"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gray-300/20 rounded-full blur-3xl animate-pulse-slow dark:bg-gray-700/20" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-slate-300/15 rounded-full blur-3xl animate-float dark:bg-slate-700/15"></div>
       </div>
 
       {/* Floating Particles */}
@@ -67,7 +67,7 @@ export default function RegisterPage() {
         {[...Array(25)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-emerald-200/40 rounded-full animate-float"
+            className="absolute w-2 h-2 bg-zinc-200/40 rounded-full animate-float dark:bg-zinc-600/40"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -81,28 +81,28 @@ export default function RegisterPage() {
       <div className="relative min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-md animate-fade-in">
           {/* Soft Card */}
-          <Card className="border-0 bg-white/90 backdrop-blur-sm shadow-xl border border-gray-200 transform transition-all duration-500 hover:scale-[1.02]">
+          <Card className="border-0 bg-white/90 backdrop-blur-sm shadow-xl border border-zinc-200 dark:bg-zinc-900/95 dark:border-zinc-800 transform transition-all duration-500 hover:scale-[1.02]">
             <CardHeader className="text-center pb-8">
               {/* Logo */}
               <div className="relative inline-flex items-center justify-center mb-6">
-                <div className="relative p-4 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl border border-gray-300 shadow-lg">
-                  <UserPlus className="h-10 w-10 text-gray-600 animate-pulse-slow" />
+                <div className="relative p-4 bg-gradient-to-br from-zinc-100 to-gray-100 rounded-2xl border border-zinc-200 shadow-lg dark:from-zinc-800 dark:to-gray-800 dark:border-zinc-700">
+                  <UserPlus className="h-10 w-10 text-zinc-600 animate-pulse-slow dark:text-zinc-400" />
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-2">
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
-                    <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                    <div className="w-2 h-2 bg-zinc-600 rounded-full animate-pulse dark:bg-zinc-400"></div>
+                    <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse dark:bg-gray-400" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-2 h-2 bg-slate-600 rounded-full animate-pulse dark:bg-slate-400" style={{animationDelay: '0.4s'}}></div>
                   </div>
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+                  <h1 className="text-3xl font-bold bg-gradient-to-r from-zinc-700 to-zinc-900 bg-clip-text text-transparent dark:from-zinc-400 dark:to-zinc-200">
                     Înregistrare
                   </h1>
                 </div>
 
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-600 text-center dark:text-gray-400">
                   Alătură-te platformei noastre de dezvoltare 2025
                 </p>
               </div>
@@ -112,7 +112,7 @@ export default function RegisterPage() {
               <form onSubmit={onSubmit} className="space-y-6">
                 {/* Name Input */}
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium text-white/90 flex items-center gap-2">
+                  <Label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
                     <UserPlus className="h-4 w-4" />
                     Nume complet
                   </Label>
@@ -122,14 +122,14 @@ export default function RegisterPage() {
                     disabled={loading}
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:border-blue-400 focus:ring-blue-400 backdrop-blur-sm"
+                    className="border border-zinc-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-zinc-400 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:text-gray-100 dark:placeholder:text-gray-500 dark:focus:border-zinc-400"
                     placeholder="Nume complet"
                   />
                 </div>
 
                 {/* Email Input */}
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium text-white/90 flex items-center gap-2">
+                  <Label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -143,14 +143,14 @@ export default function RegisterPage() {
                     disabled={loading}
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:border-blue-400 focus:ring-blue-400 backdrop-blur-sm"
+                    className="border border-zinc-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-zinc-400 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:text-gray-100 dark:placeholder:text-gray-500 dark:focus:border-zinc-400"
                     placeholder="exemplu@companie.ro"
                   />
                 </div>
 
                 {/* Password Input */}
                 <div className="space-y-3">
-                  <Label className="text-sm font-medium text-white/90 flex items-center gap-2">
+                  <Label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
                     <Shield className="h-4 w-4" />
                     Parolă
                   </Label>
@@ -163,13 +163,13 @@ export default function RegisterPage() {
                       disabled={loading}
                       value={formData.password}
                       onChange={handleInputChange}
-                      className="border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:border-blue-400 focus:ring-blue-400 backdrop-blur-sm pr-10"
+                      className="border border-zinc-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-zinc-400 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:text-gray-100 dark:placeholder:text-gray-500 dark:focus:border-zinc-400 pr-10"
                       placeholder="••••••••"
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-white/60 hover:text-white transition-colors"
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700 transition-colors dark:text-gray-400 dark:hover:text-gray-200"
                     >
                       {showPassword ? (
                         <EyeOff className="h-4 w-4" />
@@ -178,7 +178,7 @@ export default function RegisterPage() {
                       )}
                     </button>
                   </div>
-                  <p className="text-xs text-white/70">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     Parola trebuie să conțină cel puțin 8 caractere
                   </p>
                 </div>
@@ -189,10 +189,10 @@ export default function RegisterPage() {
                     type="checkbox"
                     id="terms"
                     required
-                    className="w-4 h-4 border border-white/20 rounded text-blue-600 bg-white/10 focus:ring-blue-500 focus:border-blue-500 backdrop-blur-sm"
+                    className="w-4 h-4 border border-zinc-300 rounded text-blue-600 bg-white focus:ring-blue-500 focus:border-blue-500 dark:border-zinc-600 dark:bg-zinc-800 dark:focus:ring-blue-400 dark:focus:border-blue-400"
                   />
-                  <Label htmlFor="terms" className="text-sm text-white/80 leading-relaxed">
-                    Accept <span className="text-blue-300 font-medium">termenii și condițiile</span> și <span className="text-blue-300 font-medium">politica de confidențialitate</span>
+                  <Label htmlFor="terms" className="text-sm text-gray-700 leading-relaxed dark:text-gray-300">
+                    Accept <span className="text-blue-600 font-medium dark:text-blue-400">termenii și condițiile</span> și <span className="text-blue-600 font-medium dark:text-blue-400">politica de confidențialitate</span>
                   </Label>
                 </div>
 
@@ -200,11 +200,11 @@ export default function RegisterPage() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 relative overflow-hidden group"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 relative overflow-hidden group"
                 >
                   {loading ? (
                     <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-gray-300 border-t-gray-300 rounded-full animate-spin"></div>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                       Se creează cont...
                     </div>
                   ) : (
@@ -213,15 +213,15 @@ export default function RegisterPage() {
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-blue-600 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
                 </Button>
 
                 {/* Login Link */}
                 <div className="text-center">
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Ai deja cont?{' '}
                     <Link
-                      className="text-blue-300 hover:text-white font-medium transition-colors flex items-center gap-1 inline-block"
+                      className="text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1 inline-block dark:text-blue-400 dark:hover:text-blue-300"
                       href="/login"
                     >
                       <Sparkles className="h-3 w-3" />
@@ -235,10 +235,10 @@ export default function RegisterPage() {
 
           {/* Security Badge */}
           <div className="mt-8 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 dark:bg-zinc-800/20 dark:border-zinc-700">
               <Shield className="h-3 w-3 text-green-400" />
               <CheckCircle className="h-3 w-3 text-green-400" />
-              <span className="text-xs text-white/70">Securitate Enterprise & GDPR Compliant</span>
+              <span className="text-xs text-gray-700 dark:text-gray-400">Securitate Enterprise & GDPR Compliant</span>
             </div>
           </div>
 
@@ -249,7 +249,7 @@ export default function RegisterPage() {
               { icon: CheckCircle, text: 'Colaborare în timp real' },
               { icon: CheckCircle, text: 'Suport tehnic 24/7' }
             ].map((feature, index) => (
-              <div key={index} className="flex items-center gap-2 text-xs text-white/60">
+              <div key={index} className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
                 <feature.icon className="h-3 w-3 text-green-400" />
                 <span>{feature.text}</span>
               </div>
