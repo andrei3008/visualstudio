@@ -34,16 +34,21 @@ import {
 } from 'lucide-react'
 
 export default function ServicesPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all')
+  const [selectedCategory, setSelectedCategory] = useState<string>('popular')
   const [selectedService, setSelectedService] = useState<string | null>(null)
 
   const categories = [
-    { id: 'all', name: 'Toate Serviciile', icon: '🎯', description: 'Vezi toate serviciile noastre' },
     { id: 'popular', name: 'Populare', icon: '🔥', description: 'Cele mai căutate servicii' },
     { id: 'ecommerce', name: 'E-Commerce', icon: '🛒', description: 'Magazine online complete' },
     { id: 'education', name: 'Educație', icon: '🎓', description: 'Platforme de cursuri și training' },
+    { id: 'mobile', name: 'Mobile', icon: '📱', description: 'Aplicații iOS și Android' },
     { id: 'business', name: 'Business', icon: '💼', description: 'Soluții pentru companii' },
-    { id: 'mobile', name: 'Mobile', icon: '📱', description: 'Aplicații iOS și Android' }
+    { id: 'healthcare', name: 'Sănătate', icon: '🏥', description: 'Platforme medicale și clinici' },
+    { id: 'banking', name: 'Bancar', icon: '🏦', description: 'Sisteme bancare și fintech' },
+    { id: 'manufacturing', name: 'Producție', icon: '⚙️', description: 'Sisteme de producție și fabrici' },
+    { id: 'retail', name: 'Retail', icon: '🛍️', description: 'Sisteme POS și management magazine' },
+    { id: 'legal', name: 'Legal', icon: '⚖️', description: 'Management cazuri legale și documente' },
+    { id: 'insurance', name: 'Asigurări', icon: '🛡️', description: 'Platforme de asigurări și management polițe' }
   ]
 
   const processSteps = [
@@ -104,6 +109,7 @@ export default function ServicesPage() {
   ]
 
   const services = [
+    // E-COMMERCE CATEGORY
     {
       id: 'ecommerce-full',
       category: 'ecommerce',
@@ -115,25 +121,99 @@ export default function ServicesPage() {
       badge: '#1 CEL MAI VÂNDUT',
       icon: '🛒',
       color: 'orange',
-      features: [
-        'Design responsive și modern',
-        'Management produse și categorii',
-        'Integrare plăți (Stripe, Pos România)',
-        'Management stocuri în timp real',
-        'Sistem de discount-uri și promoții',
-        'Integrare curieri (Fan Courier, DPD)',
-        'Dashboard analytics și rapoarte',
-        'SEO optimizare',
-        'Blog integrat',
-        'Sistem review-uri produse',
-        'Multi-language support',
-        'Ghid utilizare și training'
-      ],
+      features: ['Design responsive și modern', 'Management produse și categorii', 'Integrare plăți (Stripe, Pos România)', 'Management stocuri în timp real', 'Sistem discount-uri și promoții', 'Integrare curieri (Fan Courier, DPD)', 'Dashboard analytics și rapoarte', 'SEO optimizare', 'Blog integrat', 'Sistem review-uri produse', 'Multi-language support', 'Ghid utilizare și training'],
       technologies: ['React + Node.js + PostgreSQL', 'Vue.js + PHP + MySQL', 'Next.js + Python + Django + MongoDB'],
       perfectFor: 'Afaceri mici, antreprenori, produse fizice/digitale',
       support: '6 luni suport tehnic inclus',
       includes: ['Hosting 1 an', 'Domeniu .ro 1 an', 'SSL certificate', 'Email business']
     },
+    {
+      id: 'marketplace-platform',
+      category: 'ecommerce',
+      title: 'Platformă Marketplace Multi-vendor',
+      description: 'Marketplace complet cu sistem multi-vendor, comisioane automate și management vânzători',
+      price: '4.000 - 8.000',
+      duration: '4-6 săptămâni',
+      popular: false,
+      badge: 'SCALABLE',
+      icon: '🏪',
+      color: 'orange',
+      features: ['Multi-vendor management', 'Sistem comisioane automatizat', 'Dashboard vânzători', 'Rating și review sistem', 'Dispute resolution', 'Payout automation', 'Vendor analytics', 'Inventory management', 'Shipping calculation', 'Tax management', 'Vendor verification', 'Mobile app for vendors'],
+      technologies: ['React + Node.js + PostgreSQL', 'Next.js + Python + Django', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Platforme marketplace, agregatori produse, afaceri B2B',
+      support: '12 luni suport tehnic inclus',
+      includes: ['Multi-vendor dashboard', 'Automated payment system', 'Vendor analytics']
+    },
+    {
+      id: 'subscription-box',
+      category: 'ecommerce',
+      title: 'Platformă Abonamente Box',
+      description: 'Sistem complet pentru servicii de abonamente recurente cu personalizare și management automatizat',
+      price: '2.500 - 5.000',
+      duration: '3-4 săptămâni',
+      popular: false,
+      badge: 'RECURRING',
+      icon: '📦',
+      color: 'orange',
+      features: ['Subscription management', 'Customizable box builder', 'Recurring payments', 'Customer preferences', 'Inventory tracking', 'Shipping automation', 'Pause/cancel options', 'Analytics dashboard', 'Email notifications', 'Gift subscriptions', 'Mobile app', 'Loyalty program'],
+      technologies: ['React + Node.js + MongoDB', 'Vue.js + Python + FastAPI', 'Next.js + PostgreSQL'],
+      perfectFor: 'Servicii de abonamente, gift boxes, produse recurente',
+      support: '9 luni suport tehnic inclus',
+      includes: ['Recurring payment setup', 'Inventory management system', 'Customer analytics']
+    },
+    {
+      id: 'dropshipping-automation',
+      category: 'ecommerce',
+      title: 'Automatizare Dropshipping',
+      description: 'Platformă dropshipping completă cu integrare automatizată supplieri și management comenzi',
+      price: '2.000 - 4.000',
+      duration: '2-4 săptămâni',
+      popular: false,
+      badge: 'AUTOMATED',
+      icon: '🚚',
+      color: 'orange',
+      features: ['Supplier integration API', 'Automated product sync', 'Price and stock updates', 'Order routing', 'Multi-supplier support', 'Profit calculator', 'Dashboard analytics', 'Auto-order placement', 'Tracking automation', 'Inventory monitoring', 'Customer notifications', 'Mobile app'],
+      technologies: ['React + Python + Django', 'Vue.js + Node.js + Express', 'Next.js + PHP + Symfony'],
+      perfectFor: 'Afaceri dropshipping, marketplace automation, e-commerce scalabil',
+      support: '6 luni suport tehnic inclus',
+      includes: ['Supplier API integration', 'Automated order system', 'Inventory sync']
+    },
+    {
+      id: 'b2b-ecommerce',
+      category: 'ecommerce',
+      title: 'Platformă B2B E-Commerce',
+      description: 'Soluție e-commerce dedicată afacerilor B2B cu gestionare conturi corporate și prețuri personalizate',
+      price: '3.500 - 7.000',
+      duration: '4-5 săptămâni',
+      popular: false,
+      badge: 'BUSINESS',
+      icon: '🏭',
+      color: 'orange',
+      features: ['Corporate account management', 'Tiered pricing system', 'Bulk ordering', 'Purchase order management', 'Credit system', 'Account-specific catalogs', 'Approval workflows', 'Volume discounts', 'Tax exemption handling', 'Account manager dashboard', 'Invoice management', 'Integration with ERP'],
+      technologies: ['Angular + Node.js + PostgreSQL', 'React + Python + Django', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Afaceri B2B, distribuitori, producători, wholesale',
+      support: '12 luni suport tehnic inclus',
+      includes: ['Corporate account setup', 'Custom pricing engine', 'ERP integration']
+    },
+    {
+      id: 'digital-products',
+      category: 'ecommerce',
+      title: 'Platformă Produse Digitale',
+      description: 'Marketplace pentru produse digitale cu licențe automatizate și delivery instant',
+      price: '1.800 - 3.500',
+      duration: '2-3 săptămâni',
+      popular: false,
+      badge: 'DIGITAL',
+      icon: '💾',
+      color: 'orange',
+      features: ['Digital product delivery', 'License key generation', 'Download management', 'Customer accounts', 'Version control', 'Update notifications', 'Multi-format support', 'Secure delivery', 'License tracking', 'Customer dashboard', 'Analytics dashboard', 'API integration'],
+      technologies: ['React + Node.js + MongoDB', 'Next.js + Python + FastAPI', 'Vue.js + PHP + Symfony'],
+      perfectFor: 'Software, templates, digital assets, online courses',
+      support: '6 luni suport tehnic inclus',
+      includes: ['Digital delivery system', 'License management', 'Update infrastructure']
+    },
+
+    // EDUCATION CATEGORY
     {
       id: 'online-courses',
       category: 'education',
@@ -145,55 +225,99 @@ export default function ServicesPage() {
       badge: '#2 POPULAR',
       icon: '🎓',
       color: 'blue',
-      features: [
-        'Management cursuri și module',
-        'Video hosting și streaming',
-        'Sistem quiz-uri și evaluări',
-        'Generare certificate automate',
-        'Dashboard instructor',
-        'Management studenți',
-        'Integrare plăți recurente',
-        'Community și forum',
-        'Progress tracking',
-        'Mobile responsive',
-        'Live streaming support',
-        'Analytics și rapoarte detaliate'
-      ],
+      features: ['Management cursuri și module', 'Video hosting și streaming', 'Sistem quiz-uri și evaluări', 'Generare certificate automate', 'Dashboard instructor', 'Management studenți', 'Integrare plăți recurente', 'Community și forum', 'Progress tracking', 'Mobile responsive', 'Live streaming support', 'Analytics și rapoarte detaliate'],
       technologies: ['React + Node.js + Express', 'Vue.js + PHP + Laravel', 'Next.js + Python + Django + FastAPI'],
       perfectFor: 'Instructori, academii, formatori, experți',
       support: '12 luni suport tehnic inclus',
       includes: ['Video hosting 100GB', 'Email marketing', 'Webinar integration']
     },
     {
-      id: 'professional-site',
-      category: 'all',
-      title: 'Site Prezentare Profesional',
-      description: 'Site corporate modern optimizat pentru conversii și branding profesional',
-      price: '1.000 - 2.500',
-      duration: '1-2 săptămâni',
-      popular: true,
-      badge: '#3 ACCESIBIL',
-      icon: '🏢',
-      color: 'emerald',
-      features: [
-        'Design modern și profesional',
-        'Optimizat pentru conversii',
-        'Formular contact avansat',
-        'Integrare social media',
-        'Blog cu CMS',
-        'Google Analytics',
-        'SEO on-page optimizare',
-        'Galerie foto/video',
-        'Testimoniale section',
-        'FAQ section',
-        'Chat integration',
-        'Performance optimizare'
-      ],
-      technologies: ['React + Next.js + TypeScript', 'Vue.js + Nuxt.js + Python', 'Angular + Node.js + PostgreSQL'],
-      perfectFor: 'Companii, freelanceri, consultanți, servicii profesionale',
-      support: '3 luni suport tehnic inclus',
-      includes: ['Performance monitoring', 'Security updates', 'Monthly backups']
+      id: 'virtual-classroom',
+      category: 'education',
+      title: 'Sală de Clasă Virtuală',
+      description: 'Platformă interactivă pentru clase online cu video conferințe, whiteboard și colaborare real-time',
+      price: '3.000 - 6.000',
+      duration: '4-6 săptămâni',
+      popular: false,
+      badge: 'INTERACTIVE',
+      icon: '📺',
+      color: 'blue',
+      features: ['Video conferencing HD', 'Interactive whiteboard', 'Screen sharing', 'Breakout rooms', 'Chat și messaging', 'File sharing', 'Recording capabilities', 'Polls și quizzes', 'Attendance tracking', 'Hand raising system', 'Multi-language support', 'Mobile app'],
+      technologies: ['WebRTC + Node.js + React', 'Next.js + Python + Django', 'Vue.js + PHP + Symfony'],
+      perfectFor: 'Școli, universități, training corporate, tutoring',
+      support: '12 luni suport tehnic inclus',
+      includes: ['Video streaming infrastructure', 'Recording storage', 'Real-time collaboration tools']
     },
+    {
+      id: 'lms-corporate',
+      category: 'education',
+      title: 'LMS Corporate Training',
+      description: 'Platformă de training corporate cu management angajați, certificări și rapoarte de performanță',
+      price: '4.000 - 8.000',
+      duration: '5-7 săptămâni',
+      popular: false,
+      badge: 'CORPORATE',
+      icon: '👔',
+      color: 'blue',
+      features: ['Employee management', 'Training pathways', 'Compliance tracking', 'Certificate management', 'Performance analytics', 'Manager dashboards', 'Automated enrollments', 'Mobile learning', 'Gamification elements', 'Integration with HR systems', 'Custom reporting', 'Multi-tenant support'],
+      technologies: ['Angular + Node.js + PostgreSQL', 'React + Python + Django', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Corporate training, HR departments, compliance training',
+      support: '18 luni suport tehnic inclus',
+      includes: ['HR system integration', 'Compliance tracking', 'Corporate branding']
+    },
+    {
+      id: 'language-learning',
+      category: 'education',
+      title: 'Platformă Limbi Străine',
+      description: 'Sistem interactiv de învățare a limbilor străine cu exerciții audio, video și gamification',
+      price: '3.500 - 6.500',
+      duration: '4-6 săptămâni',
+      popular: false,
+      badge: 'LANGUAGE',
+      icon: '🗣️',
+      color: 'blue',
+      features: ['Interactive lessons', 'Speech recognition', 'Grammar exercises', 'Vocabulary builder', 'Progress tracking', 'Native speaker recordings', 'Cultural content', 'Gamification system', 'Social learning', 'AI-powered corrections', 'Offline mode', 'Mobile app'],
+      technologies: ['React + Python + TensorFlow', 'Next.js + Node.js + MongoDB', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Școli de limbi, aplicații mobile, educație online',
+      support: '12 luni suport tehnic inclus',
+      includes: ['AI speech recognition', 'Content management system', 'Mobile apps']
+    },
+    {
+      id: 'assessment-platform',
+      category: 'education',
+      title: 'Platformă Evaluări și Teste',
+      description: 'Sistem avansat pentru crearea și administrarea de teste online cu anti-cheating și analytics',
+      price: '2.500 - 5.000',
+      duration: '3-5 săptămâni',
+      popular: false,
+      badge: 'ASSESSMENT',
+      icon: '📝',
+      color: 'blue',
+      features: ['Advanced test builder', 'Multiple question types', 'Time-limited tests', 'Anti-cheating measures', 'Automated grading', 'Detailed analytics', 'Randomized questions', 'Proctoring integration', 'Certificate generation', 'Bulk upload', 'Result statistics', 'Mobile support'],
+      technologies: ['React + Node.js + PostgreSQL', 'Angular + Python + Django', 'Vue.js + PHP + Symfony'],
+      perfectFor: 'Instituții educaționale, centre de evaluare, HR departments',
+      support: '9 luni suport tehnic inclus',
+      includes: ['Anti-cheating system', 'Advanced analytics', 'Proctoring integration']
+    },
+    {
+      id: 'tutoring-platform',
+      category: 'education',
+      title: 'Platformă Meditații Online',
+      description: 'Marketplace pentru meditații individuale cu scheduling, payments și video calling integrat',
+      price: '3.000 - 5.500',
+      duration: '4-5 săptămâni',
+      popular: false,
+      badge: 'TUTORING',
+      icon: '👨‍🏫',
+      color: 'blue',
+      features: ['Tutor profiles', 'Advanced search filters', 'Booking system', 'Video calling integration', 'Payment processing', 'Calendar synchronization', 'Session recordings', 'Review și rating system', 'Parent accounts', 'Progress tracking', 'Mobile apps', 'Commission management'],
+      technologies: ['React + Node.js + WebRTC', 'Next.js + Python + Django', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Centre de meditații, platforme educationale, tutori independenți',
+      support: '12 luni suport tehnic inclus',
+      includes: ['Video calling infrastructure', 'Payment gateway integration', 'Mobile applications']
+    },
+
+    // MOBILE CATEGORY
     {
       id: 'mobile-app',
       category: 'mobile',
@@ -201,29 +325,103 @@ export default function ServicesPage() {
       description: 'Aplicație iOS și Android nativă cu performanță maximă și UX excepțional',
       price: '3.000 - 8.000',
       duration: '4-8 săptămâni',
-      popular: false,
+      popular: true,
       badge: 'PREMIUM',
       icon: '📱',
       color: 'purple',
-      features: [
-        'Dezvoltare nativă iOS (Swift)',
-        'Dezvoltare nativă Android (Kotlin)',
-        'Design UI/UX modern',
-        'Integrare API backend',
-        'Push notifications',
-        'Offline functionality',
-        'Real-time sync',
-        'Social media integration',
-        'Payment integration',
-        'Analytics tracking',
-        'App Store optimization',
-        'Beta testing'
-      ],
+      features: ['Dezvoltare nativă iOS (Swift)', 'Dezvoltare nativă Android (Kotlin)', 'Design UI/UX modern', 'Integrare API backend', 'Push notifications', 'Offline functionality', 'Real-time sync', 'Social media integration', 'Payment integration', 'Analytics tracking', 'App Store optimization', 'Beta testing'],
       technologies: ['Swift iOS + SwiftUI', 'Kotlin Android + Jetpack Compose', 'React Native + Expo'],
       perfectFor: 'Startup-uri, afaceri cu prezență mobile, servicii on-demand',
       support: '12 luni suport tehnic inclus',
       includes: ['App Store accounts setup', 'Beta testing platform', 'Crash analytics']
     },
+    {
+      id: 'food-delivery-app',
+      category: 'mobile',
+      title: 'Aplicație Food Delivery',
+      description: 'Platformă completă pentru livrare mâncare cu apps pentru clienți, restaurant și curieri',
+      price: '4.000 - 7.000',
+      duration: '6-8 săptămâni',
+      popular: false,
+      badge: 'DELIVERY',
+      icon: '🍕',
+      color: 'purple',
+      features: ['Customer app (iOS/Android)', 'Restaurant dashboard', 'Courier driver app', 'Real-time tracking', 'Order management', 'Payment integration', 'Rating system', 'Push notifications', 'Delivery scheduling', 'Menu management', 'Analytics dashboard', 'Multi-language support'],
+      technologies: ['React Native + Node.js', 'Swift iOS + Kotlin Android', 'Next.js + Python + MongoDB'],
+      perfectFor: 'Restaurante, servicii de livrare, platforme food delivery',
+      support: '12 luni suport tehnic inclus',
+      includes: ['3 native apps', 'Real-time tracking system', 'Admin dashboard']
+    },
+    {
+      id: 'fitness-wellness',
+      category: 'mobile',
+      title: 'Aplicație Fitness & Wellness',
+      description: 'Aplicație completă pentru fitness cu workout-uri, nutrition tracking și comunitate',
+      price: '3.500 - 6.500',
+      duration: '5-7 săptămâni',
+      popular: false,
+      badge: 'FITNESS',
+      icon: '💪',
+      color: 'purple',
+      features: ['Workout library', 'Exercise videos', 'Nutrition tracking', 'Progress analytics', 'Social features', 'Personalized plans', 'Wearable integration', 'Offline workouts', 'Challenges și gamification', 'Trainer profiles', 'Community forums', 'Premium subscription'],
+      technologies: ['React Native + Python + TensorFlow', 'Swift iOS + Kotlin Android', 'Node.js + MongoDB'],
+      perfectFor: 'Gym-uri, traineri personali, aplicații wellness',
+      support: '12 luni suport tehnic inclus',
+      includes: ['Video content delivery', 'Wearable device integration', 'Personalized AI recommendations']
+    },
+    {
+      id: 'banking-fintech',
+      category: 'mobile',
+      title: 'Aplicație Banking Fintech',
+      description: 'Aplicație bancară mobilă securizată cu transferuri, plăți și management conturi',
+      price: '8.000 - 15.000',
+      duration: '8-12 săptămâni',
+      popular: false,
+      badge: 'FINTECH',
+      icon: '🏦',
+      color: 'purple',
+      features: ['Secure authentication', 'Account management', 'Money transfers', 'Bill payments', 'Card management', 'Transaction history', 'Budget tracking', 'Investment portfolio', 'Mobile check deposit', 'Biometric security', 'Multi-currency support', 'AI-powered insights'],
+      technologies: ['Swift iOS + Kotlin Android + Native Security', 'Node.js + PostgreSQL + Blockchain', 'Python + Machine Learning'],
+      perfectFor: 'Bănci, fintech startups, servicii financiare',
+      support: '24 luni suport tehnic inclus',
+      includes: ['Security audit', 'Regulatory compliance', '24/7 monitoring']
+    },
+    {
+      id: 'healthcare-app',
+      category: 'mobile',
+      title: 'Aplicație Medicală',
+      description: 'Platformă medicală mobilă cu telemedicine, programări și management fișe pacienți',
+      price: '5.000 - 10.000',
+      duration: '6-10 săptămâni',
+      popular: false,
+      badge: 'HEALTHCARE',
+      icon: '🏥',
+      color: 'purple',
+      features: ['Video consultations', 'Appointment scheduling', 'Electronic health records', 'Prescription management', 'Medication reminders', 'Health tracking', 'Emergency contacts', 'Doctor-patient messaging', 'Lab results integration', 'Secure data storage', 'HIPAA compliance', 'Wearable device sync'],
+      technologies: ['React Native + WebRTC + HIPAA Security', 'Swift iOS + Kotlin Android', 'Python + Django + PostgreSQL'],
+      perfectFor: 'Clinici medicale, spitale, telemedicine services',
+      support: '18 luni suport tehnic inclus',
+      includes: ['HIPAA compliance setup', 'Secure video infrastructure', 'Medical data encryption']
+    },
+    {
+      id: 'real-estate-app',
+      category: 'mobile',
+      title: 'Aplicație Imobiliară',
+      description: 'Platformă imobiliară mobilă cu vizualizări proprietăți, tururi virtuale și agent communication',
+      price: '4.000 - 7.500',
+      duration: '5-8 săptămâni',
+      popular: false,
+      badge: 'REAL ESTATE',
+      icon: '🏠',
+      color: 'purple',
+      features: ['Property search with filters', 'Virtual tours 3D', 'Property management', 'Agent communication', 'Saved searches', 'Mortgage calculator', 'Neighborhood insights', 'Photo/video galleries', 'Map integration', 'Appointment scheduling', 'Price alerts', 'Social sharing'],
+      technologies: ['React Native + AR/VR', 'Swift iOS + Kotlin Android', 'Node.js + MongoDB + Maps API'],
+      perfectFor: 'Agenții imobiliare, platforme imobiliare, real estate tech',
+      support: '12 luni suport tehnic inclus',
+      includes: ['AR/VR tour system', 'Maps integration', 'Property management dashboard']
+    },
+
+    // BUSINESS CATEGORY
     {
       id: 'crm-custom',
       category: 'business',
@@ -231,28 +429,49 @@ export default function ServicesPage() {
       description: 'Sistem de management al relațiilor cu clienții personalizat pentru nevoile afacerii tale',
       price: '5.000 - 15.000',
       duration: '6-12 săptămâni',
-      popular: false,
+      popular: true,
       badge: 'ENTERPRISE',
       icon: '👥',
       color: 'red',
-      features: [
-        'Management contacte și lead-uri',
-        'Pipeline de vânzări personalizat',
-        'Automatizări marketing',
-        'Email tracking',
-        'Calendar și task management',
-        'Rapoarte customizabile',
-        'Dashboard analytics',
-        'Integrare API terțe',
-        'Mobile app',
-        'Role-based access',
-        'Data export/import',
-        'Multi-language support'
-      ],
+      features: ['Management contacte și lead-uri', 'Pipeline de vânzări personalizat', 'Automatizări marketing', 'Email tracking', 'Calendar și task management', 'Rapoarte customizabile', 'Dashboard analytics', 'Integrare API terțe', 'Mobile app', 'Role-based access', 'Data export/import', 'Multi-language support'],
       technologies: ['React + Node.js + Express', 'PHP + Laravel + PostgreSQL', 'Python + Django + FastAPI + VLLM'],
       perfectFor: 'Agenții imobiliare, servicii financiare, B2B sales',
       support: '24 luni suport tehnic inclus',
       includes: ['Custom training', 'Data migration', 'API documentation']
+    },
+    {
+      id: 'erp-solution',
+      category: 'business',
+      title: 'ERP Custom Enterprise',
+      description: 'Soluție ERP completă pentru management integrat al resurselor și proceselor companiei',
+      price: '10.000 - 25.000',
+      duration: '10-16 săptămâni',
+      popular: false,
+      badge: 'ENTERPRISE',
+      icon: '🏭',
+      color: 'red',
+      features: ['Financial management', 'Supply chain management', 'Human resources', 'Inventory management', 'Project management', 'Business intelligence', 'Multi-company support', 'Custom reporting', 'Workflow automation', 'Mobile access', 'Integration APIs', 'Advanced security'],
+      technologies: ['Angular + Python + Django + FastAPI', 'React + Node.js + PostgreSQL', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Corporații, manufacturing, distribuție, retail enterprise',
+      support: '36 luni suport tehnic inclus',
+      includes: ['Full system integration', 'Employee training', 'Custom reporting tools']
+    },
+    {
+      id: 'hr-management',
+      category: 'business',
+      title: 'Platformă HR Management',
+      description: 'Sistem complet pentru managementul resurselor umane cu recruitment, payroll și performance',
+      price: '4.000 - 8.000',
+      duration: '6-9 săptămâni',
+      popular: false,
+      badge: 'HR SOLUTION',
+      icon: '👤',
+      color: 'red',
+      features: ['Recruitment management', 'Employee database', 'Payroll processing', 'Performance reviews', 'Time tracking', 'Leave management', 'Benefits administration', 'Training management', 'Analytics dashboard', 'Employee self-service', 'Document management', 'Compliance tracking'],
+      technologies: ['React + Node.js + PostgreSQL', 'Angular + Python + Django', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Departamente HR, companii medii și mari, HR consultanți',
+      support: '18 luni suport tehnic inclus',
+      includes: ['Payroll integration', 'Compliance setup', 'Employee portal']
     },
     {
       id: 'booking-system',
@@ -265,24 +484,168 @@ export default function ServicesPage() {
       badge: 'TRENDING',
       icon: '📅',
       color: 'indigo',
-      features: [
-        'Calendar rezervări interactive',
-        'Management personal și servicii',
-        'Automatizări email/SMS',
-        'Payment integration',
-        'Reminder system',
-        'Customer profiles',
-        'Reviews și ratings',
-        'Multi-location support',
-        'Mobile responsive',
-        'Sync Google Calendar',
-        'Recurring appointments',
-        'Waitlist management'
-      ],
+      features: ['Calendar rezervări interactive', 'Management personal și servicii', 'Automatizări email/SMS', 'Payment integration', 'Reminder system', 'Customer profiles', 'Reviews și ratings', 'Multi-location support', 'Mobile responsive', 'Sync Google Calendar', 'Recurring appointments', 'Waitlist management'],
       technologies: ['Vue.js + Node.js + Express', 'React + Python + Django', 'Next.js + MongoDB + WebRTC'],
       perfectFor: 'Clinici medicale, saloane, consultanți, service auto',
       support: '6 luni suport tehnic inclus',
       includes: ['SMS gateway', 'Email templates', 'Video consultation integration']
+    },
+    {
+      id: 'project-management',
+      category: 'business',
+      title: 'Platformă Project Management',
+      description: 'Sistem avansat pentru managementul proiectelor cu colaborare echipă și tracking automatizat',
+      price: '3.500 - 7.000',
+      duration: '5-8 săptămâni',
+      popular: false,
+      badge: 'AGILE',
+      icon: '📊',
+      color: 'red',
+      features: ['Task management', 'Team collaboration', 'Gantt charts', 'Time tracking', 'Resource allocation', 'Budget management', 'Reporting dashboard', 'Kanban boards', 'File sharing', 'Communication tools', 'Mobile app', 'Integration APIs'],
+      technologies: ['React + Node.js + MongoDB', 'Angular + Python + Django', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Agenții, software teams, departamente de proiecte',
+      support: '12 luni suport tehnic inclus',
+      includes: ['Team training', 'Integration setup', 'Custom workflows']
+    },
+    {
+      id: 'inventory-management',
+      category: 'business',
+      title: 'Sistem Management Stocuri',
+      description: 'Platformă completă pentru managementul stocurilor cu tracking real-time și automatizări',
+      price: '3.000 - 6.000',
+      duration: '4-6 săptămâni',
+      popular: false,
+      badge: 'INVENTORY',
+      icon: '📦',
+      color: 'red',
+      features: ['Real-time inventory tracking', 'Barcode/QR code scanning', 'Stock level alerts', 'Supplier management', 'Purchase orders', 'Warehouse management', 'Reporting și analytics', 'Multi-location support', 'Mobile app', 'Integration with accounting', 'Batch tracking', 'Automated reordering'],
+      technologies: ['React + Node.js + PostgreSQL', 'Vue.js + Python + Django', 'Next.js + PHP + Symfony'],
+      perfectFor: 'Retail, wholesale, manufacturing, distribuție',
+      support: '12 luni suport tehnic inclus',
+      includes: ['Barcode system setup', 'Mobile inventory app', 'Supplier portal']
+    },
+
+    // INDUSTRY SPECIFIC
+    {
+      id: 'healthcare-platform',
+      category: 'healthcare',
+      title: 'Platformă Medicală Completă',
+      description: 'Sistem integrat pentru management clinică cu EHR, programări și telemedicine',
+      price: '8.000 - 18.000',
+      duration: '8-14 săptămâni',
+      popular: false,
+      badge: 'HEALTHCARE',
+      icon: '🏥',
+      color: 'green',
+      features: ['Electronic Health Records (EHR)', 'Patient management', 'Appointment scheduling', 'Telemedicine platform', 'Billing și insurance', 'Lab results management', 'Prescription system', 'Doctor dashboard', 'Patient portal', 'HIPAA compliance', 'Reporting analytics', 'Mobile apps'],
+      technologies: ['React + Node.js + PostgreSQL + HIPAA', 'Python + Django + TensorFlow', 'Angular + FastAPI + MongoDB'],
+      perfectFor: 'Clinici medicale, spitale, telemedicine, healthcare startups',
+      support: '24 luni suport tehnic inclus',
+      includes: ['HIPAA compliance setup', 'Secure infrastructure', 'Medical staff training']
+    },
+    {
+      id: 'banking-core',
+      category: 'banking',
+      title: 'Core Banking System',
+      description: 'Sistem bancar central securizat cu conturi, tranzacții și conformitate regulamentară',
+      price: '15.000 - 50.000',
+      duration: '12-20 săptămâni',
+      popular: false,
+      badge: 'BANKING',
+      icon: '🏦',
+      color: 'blue',
+      features: ['Account management', 'Transaction processing', 'Loan management', 'Credit scoring', 'Risk assessment', 'Regulatory reporting', 'Multi-currency support', 'Fraud detection', 'API gateway', 'Customer portal', 'Compliance automation', 'Audit trails'],
+      technologies: ['Java Spring Boot + PostgreSQL', 'Python + ML + Blockchain', 'React + Node.js + Redis'],
+      perfectFor: 'Bănci, fintech, neobanks, instituții financiare',
+      support: '36 luni suport tehnic inclus',
+      includes: ['Regulatory compliance', 'Security audit', 'High availability setup']
+    },
+    {
+      id: 'manufacturing-mes',
+      category: 'manufacturing',
+      title: 'Manufacturing Execution System',
+      description: 'Sistem de execuție producție cu tracking real-time și control calitate automatizat',
+      price: '10.000 - 25.000',
+      duration: '10-16 săptămâni',
+      popular: false,
+      badge: 'MANUFACTURING',
+      icon: '⚙️',
+      color: 'gray',
+      features: ['Production scheduling', 'Quality control', 'Equipment monitoring', 'Workforce management', 'Inventory tracking', 'Maintenance scheduling', 'Real-time dashboards', 'Production analytics', 'Compliance tracking', 'IoT integration', 'Mobile access', 'Reporting tools'],
+      technologies: ['Angular + Python + Django + IoT', 'React + Node.js + TimescaleDB', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Manufacturing, production facilities, industrial companies',
+      support: '24 luni suport tehnic inclus',
+      includes: ['IoT sensor integration', 'Production optimization', 'Staff training']
+    },
+    {
+      id: 'retail-pos',
+      category: 'retail',
+      title: 'Retail POS System',
+      description: 'Sistem POS complet pentru retail cu management inventar, loialitate și analytics avansate',
+      price: '4.000 - 9.000',
+      duration: '6-10 săptămâni',
+      popular: false,
+      badge: 'RETAIL',
+      icon: '🛍️',
+      color: 'purple',
+      features: ['Point of Sale interface', 'Inventory management', 'Customer management', 'Loyalty programs', 'Payment processing', 'Sales reporting', 'Multi-store support', 'Employee management', 'Discount management', 'Receipt printing', 'Offline mode', 'Cloud sync'],
+      technologies: ['Electron + React + Node.js', 'Python + Django + PostgreSQL', 'Native iOS/Android apps'],
+      perfectFor: 'Retail stores, chain stores, shops, restaurants',
+      support: '18 luni suport tehnic inclus',
+      includes: ['Hardware integration', 'Training staff', 'Data migration']
+    },
+    {
+      id: 'legal-case-management',
+      category: 'legal',
+      title: 'Legal Case Management',
+      description: 'Platformă pentru managementul cazurilor legale cu documente, calendar și billing automatizat',
+      price: '5.000 - 12.000',
+      duration: '7-12 săptămâni',
+      popular: false,
+      badge: 'LEGAL',
+      icon: '⚖️',
+      color: 'darkblue',
+      features: ['Case management', 'Document management', 'Calendar și deadlines', 'Time tracking', 'Billing și invoicing', 'Client portal', 'Legal research tools', 'Compliance tracking', 'Secure communication', 'Reporting analytics', 'Mobile access', 'Integration APIs'],
+      technologies: ['React + Node.js + PostgreSQL', 'Angular + Python + Django', 'Vue.js + PHP + Symfony'],
+      perfectFor: 'Law firms, legal departments, solo practitioners',
+      support: '24 luni suport tehnic inclus',
+      includes: ['Legal document templates', 'Compliance setup', 'Client portal setup']
+    },
+    {
+      id: 'insurance-platform',
+      category: 'insurance',
+      title: 'Insurance Management Platform',
+      description: 'Platformă completă pentru management polițe, procesare daune și clienți',
+      price: '8.000 - 20.000',
+      duration: '10-16 săptămâni',
+      popular: false,
+      badge: 'INSURANCE',
+      icon: '🛡️',
+      color: 'red',
+      features: ['Policy management', 'Claims processing', 'Customer management', 'Risk assessment', 'Underwriting tools', 'Payment processing', 'Reporting analytics', 'Compliance tracking', 'Agent portal', 'Customer portal', 'Document management', 'Integration APIs'],
+      technologies: ['Angular + Python + Django + ML', 'React + Node.js + PostgreSQL', 'Vue.js + PHP + Laravel'],
+      perfectFor: 'Insurance companies, brokers, MGAs',
+      support: '36 luni suport tehnic inclus',
+      includes: ['Compliance setup', 'Risk models', 'Agent training']
+    },
+
+    // GENERAL/BUSINESS SERVICES
+    {
+      id: 'professional-site',
+      category: 'all',
+      title: 'Site Prezentare Profesional',
+      description: 'Site corporate modern optimizat pentru conversii și branding profesional',
+      price: '1.000 - 2.500',
+      duration: '1-2 săptămâni',
+      popular: true,
+      badge: '#3 ACCESIBIL',
+      icon: '🏢',
+      color: 'emerald',
+      features: ['Design modern și profesional', 'Optimizat pentru conversii', 'Formular contact avansat', 'Integrare social media', 'Blog cu CMS', 'Google Analytics', 'SEO on-page optimizare', 'Galerie foto/video', 'Testimoniale section', 'FAQ section', 'Chat integration', 'Performance optimizare'],
+      technologies: ['React + Next.js + TypeScript', 'Vue.js + Nuxt.js + Python', 'Angular + Node.js + PostgreSQL'],
+      perfectFor: 'Companii, freelanceri, consultanți, servicii profesionale',
+      support: '3 luni suport tehnic inclus',
+      includes: ['Performance monitoring', 'Security updates', 'Monthly backups']
     }
   ]
 
@@ -317,47 +680,74 @@ export default function ServicesPage() {
     }
   ]
 
-  const filteredServices = selectedCategory === 'all'
-    ? services
-    : services.filter(service => service.category === selectedCategory)
+  const filteredServices = selectedCategory === 'popular'
+    ? services.filter(service => service.popular)
+    : services.filter(service => service.category === selectedCategory).slice(0, 6)
 
   const getColorClasses = (color: string) => {
     const colors = {
       orange: {
-        bg: 'bg-gradient-to-r from-orange-500 to-red-500',
-        light: 'from-orange-50 to-red-50',
-        dark: 'dark:from-orange-900/10 dark:to-red-900/10',
-        text: 'text-orange-600'
+        border: 'border-amber-500',
+        iconBg: 'bg-amber-100 dark:bg-amber-900/30',
+        iconText: 'text-amber-600 dark:text-amber-400',
+        text: 'text-amber-600',
+        badge: 'bg-amber-500 text-white'
       },
       blue: {
-        bg: 'bg-gradient-to-r from-blue-500 to-cyan-500',
-        light: 'from-blue-50 to-cyan-50',
-        dark: 'dark:from-zinc-900/10 dark:to-zinc-900/10',
-        text: 'text-blue-600'
+        border: 'border-sky-500',
+        iconBg: 'bg-sky-100 dark:bg-sky-900/30',
+        iconText: 'text-sky-600 dark:text-sky-400',
+        text: 'text-sky-600',
+        badge: 'bg-sky-500 text-white'
       },
       emerald: {
-        bg: 'bg-gradient-to-r from-emerald-500 to-teal-500',
-        light: 'from-emerald-50 to-teal-50',
-        dark: 'dark:from-emerald-900/10 dark:to-teal-900/10',
-        text: 'text-emerald-600'
+        border: 'border-teal-500',
+        iconBg: 'bg-teal-100 dark:bg-teal-900/30',
+        iconText: 'text-teal-600 dark:text-teal-400',
+        text: 'text-teal-600',
+        badge: 'bg-teal-500 text-white'
       },
       purple: {
-        bg: 'bg-gradient-to-r from-purple-500 to-pink-500',
-        light: 'from-purple-50 to-pink-50',
-        dark: 'dark:from-purple-900/10 dark:to-pink-900/10',
-        text: 'text-purple-600'
+        border: 'border-violet-500',
+        iconBg: 'bg-violet-100 dark:bg-violet-900/30',
+        iconText: 'text-violet-600 dark:text-violet-400',
+        text: 'text-violet-600',
+        badge: 'bg-violet-500 text-white'
       },
       red: {
-        bg: 'bg-gradient-to-r from-red-500 to-orange-500',
-        light: 'from-red-50 to-orange-50',
-        dark: 'dark:from-red-900/10 dark:to-orange-900/10',
-        text: 'text-red-600'
+        border: 'border-rose-500',
+        iconBg: 'bg-rose-100 dark:bg-rose-900/30',
+        iconText: 'text-rose-600 dark:text-rose-400',
+        text: 'text-rose-600',
+        badge: 'bg-rose-500 text-white'
       },
       indigo: {
-        bg: 'bg-gradient-to-r from-indigo-500 to-blue-500',
-        light: 'from-indigo-50 to-blue-50',
-        dark: 'dark:from-indigo-900/10 dark:to-blue-900/10',
-        text: 'text-indigo-600'
+        border: 'border-indigo-500',
+        iconBg: 'bg-indigo-100 dark:bg-indigo-900/30',
+        iconText: 'text-indigo-600 dark:text-indigo-400',
+        text: 'text-indigo-600',
+        badge: 'bg-indigo-500 text-white'
+      },
+      green: {
+        border: 'border-emerald-500',
+        iconBg: 'bg-emerald-100 dark:bg-emerald-900/30',
+        iconText: 'text-emerald-600 dark:text-emerald-400',
+        text: 'text-emerald-600',
+        badge: 'bg-emerald-500 text-white'
+      },
+      gray: {
+        border: 'border-slate-500',
+        iconBg: 'bg-slate-100 dark:bg-slate-900/30',
+        iconText: 'text-slate-600 dark:text-slate-400',
+        text: 'text-slate-600',
+        badge: 'bg-slate-500 text-white'
+      },
+      darkblue: {
+        border: 'border-blue-700',
+        iconBg: 'bg-blue-100 dark:bg-blue-900/30',
+        iconText: 'text-blue-700 dark:text-blue-400',
+        text: 'text-blue-700',
+        badge: 'bg-blue-700 text-white'
       }
     }
     return colors[color] || colors.blue
@@ -455,52 +845,48 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-20 bg-white dark:bg-slate-950">
         <div className="max-w-[90vw] md:max-w-full mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredServices.map((service) => {
               const colors = getColorClasses(service.color)
               return (
                 <Card
                   key={service.id}
-                  className={`bg-white dark:bg-slate-900 rounded-3xl border-2 ${
-                    service.popular ? 'border-orange-200 dark:border-orange-800' : 'border-gray-200 dark:border-gray-700'
-                  } p-8 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden cursor-pointer`}
+                  className={`bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-2xl border-2 ${colors.border} p-6 hover:shadow-xl transition-all duration-300 group relative cursor-pointer hover:scale-105 hover:shadow-${colors.border.split('-')[1]}/20`}
                   onClick={() => setSelectedService(selectedService === service.id ? null : service.id)}
                 >
                   {service.badge && (
-                    <div className={`absolute top-4 right-4 ${colors.bg} text-white px-3 py-1 rounded-full text-xs font-bold z-10`}>
+                    <div className={`absolute top-3 right-3 ${colors.badge} px-3 py-1 rounded-full text-sm font-bold z-10 shadow-lg`}>
                       {service.badge}
                     </div>
                   )}
 
-                  <div className={`absolute inset-0 bg-gradient-to-r ${colors.light} ${colors.dark} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-
                   <div className="relative">
                     <div className="text-center mb-6">
-                      <div className={`w-20 h-20 ${colors.bg} rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <span className="text-3xl">{service.icon}</span>
+                      <div className={`w-16 h-16 ${colors.iconBg} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <span className={`text-3xl ${colors.iconText}`}>{service.icon}</span>
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{service.title}</h3>
-                      <div className={`text-2xl font-bold ${colors.text} mb-2`}>{service.price} €</div>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight">{service.title}</h3>
+                      <div className={`text-xl font-bold ${colors.text} mb-2`}>{service.price} €</div>
                       <div className="text-sm text-gray-600 dark:text-gray-400 flex items-center justify-center gap-1">
                         <Clock className="h-4 w-4" />
                         {service.duration}
                       </div>
                     </div>
 
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6 text-center">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6 text-center line-clamp-3">
                       {service.description}
                     </p>
 
                     {/* Expanded Details */}
                     {selectedService === service.id && (
-                      <div className="space-y-6 animate-in slide-in-from-top duration-300">
+                      <div className="space-y-4 animate-in slide-in-from-top duration-300">
                         <div>
-                          <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2 text-sm">
                             <CheckCircle className="h-5 w-5 text-green-500" />
-                            Funcționalități Incluse
+                            Funcționalități
                           </h4>
-                          <div className="space-y-2 max-h-60 overflow-y-auto">
-                            {service.features.map((feature, index) => (
+                          <div className="space-y-2 max-h-48 overflow-y-auto">
+                            {service.features.slice(0, 8).map((feature, index) => (
                               <div key={index} className="flex items-center gap-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
                                 <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
@@ -510,50 +896,31 @@ export default function ServicesPage() {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2 text-sm">
                             <Code className="h-5 w-5 text-blue-500" />
                             Tehnologii
                           </h4>
                           <div className="flex flex-wrap gap-2">
-                            {service.technologies.map((tech, index) => (
+                            {service.technologies.slice(0, 4).map((tech, index) => (
                               <span key={index} className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">
-                                {tech}
+                                {tech.split(' + ')[0]}
                               </span>
                             ))}
                           </div>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2 text-sm">
                             <Target className="h-5 w-5 text-orange-500" />
                             Perfect Pentru
                           </h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">{service.perfectFor}</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                            <Shield className="h-5 w-5 text-green-500" />
-                            Suport & Beneficii
-                          </h4>
-                          <div className="space-y-1">
-                            <div className="flex items-center gap-2">
-                              <Headphones className="h-4 w-4 text-gray-500" />
-                              <span className="text-sm text-gray-600 dark:text-gray-400">{service.support}</span>
-                            </div>
-                            {service.includes.map((item, index) => (
-                              <div key={index} className="flex items-center gap-2">
-                                <CheckCircle className="h-4 w-4 text-green-500" />
-                                <span className="text-sm text-gray-600 dark:text-gray-400">{item}</span>
-                              </div>
-                            ))}
-                          </div>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{service.perfectFor}</p>
                         </div>
                       </div>
                     )}
 
                     <div className="text-center mt-6">
-                      <Link href="/contact" className={`inline-flex items-center gap-2 ${colors.bg} text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 hover:scale-105`}>
+                      <Link href="/contact" className={`inline-flex items-center gap-2 ${colors.badge} text-white px-6 py-3 rounded-xl font-medium hover:opacity-90 transition-all duration-300 shadow-lg`}>
                         {selectedService === service.id ? 'Cere Ofertă' : 'Detalii'}
                         <ArrowRight className="h-4 w-4" />
                       </Link>
