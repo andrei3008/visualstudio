@@ -685,7 +685,15 @@ export default function ServicesPage() {
     : services.filter(service => service.category === selectedCategory).slice(0, 6)
 
   const getColorClasses = (color: string) => {
-    const colors = {
+    type ColorType = 'orange' | 'blue' | 'emerald' | 'purple' | 'red' | 'indigo' | 'green' | 'gray' | 'darkblue'
+
+    const colors: Record<ColorType, {
+      border: string
+      iconBg: string
+      iconText: string
+      text: string
+      badge: string
+    }> = {
       orange: {
         border: 'border-amber-500',
         iconBg: 'bg-amber-100 dark:bg-amber-900/30',
@@ -749,8 +757,9 @@ export default function ServicesPage() {
         text: 'text-blue-700',
         badge: 'bg-blue-700 text-white'
       }
-    }
-    return colors[color] || colors.blue
+    } as const
+
+    return colors[color as ColorType] || colors.blue
   }
 
   return (
