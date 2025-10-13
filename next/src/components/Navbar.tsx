@@ -71,6 +71,11 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
     return null
   }
 
+  // Hide navbar when user is in dashboard area (app routes)
+  if (pathname.startsWith('/app')) {
+    return null
+  }
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getNavbarClasses()}`}>
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,20 +153,7 @@ export default function Navbar({ session, isAdmin }: NavbarProps) {
                 pathname === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></div>
             </Link>
-            <Link
-              href="/projects"
-              className={`text-sm font-medium transition-colors relative group ${
-                pathname === '/projects'
-                  ? 'text-blue-600'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
-              }`}
-            >
-              Proiecte
-              <div className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                pathname === '/projects' ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></div>
-            </Link>
-          </div>
+            </div>
 
           {/* User Actions - Right side */}
           <div className="flex items-center gap-3">

@@ -20,6 +20,32 @@ model User {
   messages     Message[]
   notifications Notification[]
   uploadedFiles File[]
+  subscriptions Subscription[]
+  stripeCustomerId String? @unique
+  oneTimeProjects OneTimeProject[]
+
+  // Client management fields
+  Nume        String?   // Last Name
+  Prenume     String?   // First Name
+  Companie    String?   // Company
+  Telefon     String?   // Phone
+  Oras        String?   // City
+  Address     String?   // Address
+  PostalCode  String?   // Postal Code
+  Country     String?   // Country
+  Website     String?   // Website
+  Notes       String?   // Client notes
+  isActive    Boolean   @default(true)
+  clientSince DateTime  @default(now())
+
+  // Client relationships
+  contacts    Contact[]
+  clientNotes ClientNote[]
+  creditNotes CreditNote[]
+  expenses    Expense[]
+  contracts   Contract[]
+  tickets     Ticket[]
+  estimates   Estimate[]
 }
 
 enum UserRole {
@@ -29,11 +55,16 @@ enum UserRole {
 }
 
 enum ProjectStatus {
-  new
-  in_progress
-  scoping
-  review
-  done
+  request          // Client project request
+  proposal_review  // Admin created proposal, client reviewing
+  estimation       // Estimation phase
+  estimation_review // Client reviewing estimation
+  approved         // Project approved, can start work
+  in_progress      // Work in progress
+  scoping          // Scoping phase
+  review           // Review phase
+  done             // Project completed
+  rejected         // Request or proposal rejected
 }
 
 model Project {
@@ -41,37 +72,69 @@ model Project {
   user      User           @relation(fields: [userId], references: [id])
   userId    String
   name      String
-  status    ProjectStatus  @default(new)
+  status    ProjectStatus  @default(request)
+  description String?
+  budget    Float?
+  deadline  DateTime?
   createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  // Workflow fields
+  requestDetails Json?     // Client request details
+  adminNotes      Json?     // Admin notes and decisions
+
   tasks     Task[]
   milestones Milestone[]
   messages   Message[]
   proposals  Proposal[]
   files      File[]
+  estimations Estimation[]
+  invoices   Invoice[]
+
+  subscriptionId String?   @unique
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id])
 
   @@index([userId])
+  @@index([status])
 }
 
 enum TaskStatus {
-  todo
-  in_progress
-  done
+  backlog         // Tasks waiting to be started
+  in_progress     // Currently being worked on
+  development     // In development phase
+  testing         // Testing phase
+  review          // Review/quality assurance
+  done            // Completed
 }
 
 model Task {
-  id         String      @id @default(cuid())
-  project    Project     @relation(fields: [projectId], references: [id])
-  projectId  String
-  title      String
-  status     TaskStatus  @default(todo)
-  assignee   User?       @relation("TaskAssignee", fields: [assigneeId], references: [id])
-  assigneeId String?
-  dueAt      DateTime?
-  estimateH  Int?
-  createdAt  DateTime    @default(now())
+  id          String      @id @default(cuid())
+  project     Project     @relation(fields: [projectId], references: [id])
+  projectId   String
+  title       String
+  description String?
+  status      TaskStatus  @default(backlog)
+  priority    TaskPriority @default(medium)
+  assignee    User?       @relation("TaskAssignee", fields: [assigneeId], references: [id])
+  assigneeId  String?
+  dueAt       DateTime?
+  estimateH   Int?        // Estimated hours
+  actualH     Int?        // Actual hours spent
+  completedAt DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 
   @@index([projectId])
   @@index([assigneeId])
+  @@index([status])
+  @@index([priority])
+}
+
+enum TaskPriority {
+  low
+  medium
+  high
+  critical
 }
 
 enum MilestoneStatus {
@@ -136,10 +199,16 @@ model Notification {
 }
 
 enum ProposalStatus {
-  draft
-  submitted
-  approved
-  rejected
+  draft              // Admin working on proposal
+  submitted          // Proposal submitted to client
+  client_review      // Client reviewing proposal
+  client_rejected    // Client rejected proposal (with feedback)
+  estimation_pending // Client approved, waiting for estimation
+  estimated          // Estimation completed
+  estimation_review  // Client reviewing estimation
+  estimation_rejected // Client rejected estimation
+  approved           // Proposal and estimation approved
+  rejected           // Admin rejected request
 }
 
 model Proposal {
@@ -147,14 +216,25 @@ model Proposal {
   project      Project         @relation(fields: [projectId], references: [id])
   projectId    String
   title        String
+  description  String?
   status       ProposalStatus  @default(draft)
   publicToken  String          @unique
   submittedAt  DateTime?
   approvedAt   DateTime?
   createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  // Workflow fields
+  adminNotes      Json?        // Admin internal notes
+  clientFeedback  Json?        // Client feedback and requests
+  aiGeneratedTasks Json?       // AI-generated tasks from proposal
+
   items        ProposalItem[]
+  estimations Estimation[]
+  invoices     Invoice[]
 
   @@index([projectId])
+  @@index([status])
 }
 
 model ProposalItem {
@@ -167,4 +247,597 @@ model ProposalItem {
   createdAt       DateTime  @default(now())
 
   @@index([proposalId])
+}
+
+enum PackageType {
+  basic
+  growth
+  pro
+}
+
+enum SubscriptionStatus {
+  active
+  canceled
+  past_due
+  unpaid
+}
+
+model MaintenancePackage {
+  id          String      @id @default(cuid())
+  name        String
+  type        PackageType  @unique
+  priceCents  Int
+  description String
+  features    Json        // Array of features as JSON
+  includedProjects Int     @default(0) // Number of free projects included
+  isPublic    Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  subscriptions Subscription[]
+
+  @@index([isPublic])
+}
+
+model Subscription {
+  id                  String             @id @default(cuid())
+  user                User               @relation(fields: [userId], references: [id])
+  userId              String
+  maintenancePackage  MaintenancePackage @relation(fields: [maintenancePackageId], references: [id])
+  maintenancePackageId String
+  status              SubscriptionStatus @default(active)
+  stripeSubscriptionId String?            @unique
+  stripePriceId       String?
+  currentPeriodStart  DateTime?
+  currentPeriodEnd    DateTime?
+  canceledAt          DateTime?
+  projectsIncluded    Int                @default(0) // Number of projects user gets with this package
+  projectsUsed        Int                @default(0) // Number of projects created from this package
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  projects            Project[]          // Free projects from subscription
+
+  @@index([userId])
+  @@index([status])
+  @@index([stripeSubscriptionId])
+}
+
+model OneTimeProject {
+  id          String   @id @default(cuid())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  name        String
+  description String?
+  priceCents  Int
+  status      String   @default("pending") // pending, paid, completed
+  stripePaymentIntentId String? @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+// Estimation model for project time and cost estimates
+model Estimation {
+  id           String           @id @default(cuid())
+  project      Project          @relation(fields: [projectId], references: [id])
+  projectId    String
+  proposal     Proposal?        @relation(fields: [proposalId], references: [id])
+  proposalId   String?
+
+  title        String
+  description  String?
+  totalHours   Float
+  hourlyRate   Float
+  totalCost    Float
+  status       EstimationStatus @default(draft)
+
+  // Timeline details
+  estimatedStartDate DateTime?
+  estimatedEndDate   DateTime?
+  phases           Json?            // Project phases with timelines
+
+  // Cost breakdown
+  costBreakdown    Json?            // Detailed cost breakdown
+
+  // AI-generated insights
+  aiInsights       Json?            // AI analysis and recommendations
+  riskFactors      Json?            // Potential risks and mitigation
+
+  submittedAt      DateTime?
+  approvedAt       DateTime?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  // Relations
+  invoices         Invoice[]
+
+  @@index([projectId])
+  @@index([proposalId])
+  @@index([status])
+}
+
+enum EstimationStatus {
+  draft              // Admin working on estimation
+  submitted          // Estimation submitted to client
+  client_review      // Client reviewing estimation
+  client_rejected    // Client rejected estimation (with feedback)
+  approved           // Estimation approved by client
+  rejected           // Estimation rejected
+}
+
+// Invoice model for billing and payment tracking
+model Invoice {
+  id           String          @id @default(cuid())
+  invoiceNumber String         @unique
+  project      Project?        @relation(fields: [projectId], references: [id])
+  projectId    String?
+  estimation   Estimation?     @relation(fields: [estimationId], references: [id])
+  estimationId String?
+  proposal     Proposal?       @relation(fields: [proposalId], references: [id])
+  proposalId   String?
+
+  // Client information
+  clientName   String
+  clientEmail  String
+  clientAddress Json?          // Client address and contact info
+
+  // Invoice details
+  title        String
+  description  String?
+  items        Json            // Line items as JSON array
+  subtotal     Float
+  taxRate      Float           @default(0.19) // 19% VAT by default
+  taxAmount    Float
+  totalAmount  Float
+
+  // Status and dates
+  status       InvoiceStatus   @default(draft)
+  issueDate    DateTime        @default(now())
+  dueDate      DateTime
+  paidAt       DateTime?
+
+  // Stripe integration
+  stripePaymentIntentId String? @unique
+  stripeCheckoutSessionId String? @unique
+  stripeCustomerId String?
+  paymentUrl String?
+
+  // Payment tracking
+  payments     Payment[]
+
+  // Metadata
+  notes        String?
+  terms        String?
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  // Relations
+  lineItems    InvoiceItem[] @relation("InvoiceItems")
+
+  @@index([status])
+  @@index([issueDate])
+  @@index([dueDate])
+  @@index([projectId])
+  @@index([estimationId])
+  @@index([proposalId])
+  @@index([stripePaymentIntentId])
+  @@index([stripeCheckoutSessionId])
+}
+
+enum InvoiceStatus {
+  draft          // Invoice being prepared
+  unpaid         // Invoice created, awaiting payment
+  sent           // Invoice sent to client
+  paid           // Invoice fully paid
+  partially_paid // Invoice partially paid
+  overdue        // Invoice past due date
+  cancelled      // Invoice cancelled
+}
+
+// Payment model for tracking payments
+model Payment {
+  id           String          @id @default(cuid())
+  invoice      Invoice         @relation(fields: [invoiceId], references: [id])
+  invoiceId    String
+  amount       Float
+  method       PaymentMethod
+  status       PaymentStatus   @default(pending)
+
+  // Payment details
+  transactionId String?        @unique // External transaction ID
+  gateway      String?         // Payment gateway (stripe, paypal, etc.)
+  gatewayFee   Float?          // Processing fees
+
+  // Dates
+  paidAt       DateTime?
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  // Notes
+  notes        String?
+
+  @@index([invoiceId])
+  @@index([status])
+  @@index([paidAt])
+  @@index([method])
+}
+
+enum PaymentMethod {
+  bank_transfer
+  card
+  cash
+  paypal
+  stripe
+  other
+}
+
+enum PaymentStatus {
+  pending    // Payment initiated but not completed
+  processing // Payment being processed
+  completed  // Payment successfully completed
+  failed     // Payment failed
+  refunded   // Payment refunded
+  cancelled  // Payment cancelled
+}
+
+// Service model for service catalog
+model Service {
+  id          String         @id @default(cuid())
+  name        String
+  description String
+  category    String
+  priceCents  Int
+  currency    String         @default("USD")
+
+  // Service details
+  duration    Int?           // Duration in hours/days
+  features    Json           // Service features as JSON array
+  isPublic    Boolean        @default(true)
+  sortOrder   Int            @default(0)
+
+  // Relationships
+  invoiceItems InvoiceItem[]
+
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([category])
+  @@index([isPublic])
+  @@index([sortOrder])
+}
+
+// Invoice items for detailed line items
+model InvoiceItem {
+  id         String    @id @default(cuid())
+  invoice    Invoice   @relation("InvoiceItems", fields: [invoiceId], references: [id])
+  invoiceId  String
+  service    Service?  @relation(fields: [serviceId], references: [id])
+  serviceId  String?
+
+  description String
+  quantity   Float
+  unitPrice  Float
+  total      Float
+
+  createdAt  DateTime  @default(now())
+
+  @@index([invoiceId])
+  @@index([serviceId])
+}
+
+// Contact model for client contacts
+model Contact {
+  id          String    @id @default(cuid())
+  client      User      @relation(fields: [clientId], references: [id])
+  clientId    String
+  name        String
+  position    String?   // Job position/title
+  email       String?
+  phone       String?
+  isPrimary   Boolean   @default(false)
+  notes       String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([clientId])
+  @@index([isPrimary])
+}
+
+// ClientNote model for client notes
+model ClientNote {
+  id        String    @id @default(cuid())
+  client    User      @relation(fields: [clientId], references: [id])
+  clientId  String
+  title     String
+  content   String
+  isPrivate Boolean   @default(false) // Whether note is visible to client
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([clientId])
+  @@index([isPrivate])
+}
+
+// CreditNote model for client credit notes
+model CreditNote {
+  id             String        @id @default(cuid())
+  creditNumber   String        @unique
+  client         User          @relation(fields: [clientId], references: [id])
+  clientId       String
+
+  // Reference to original invoice
+  invoiceId      String?
+
+  // Credit note details
+  title          String
+  description    String?
+  items          Json          // Line items as JSON array
+  subtotal       Float
+  taxRate        Float         @default(0.19)
+  taxAmount      Float
+  totalAmount    Float
+
+  // Status and dates
+  status         CreditNoteStatus @default(draft)
+  issueDate      DateTime      @default(now())
+
+  // Payment details
+  refundAmount   Float?
+  refundDate     DateTime?
+  refundMethod   String?
+
+  // Metadata
+  notes          String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([clientId])
+  @@index([invoiceId])
+  @@index([status])
+  @@index([issueDate])
+}
+
+enum CreditNoteStatus {
+  draft      // Credit note being prepared
+  issued     // Credit note issued
+  refunded   // Amount refunded to client
+  cancelled  // Credit note cancelled
+}
+
+// Expense model for client expenses
+model Expense {
+  id          String       @id @default(cuid())
+  client      User         @relation(fields: [clientId], references: [id])
+  clientId    String
+
+  // Expense details
+  title       String
+  description String?
+  amount      Float
+  currency    String       @default("USD")
+  category    ExpenseCategory
+
+  // Status and dates
+  status      ExpenseStatus @default(pending)
+  expenseDate DateTime     @default(now())
+
+  // Project assignment
+  projectId   String?
+
+  // Receipt/attachment info
+  receiptUrl  String?
+  receiptPath String?
+
+  // Approval
+  approvedBy  String?
+  approvedAt  DateTime?
+
+  // Metadata
+  notes       String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([clientId])
+  @@index([projectId])
+  @@index([category])
+  @@index([status])
+  @@index([expenseDate])
+}
+
+enum ExpenseCategory {
+  materials
+  software
+  hardware
+  travel
+  accommodation
+  meals
+  marketing
+  consulting
+  other
+}
+
+enum ExpenseStatus {
+  pending   // Awaiting approval
+  approved  // Expense approved
+  rejected  // Expense rejected
+  paid      // Expense reimbursed
+}
+
+// Contract model for client contracts
+model Contract {
+  id          String        @id @default(cuid())
+  client      User          @relation(fields: [clientId], references: [id])
+  clientId    String
+
+  // Contract details
+  title       String
+  description String?
+  contractNumber String     @unique
+  type        ContractType
+
+  // Financial details
+  value       Float?
+  currency    String        @default("USD")
+
+  // Contract duration
+  startDate   DateTime
+  endDate     DateTime?
+
+  // Status and dates
+  status      ContractStatus @default(draft)
+  signedAt    DateTime?
+
+  // Document storage
+  contractUrl String?
+  contractPath String?
+
+  // Terms
+  terms       String?
+  notes       String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([clientId])
+  @@index([type])
+  @@index([status])
+  @@index([startDate])
+  @@index([endDate])
+}
+
+enum ContractType {
+  service_agreement
+  maintenance
+  nda
+  sla
+  other
+}
+
+enum ContractStatus {
+  draft      // Contract being prepared
+  sent       // Contract sent to client
+  signed     // Contract signed by client
+  active     // Contract currently active
+  expired    // Contract expired
+  terminated // Contract terminated
+}
+
+// Ticket model for client support tickets
+model Ticket {
+  id          String       @id @default(cuid())
+  client      User         @relation(fields: [clientId], references: [id])
+  clientId    String
+
+  // Ticket details
+  title       String
+  description String?
+  category    TicketCategory
+
+  // Priority and status
+  priority    TicketPriority @default(medium)
+  status      TicketStatus   @default(open)
+
+  // Assignment
+  assignedTo  String?       // User ID of staff member
+
+  // Project relation
+  projectId   String?
+
+  // Dates
+  openedAt    DateTime     @default(now())
+  closedAt    DateTime?
+  dueDate     DateTime?
+
+  // Resolution
+  resolution  String?
+
+  // Metadata
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([clientId])
+  @@index([projectId])
+  @@index([assignedTo])
+  @@index([status])
+  @@index([priority])
+  @@index([category])
+  @@index([openedAt])
+}
+
+enum TicketCategory {
+  bug_report
+  feature_request
+  technical_support
+  billing
+  general_inquiry
+  other
+}
+
+enum TicketPriority {
+  low
+  medium
+  high
+  urgent
+}
+
+enum TicketStatus {
+  open
+  in_progress
+  awaiting_client
+  resolved
+  closed
+  reopened
+}
+
+// Estimate model for client estimates
+model Estimate {
+  id          String         @id @default(cuid())
+  client      User           @relation(fields: [clientId], references: [id])
+  clientId    String
+
+  // Estimate details
+  title       String
+  description String?
+  estimateNumber String      @unique
+
+  // Financial details
+  subtotal    Float
+  taxRate     Float          @default(0.19)
+  taxAmount   Float
+  totalAmount Float
+  currency    String         @default("USD")
+
+  // Status and dates
+  status      EstimateStatus @default(draft)
+  issueDate   DateTime       @default(now())
+  validUntil  DateTime?
+
+  // Project relation
+  projectId   String?
+
+  // Items breakdown
+  items       Json           // Line items as JSON array
+
+  // Conversion tracking
+  convertedToInvoiceId String?
+  convertedAt DateTime?
+
+  // Metadata
+  notes       String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([clientId])
+  @@index([projectId])
+  @@index([status])
+  @@index([issueDate])
+  @@index([validUntil])
+}
+
+enum EstimateStatus {
+  draft          // Estimate being prepared
+  sent           // Estimate sent to client
+  accepted       // Estimate accepted by client
+  rejected       // Estimate rejected by client
+  expired        // Estimate expired
+  converted      // Estimate converted to invoice
 }

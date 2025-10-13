@@ -21,6 +21,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import type { Metadata } from 'next'
 import { CheckCircle, Clock, FileText, MessageSquare, FolderOpen, Calendar, ArrowRight, Sparkles, BarChart3, Target } from 'lucide-react'
+import DashboardLayout from '../../components/DashboardLayout'
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const proj = await prisma.project.findUnique({ where: { id: params.id }, select: { name: true } })
@@ -45,36 +46,14 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
   const tab = (searchParams?.tab as string) || 'tasks'
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-zinc-50 via-zinc-50 to-zinc-50 dark:bg-gradient-to-br dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-900">
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-zinc-400/10 dark:bg-zinc-600/5 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-zinc-400/10 dark:bg-zinc-600/5 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-zinc-400/5 dark:bg-zinc-600/3 rounded-full blur-3xl animate-float"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
+    <DashboardLayout title={project.name} subtitle={`Proiect creat la ${new Date(project.createdAt).toLocaleDateString('ro-RO')}`}>
+      <div className="max-w-7xl mx-auto">
+        {/* Status Badge and Actions */}
         <div className="flex items-center justify-between gap-4 mb-8">
-          <div className="space-y-2">
-            <div className="flex items-center gap-3">
-              <div className="flex gap-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-              </div>
-              <div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-green-600 bg-clip-text text-transparent dark:from-blue-400 dark:via-blue-400 dark:to-green-400">
-                  {project.name}
-                </h1>
-                <Badge variant={String(project.status) === 'active' ? 'default' : 'secondary'} className={String(project.status) === 'active' ? 'bg-green-100 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-700' : 'bg-gray-100 text-gray-700 border-gray-300 dark:bg-zinc-700 dark:text-gray-300 dark:border-zinc-600'}>
-                  {String(project.status)}
-                </Badge>
-              </div>
-            </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Creat la: {new Date(project.createdAt).toLocaleDateString('ro-RO')}
-            </p>
+          <div className="flex items-center gap-3">
+            <Badge variant={String(project.status) === 'active' ? 'default' : 'secondary'} className={String(project.status) === 'active' ? 'bg-green-100 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-700' : 'bg-gray-100 text-gray-700 border-gray-300 dark:bg-zinc-700 dark:text-gray-300 dark:border-zinc-600'}>
+              {String(project.status)}
+            </Badge>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="outline" size="sm" className="border-gray-300 hover:border-zinc-400 hover:bg-zinc-50 dark:border-zinc-600 dark:hover:border-zinc-500 dark:hover:bg-zinc-700 transform transition-all duration-300 hover:scale-105">
@@ -85,36 +64,35 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
                 Înapoi la dashboard
               </Link>
             </Button>
-            <Button size="sm" variant="default" className="bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-700 dark:hover:bg-blue-600 transform transition-all duration-300 hover:scale-105">
-              <Link href="/app/projects/new" className="flex items-center gap-2">
-                <FolderOpen className="h-4 w-4" />
-                Proiect nou
-              </Link>
-            </Button>
           </div>
         </div>
 
         {/* Quick Stats */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-          <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-xl">
-                  <FolderOpen className="h-5 w-5 text-zinc-600 dark:text-zinc-300" />
+          <Link href={`/app/projects/${project.id}/tasks`} className="block">
+            <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg cursor-pointer">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-xl">
+                    <FolderOpen className="h-5 w-5 text-zinc-600 dark:text-zinc-300" />
+                  </div>
+                  <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-300">Task-uri</CardTitle>
                 </div>
-                <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-300">Task-uri</CardTitle>
-              </div>
-              <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors">{tasks.length}</div>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-green-500 dark:text-green-400" />
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  {tasks.filter(t => t.status === 'done').length} finalizate
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+                <div className="flex items-center gap-2">
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors">{tasks.length}</div>
+                  <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-2">
+                  <BarChart3 className="h-4 w-4 text-green-500 dark:text-green-400" />
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    {tasks.filter(t => t.status === 'done').length} finalizate
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
 
           <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white dark:bg-zinc-800 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -484,6 +462,6 @@ export default async function ProjectDetailPage({ params, searchParams }: { para
           </TabsContent>
         </Tabs>
       </div>
-    </main>
+    </DashboardLayout>
   )
 }

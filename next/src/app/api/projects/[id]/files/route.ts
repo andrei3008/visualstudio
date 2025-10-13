@@ -10,7 +10,7 @@ const baseDir = path.join(process.cwd(), 'storage', 'uploads')
 export async function GET(_req: Request, ctx: { params: { id: string } }) {
   const session = await getServerSession(authOptions)
   if (!session?.user?.email) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  const user = await prisma.user.findUnique({ where: { email: session.user.email } })
+  const user = await prisma.user.findUnique({ where: { email: session.user.email }, select: { id: true, role: true } })
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   const project = await prisma.project.findFirst({ where: user.role === 'admin' ? { id: ctx.params.id } : { id: ctx.params.id, userId: user.id } })
   if (!project) return NextResponse.json({ error: 'Not found' }, { status: 404 })
@@ -21,7 +21,7 @@ export async function GET(_req: Request, ctx: { params: { id: string } }) {
 export async function POST(req: Request, ctx: { params: { id: string } }) {
   const session = await getServerSession(authOptions)
   if (!session?.user?.email) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  const user = await prisma.user.findUnique({ where: { email: session.user.email } })
+  const user = await prisma.user.findUnique({ where: { email: session.user.email }, select: { id: true, role: true } })
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   const project = await prisma.project.findFirst({ where: user.role === 'admin' ? { id: ctx.params.id } : { id: ctx.params.id, userId: user.id } })
   if (!project) return NextResponse.json({ error: 'Not found' }, { status: 404 })

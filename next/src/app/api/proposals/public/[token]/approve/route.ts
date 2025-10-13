@@ -1,31 +1,187 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
-import { notifyProposalApproved } from '@/lib/notify'
-import { createNotification } from '@/lib/notifications'
+import crypto from 'crypto'
 
-export async function POST(_req: Request, ctx: { params: { token: string } }) {
-  const prop = await prisma.proposal.findUnique({ where: { publicToken: ctx.params.token } })
-  if (!prop) return NextResponse.json({ error: 'Not found' }, { status: 404 })
-  if (prop.status !== 'submitted') return NextResponse.json({ error: 'Propunerea nu este în status trimis' }, { status: 400 })
-  const updated = await prisma.proposal.update({
-    where: { id: prop.id },
-    data: { status: 'approved', approvedAt: new Date() },
-    select: { id: true, status: true, approvedAt: true },
-  })
-  // fire-and-forget webhook
-  const items = await prisma.proposalItem.findMany({ where: { proposalId: prop.id } })
-  const totalCents = items.reduce((s, it) => s + it.qty * it.unitPriceCents, 0)
-  notifyProposalApproved({
-    webhookUrl: process.env.PROPOSAL_APPROVED_WEBHOOK,
-    proposalId: prop.id,
-    projectId: prop.projectId,
-    title: prop.title,
-    totalCents,
-  })
-  // notify project owner
-  const project = await prisma.project.findUnique({ where: { id: prop.projectId }, select: { userId: true, name: true } })
-  if (project) {
-    createNotification(project.userId, 'proposal.approved', { id: prop.id, title: prop.title, projectId: prop.projectId, projectName: project.name, totalCents })
+export async function POST(
+  req: Request,
+  ctx: { params: { token: string } }
+) {
+  try {
+    const { action, feedback } = await req.json()
+
+    if (!['approve', 'reject'].includes(action)) {
+      return NextResponse.json(
+        { error: 'Invalid action' },
+        { status: 400 }
+      )
+    }
+
+    // Find proposal by public token
+    const proposal = await prisma.proposal.findUnique({
+      where: { publicToken: ctx.params.token },
+      include: {
+        project: true,
+        items: true
+      }
+    })
+
+    if (!proposal) {
+      return NextResponse.json(
+        { error: 'Proposal not found' },
+        { status: 404 }
+      )
+    }
+
+    // Check if proposal can be reviewed
+    if (proposal.status !== 'client_review' && proposal.status !== 'submitted') {
+      return NextResponse.json(
+        { error: 'Proposal cannot be reviewed at this stage' },
+        { status: 400 }
+      )
+    }
+
+    const newStatus = action === 'approve' ? 'approved' : 'client_rejected'
+
+    // Update proposal
+    const updatedProposal = await prisma.proposal.update({
+      where: { id: proposal.id },
+      data: {
+        status: newStatus,
+        approvedAt: action === 'approve' ? new Date() : null,
+        clientFeedback: action === 'reject' ? feedback : null,
+        updatedAt: new Date()
+      },
+      include: {
+        items: true
+      }
+    })
+
+    // Update project status based on proposal decision
+    const newProjectStatus = action === 'approve' ? 'estimation' : 'proposal_review'
+
+    await prisma.project.update({
+      where: { id: proposal.projectId },
+      data: {
+        status: newProjectStatus,
+        updatedAt: new Date(),
+        adminNotes: {
+          ...(proposal.project.adminNotes as any || {}),
+          proposalDecision: {
+            action,
+            timestamp: new Date().toISOString(),
+            proposalId: proposal.id,
+            proposalTitle: proposal.title
+          }
+        }
+      }
+    })
+
+    // Create notification for admin
+    await prisma.notification.create({
+      data: {
+        userId: 'admin', // You might need to get actual admin user IDs
+        type: action === 'approve' ? 'proposal_approved' : 'proposal_rejected',
+        payload: {
+          proposalId: proposal.id,
+          projectName: proposal.project.name,
+          proposalTitle: proposal.title,
+          action,
+          feedback: action === 'reject' ? feedback : null
+        }
+      }
+    })
+
+    // Calculate totals for response
+    const subtotal = updatedProposal.items.reduce(
+      (sum, item) => sum + item.qty * item.unitPriceCents,
+      0
+    )
+    const vat = subtotal * 0.19
+    const total = subtotal + vat
+
+    return NextResponse.json({
+      success: true,
+      proposal: {
+        ...updatedProposal,
+        pricing: {
+          subtotal,
+          vat,
+          total
+        }
+      }
+    })
+
+  } catch (error) {
+    console.error('Error processing proposal action:', error)
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    )
   }
-  return NextResponse.json(updated)
+}
+
+export async function GET(
+  req: Request,
+  ctx: { params: { token: string } }
+) {
+  try {
+    // Find proposal by public token
+    const proposal = await prisma.proposal.findUnique({
+      where: { publicToken: ctx.params.token },
+      include: {
+        project: {
+          include: {
+            user: {
+              select: {
+                email: true,
+                name: true
+              }
+            }
+          }
+        },
+        items: true
+      }
+    })
+
+    if (!proposal) {
+      return NextResponse.json(
+        { error: 'Proposal not found' },
+        { status: 404 }
+      )
+    }
+
+    // Don't allow access to draft proposals
+    if (proposal.status === 'draft') {
+      return NextResponse.json(
+        { error: 'Proposal not available' },
+        { status: 404 }
+      )
+    }
+
+    // Calculate totals
+    const subtotal = proposal.items.reduce(
+      (sum, item) => sum + item.qty * item.unitPriceCents,
+      0
+    )
+    const vat = subtotal * 0.19
+    const total = subtotal + vat
+
+    return NextResponse.json({
+      proposal: {
+        ...proposal,
+        pricing: {
+          subtotal,
+          vat,
+          total
+        }
+      }
+    })
+
+  } catch (error) {
+    console.error('Error fetching proposal:', error)
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    )
+  }
 }

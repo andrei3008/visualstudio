@@ -8,7 +8,7 @@ export async function GET(_req: Request, ctx: { params: { fileId: string } }) {
   const file = await prisma.file.findUnique({ where: { id: ctx.params.fileId }, include: { project: { select: { userId: true, name: true } } } })
   if (!file) return new Response('Not found', { status: 404 })
   const session = await getServerSession(authOptions)
-  const user = session?.user?.email ? await prisma.user.findUnique({ where: { email: session.user.email } }) : null
+  const user = session?.user?.email ? await prisma.user.findUnique({ where: { email: session.user.email }, select: { id: true, role: true } }) : null
   const isAdmin = user?.role === 'admin'
   const isOwner = user?.id === file.project.userId
   if (!(isAdmin || isOwner) || (file.isInternal && !isAdmin)) return new Response('Forbidden', { status: 403 })
@@ -24,7 +24,7 @@ export async function GET(_req: Request, ctx: { params: { fileId: string } }) {
 export async function DELETE(_req: Request, ctx: { params: { fileId: string } }) {
   const session = await getServerSession(authOptions)
   if (!session?.user?.email) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  const user = await prisma.user.findUnique({ where: { email: session.user.email } })
+  const user = await prisma.user.findUnique({ where: { email: session.user.email }, select: { id: true, role: true } })
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   const file = await prisma.file.findUnique({ where: { id: ctx.params.fileId }, include: { project: true } })
   if (!file) return NextResponse.json({ error: 'Not found' }, { status: 404 })

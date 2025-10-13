@@ -11,6 +11,7 @@ import ThemeInit from '@/components/ThemeInit'
 import { Sparkles } from 'lucide-react'
 import ConditionalMainLayout from '@/components/ConditionalMainLayout'
 import CookieConsent from '@/components/CookieConsent'
+import SessionProviderWrapper from '@/components/SessionProviderWrapper'
 
 
 export const metadata: Metadata = {
@@ -92,14 +93,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-sans">
-        {/* Structured Data for SEO */}
-        <StructuredData type="organization" />
-        <StructuredData type="website" />
-        <ThemeInit />
-        <Navbar session={session} isAdmin={isAdmin} />
-        <ToasterClient />
-        <ConditionalMainLayout>{children}</ConditionalMainLayout>
-        <CookieConsent />
+        <SessionProviderWrapper>
+          {/* Structured Data for SEO */}
+          <StructuredData type="organization" />
+          <StructuredData type="website" />
+          <ThemeInit />
+          <Navbar session={session} isAdmin={isAdmin} />
+          <ToasterClient />
+          <ConditionalMainLayout>{children}</ConditionalMainLayout>
+          <CookieConsent />
+        </SessionProviderWrapper>
         <footer className="mt-12 relative overflow-hidden">
         {/* Clean background */}
         <div className="absolute inset-0 bg-blue-50 dark:bg-blue-950/30"></div>

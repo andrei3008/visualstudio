@@ -2,71 +2,137 @@
 
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Check, Star, Headphones, ArrowRight, Sparkles } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Check, Star, Headphones, ArrowRight, Sparkles, Crown, Zap, Shield } from 'lucide-react'
 
+interface MaintenancePackage {
+  id: string
+  name: string
+  type: string
+  price: number
+  description: string
+  features: string[]
+  includedProjects: number | string
+  createdAt: string
+}
+
+interface UserSubscription {
+  id: string
+  status: string
+  maintenancePackage: MaintenancePackage
+  currentPeriodStart: string
+  currentPeriodEnd: string
+  canceledAt: string
+  projectsIncluded: number
+  projectsUsed: number
+  createdAt: string
+  updatedAt: string
+}
 
 export default function PricingPage() {
+  const { data: session, status } = useSession()
   const [isAnnual, setIsAnnual] = useState(false)
+  const [packages, setPackages] = useState<MaintenancePackage[]>([])
+  const [subscriptions, setSubscriptions] = useState<UserSubscription[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const pricingPlans = [
-    {
-      name: 'Basic',
-      description: 'Perfect pentru proiecte mici și mentenanță',
-      price: { monthly: 499, annual: 4490 },
-      hours: '10 ore/lună',
-      sla: 'SLA 48h',
-      popular: false,
-      features: [
-        'Mentenanță & bugfix',
-        'Mică dezvoltare',
-        'Suport email',
-        'Raport lunar',
-        '1 proiect activ'
-      ],
-      color: 'from-gray-500 to-gray-600',
-      icon: '🚀'
-    },
-    {
-      name: 'Growth',
-      description: 'Ideal pentru afaceri în creștere',
-      price: { monthly: 1299, annual: 11690 },
-      hours: '30 ore/lună',
-      sla: 'SLA 24h',
-      popular: true,
-      features: [
-        'Iterații feature',
-        'Optimizări & A/B',
-        'PM inclus',
-        'Suport prioritar',
-        '3 proiecte active',
-        'Raport săptămânal'
-      ],
-      color: 'from-blue-500 to-blue-600',
-      icon: '⚡'
-    },
-    {
-      name: 'Pro',
-      description: 'Pentru companii cu nevoi complexe',
-      price: { monthly: 2499, annual: 22490 },
-      hours: '60+ ore/lună',
-      sla: 'SLA 8h',
-      popular: false,
-      features: [
-        'Roadmap dedicat',
-        'Integrare CI/CD',
-        'Suport prioritar 24/7',
-        'Proiecte nelimitate',
-        'Dedicated team lead',
-        'Raport zilnic'
-      ],
-      color: 'from-blue-600 to-blue-700',
-      icon: '👑'
+  useEffect(() => {
+    fetchPackages()
+    if (status === 'authenticated') {
+      fetchSubscriptions()
+    } else {
+      setLoading(false)
     }
-  ]
+  }, [status])
+
+  const fetchPackages = async () => {
+    try {
+      const res = await fetch('/api/maintenance-packages')
+      const data = await res.json()
+      setPackages(data.packages || [])
+    } catch (error) {
+      console.error('Failed to fetch packages:', error)
+    }
+  }
+
+  const fetchSubscriptions = async () => {
+    try {
+      const res = await fetch('/api/subscriptions')
+      const data = await res.json()
+      setSubscriptions(data.subscriptions || [])
+    } catch (error) {
+      console.error('Failed to fetch subscriptions:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleSubscribe = async (packageId: string, packageName: string) => {
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ maintenancePackageId: packageId }),
+      })
+
+      if (res.ok) {
+        const data = await res.json()
+        // Redirect to Stripe Checkout
+        window.location.href = data.url
+      } else {
+        const error = await res.json()
+        alert(error.error || 'Failed to create checkout session')
+      }
+    } catch (error) {
+      console.error('Failed to create subscription:', error)
+      alert('Failed to create subscription')
+    }
+  }
+
+  // Get package icon based on type
+  const getPackageIcon = (type: string) => {
+    switch (type) {
+      case 'basic': return <Shield className="h-8 w-8" />
+      case 'growth': return <Zap className="h-8 w-8" />
+      case 'pro': return <Crown className="h-8 w-8" />
+      default: return <Star className="h-8 w-8" />
+    }
+  }
+
+  // Get package color based on type
+  const getPackageColor = (type: string) => {
+    switch (type) {
+      case 'basic': return 'from-gray-500 to-gray-600'
+      case 'growth': return 'from-blue-500 to-blue-600'
+      case 'pro': return 'from-blue-600 to-blue-700'
+      default: return 'from-gray-500 to-gray-600'
+    }
+  }
+
+  // Check if user is subscribed to a package
+  const isSubscribed = (packageId: string) => {
+    return subscriptions.some(sub =>
+      sub.maintenancePackage.id === packageId && sub.status === 'active'
+    )
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400">Loading pricing...</p>
+        </div>
+      </div>
+    )
+  }
 
   const additionalServices = [
     {
@@ -136,65 +202,107 @@ export default function PricingPage() {
 
           {/* Pricing Cards */}
           <div className="grid lg:grid-cols-3 gap-8 mb-20">
-            {pricingPlans.map((plan, index) => (
-              <div
-                key={index}
-                className={`relative group ${plan.popular ? 'lg:-translate-y-4' : ''}`}
-              >
-                {/* Popular Badge */}
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
-                      <Star className="h-4 w-4" />
-                      Cel Mai Popular
-                    </div>
-                  </div>
-                )}
+            {packages.map((pkg) => {
+              const subscribed = isSubscribed(pkg.id)
+              const isGrowth = pkg.type === 'growth'
 
-                <Card className={`h-full bg-white dark:bg-card rounded-2xl border-2 transition-all duration-300 hover:shadow-xl ${plan.popular ? 'border-blue-500 dark:border-blue-400 shadow-lg' : 'border-gray-200 dark:border-gray-700'} group-hover:scale-105`}>
-                  <CardHeader className="text-center p-8 pb-4">
-                    <div className="mb-4">
-                      <div className="text-4xl mb-2">{plan.icon}</div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 mt-2">{plan.description}</p>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{plan.hours} • {plan.sla}</p>
-                      <div className="flex items-baseline justify-center gap-2">
-                        <span className="text-4xl font-bold text-gray-900 dark:text-white">
-                          {isAnnual ? plan.price.annual : plan.price.monthly}€
-                        </span>
-                        <span className="text-gray-600 dark:text-gray-400">
-                          /{isAnnual ? 'an' : 'lună'}
-                        </span>
+              return (
+                <div
+                  key={pkg.id}
+                  className={`relative group ${isGrowth ? 'lg:-translate-y-4' : ''}`}
+                >
+                  {/* Popular Badge */}
+                  {isGrowth && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                        <Star className="h-4 w-4" />
+                        Cel Mai Popular
                       </div>
-                      {isAnnual && (
-                        <p className="text-sm text-green-600 dark:text-green-400">
-                          Economisești {plan.price.monthly * 12 - plan.price.annual}€
-                        </p>
-                      )}
                     </div>
-                  </CardHeader>
-                  <CardContent className="p-8 pt-4 space-y-6">
-                    <div className="space-y-3">
-                      {plan.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start gap-3">
-                          <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                  )}
+
+                  <Card className={`h-full bg-white dark:bg-card rounded-2xl border-2 transition-all duration-300 hover:shadow-xl ${isGrowth ? 'border-blue-500 dark:border-blue-400 shadow-lg' : 'border-gray-200 dark:border-gray-700'} group-hover:scale-105`}>
+                    <CardHeader className="text-center p-8 pb-4">
+                      <div className="mb-4">
+                        <div className="text-4xl mb-2 text-gray-600 dark:text-gray-400">
+                          {getPackageIcon(pkg.type)}
                         </div>
-                      ))}
-                    </div>
-                    <Link
-                      href={plan.name === 'Pro' ? '/contact' : '/login'}
-                      className={`w-full py-4 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl' : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white'}`}
-                    >
-                      {plan.name === 'Pro' ? 'Contactează-ne' : plan.name === 'Growth' ? 'Alege Planul' : 'Începe'}
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{pkg.name}</h3>
+                        <p className="text-gray-600 dark:text-gray-400 mt-2">{pkg.description}</p>
+                      </div>
+                      <div className="space-y-2">
+                        <p className="text-sm text-blue-600 dark:text-blue-400">
+                          {pkg.includedProjects === 'unlimited' ?
+                            'Proiecte nelimitate' :
+                            `${pkg.includedProjects} proiect${pkg.includedProjects !== 1 ? 'e' : ''} gratuite/lună`}
+                        </p>
+                        <div className="flex items-baseline justify-center gap-2">
+                          <span className="text-4xl font-bold text-gray-900 dark:text-white">
+                            {isAnnual ? Math.round(pkg.price * 12 * 0.9) : pkg.price}€
+                          </span>
+                          <span className="text-gray-600 dark:text-gray-400">
+                            /{isAnnual ? 'an' : 'lună'}
+                          </span>
+                        </div>
+                        {isAnnual && (
+                          <p className="text-sm text-green-600 dark:text-green-400">
+                            Economisești {Math.round(pkg.price * 12 * 0.1)}€
+                          </p>
+                        )}
+                      </div>
+
+                      {subscribed && (
+                        <Badge className="mt-4 bg-green-100 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-700">
+                          <Check className="h-3 w-3 mr-1" />
+                          Activ
+                        </Badge>
+                      )}
+                    </CardHeader>
+                    <CardContent className="p-8 pt-4 space-y-6">
+                      <div className="space-y-3">
+                        {pkg.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-start gap-3">
+                            <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {!session ? (
+                        <Link
+                          href="/login"
+                          className={`w-full py-4 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 text-center ${isGrowth ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl' : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white'}`}
+                        >
+                          Autentifică-te pentru a abona
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      ) : (
+                        <Button
+                          className={`w-full py-4 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
+                            subscribed
+                              ? 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 cursor-not-allowed'
+                              : isGrowth
+                              ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl'
+                              : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white'
+                          }`}
+                          disabled={subscribed}
+                          onClick={() => !subscribed && handleSubscribe(pkg.id, pkg.name)}
+                        >
+                          {subscribed ? (
+                            <>Abonat</>
+                          ) : (
+                            <>
+                              {pkg.name === 'Pro' ? 'Contactează-ne' : 'Abonează-te'}
+                              <ArrowRight className="h-4 w-4" />
+                            </>
+                          )}
+                        </Button>
+                      )}
+                    </CardContent>
+                  </Card>
+                </div>
+              )
+            })}
           </div>
 
           {/* Additional Services */}
