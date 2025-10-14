@@ -29,7 +29,7 @@ fi
 
 # Default NEXTAUTH_URL if empty
 if [ -z "${NEXTAUTH_URL:-}" ]; then
-  export NEXTAUTH_URL="http://localhost:3000"
+  export NEXTAUTH_URL="http://localhost:8007"
 fi
 
 # Create a materialized runtime env file for debugging/reference

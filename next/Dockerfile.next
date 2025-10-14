@@ -27,13 +27,16 @@ ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1
 
 # Install Prisma CLI globally to avoid npx downloads at runtime
-RUN npm i -g prisma@5.19.1
+RUN npm i -g prisma
 # Install OpenSSL and glibc compatibility for Prisma engines
 RUN apk add --no-cache openssl libc6-compat postgresql-client
 ## Ensure seed dependencies exist at runtime (standalone doesn't include dev deps)
 # bcryptjs is used in prisma/seed.js to hash the initial password
 RUN npm init -y >/dev/null 2>&1 || true \
- && npm i --no-audit --silent bcryptjs@2.4.3
+ && npm i --no-audit --silent bcryptjs@2.4.3 \
+ && apk add --no-cache --virtual .build-deps python3 make g++ \
+ && npm rebuild bcryptjs \
+ && apk del .build-deps
 
 # Copy standalone output
 COPY --from=builder /app/.next/standalone ./
