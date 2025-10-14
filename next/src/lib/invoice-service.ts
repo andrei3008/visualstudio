@@ -30,6 +30,15 @@ export interface EstimationWithDetails extends Estimation {
   }
 }
 
+export interface InvoiceWithDetails extends Invoice {
+  project?: (Project & {
+    user: User
+  }) | null
+  estimation?: Estimation | null
+  proposal?: any | null
+  payments?: any[]
+}
+
 export class InvoiceService {
   /**
    * Generate a unique invoice number in format INV-YYYY-NNNN
@@ -154,7 +163,7 @@ export class InvoiceService {
         // Client information
         clientName,
         clientEmail,
-        clientAddress: null, // TODO: Add client address if available
+        // clientAddress: null, // TODO: Add client address if available
 
         // Invoice details
         title: `Invoice for ${estimation.title}`,
@@ -218,7 +227,7 @@ export class InvoiceService {
   /**
    * Get invoice with all related data
    */
-  static async getInvoiceDetails(invoiceId: string): Promise<Invoice | null> {
+  static async getInvoiceDetails(invoiceId: string): Promise<InvoiceWithDetails | null> {
     return await prisma.invoice.findUnique({
       where: { id: invoiceId },
       include: {
@@ -321,6 +330,8 @@ export class InvoiceService {
     return await prisma.payment.create({
       data: {
         ...data,
+        method: data.method as any, // Type cast for PaymentMethod enum
+        status: data.status as any, // Type cast for PaymentStatus enum
         paidAt: data.status === 'completed' ? new Date() : null
       }
     })

@@ -42,7 +42,24 @@ export default async function EditUserPage({ params }: PageProps) {
 
   const user = await prisma.user.findUnique({
     where: { id: params.id },
-    include: {
+    select: {
+      id: true,
+      email: true,
+      name: true,
+      role: true,
+      Nume: true,
+      Prenume: true,
+      Companie: true,
+      Telefon: true,
+      Oras: true,
+      Address: true,
+      PostalCode: true,
+      Country: true,
+      Website: true,
+      Notes: true,
+      isActive: true,
+      clientSince: true,
+      createdAt: true,
       _count: {
         select: {
           projects: true,
@@ -280,7 +297,7 @@ export default async function EditUserPage({ params }: PageProps) {
                 {/* Form Actions */}
                 <div className="flex items-center justify-between pt-6 border-t border-gray-200 dark:border-gray-700">
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Ultima modificare: {new Date(user.updatedAt).toLocaleDateString('ro-RO')}
+                    Creat: {new Date(user.createdAt).toLocaleDateString('ro-RO')}
                   </div>
                   <div className="flex gap-2">
                     <Button variant="outline" asChild>

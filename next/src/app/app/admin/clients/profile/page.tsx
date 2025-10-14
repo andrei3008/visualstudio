@@ -348,7 +348,7 @@ export default function ClientProfilePage() {
           <Card className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border-orange-200 dark:border-orange-700">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
-                <div className>
+                <div className="space-y-1">
                   <p className="text-sm font-medium text-orange-600 dark:text-orange-400">Status</p>
                   <Badge
                     variant={client.isActive ? "default" : "secondary"}

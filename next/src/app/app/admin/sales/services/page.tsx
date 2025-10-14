@@ -370,7 +370,7 @@ export default async function AdminServicesPage({ searchParams }: PageProps) {
                     <div>
                       <h4 className="font-medium text-sm text-gray-900 dark:text-white mb-2">Caracteristici:</h4>
                       <ul className="space-y-1">
-                        {features.slice(0, 3).map((feature: string, index: number) => (
+                        {features.slice(0, 3).map((feature: any, index: number) => (
                           <li key={index} className="text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             {feature}

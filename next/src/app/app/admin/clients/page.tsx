@@ -72,6 +72,7 @@ interface Client {
   Telefon?: string
   Oras?: string
   Address?: string
+  Website?: string
   isActive: boolean
   clientSince: string
   role: string

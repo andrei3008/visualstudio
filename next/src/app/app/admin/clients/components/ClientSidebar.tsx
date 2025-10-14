@@ -15,7 +15,7 @@ import {
   Calculator,
   DollarSign,
   ShoppingCart,
-  FileContract,
+  File,
   HelpCircle,
   Folder,
   Building,
@@ -106,7 +106,7 @@ const clientMenuItems = [
   {
     title: 'Contracte',
     href: '/app/admin/clients/[id]/contracts',
-    icon: FileContract,
+    icon: File,
     description: 'Contracte client'
   },
   {

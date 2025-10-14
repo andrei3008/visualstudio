@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 import AdminSidebar from '../../components/AdminSidebar'
 import UserSidebar from './components/UserSidebar'
 import { useRouter } from 'next/navigation'
@@ -11,6 +12,7 @@ export default function UserLayout({
 }: {
   children: React.ReactNode
 }) {
+  const { data: session } = useSession()
   const [mainSidebarOpen, setMainSidebarOpen] = useState(true)
   const [userSidebarOpen, setUserSidebarOpen] = useState(true)
   const [user, setUser] = useState<any>(null)
@@ -49,7 +51,11 @@ export default function UserLayout({
     <div className="flex h-screen bg-gray-50 dark:bg-slate-900 overflow-hidden">
       {/* Main Admin Sidebar - First Column */}
       <div className={`${mainSidebarOpen ? 'w-64' : 'w-0'} bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 transition-all duration-300 overflow-hidden flex-shrink-0`}>
-        <AdminSidebar />
+        <AdminSidebar
+            isOpen={mainSidebarOpen}
+            onClose={() => setMainSidebarOpen(false)}
+            user={session?.user}
+          />
       </div>
 
       {/* User Secondary Sidebar - Second Column */}

@@ -159,7 +159,11 @@ export default function ClientLayout({
           flex-shrink-0
         `}>
           <div className="h-full">
-            <AdminSidebar />
+            <AdminSidebar
+                isOpen={mainSidebarOpen}
+                onClose={() => setMainSidebarOpen(false)}
+                user={session?.user}
+              />
           </div>
         </div>
 
@@ -169,7 +173,11 @@ export default function ClientLayout({
           ${mainSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         `}>
           <div className="h-full">
-            <AdminSidebar />
+            <AdminSidebar
+                isOpen={mainSidebarOpen}
+                onClose={() => setMainSidebarOpen(false)}
+                user={session?.user}
+              />
           </div>
         </div>
 

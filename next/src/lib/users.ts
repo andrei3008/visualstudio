@@ -8,6 +8,7 @@ export type User = {
   name?: string
   email: string
   passwordHash: string
+  role: string
   createdAt: string
 }
 
@@ -26,7 +27,7 @@ async function ensureStore() {
 export async function listUsers(): Promise<User[]> {
   if (process.env.DATABASE_URL) {
     const users = await prisma.user.findMany({ orderBy: { createdAt: 'asc' } })
-    return users.map((u: any) => ({ id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, createdAt: u.createdAt.toISOString() }))
+    return users.map((u: any) => ({ id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, role: u.role, createdAt: u.createdAt.toISOString() }))
   }
   await ensureStore()
   const raw = await fs.readFile(usersFile, 'utf-8')
@@ -37,7 +38,7 @@ export async function findUserByEmail(email: string): Promise<User | undefined> 
   if (process.env.DATABASE_URL) {
     const u = await prisma.user.findUnique({ where: { email } })
     if (!u) return undefined
-    return { id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, createdAt: u.createdAt.toISOString() }
+    return { id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, role: u.role, createdAt: u.createdAt.toISOString() }
   }
   const users = await listUsers()
   return users.find(u => u.email.toLowerCase() === email.toLowerCase())
@@ -50,7 +51,7 @@ export async function createUser(params: { name?: string; email: string; passwor
     const existing = await prisma.user.findUnique({ where: { email } })
     if (existing) throw new Error('Email already registered')
     const u = await prisma.user.create({ data: { email, name, passwordHash } })
-    return { id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, createdAt: u.createdAt.toISOString() }
+    return { id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, role: u.role, createdAt: u.createdAt.toISOString() }
   }
   const existing = await findUserByEmail(email)
   if (existing) throw new Error('Email already registered')
@@ -59,6 +60,7 @@ export async function createUser(params: { name?: string; email: string; passwor
     name,
     email,
     passwordHash,
+    role: 'client', // Default role
     createdAt: new Date().toISOString(),
   }
   const users = await listUsers()
@@ -78,7 +80,7 @@ export async function updateUserName(email: string, name: string): Promise<User 
   if (process.env.DATABASE_URL) {
     const u = await prisma.user.update({ where: { email }, data: { name } }).catch(() => null)
     if (!u) return null
-    return { id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, createdAt: u.createdAt.toISOString() }
+    return { id: u.id, name: u.name ?? undefined, email: u.email, passwordHash: u.passwordHash, role: u.role, createdAt: u.createdAt.toISOString() }
   }
   await ensureStore()
   const raw = await fs.readFile(usersFile, 'utf-8')
