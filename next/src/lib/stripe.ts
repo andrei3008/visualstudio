@@ -1,9 +1,19 @@
 import Stripe from 'stripe'
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-09-30.clover',
-  typescript: true,
-})
+let stripeInstance: Stripe | null = null
+
+export function getStripe(): Stripe {
+  if (!stripeInstance) {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      throw new Error('STRIPE_SECRET_KEY is not defined')
+    }
+    stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2025-09-30.clover',
+      typescript: true,
+    })
+  }
+  return stripeInstance
+}
 
 // Create a checkout session for subscriptions
 export async function createSubscriptionCheckoutSession({
@@ -20,6 +30,7 @@ export async function createSubscriptionCheckoutSession({
   price: number
 }) {
   try {
+    const stripe = getStripe()
     const session = await stripe.checkout.sessions.create({
       customer_email: email,
       billing_address_collection: 'required',
@@ -70,6 +81,7 @@ export async function createProjectPaymentIntent({
   price: number
 }) {
   try {
+    const stripe = getStripe()
     const paymentIntent = await stripe.paymentIntents.create({
       amount: Math.round(price * 100), // Convert to cents
       currency: 'eur',
@@ -91,6 +103,7 @@ export async function createProjectPaymentIntent({
 // Get subscription by Stripe subscription ID
 export async function getSubscription(subscriptionId: string) {
   try {
+    const stripe = getStripe()
     const subscription = await stripe.subscriptions.retrieve(subscriptionId)
     return subscription
   } catch (error) {
@@ -102,6 +115,7 @@ export async function getSubscription(subscriptionId: string) {
 // Cancel subscription
 export async function cancelSubscription(subscriptionId: string) {
   try {
+    const stripe = getStripe()
     const subscription = await stripe.subscriptions.cancel(subscriptionId)
     return subscription
   } catch (error) {
@@ -119,6 +133,7 @@ export async function createCustomer({
   name?: string
 }) {
   try {
+    const stripe = getStripe()
     const customer = await stripe.customers.create({
       email,
       name: name || email,
@@ -139,6 +154,7 @@ export async function updateCustomer(
   }
 ) {
   try {
+    const stripe = getStripe()
     const customer = await stripe.customers.update(customerId, updates)
     return customer
   } catch (error) {

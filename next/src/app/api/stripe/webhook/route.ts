@@ -2,13 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import Stripe from 'stripe'
 import { prisma } from '@/lib/prisma'
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-09-30.clover',
-})
+import { getStripe } from '@/lib/stripe'
 
 export async function POST(req: NextRequest) {
   try {
+    const stripe = getStripe()
     const body = await req.text()
     const signature = headers().get('stripe-signature')
 
