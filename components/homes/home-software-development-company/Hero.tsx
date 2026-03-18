@@ -161,7 +161,6 @@ export default function Hero() {
                     className="video parallax-video"
                     src="/video/1920x1080_video-04.webm"
                     poster="/video/1920x1080_video-04.webp"
-                    style={{ maxHeight: '60vh', margin: '0 auto' }}
                   />
                 </div>
               </div>

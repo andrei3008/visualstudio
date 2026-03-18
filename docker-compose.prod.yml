@@ -12,9 +12,7 @@
 
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile.next
+    image: ghcr.io/andrei3008/visualstudio-web:latest
     container_name: visualstudio-web
     ports:
       - "8007:3000"
