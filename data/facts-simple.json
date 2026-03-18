@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "number": 50,
+    "suffix": "+",
+    "description": "Clienți fericiți care\nne-au acordat încrederea",
+    "image": "/img/icons/h70_stats-01.webp",
+    "imageWidth": 311,
+    "imageHeight": 280,
+    "counterId": "stats-counter-1"
+  },
+  {
+    "id": 2,
+    "number": 80,
+    "suffix": "%",
+    "description": "Clienți care revin\npentru proiecte noi",
+    "image": "/img/icons/h70_stats-02.webp",
+    "imageWidth": 280,
+    "imageHeight": 280,
+    "counterId": "stats-counter-2"
+  },
+  {
+    "id": 3,
+    "number": 15,
+    "suffix": "+",
+    "description": "Ani de\nexperiență profesională",
+    "image": "/img/icons/h70_stats-03.webp",
+    "imageWidth": 280,
+    "imageHeight": 280,
+    "counterId": "stats-counter-3"
+  },
+  {
+    "id": 4,
+    "number": 70,
+    "suffix": "+",
+    "description": "Proiecte finalizate\ncu succes",
+    "image": "/img/icons/h70_stats-04.webp",
+    "imageWidth": 274,
+    "imageHeight": 280,
+    "counterId": "stats-counter-4"
+  }
+]

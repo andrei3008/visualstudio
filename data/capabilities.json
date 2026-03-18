@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Dezvoltare software custom",
+    "num": "/ 01",
+    "hoverImage": "/img/illustrations/600x730_cpb-01.webp",
+    "mainImage": "/img/illustrations/1200x800_cpb-01.webp"
+  },
+  {
+    "title": "Site-uri & Magazine Online",
+    "num": "/ 02",
+    "hoverImage": "/img/illustrations/600x730_cpb-03.webp",
+    "mainImage": "/img/illustrations/1200x800_cpb-03.webp"
+  },
+  {
+    "title": "DevOps & Cloud Migration",
+    "num": "/ 03",
+    "hoverImage": "/img/illustrations/600x730_cpb-02.webp",
+    "mainImage": "/img/illustrations/1200x800_cpb-02.webp"
+  },
+  {
+    "title": "Automatizări inteligente cu AI",
+    "num": "/ 04",
+    "hoverImage": "/img/illustrations/600x730_cpb-04.webp",
+    "mainImage": "/img/illustrations/1200x800_cpb-04.webp"
+  },
+  {
+    "title": "Digitalizare PNRR & e-Factura",
+    "num": "/ 05",
+    "hoverImage": "/img/illustrations/600x730_cpb-05.webp",
+    "mainImage": "/img/illustrations/1200x800_cpb-05.webp"
+  },
+  {
+    "title": "Securitate & Mentenanță lunară",
+    "num": "/ 06",
+    "hoverImage": "/img/illustrations/600x730_cpb-06.webp",
+    "mainImage": "/img/illustrations/1200x800_cpb-06.webp"
+  },
+  {
+    "title": "Consulting & Audit IT",
+    "num": "/ 07",
+    "hoverImage": "/img/illustrations/600x730_cpb-07.webp",
+    "mainImage": "/img/illustrations/1200x800_cpb-07.webp"
+  }
+]

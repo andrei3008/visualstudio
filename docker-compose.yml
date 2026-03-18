@@ -1,0 +1,29 @@
+# ============================================================================
+# DOCKER COMPOSE - DEVELOPMENT
+# ============================================================================
+# Această configurație este pentru DEVELOPMENT LOCAL
+#
+# Porturi:
+#   - Web: http://localhost:8007
+#   - DB: localhost:5435
+#
+# Comenzi:
+#   docker compose up -d --build    # Start development
+#   docker compose down              # Stop development
+#   docker compose logs -f web       # View logs
+# ============================================================================
+
+services:
+  web:
+    image: node:20
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "8007:3000"  # Mapping: localhost:8007 -> container:3000
+    environment:
+      - NODE_ENV=development
+    command: sh -lc "npm install && npm run dev"
+    stdin_open: true
+    tty: true
