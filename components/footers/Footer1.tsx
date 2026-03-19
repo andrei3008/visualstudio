@@ -125,6 +125,7 @@ export default function Footer1() {
                           <rect x="87" y="77" width="8" height="16"/>
                           <rect x="75" y="93" width="20" height="8"/>
                         </g>
+                      </g>
                     </svg>
                     {/* logo text */}
                     <span className="mxd-logo__text">
