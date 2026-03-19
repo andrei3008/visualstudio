@@ -118,9 +118,9 @@ export default function Hero() {
             {/* headline */}
             <div className="mxd-hero-03__headline">
               <p className="hero-03-headline__caption loading__item">
-                Partener Tehnic de Viitor
+                Partener Tehnic
                 <br />
-                soluții software inteligente
+                Soluții software inteligente
               </p>
               <h1 className="hero-03-headline__title loading__item">
                 <span className="hero-03-headline__hidden">visualstudio</span>
