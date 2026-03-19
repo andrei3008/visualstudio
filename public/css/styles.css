@@ -122,10 +122,27 @@ html {
 
 /* Force visualstudio text color */
 .hero-03-headline__svg-mobile.custom-visualstudio-text,
-.hero-03-headline__svg.custom-visualstudio-text {
+.hero-03-headline__svg.custom-visualstudio-text,
+.mxd-footer__svg-v2-mobile.custom-visualstudio-text,
+.mxd-footer__svg-v2.custom-visualstudio-text {
   color: #161616 !important;
   text-shadow: 0 0 2px rgba(0,0,0,0.8) !important;
   filter: none !important;
+}
+
+/* Show/hide mobile vs desktop elements */
+@media (max-width: 991px) {
+  .hero-03-headline__svg,
+  .mxd-footer__svg-v2 {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-03-headline__svg-mobile,
+  .mxd-footer__svg-v2-mobile {
+    display: none !important;
+  }
 }
 
 /* Adjust font size for problematic range 992px - 1800px */
@@ -133,12 +150,17 @@ html {
   .hero-03-headline__svg.custom-visualstudio-text {
     font-size: clamp(100px, 18vw, 180px) !important;
   }
+  .mxd-footer__svg-v2.custom-visualstudio-text {
+    font-size: clamp(80px, 15vw, 200px) !important;
+  }
 }
 
 /* Dark mode override */
 @media (prefers-color-scheme: dark) {
   .hero-03-headline__svg-mobile.custom-visualstudio-text,
-  .hero-03-headline__svg.custom-visualstudio-text {
+  .hero-03-headline__svg.custom-visualstudio-text,
+  .mxd-footer__svg-v2-mobile.custom-visualstudio-text,
+  .mxd-footer__svg-v2.custom-visualstudio-text {
     color: #faf7f6 !important;
     text-shadow: 0 0 2px rgba(255,255,255,0.8) !important;
   }

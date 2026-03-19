@@ -127,7 +127,7 @@ export default function Hero() {
                 <span
                   className="hero-03-headline__svg-mobile custom-visualstudio-text"
                   style={{
-                    fontSize: 'clamp(80px, 16vw, 160px)',
+                    fontSize: 'clamp(60px, 15vw, 120px)',
                     fontWeight: '900',
                     lineHeight: '1',
                     color: '#161616',

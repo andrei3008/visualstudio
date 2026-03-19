@@ -12,9 +12,21 @@ export default function Footer2({ text = "rayosttudio" }: { text?: string }) {
         <div className="fullwidth-text__tl-trigger" />
         <div className="mxd-footer__fullwidth-text anim-top-to-bottom">
           <span
+            className="mxd-footer__svg-v2-mobile custom-visualstudio-text"
+            style={{
+              fontSize: 'clamp(60px, 15vw, 120px)',
+              fontWeight: '900',
+              lineHeight: '1',
+              color: '#161616',
+              textShadow: '0 0 2px rgba(0,0,0,0.8)'
+            }}
+          >
+            visualstudio
+          </span>
+          <span
             className="mxd-footer__svg-v2 custom-visualstudio-text"
             style={{
-              fontSize: 'clamp(120px, 25vw, 280px)',
+              fontSize: 'clamp(125px, 25vw, 285px)',
               fontWeight: '900',
               lineHeight: '1',
               color: '#161616',
