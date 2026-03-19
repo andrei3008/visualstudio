@@ -41,7 +41,7 @@ export default function Services() {
                     <div className="mxd-services-cards-s__image image-right">
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/site-ecomm-2.png"
+                        src="/img/illustrations/vector-7.png"
                         width={910}
                         height={1200}
                       />

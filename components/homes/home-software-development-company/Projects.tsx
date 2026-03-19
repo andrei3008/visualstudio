@@ -22,23 +22,23 @@ export default function Projects() {
                           <div className="col-12 mxd-grid-item no-margin">
                             <div className="mxd-section-title__title">
                               <RevealText as="h2" className="reveal-type">
-                                Case studies
+                                Studii de caz
                               </RevealText>
                             </div>
                           </div>
                           <div className="col-12 mxd-grid-item no-margin">
                             <div className="mxd-section-title__descr">
                               <p className="anim-uni-in-up">
-                                Explore a selection of projects blending
+                                Explorează o selecție de proiecte care combină
                                 <br />
-                                creativity with practical design
+                                creativitatea cu design-ul practic
                               </p>
                             </div>
                           </div>
                           <div className="col-12 mxd-grid-item no-margin">
                             <div className="mxd-section-title__controls anim-uni-in-up">
                               <AnimatedButton
-                                text="All Works"
+                                text="Toate proiectele"
                                 className="btn btn-anim btn-default btn-outline slide-right-up"
                                 href={`/works-simple`}
                               >
@@ -54,7 +54,7 @@ export default function Projects() {
                 </div>
                 <div className="col-12 col-xl-7 mxd-pinned-projects__scroll">
                   <div className="mxd-pinned-projects__scroll-inner mxd-grid-item no-margin">
-                    {projects1.slice(0, 5).map((project, index) => (
+                    {projects1.slice(0, 1).map((project, index) => (
                       <div key={index} className="mxd-project-item">
                         <Link
                           className={`mxd-project-item__media ${project.anim}`}
