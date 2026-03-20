@@ -9,7 +9,7 @@
     "imageHeight": 800,
     "button": {
       "text": "Studio",
-      "href": "/about-us",
+      "href": "/despre-noi",
       "iconClass": "ph-bold ph-arrow-up-right",
       "btnClass": "btn btn-anim btn-default btn-outline opposite slide-right-up"
     },

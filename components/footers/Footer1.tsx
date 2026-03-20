@@ -50,7 +50,7 @@ export default function Footer1() {
       title: "Inner pages",
       links: [
         { label: "About me", href: "/about-me" },
-        { label: "About us", href: "/about-us" },
+        { label: "About us", href: "/despre-noi" },
         { label: "Services", href: "/services" },
         { label: "Our team", href: "/team" },
         { label: "Pricing plans", href: "/pricing" },

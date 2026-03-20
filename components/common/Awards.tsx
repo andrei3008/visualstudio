@@ -54,7 +54,7 @@ export default function Awards() {
                     <AnimatedButton
                       text="View More"
                       className="btn btn-anim btn-default btn-outline slide-right-up"
-                      href={`/about-us`}
+                      href={`/despre-noi`}
                     >
                       <i className="ph-bold ph-arrow-up-right" />
                     </AnimatedButton>
