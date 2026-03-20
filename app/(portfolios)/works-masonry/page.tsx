@@ -1,5 +1,5 @@
 import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 
 import MarqueeSlider from "@/components/portfolios/MarqueeSlider";
 import ParallaxDivider from "@/components/portfolios/ParallaxDivider";
@@ -24,7 +24,7 @@ export default function WorksMasonryPage() {
         <Testimonials />
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

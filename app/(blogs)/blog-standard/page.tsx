@@ -1,6 +1,6 @@
 import Blogs1 from "@/components/blogs/Blogs1";
 import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title:
@@ -18,7 +18,7 @@ export default function BlogStandardPage() {
         <Blogs1 />
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

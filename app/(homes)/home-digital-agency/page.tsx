@@ -1,7 +1,7 @@
 import Blogs from "@/components/common/Blogs";
 import Cta from "@/components/common/Cta";
 import Facts from "@/components/common/Facts";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 
 import About from "@/components/homes/home-digital-agency/About";
 
@@ -32,7 +32,7 @@ export default function HomeDigitalAgencyPage() {
         <Blogs />
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 
 import Challages from "@/components/portfolios/Challages";
 import DetailsHero from "@/components/portfolios/DetailsHero";
@@ -33,7 +33,7 @@ export default function ProjectDetailsPage() {
         </div>
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

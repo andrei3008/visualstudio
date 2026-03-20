@@ -1,6 +1,6 @@
 import Blogs from "@/components/common/Blogs";
 import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 
 import About from "@/components/homes/home-1/About";
 import Approch from "@/components/common/Approch";
@@ -43,7 +43,7 @@ export default function HomeMainPage() {
         <Blogs />
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

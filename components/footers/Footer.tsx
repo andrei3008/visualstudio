@@ -4,7 +4,7 @@ import socials from "@/data/socials.json";
 import AnimatedButton from "../animation/AnimatedButton";
 import SubscribeForm from "./SubscribeForm";
 
-export default function Footer2({ text = "rayosttudio" }: { text?: string }) {
+export default function Footer({ text = "visualstudio" }: { text?: string }) {
   return (
     <footer id="mxd-footer" className="mxd-footer">
       {/* Footer Block - Fullwidth Text Start */}

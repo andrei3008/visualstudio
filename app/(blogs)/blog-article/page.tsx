@@ -1,7 +1,7 @@
 import BlogDetails from "@/components/blogs/BlogDetails";
 import Blogs from "@/components/common/Blogs";
 import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title:
@@ -20,7 +20,7 @@ export default function BlogSinglePage() {
         <Blogs desc="" title="More on topic" />
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

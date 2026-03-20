@@ -1,7 +1,7 @@
 import Awards from "@/components/common/Awards";
 import Blogs from "@/components/common/Blogs";
 import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 
 import About from "@/components/homes/home-creative-design-studio/About";
 
@@ -31,7 +31,7 @@ export default function HomeCreativeDesignStudioPage() {
         <Blogs />
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

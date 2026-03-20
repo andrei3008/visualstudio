@@ -1,6 +1,6 @@
 import Blogs from "@/components/common/Blogs";
 import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 import Faqs from "@/components/other-pages/Faqs";
 import { Metadata } from "next";
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function FaqsPage() {
         <Blogs />
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

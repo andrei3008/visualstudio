@@ -10,7 +10,7 @@ import PagesMarquee from "@/components/preview/PagesMarquee";
 import Features2 from "@/components/preview/Features2";
 import FeatureCards from "@/components/preview/FeatureCards";
 import Cta from "@/components/preview/Cta";
-import Footer1 from "@/components/footers/Footer1";
+import Footer from "@/components/footers/Footer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title:
@@ -34,7 +34,7 @@ export default function PreviewPage() {
         <FeatureCards />
         <Cta />
       </main>
-      <Footer1 />
+      <Footer />
     </>
   );
 }

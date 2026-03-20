@@ -1,7 +1,7 @@
 import BackgroundParallax from "@/components/animation/BackgroundParallax";
 import VelocityMarquee from "@/components/animation/VelocityMarquee";
 import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 import ContactForm from "@/components/other-pages/contact/ContactForm";
 import Locations from "@/components/other-pages/contact/Locations";
 import PageTitle from "@/components/other-pages/contact/PageTitle";
@@ -74,7 +74,7 @@ export default function ContactPage() {
         <Locations />
         <Cta />
       </main>
-      <Footer2 />
+      <Footer />
     </>
   );
 }

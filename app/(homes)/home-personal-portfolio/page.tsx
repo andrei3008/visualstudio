@@ -7,7 +7,7 @@ import ParallaxBanner from "@/components/homes/home-personal-portfolio/ParallaxB
 import Projects from "@/components/homes/home-personal-portfolio/Projects";
 import Services from "@/components/homes/home-personal-portfolio/Services";
 
-import Footer2 from "@/components/footers/Footer2";
+import Footer from "@/components/footers/Footer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title:
@@ -28,7 +28,7 @@ export default function HomePersonalPortfolioPage() {
         <Blogs />
         <Cta />
       </main>
-      <Footer2 text="alexwalker" />
+      <Footer text="alexwalker" />
     </>
   );
 }
