@@ -216,9 +216,9 @@ export default function MobileMenu() {
                     className="menu-promo__caption fade-in-elm"
                     style={{ transitionDelay: "0.4s" }}
                   >
-                    👋 New Rayo template is here!
+                    👋 Implementăm proiectele tale cu maximă responsabilitate.
                     <br />
-                    Showcase your projects, services and expertise with impact.
+                    Termene respectate • Comunicare clară • Suport pe termen lung.
                   </p>
                   <div
                     className="menu-promo__video fade-in-up-elm"
@@ -256,13 +256,13 @@ export default function MobileMenu() {
               style={{ transitionDelay: "0.4s" }}
             >
               <p className="t-xsmall">
-                Made with <i className="ph-fill ph-heart t-additional" /> by{" "}
+                Made with <i className="ph-fill ph-heart t-additional" /> {" "}
                 <a
                   className="no-effect"
-                  href="https://themeforest.net/user/ib-themes/portfolio"
+                  href="#"
                   target="_blank"
                 >
-                  ib themes
+                  visualstudio
                 </a>
               </p>
               <p className="t-xsmall">

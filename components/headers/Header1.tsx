@@ -83,7 +83,7 @@ export default function Header1() {
     }, 300);
   }}
 >
-  Say Hello
+  <span className="btn__text">Say Hello</span>
   <i className="ph-bold ph-arrow-up-right" />
 </a>
       </div>

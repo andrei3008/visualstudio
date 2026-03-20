@@ -184,3 +184,10 @@ html {
 }
 
 /* General fix for internal links to scroll to top */
+
+/* Hide button text on mobile, show only icon */
+@media (max-width: 991px) {
+  .btn__text {
+    display: none !important;
+  }
+}
