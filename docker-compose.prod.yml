@@ -12,7 +12,7 @@
 
 services:
   web:
-    image: ghcr.io/andrei3008/visualstudio-web:latest
+    image: ghcr.io/andrei3008/visualstudio:latest
     container_name: visualstudio-web
     ports:
       - "8007:3000"

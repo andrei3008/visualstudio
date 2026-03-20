@@ -2,8 +2,8 @@
   "projects1": [
     {
       "id": 1,
-      "title": "Creative studio",
-      "description": "template for modern agencies",
+      "title": "InkLab",
+      "description": "Studio Tatuaje",
       "previewClass": "preview-image-1",
       "tags": ["UI/UX", "Web design", "Illustrations"],
       "anim": "anim-uni-in-up"

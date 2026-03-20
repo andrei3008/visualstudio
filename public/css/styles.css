@@ -165,3 +165,20 @@ html {
     text-shadow: 0 0 2px rgba(255,255,255,0.8) !important;
   }
 }
+
+/* Custom background image for first project */
+.mxd-project-item__preview.preview-image-custom {
+  background-image: url(/img/illustrations/site-1.png) !important;
+  position: relative !important;
+}
+
+.mxd-project-item__preview.preview-image-custom::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}

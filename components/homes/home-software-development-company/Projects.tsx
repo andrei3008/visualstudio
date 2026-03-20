@@ -61,7 +61,7 @@ export default function Projects() {
                           href={`/project-details`}
                         >
                           <BackgroundParallax
-                            className={`mxd-project-item__preview ${project.previewClass} parallax-img-small`}
+                            className={`mxd-project-item__preview preview-image-custom parallax-img-small`}
                           />
                           <div className="mxd-project-item__tags">
                             {project.tags.map((tag, i) => (
