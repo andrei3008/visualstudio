@@ -79,7 +79,7 @@ export default function About() {
                       <AnimatedButton
                         text="About Us"
                         className="btn btn-anim btn-default btn-outline slide-right-up"
-                        href={`/about-us`}
+                        href={`/despre-noi`}
                       >
                         <i className="ph-bold ph-arrow-up-right" />
                       </AnimatedButton>

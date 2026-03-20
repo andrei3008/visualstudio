@@ -15,7 +15,7 @@ export default function Hero() {
                   <div className="hero-04-imageblock__btn">
                     <Link
                       className="btn btn-round btn-round-medium btn-base slide-right-up anim-no-delay"
-                      href={`/about-us`}
+                      href={`/despre-noi`}
                     >
                       <i className="ph-bold ph-arrow-up-right" />
                     </Link>
