@@ -17,7 +17,7 @@ export default function BlogDetails() {
                 <div className="mxd-article__meta">
                   <div className="mxd-article__breadcrumbs loading__item">
                     <span>
-                      <Link href={`/index-main`}>Home</Link>
+                      <Link href={`/`}>Home</Link>
                     </span>
                     <span>
                       <Link href={`/blog-standard`}>Insights</Link>

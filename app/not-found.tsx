@@ -53,7 +53,7 @@ export default function NotFoundPage() {
                       <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                         <Link
                           className="btn btn-anim btn-default btn-accent slide-right-up"
-                          href={`/index-main`}
+                          href={`/`}
                         >
                           <span className="btn-caption">
                             Let&apos;s Go Home

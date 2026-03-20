@@ -55,7 +55,7 @@ export default function NotFoundPage() {
                         <AnimatedButton
                           className="btn btn-anim btn-default btn-accent slide-right-up"
                           text="Let's Go Home"
-                          href="/index-main"
+                          href="/"
                         >
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>
