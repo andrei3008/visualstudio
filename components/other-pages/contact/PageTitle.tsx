@@ -44,16 +44,16 @@ export default function PageTitle() {
                       Let&apos;s talk
                       <br />
                       about your project!
-                      {/* <a class="btn btn-line-headline slide-right-up anim-no-delay" href="mailto:example@example.com?subject=Message%20from%20your%20site">
+                      {/* <a class="btn btn-line-headline slide-right-up anim-no-delay" href="mailto:salut@visualstudio.ro?subject=Message%20from%20your%20site">
                     <span class="btn-caption">hello@rayo.com</span>
                     <i class="ph-bold ph-arrow-up-right"></i>
                   </a> */}
                     </h1>
                     <a
                       className="btn btn-line-headline slide-right-up anim-no-delay"
-                      href="mailto:example@example.com?subject=Message%20from%20your%20site"
+                      href="mailto:salut@visualstudio.ro?subject=Message%20from%20your%20site"
                     >
-                      <span className="btn-caption">hello@rayo.com</span>
+                      <span className="btn-caption">salut@visualstudio.ro</span>
                       <i className="ph-bold ph-arrow-up-right" />
                     </a>
                     <p className="inner-headline__text t-large t-bright loading__item">

@@ -125,9 +125,9 @@ export default function MobileMenu() {
                 className="mxd-menu__caption fade-in-elm"
                 style={{ transitionDelay: "0.4s" }}
               >
-                🦄 Innovative design
+                💻 Soluții software custom
                 <br />
-                and cutting-edge development
+                și automatizări inteligente
               </p>
               <div className="main-menu">
                 <nav className="main-menu__content">
@@ -218,7 +218,11 @@ export default function MobileMenu() {
                   >
                     👋 Implementăm proiectele tale cu maximă responsabilitate.
                     <br />
-                    Termene respectate • Comunicare clară • Suport pe termen lung.
+                    • Termene respectate
+                    <br />
+                    • Comunicare clară
+                    <br />
+                    • Suport pe termen lung
                   </p>
                   <div
                     className="menu-promo__video fade-in-up-elm"
