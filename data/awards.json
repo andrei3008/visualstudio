@@ -1,15 +1,15 @@
 [
   {
-    "title": "Some article on Medium",
+    "title": "Articol pe Medium",
     "url": "https://medium.com/",
     "image": "/img/works/preview/600x600_prv-01.webp",
     "imageWidth": 601,
     "imageHeight": 600,
-    "tags": ["UI/UX design", "Development"],
+    "tags": ["UI/UX design", "Dezvoltare"],
     "date": "2025"
   },
   {
-    "title": "Awwwards nomination",
+    "title": "Nominalizare Awwwards",
     "url": "https://www.awwwards.com/",
     "image": "/img/works/preview/600x600_prv-02.webp",
     "imageWidth": 600,
@@ -18,16 +18,16 @@
     "date": "2024"
   },
   {
-    "title": "Behance curated work",
+    "title": "Lucrare curated pe Behance",
     "url": "https://www.behance.net/",
     "image": "/img/works/preview/600x600_prv-03.webp",
     "imageWidth": 600,
     "imageHeight": 600,
-    "tags": ["Illustrations", "Graphic design"],
+    "tags": ["Ilustrații", "Design Grafic"],
     "date": "2024"
   },
   {
-    "title": "Article on Medium",
+    "title": "Articol pe Medium",
     "url": "https://medium.com/",
     "image": "/img/works/preview/600x600_prv-04.webp",
     "imageWidth": 600,

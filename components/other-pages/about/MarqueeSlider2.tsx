@@ -11,10 +11,10 @@ export default function MarqueeSlider2() {
               {/* single item */}
               {[
                 "Design",
-                "Development",
+                "Dezvoltare",
                 "Branding",
                 "eCommerce",
-                "Mobile Apps",
+                "Aplicații Mobile",
               ].map((text, i) => (
                 <div
                   key={i}

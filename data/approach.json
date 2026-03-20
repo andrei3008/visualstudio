@@ -1,27 +1,27 @@
 {"approach1":[
   {
-    "title": "Perfection",
-    "description": "From pixel-perfect designs to flawless code, every aspect of our projects is crafted with care to ensure the highest standards of quality.",
+    "title": "Perfecțiune",
+    "description": "De la design pixel-perfect la cod impecabil, fiecare aspect al proiectelor noastre este creat cu grijă pentru a asigura cele mai înalte standarde de calitate.",
     "icon": "/img/icons/h70_appr-01.webp"
   },
   {
-    "title": "Innovative",
-    "description": "We stay ahead of design trends, offering modern and visually impactful solutions that set your brand apart.",
+    "title": "Inovație",
+    "description": "Rămânem înaintea tendințelor de design, oferind soluții moderne și cu impact vizual care diferențiază brandul tău.",
     "icon": "/img/icons/h70_appr-02.webp"
   },
   {
-    "title": "Expertise",
-    "description": "We are passionate about integrating the latest technologies and trends, including interactive animations and mobile-first strategies.",
+    "title": "Expertiză",
+    "description": "Suntem pasionați de integrarea celor mai noi tehnologii și tendințe, inclusiv animații interactive și strategii mobile-first.",
     "icon": "/img/icons/h70_appr-03.webp"
   },
   {
-    "title": "Full-Cycle services",
-    "description": "From web design to development, branding, SEO, and UX/UI, we provide a full range of services that cover all your digital needs.",
+    "title": "Servicii Complete",
+    "description": "De la web design la dezvoltare, branding, SEO și UX/UI, oferim o gamă completă de servicii care acoperă toate nevoile tale digitale.",
     "icon": "/img/icons/h70_appr-04.webp"
   },
   {
-    "title": "Client Success",
-    "description": "Our clients consistently see improved engagement, conversion rates, and business growth.",
+    "title": "Succesul Clienților",
+    "description": "Clienții noștri văd în mod constant îmbunătățiri în implicare, rate de conversie și creșterea afacerii.",
     "icon": "/img/icons/h70_appr-05.webp"
   }
 ]

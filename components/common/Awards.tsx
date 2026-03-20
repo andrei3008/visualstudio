@@ -42,9 +42,9 @@ export default function Awards() {
                 <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrtitle anim-uni-in-up">
                     <RevealText as="h2" className="reveal-type">
-                      Awards &amp;
+                      Premii și
                       <br />
-                      publications
+                      publicații
                     </RevealText>
                   </div>
                 </div>
@@ -52,7 +52,7 @@ export default function Awards() {
                 <div className="col-12 col-xl-3 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrcontrols pre-title anim-uni-in-up">
                     <AnimatedButton
-                      text="View More"
+                      text="Vezi mai multe"
                       className="btn btn-anim btn-default btn-outline slide-right-up"
                       href={`/despre-noi`}
                     >

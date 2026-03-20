@@ -45,7 +45,7 @@ export default function About() {
                                 <p className="anim-uni-in-up">Implementare rapidă</p>
                               </li>
                               <li>
-                                <p className="anim-uni-in-up">DevOps & Cloud expert</p>
+                                <p className="anim-uni-in-up">DevOps & Cloud</p>
                               </li>
                               <li>
                                 <p className="anim-uni-in-up">Suport permanent</p>

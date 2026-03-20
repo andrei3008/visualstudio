@@ -16,21 +16,21 @@ export default function Approch() {
                 <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrtitle anim-uni-in-up">
                     <RevealText as="h2" className="reveal-type">
-                      Approach and philosophy
+                      Abordare și filosofie
                     </RevealText>
                   </div>
                 </div>
                 <div className="col-12 col-xl-3 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrdescr">
                     <p className="anim-uni-in-up">Design</p>
-                    <p className="anim-uni-in-up">Development</p>
-                    <p className="anim-uni-in-up">Mastership</p>
+                    <p className="anim-uni-in-up">Dezvoltare</p>
+                    <p className="anim-uni-in-up">Infrastructura</p>
                   </div>
                 </div>
                 <div className="col-12 col-xl-3 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrcontrols anim-uni-in-up">
                     <AnimatedButton
-                      text="Let's Chat"
+                      text="Să discutăm"
                       className="btn btn-anim btn-default btn-outline slide-right-up"
                       href={`/contact`}
                     >

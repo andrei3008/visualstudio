@@ -10,11 +10,11 @@
   {
     "title": "Servicii",
     "submenu": [
-      { "label": "Dezvoltare Software", "href": "/services" },
-      { "label": "Automatizări AI", "href": "/services" },
-      { "label": "Aplicații Mobile", "href": "/services" },
-      { "label": "DevOps & Cloud", "href": "/services" },
-      { "label": "Securitate & Mentenanță", "href": "/services" }
+      { "label": "Dezvoltare Software", "href": "/dezvoltare-software" },
+      { "label": "Automatizări AI", "href": "/automatizari-ai" },
+      { "label": "Aplicații Mobile", "href": "/aplicatii-mobile" },
+      { "label": "DevOps & Cloud", "href": "/devops-cloud" },
+      { "label": "Securitate & Mentenanță", "href": "/securitate-mentenanta" }
     ]
   },
   {

@@ -2,13 +2,13 @@
   {
     "number": 50,
     "suffix": "+",
-    "description": "Happy clients who\ntrust my work",
+    "description": "Clienți fericiți care\nîși acordă încredere munții noastre",
     "image": "/img/illustrations/800x800_card-image-01.webp",
 
     "imageWidth": 800,
     "imageHeight": 800,
     "button": {
-      "text": "Studio",
+      "text": "Studioul",
       "href": "/despre-noi",
       "iconClass": "ph-bold ph-arrow-up-right",
       "btnClass": "btn btn-anim btn-default btn-outline opposite slide-right-up"
@@ -23,7 +23,7 @@
   {
     "number": 80,
     "suffix": "%",
-    "description": "Clients come back for\na new projects",
+    "description": "Clienții se întorc pentru\nproiecte noi",
     "image": "/img/illustrations/800x800_card-image-02.webp",
     "imageWidth": 800,
     "imageHeight": 800,
@@ -50,14 +50,14 @@
     "colClass": "col-12 col-xl-7 mxd-stats-cards__item mxd-grid-item anim-uni-scale-in-left"
   },
   {
-    "number": 5,
+    "number": 15,
     "suffix": "+",
-    "description": "Years of professional experience in designing digital products",
+    "description": "Ani de experiență profesională în designul de produse digitale",
     "image": "/img/illustrations/800x800_card-image-03.webp",
     "imageWidth": 800,
     "imageHeight": 800,
     "button": {
-      "text": "Start New Project",
+      "text": "Începe Proiect Nou",
       "href": "/contact",
       "iconClass": "ph-bold ph-arrow-down-right",
       "btnClass": "btn btn-anim btn-default btn-outline slide-right-down"
@@ -72,12 +72,12 @@
   {
     "number": 70,
     "suffix": "+",
-    "description": "Successfully\ncompleted projects",
+    "description": "Proiecte finalizate\ncu succes",
     "image": "/img/illustrations/800x800_card-image-04.webp",
     "imageWidth": 800,
     "imageHeight": 800,
     "button": {
-      "text": "Works",
+      "text": "Portofoliu",
       "href": "/works-simple",
       "iconClass": "ph-bold ph-arrow-up-right",
       "btnClass": "btn btn-anim btn-default btn-outline slide-right-up"

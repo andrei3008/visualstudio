@@ -70,15 +70,15 @@ export default function Team() {
                           <div className="col-12">
                             <div className="mxd-section-title__title">
                               <RevealText as="h2" className="reveal-type">
-                                Creative leaders
+                                Lideri creativi
                               </RevealText>
                             </div>
                           </div>
                           <div className="col-12">
                             <div className="mxd-section-title__descr">
                               <p className="anim-uni-in-up">
-                                Technical experts dedicated to delivering
-                                flawless, high-performing digital experiences.
+                                Experți tehnici dedicați livrării
+                                de experiențe digitale impecabile și performante.
                               </p>
                             </div>
                           </div>
@@ -86,7 +86,7 @@ export default function Team() {
                             <div className="mxd-section-title__controls anim-uni-in-up">
                               <AnimatedButton
                                 className="btn btn-anim btn-default btn-outline slide-right-up"
-                                text="Meet our team"
+                                text="Echipa noastră"
                                 href={`/team`}
                               >
                                 <i className="ph-bold ph-arrow-up-right" />

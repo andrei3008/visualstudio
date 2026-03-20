@@ -36,7 +36,7 @@ export default function Hero2() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                         />
                       </svg>
-                      <span>Studio</span>
+                      <span>Studioul</span>
                     </p>
                   </div>
                 </div>
@@ -46,7 +46,7 @@ export default function Hero2() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-06 loading__item">
-                        Driven by ideas and innovation
+                        Conduși de idei și inovație
                       </h1>
                       {/* <p class="inner-headline__text t-large t-bright">Our team is a blend of creative 
                   thinkers, problem-solvers, and tech enthusiasts dedicated to bringing your ideas 
@@ -78,32 +78,32 @@ export default function Hero2() {
                             <ul>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Innovations
+                                  Inovație
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Excellence
+                                  Excelență
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Creativity
+                                  Creativitate
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Experience
+                                  Experiență
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Competence
+                                  Competență
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Passion
+                                  Pasiune
                                 </p>
                               </li>
                             </ul>
@@ -116,16 +116,16 @@ export default function Hero2() {
                                 </p>
                               </li>
                               <li>
-                                <p className="t-small anim-uni-in-up">IU/UX</p>
+                                <p className="t-small anim-uni-in-up">UI/UX</p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  App design
+                                  Design Aplicații
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Development
+                                  Dezvoltare
                                 </p>
                               </li>
                               <li>
@@ -152,9 +152,9 @@ export default function Hero2() {
                         as="p"
                         className="t-bright t-large reveal-type"
                       >
-                        We are a creative digital agency specializing in
-                        innovative design and cutting-edge development. We help
-                        businesses stand out and thrive in the modern landscape.
+                        Suntem o agenție digitală specializată în
+                        design inovator și dezvoltare de ultimă generație. Ajutăm
+                        afacerile să iasă în evidență și să prospere în peisajul modern.
                       </RevealText>
                     </div>
                   </div>
