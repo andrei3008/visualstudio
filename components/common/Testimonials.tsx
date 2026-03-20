@@ -94,7 +94,7 @@ export default function Testimonials() {
                           >
                             <p className="t-large">{item.text}</p>
                             <AnimatedButton
-                              text="Project Page"
+                              text="Pagina Proiectului"
                               className="btn btn-anim btn-default btn-small btn-opposite slide-right-up"
                               href={item.projectPage}
                             >

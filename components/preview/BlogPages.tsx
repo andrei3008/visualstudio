@@ -88,7 +88,7 @@ export default function BlogPages() {
               <div className="mxd-demo-cards__content">
                 <div className="mxd-demo-cards__descr">
                   <h2 className="mxd-demo-cards__title h2-small">
-                    <Link href={`/works-simple`} target="_blank">
+                    <Link href={`/portofoliu`} target="_blank">
                       Portfolio
                     </Link>
                   </h2>

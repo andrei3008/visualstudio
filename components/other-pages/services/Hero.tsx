@@ -133,7 +133,7 @@ export default function Hero() {
                                 <div className="mxd-stats-cards__btngroup">
                                   <Link
                                     className="btn btn-anim btn-default btn-outline slide-right-up"
-                                    href={`/works-simple`}
+                                    href={`/portofoliu`}
                                   >
                                     <span className="btn-caption">Works</span>
                                     <i className="ph-bold ph-arrow-up-right" />

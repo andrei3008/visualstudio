@@ -40,7 +40,7 @@ export default function Projects() {
                               <AnimatedButton
                                 text="Toate proiectele"
                                 className="btn btn-anim btn-default btn-outline slide-right-up"
-                                href={`/works-simple`}
+                                href={`/portofoliu`}
                               >
                                 <i className="ph-bold ph-arrow-up-right" />
                               </AnimatedButton>
