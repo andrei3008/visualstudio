@@ -191,3 +191,31 @@ html {
     display: none !important;
   }
 }
+
+/* Fix iOS Safari stacking issue in Hero section */
+@supports (-webkit-touch-callout: none) {
+  .mxd-hero-03__marquee {
+    position: relative !important;
+    z-index: 10 !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .mxd-hero-03__headline {
+    position: relative !important;
+    z-index: 20 !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .hero-03-marquee__image,
+  .hero-03-marquee__video {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  .marquee__item {
+    -webkit-transform-style: preserve-3d !important;
+    transform-style: preserve-3d !important;
+  }
+}
