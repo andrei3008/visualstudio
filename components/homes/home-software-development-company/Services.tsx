@@ -118,7 +118,7 @@ export default function Services() {
                     <div className="mxd-services-cards-s__image image-bottom" style={{ bottom: '-60px' }}>
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-3.png"
+                        src="/img/illustrations/vector-9.png"
                         width={1200}
                         height={1200}
                       />
