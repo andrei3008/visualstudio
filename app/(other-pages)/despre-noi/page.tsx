@@ -12,9 +12,9 @@ import Team from "@/components/other-pages/about/Team";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title:
-    "About Us || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Despre Noi || Visual Studio - Software Development Company",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Visual Studio - Software development company specializată în Next.js, React, CRM, E-commerce și soluții software custom.",
 };
 export default function AboutUsPage() {
   return (
