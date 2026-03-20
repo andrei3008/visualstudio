@@ -72,13 +72,20 @@ export default function Header1() {
       <div className="mxd-header__controls loading__fade">
         <ThemeSwitcherButton />
 
-        <AnimatedButton
-          text="Say Hello"
-          className="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right"
-          href="/contact"
-        >
-          <i className="ph-bold ph-arrow-up-right" />
-        </AnimatedButton>
+        <a
+  href="/contact"
+  className="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right"
+  onClick={(e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      window.location.href = '/contact';
+    }, 300);
+  }}
+>
+  Say Hello
+  <i className="ph-bold ph-arrow-up-right" />
+</a>
       </div>
     </header>
   );

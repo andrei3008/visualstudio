@@ -14,6 +14,27 @@ const setColorSchemeScript = `
   } catch(e) {}
 })();
 `;
+
+const scrollFixScript = `
+(function() {
+  // Handle internal links scroll to top
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[href^="/"]');
+    if (link && !link.target) {
+      e.preventDefault();
+      // Smooth scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      // Navigate after a small delay
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 300);
+    }
+  });
+})();
+`;
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +44,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en" className="no-touch">
       <head>
         <script dangerouslySetInnerHTML={{ __html: setColorSchemeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: scrollFixScript }} />
       </head>
       <body>
         <ClientLayout>{children}</ClientLayout>
