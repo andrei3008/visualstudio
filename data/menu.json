@@ -8,14 +8,24 @@
     "href": "/despre-noi"
   },
   {
-    "title": "Servicii",
-    "submenu": [
-      { "label": "Dezvoltare Software", "href": "/dezvoltare-software" },
-      { "label": "Automatizări AI", "href": "/automatizari-ai" },
-      { "label": "Aplicații Mobile", "href": "/aplicatii-mobile" },
-      { "label": "DevOps & Cloud", "href": "/devops-cloud" },
-      { "label": "Securitate & Mentenanță", "href": "/securitate-mentenanta" }
-    ]
+    "title": "Dezvoltare Software",
+    "href": "/dezvoltare-software"
+  },
+  {
+    "title": "Automatizări AI",
+    "href": "/automatizari-ai"
+  },
+  {
+    "title": "Aplicații Mobile",
+    "href": "/aplicatii-mobile"
+  },
+  {
+    "title": "DevOps & Cloud",
+    "href": "/devops-cloud"
+  },
+  {
+    "title": "Securitate & Mentenanță",
+    "href": "/securitate-mentenanta"
   },
   {
     "title": "Portofoliu",
@@ -23,7 +33,7 @@
   },
   {
     "title": "Blog",
-    "href": "/blog-standard"
+    "href": "/blog"
   },
   {
     "title": "Contact",

@@ -1,24 +1,20 @@
 [
   {
-    "label": "Home",
-    "href": "/home-main"
+    "label": "Acasă",
+    "href": "/"
   },
   {
-    "label": "About us",
+    "label": "Despre Noi",
     "href": "/despre-noi"
   },
   {
-    "label": "Works",
+    "label": "Portofoliu",
     "href": "/portofoliu",
     "counter": 10
   },
   {
-    "label": "Services",
-    "href": "/services"
-  },
-  {
-    "label": "Insights",
-    "href": "/blog-standard"
+    "label": "Blog",
+    "href": "/blog"
   },
   {
     "label": "Contact",
