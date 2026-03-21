@@ -1,22 +1,8 @@
 import Link from "next/link";
 import footerNav from "@/data/footer-nav.json";
+import socials from "@/data/socials.json";
 import AnimatedButton from "../animation/AnimatedButton";
 import SubscribeForm from "./SubscribeForm";
-
-const services = [
-  { title: "Dezvoltare Software", href: "/dezvoltare-software" },
-  { title: "Automatizări AI", href: "/automatizari-ai" },
-  { title: "Aplicații Mobile", href: "/aplicatii-mobile" },
-  { title: "DevOps & Cloud", href: "/devops-cloud" },
-  { title: "Securitate & Mentenanță", href: "/securitate-mentenanta" },
-];
-
-const socials = [
-  { title: "Instagram", icon: "ph-instagram-logo", url: "https://www.instagram.com/visualstudio.ro" },
-  { title: "TikTok", icon: "ph-tiktok-logo", url: "https://www.tiktok.com/@visualstudio" },
-  { title: "YouTube", icon: "ph-youtube-logo", url: "https://www.youtube.com/@visualstudio" },
-  { title: "GitHub", icon: "ph-github-logo", url: "https://github.com/visualstudio" },
-];
 
 export default function Footer({ text = "visualstudio" }: { text?: string }) {
   return (
@@ -217,42 +203,19 @@ export default function Footer({ text = "visualstudio" }: { text?: string }) {
             <div className="footer-blocks__block">
               {/* card title */}
               <div className="footer-blocks__title anim-uni-in-up">
-                <p className="footer-blocks__title-l">Servicii</p>
-              </div>
-              {/* footer services */}
-              <div className="footer-blocks__socials">
-                <ul className="footer-socials">
-                  {services.map((service, i) => (
-                    <li key={i} className="footer-socials__item anim-uni-in-up">
-                      <Link
-                        href={service.href}
-                        className="footer-socials__link"
-                      >
-                        {service.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            {/* social block */}
-            <div className="footer-blocks__block" style={{ marginTop: "20px" }}>
-              {/* card title */}
-              <div className="footer-blocks__title anim-uni-in-up">
                 <p className="footer-blocks__title-l">Social</p>
               </div>
               {/* footer socials */}
               <div className="footer-blocks__socials">
-                <ul className="footer-socials" style={{ display: "flex", flexDirection: "row", gap: "20px", flexWrap: "nowrap", listStyle: "none", padding: 0, margin: 0 }}>
+                <ul className="footer-socials">
                   {socials.map((social, i) => (
-                    <li key={i} className="footer-socials__item anim-uni-in-up" style={{ display: "inline-block" }}>
+                    <li key={i} className="footer-socials__item anim-uni-in-up">
                       <a
                         href={social.url}
+                        className="footer-socials__link"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}
                       >
-                        <i className={`ph-bold ${social.icon}`} style={{ fontSize: "24px", color: "#fff" }} />
+                        {social.title}
                       </a>
                     </li>
                   ))}
