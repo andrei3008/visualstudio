@@ -135,7 +135,7 @@ export default function Hero() {
                     className="video parallax-video"
                     scale={1.5}
                     src="/video/video-1.mp4"
-                    poster="/video/video-1.webp"
+                    poster="/video/video-1-poster.svg"
                   />
                 </div>
               </div>

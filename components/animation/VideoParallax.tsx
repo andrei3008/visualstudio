@@ -48,10 +48,11 @@ const VideoParallax = ({
 
   return (
     <video
-      preload="auto"
+      preload="metadata"
       autoPlay
       loop
       muted
+      playsInline
       src={src}
       poster={poster}
       ref={elRef}
