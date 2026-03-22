@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
 
 export default function RouteScrollManager() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const lenis = useLenis();
 
   useEffect(() => {
@@ -34,7 +33,7 @@ export default function RouteScrollManager() {
     return () => {
       window.history.scrollRestoration = previous;
     };
-  }, [lenis, pathname, searchParams]);
+  }, [lenis, pathname]);
 
   return null;
 }
