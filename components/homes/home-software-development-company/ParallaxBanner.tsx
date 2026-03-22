@@ -6,7 +6,7 @@ export default function ParallaxBanner() {
       <div className="mxd-container">
         <div className="mxd-divider">
           <BackgroundParallax
-            scale={1.5}
+            scale={1.15}
             className="mxd-divider__image divider-image-5 parallax-img"
           />
         </div>

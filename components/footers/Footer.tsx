@@ -21,7 +21,7 @@ export default function Footer({ text = "visualstudio" }: { text?: string }) {
               textShadow: '0 0 2px rgba(0,0,0,0.8)'
             }}
           >
-            visualstudio
+            
           </span>
           <span
             className="mxd-footer__svg-v2 custom-visualstudio-text"
@@ -33,7 +33,7 @@ export default function Footer({ text = "visualstudio" }: { text?: string }) {
               textShadow: '0 0 2px rgba(0,0,0,0.8)'
             }}
           >
-            visualstudio
+            
           </span>
         </div>
       </div>

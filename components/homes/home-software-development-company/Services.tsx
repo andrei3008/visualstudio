@@ -41,7 +41,7 @@ export default function Services() {
                     <div className="mxd-services-cards-s__image image-right">
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-7.png"
+                        src="/img/illustrations/vector-15.png"
                         width={910}
                         height={1200}
                       />
@@ -73,11 +73,11 @@ export default function Services() {
                         Implementăm rapid soluțiile eligibile PNRR – site, e-Factura, automatizări de bază. Ajutăm IMM-urile să nu piardă grantul și să atingă minim 6-8 criterii DESI.
                       </p>
                     </div>
-                    <div className="mxd-services-cards-s__image image-top-right" style={{ marginTop: '100px', marginLeft: '-40px' }}>
+                    <div className="mxd-services-cards-s__image image-top-right">
                       <Image
                         className="mxd-move"
                         alt="Illustration"
-                        src="/img/illustrations/vector-2.png"
+                        src="/img/illustrations/vector-16.png"
                         width={1200}
                         height={1200}
                       />
@@ -118,7 +118,7 @@ export default function Services() {
                     <div className="mxd-services-cards-s__image image-bottom" style={{ bottom: '-60px' }}>
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-9.png"
+                        src="/img/illustrations/vector-19.png"
                         width={1200}
                         height={1200}
                       />
@@ -156,7 +156,7 @@ export default function Services() {
                     <div className="mxd-services-cards-s__image image-bottom image-bottom-2" style={{ bottom: '-60px' }}>
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-4.png"
+                        src="/img/illustrations/vector-18.png"
                         width={891}
                         height={1200}
                       />
@@ -196,7 +196,7 @@ export default function Services() {
                     <div className="mxd-services-cards-s__image image-top" style={{ marginTop: '60px' }}>
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-5.png"
+                        src="/img/illustrations/vector-20.png"
                         width={1200}
                         height={996}
                       />

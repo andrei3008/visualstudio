@@ -16,27 +16,14 @@ export default function Hero() {
               <VelocityMarquee className="marquee marquee-right--gsap">
                 {/* item */}
                 <div className="marquee__item one-line">
-                  <div className="hero-03-marquee__video">
-                    <video
-                      preload="auto"
-                      autoPlay
-                      loop
-                      muted
-                      poster="video/hero/hero-video-02.webp"
-                    >
-                      <source
-                        type="video/mp4"
-                        src="/video/hero/hero-video-02.mp4"
-                      />
-                      <source
-                        type="video/webm"
-                        src="/video/hero/hero-video-02.webm"
-                      />
-                      <source
-                        type="video/ogv"
-                        src="/video/hero/hero-video-02.ogv"
-                      />
-                    </video>
+                  <div className="hero-03-marquee__image">
+                    <Image
+                      className="mxd-move"
+                      alt="Image"
+                      src="/img/hero/hero-15.png"
+                      width={1000}
+                      height={1532}
+                    />
                   </div>
                 </div>
                 {/* item */}
@@ -53,27 +40,14 @@ export default function Hero() {
                 </div>
                 {/* item */}
                 <div className="marquee__item one-line">
-                  <div className="hero-03-marquee__video">
-                    <video
-                      preload="auto"
-                      autoPlay
-                      loop
-                      muted
-                      poster="video/hero/hero-video-01.webp"
-                    >
-                      <source
-                        type="video/mp4"
-                        src="/video/hero/hero-video-01.mp4"
-                      />
-                      <source
-                        type="video/webm"
-                        src="/video/hero/hero-video-01.webm"
-                      />
-                      <source
-                        type="video/ogv"
-                        src="/video/hero/hero-video-01.ogv"
-                      />
-                    </video>
+                  <div className="hero-03-marquee__image">
+                    <Image
+                      className="mxd-pulse-small"
+                      alt="Image"
+                      src="/img/hero/hero-16.png"
+                      width={800}
+                      height={780}
+                    />
                   </div>
                 </div>
                 {/* item */}
@@ -82,7 +56,7 @@ export default function Hero() {
                     <Image
                       className="mxd-rotate-slow"
                       alt="Image"
-                      src="/img/hero/hero-6.png"
+                      src="/img/hero/hero-13.png"
                       width={1410}
                       height={1056}
                     />
@@ -94,7 +68,7 @@ export default function Hero() {
                     <Image
                       className="mxd-move"
                       alt="Image"
-                      src="/img/hero/hero-10.png"
+                      src="/img/hero/hero-11.png"
                       width={2152}
                       height={2015}
                     />
@@ -106,7 +80,7 @@ export default function Hero() {
                     <Image
                       className="mxd-pulse-small"
                       alt="Image"
-                      src="/img/hero/hero-4.png"
+                      src="/img/hero/hero-14.png"
                       width={800}
                       height={780}
                     />
@@ -159,8 +133,9 @@ export default function Hero() {
                 <div className="mxd-divider__video">
                   <VideoParallax
                     className="video parallax-video"
-                    src="/video/1920x1080_video-04.webm"
-                    poster="/video/1920x1080_video-04.webp"
+                    scale={1.5}
+                    src="/video/video-1.mp4"
+                    poster="/video/video-1.webp"
                   />
                 </div>
               </div>

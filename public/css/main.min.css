@@ -364,13 +364,13 @@
   background-image: url(/img/illustrations/1920x1080_divider-02.webp);
 }
 .divider-image-3 {
-  background-image: url(/img/illustrations/1920x1080_divider-03.webp);
+  background-image: url(/img/illustrations/vector-26.jpeg);
 }
 .divider-image-4 {
   background-image: url(/img/illustrations/1920x1080_divider-04.webp);
 }
 .divider-image-5 {
-  background-image: url(/img/illustrations/2400x1350_divider-05.webp);
+  background-image: url(/img/illustrations/vector-25.png);
 }
 .divider-image-6 {
   background-image: url(/img/illustrations/1920x1080_divider-06.webp);
@@ -17125,8 +17125,8 @@ form textarea:required:valid {
 @media only screen and (min-width: 1600px) {
   .mxd-services-cards-s__image.image-top-right {
     width: 414px;
-    top: -120px;
-    right: -60px;
+    top: -20px;
+    right: -20px;
   }
   .mxd-services-cards-s__image.image-bottom {
     max-width: 470px;
