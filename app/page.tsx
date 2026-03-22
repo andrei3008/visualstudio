@@ -8,7 +8,6 @@ import Facts from "@/components/homes/home-software-development-company/Facts";
 import Hero from "@/components/homes/home-software-development-company/Hero";
 import MarqueeSlider from "@/components/homes/home-software-development-company/MarqueeSlider";
 import MarqueeSlider2 from "@/components/homes/home-software-development-company/MarqueeSlider2";
-import ParallaxBanner from "@/components/homes/home-software-development-company/ParallaxBanner";
 import ParallaxDivider from "@/components/homes/home-software-development-company/ParallaxDivider";
 import Projects from "@/components/homes/home-software-development-company/Projects";
 import Services from "@/components/homes/home-software-development-company/Services";
@@ -29,9 +28,8 @@ export default function Home() {
         <MarqueeSlider />
         <Services />
         <About />
-        <ParallaxBanner />
         <Capabilities />
-        <Projects />
+        {/* <Projects /> */}
         <TechStacks />
         <MarqueeSlider2 />
         <Facts />
