@@ -1,27 +1,27 @@
 {"approach1":[
   {
-    "title": "Perfecțiune",
-    "description": "De la design pixel-perfect la cod impecabil, fiecare aspect al proiectelor noastre este creat cu grijă pentru a asigura cele mai înalte standarde de calitate.",
+    "title": "Claritate in executie",
+    "description": "Pornim de la obiective concrete, definim scope-ul clar si transformam cerintele intr-un plan de livrare realist, usor de urmarit si usor de validat.",
     "icon": "/img/icons/h70_appr-01.webp"
   },
   {
-    "title": "Inovație",
-    "description": "Rămânem înaintea tendințelor de design, oferind soluții moderne și cu impact vizual care diferențiază brandul tău.",
+    "title": "Tehnologie care sustine cresterea",
+    "description": "Alegem stack-ul in functie de produs, echipa si etapa business-ului, astfel incat solutia sa fie rapida azi si scalabila maine.",
     "icon": "/img/icons/h70_appr-02.webp"
   },
   {
-    "title": "Expertiză",
-    "description": "Suntem pasionați de integrarea celor mai noi tehnologii și tendințe, inclusiv animații interactive și strategii mobile-first.",
+    "title": "Experienta digitala utila",
+    "description": "Construim interfete clare, orientate pe conversie si usor de folosit, astfel incat produsul sa fie placut pentru utilizator si eficient pentru business.",
     "icon": "/img/icons/h70_appr-03.webp"
   },
   {
-    "title": "Servicii Complete",
-    "description": "De la web design la dezvoltare, branding, SEO și UX/UI, oferim o gamă completă de servicii care acoperă toate nevoile tale digitale.",
+    "title": "Cap-coada, fara fragmentare",
+    "description": "Acoperim strategia, designul, dezvoltarea, integrarile, automatizarile si optimizarea continua, fara sa impingem proiectul intre mai multi furnizori.",
     "icon": "/img/icons/h70_appr-04.webp"
   },
   {
-    "title": "Succesul Clienților",
-    "description": "Clienții noștri văd în mod constant îmbunătățiri în implicare, rate de conversie și creșterea afacerii.",
+    "title": "Parteneriat pe termen lung",
+    "description": "Nu ne oprim la lansare. Monitorizam, imbunatatim si evoluam produsul impreuna cu clientul, astfel incat investitia tehnica sa produca rezultate reale in timp.",
     "icon": "/img/icons/h70_appr-05.webp"
   }
 ]

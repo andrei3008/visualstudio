@@ -3,7 +3,7 @@
     "number": 50,
     "suffix": "+",
     "description": "Clienți fericiți care\nîși acordă încredere munții noastre",
-    "image": "/img/illustrations/800x800_card-image-01.webp",
+    "image": "/img/facts/fact-01.jpg",
 
     "imageWidth": 800,
     "imageHeight": 800,
@@ -24,7 +24,7 @@
     "number": 80,
     "suffix": "%",
     "description": "Clienții se întorc pentru\nproiecte noi",
-    "image": "/img/illustrations/800x800_card-image-02.webp",
+    "image": "/img/facts/fact-02.jpg",
     "imageWidth": 800,
     "imageHeight": 800,
     "avatars": [
@@ -53,7 +53,7 @@
     "number": 15,
     "suffix": "+",
     "description": "Ani de experiență profesională în designul de produse digitale",
-    "image": "/img/illustrations/800x800_card-image-03.webp",
+    "image": "/img/facts/fact-03.jpg",
     "imageWidth": 800,
     "imageHeight": 800,
     "button": {
@@ -73,7 +73,7 @@
     "number": 70,
     "suffix": "+",
     "description": "Proiecte finalizate\ncu succes",
-    "image": "/img/illustrations/800x800_card-image-04.webp",
+    "image": "/img/facts/fact-04.jpg",
     "imageWidth": 800,
     "imageHeight": 800,
     "button": {

@@ -1,4 +1,5 @@
 import BackgroundParallax from "@/components/animation/BackgroundParallax";
+import AnimatedButton from "@/components/animation/AnimatedButton";
 import RevealText from "@/components/animation/RevealText";
 
 export default function Hero2() {
@@ -36,7 +37,7 @@ export default function Hero2() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                         />
                       </svg>
-                      <span>Studioul</span>
+                      <span>Despre noi</span>
                     </p>
                   </div>
                 </div>
@@ -46,11 +47,37 @@ export default function Hero2() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-06 loading__item">
-                        Conduși de idei și inovație
+                        Construim produse digitale care ajuta business-urile sa creasca
                       </h1>
-                      {/* <p class="inner-headline__text t-large t-bright">Our team is a blend of creative 
-                  thinkers, problem-solvers, and tech enthusiasts dedicated to bringing your ideas 
-                  to life. Together, we craft innovative solutions that inspire and deliver results.</p> */}
+                      <p className="inner-headline__text t-large t-bright loading__item">
+                        Combinam strategie, design, dezvoltare si automatizare
+                        pentru a livra site-uri, aplicatii si sisteme care arata
+                        bine, se misca rapid si sustin vanzari reale.
+                      </p>
+                      <div
+                        className="loading__item"
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "12px",
+                          marginTop: "24px",
+                        }}
+                      >
+                        <AnimatedButton
+                          text="Programeaza o discutie"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/contact"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                        <AnimatedButton
+                          text="Vezi serviciile"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/services"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -78,32 +105,32 @@ export default function Hero2() {
                             <ul>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Inovație
+                                  Next.js
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Excelență
+                                  React
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Creativitate
+                                  Automatizari AI
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Experiență
+                                  CRM & ERP
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Competență
+                                  E-commerce
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Pasiune
+                                  DevOps & Cloud
                                 </p>
                               </li>
                             </ul>
@@ -112,7 +139,7 @@ export default function Hero2() {
                             <ul>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Web design
+                                  Strategie digitala
                                 </p>
                               </li>
                               <li>
@@ -120,21 +147,21 @@ export default function Hero2() {
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Design Aplicații
+                                  Arhitectura scalabila
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Dezvoltare
+                                  Performanta tehnica
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Branding
+                                  Mentenanta
                                 </p>
                               </li>
                               <li>
-                                <p className="t-small anim-uni-in-up">Motion</p>
+                                <p className="t-small anim-uni-in-up">Crestere continua</p>
                               </li>
                             </ul>
                           </div>
@@ -152,9 +179,11 @@ export default function Hero2() {
                         as="p"
                         className="t-bright t-large reveal-type"
                       >
-                        Suntem o agenție digitală specializată în
-                        design inovator și dezvoltare de ultimă generație. Ajutăm
-                        afacerile să iasă în evidență și să prospere în peisajul modern.
+                        Suntem un partener tehnic pentru companii care vor mai
+                        mult decat un site frumos. Gandim procese, construim
+                        produse digitale solide si optimizam fiecare detaliu
+                        astfel incat tehnologia sa sustina obiectivele reale ale
+                        afacerii.
                       </RevealText>
                     </div>
                   </div>

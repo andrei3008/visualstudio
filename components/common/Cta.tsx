@@ -29,14 +29,14 @@ export default function Cta() {
                     as="span"
                     className="mxd-promo__caption reveal-type"
                   >
-                    Hai să discutăm
+                    Hai să construim
                     <br />
-                    proiectul tău!
+                    următorul tău produs digital
                   </RevealText>
                 </p>
                 <div className="mxd-promo__controls anim-uni-in-up">
                   <AnimatedButton
-                    text="Contactează-mă"
+                    text="Programeaza o discutie"
                     className="btn btn-anim btn-default btn-large btn-additional slide-right-up"
                     href={`/contact`}
                   >
@@ -49,14 +49,14 @@ export default function Cta() {
                 <Image
                   className="promo-image promo-image-1"
                   alt="Image"
-                  src="/img/illustrations/cta-img-01.webp"
+                  src="/img/illustrations/cta-img-01.jpg"
                   width={800}
                   height={912}
                 />
                 <Image
                   className="promo-image promo-image-2"
                   alt="Image"
-                  src="/img/illustrations/cta-img-02.webp"
+                  src="/img/illustrations/cta-img-02.jpg"
                   width={600}
                   height={601}
                 />

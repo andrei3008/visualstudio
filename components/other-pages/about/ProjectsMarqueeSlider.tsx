@@ -3,7 +3,29 @@ import Image from "next/image";
 
 import VelocityMarquee from "@/components/animation/VelocityMarquee";
 import AnimateRotation from "@/components/animation/AnimateRotation";
-import { projects6 } from "@/data/projects.json";
+
+const aboutProjects = [
+  {
+    id: 1,
+    src: "/img/marquee/about/about-marquee-01.jpg",
+    title: "Developer workspace",
+  },
+  {
+    id: 2,
+    src: "/img/marquee/about/about-marquee-02.jpg",
+    title: "Product build session",
+  },
+  {
+    id: 3,
+    src: "/img/marquee/about/about-marquee-03.jpg",
+    title: "Programming flow",
+  },
+  {
+    id: 4,
+    src: "/img/marquee/about/about-marquee-04.jpg",
+    title: "Technical setup",
+  },
+];
 
 export default function ProjectsMarqueeSlider() {
   return (
@@ -59,7 +81,7 @@ export default function ProjectsMarqueeSlider() {
         <div className="mxd-block loading__fade">
           {/* Marquee Divider Start */}
           <VelocityMarquee className="marquee marquee-right--gsap">
-            {projects6.map((item, idx) => {
+            {aboutProjects.map((item, idx) => {
               const src = item.src;
 
               const href = item.id ? `/project-details` : "/project-details";

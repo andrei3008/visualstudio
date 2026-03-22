@@ -93,18 +93,18 @@ export default function Footer({ text = "visualstudio" }: { text?: string }) {
             {/* links */}
             <div className="footer-blocks__links anim-uni-in-up">
               <AnimatedButton
-                text="Privacy Policy"
+                text="Politica de confidentialitate"
                 as={"a"}
                 className="btn btn-line-xsmall btn-muted slide-right anim-no-delay"
-                href="#"
+                href="/politica-de-confidentialitate"
               >
                 <i className="ph ph-arrow-right" />
               </AnimatedButton>
               <AnimatedButton
-                text="Terms &amp; conditions"
+                text="Termeni si conditii"
                 as={"a"}
                 className="btn btn-line-xsmall btn-muted slide-right anim-no-delay"
-                href="#"
+                href="/termeni-si-conditii"
               >
                 <i className="ph ph-arrow-right" />
               </AnimatedButton>

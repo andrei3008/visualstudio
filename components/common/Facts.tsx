@@ -117,6 +117,12 @@ export default function Facts() {
                           src={item.image}
                           width={item.imageWidth}
                           height={item.imageHeight}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            objectPosition: "center center",
+                          }}
                         />
                       </div>
                     </div>

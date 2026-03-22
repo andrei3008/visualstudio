@@ -4,17 +4,15 @@ import Awards from "@/components/common/Awards";
 import Blogs from "@/components/common/Blogs";
 import Cta from "@/components/common/Cta";
 import Facts from "@/components/common/Facts";
-import MarqueeSlider from "@/components/common/MarqueeSlider";
 import Footer from "@/components/footers/Footer";
+import AboutMarqueeSlider from "@/components/other-pages/about/AboutMarqueeSlider";
 import Hero2 from "@/components/other-pages/about/Hero2";
 import MarqueeSlider2 from "@/components/other-pages/about/MarqueeSlider2";
-import Team from "@/components/other-pages/about/Team";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Despre Noi || Visual Studio - Software Development Company",
+  title: "Despre Noi | Visual Studio Concept",
   description:
-    "Visual Studio - Software development company specializată în Next.js, React, CRM, E-commerce și soluții software custom.",
+    "Afla cum lucreaza Visual Studio Concept: strategie, design, dezvoltare software si automatizari pentru companii care vor crestere reala.",
 };
 export default function AboutUsPage() {
   return (
@@ -33,8 +31,7 @@ export default function AboutUsPage() {
           </div>
         </div>
         <Awards />
-        <MarqueeSlider />
-        <Team />
+        <AboutMarqueeSlider />
         <Facts />
         <Approch />
         <div className="mxd-section padding-pre-title">

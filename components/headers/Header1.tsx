@@ -1,12 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AnimatedButton from "../animation/AnimatedButton";
-import { usePathname } from "next/navigation";
 import ThemeSwitcherButton from "./ColorSwitcher";
 
 export default function Header1() {
-  const pathname = usePathname();
   const [isHidden, setIsHidden] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -72,20 +69,13 @@ export default function Header1() {
       <div className="mxd-header__controls loading__fade">
         <ThemeSwitcherButton />
 
-        <a
-  href="/contact"
-  className="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right"
-  onClick={(e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => {
-      window.location.href = '/contact';
-    }, 300);
-  }}
->
-  <span className="btn__text">Say Hello</span>
-  <i className="ph-bold ph-arrow-up-right" />
-</a>
+        <Link
+          href="/contact"
+          className="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right"
+        >
+          <span className="btn__text">Say Hello</span>
+          <i className="ph-bold ph-arrow-up-right" />
+        </Link>
       </div>
     </header>
   );
