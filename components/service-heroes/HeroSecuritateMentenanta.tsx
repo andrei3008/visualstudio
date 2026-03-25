@@ -1,6 +1,4 @@
-import Counter from "@/components/common/Counter";
-import Image from "next/image";
-import Link from "next/link";
+import AnimatedButton from "@/components/animation/AnimatedButton";
 
 export default function HeroSecuritateMentenanta() {
   return (
@@ -47,8 +45,38 @@ export default function HeroSecuritateMentenanta() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        Securitate & Mentenanță
+                        Securitate și mentenanță pentru produse care trebuie să funcționeze constant
                       </h1>
+                      <p className="inner-headline__text t-large t-bright loading__item">
+                        Monitorizăm, actualizăm și consolidăm aplicațiile tale
+                        astfel încât să reduci riscurile tehnice, să previi
+                        problemele costisitoare și să păstrezi platforma stabilă
+                        după lansare.
+                      </p>
+                      <div
+                        className="loading__item"
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "12px",
+                          marginTop: "24px",
+                        }}
+                      >
+                        <AnimatedButton
+                          text="Cere audit tehnic"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/contact"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                        <AnimatedButton
+                          text="Vezi serviciile"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/services"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                      </div>
                     </div>
                   </div>
                 </div>

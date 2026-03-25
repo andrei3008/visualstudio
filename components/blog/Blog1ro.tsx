@@ -6,26 +6,23 @@ import SearchForm from "../blogs/SearchForm";
 import AnimatedButton from "../animation/AnimatedButton";
 // -------------------- Data (NO LINKS INSIDE) --------------------
 const headlineTags = [
-  "Midjourney",
   "AI",
   "Editorial",
-  "Design interactiv",
+  "Produs digital",
   "Experiență web",
-  "Web design",
-  "Branding",
+  "Arhitectură",
   "UI",
-  "HTML",
   "Frontend",
   "UX",
-  "Design motion",
-  "Modelare 3d",
-  "Editare video",
+  "DevOps",
+  "Cloud",
+  "Automatizare",
 ];
 
 const sidebarCategories = [
-  "Design",
+  "Produs",
   "Dezvoltare",
-  "Marketing Digital",
+  "Automatizare",
   "Tehnologie",
   "Studii de caz",
   "Tendințe",
@@ -324,8 +321,8 @@ export default function Blog1ro() {
                 </div>
                 <div className="widget__descr">
                   <p className="t-small">
-                    Descoperă cele mai noi tendințe, insight-uri valoroase din industrie
-                    și sfaturi practice pentru dezvoltarea ta.
+                    Articole scurte și directe despre decizii de produs,
+                    dezvoltare software, automatizare și infrastructură.
                   </p>
                 </div>
               </div>

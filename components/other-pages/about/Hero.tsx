@@ -33,7 +33,7 @@ export default function Hero() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                       />
                     </svg>
-                    <span>About me</span>
+                    <span>Despre echipă</span>
                   </p>
                 </div>
               </div>
@@ -46,11 +46,9 @@ export default function Hero() {
                       <TypedText />
                     </h1>
                     <p className="inner-headline__text t-large t-bright loading__item">
-                      👋 Hey! I am Alex Walker. I&apos;m passionate about
-                      crafting designs that tell stories, spark emotions, and
-                      make an impact. Whether I&apos;m crafting digital
-                      experiences or creating illustrations, I pour creativity
-                      and precision into every detail.
+                      Pagina aceasta explică mai personal cum lucrăm: cu focus
+                      pe claritate, execuție bună și produse digitale care au
+                      sens pentru business, nu doar pentru prezentare.
                     </p>
                   </div>
                 </div>

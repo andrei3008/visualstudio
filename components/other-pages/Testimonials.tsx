@@ -98,7 +98,7 @@ export default function Testimonials() {
                               className="btn btn-anim btn-default btn-small btn-opposite slide-right-up"
                               href={t.projectLink}
                             >
-                              <span className="btn-caption">Project Page</span>
+                              <span className="btn-caption">Vezi proiectul</span>
                               <i className="ph ph-arrow-up-right" />
                             </a>
                           </div>

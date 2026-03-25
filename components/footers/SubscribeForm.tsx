@@ -6,7 +6,7 @@ export default function SubscribeForm() {
       className="form notify-form form-light"
       onSubmit={(e) => e.preventDefault()}
     >
-      <input type="email" placeholder="Your Email" required />
+      <input type="email" placeholder="Adresa ta de e-mail" required />
       <button
         className="btn btn-form btn-absolute-right btn-muted slide-right-up anim-no-delay"
         type="submit"

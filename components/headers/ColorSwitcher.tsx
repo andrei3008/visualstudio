@@ -2,21 +2,25 @@
 import React, { useEffect, useState } from "react";
 
 export default function ThemeSwitcherButton({}) {
-  const [showSwitcher, setShowSwitcher] = useState(false);
-  const [colorScheme, setColorScheme] = useState<"light" | "dark">(() => {
-    if (typeof window !== "undefined") {
-      return (
-        (localStorage.getItem("color-scheme") as "light" | "dark") || "light"
-      );
-    }
-    return "light";
-  });
+  const [colorScheme, setColorScheme] = useState<"light" | "dark">("light");
+
   useEffect(() => {
-    setShowSwitcher(true);
+    const frameId = window.requestAnimationFrame(() => {
+      const storedScheme = localStorage.getItem("color-scheme");
+      const documentScheme =
+        document.documentElement.getAttribute("color-scheme");
+      const nextScheme =
+        storedScheme === "dark" || documentScheme === "dark"
+          ? "dark"
+          : "light";
+
+      setColorScheme(nextScheme);
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
   }, []);
 
   useEffect(() => {
-    // Only set if not already set to the same value
     const currentScheme = document.documentElement.getAttribute("color-scheme");
     if (currentScheme !== colorScheme) {
       document.documentElement.setAttribute("color-scheme", colorScheme);
@@ -31,27 +35,23 @@ export default function ThemeSwitcherButton({}) {
   };
   return (
     <>
-      {showSwitcher ? (
-        <button
-          id="color-switcher"
-          className="mxd-color-switcher"
-          type="button"
-          role="switch"
-          aria-label="light/dark mode"
-          aria-checked={colorScheme === "dark"}
-          onClick={handleColorSwitch}
-        >
-          <i
-            className={
-              colorScheme === "dark"
-                ? "ph-bold ph-sun-horizon"
-                : "ph-bold ph-moon-stars "
-            }
-          />
-        </button>
-      ) : (
-        ""
-      )}{" "}
+      <button
+        id="color-switcher"
+        className="mxd-color-switcher"
+        type="button"
+        role="switch"
+        aria-label="light/dark mode"
+        aria-checked={colorScheme === "dark"}
+        onClick={handleColorSwitch}
+      >
+        <i
+          className={
+            colorScheme === "dark"
+              ? "ph-bold ph-sun-horizon"
+              : "ph-bold ph-moon-stars "
+          }
+        />
+      </button>{" "}
     </>
   );
 }

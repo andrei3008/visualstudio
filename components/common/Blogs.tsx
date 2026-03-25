@@ -5,7 +5,7 @@ import { blogs1 } from "@/data/blogs.json";
 import RevealText from "../animation/RevealText";
 import BackgroundParallax from "../animation/BackgroundParallax";
 import AnimatedButton from "../animation/AnimatedButton";
-const defaultDesc = `Idei inspiraționale, perspective creative și cele mai noi noutăți în design și tehnologie. Stimulăm inovația pentru călătoria ta digitală.`;
+const defaultDesc = `Articole practice despre dezvoltare software, automatizare, produse digitale și decizii tehnice care contează într-un business real.`;
 export default function Blogs({
   title = "Noutăți recente",
   desc = defaultDesc,

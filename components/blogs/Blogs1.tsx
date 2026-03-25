@@ -6,29 +6,26 @@ import SearchForm from "./SearchForm";
 import AnimatedButton from "../animation/AnimatedButton";
 // -------------------- Data (NO LINKS INSIDE) --------------------
 const headlineTags = [
-  "Midjourney",
   "AI",
   "Editorial",
-  "Interactive design",
-  "Web experience",
-  "Web design",
-  "Branding",
+  "Produs digital",
+  "Experiență web",
+  "Arhitectură",
   "UI",
-  "HTML",
   "Frontend",
   "UX",
-  "Motion design",
-  "3d modeling",
-  "Video editing",
+  "DevOps",
+  "Cloud",
+  "Automatizare",
 ];
 
 const sidebarCategories = [
-  "Design",
-  "Development",
-  "Digital Marketing",
-  "Technology",
-  "Case Studies",
-  "Trends",
+  "Produs",
+  "Dezvoltare",
+  "Automatizare",
+  "Tehnologie",
+  "Studii de caz",
+  "Tendințe",
 ];
 
 // -------------------- Small helpers --------------------
@@ -60,7 +57,7 @@ export default function Blogs1() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline loading__item">
                       <h1 className="inner-headline__title headline-img-before headline-img-06">
-                        Our digital digest
+                        Digest digital
                       </h1>
                     </div>
                   </div>
@@ -88,9 +85,9 @@ export default function Blogs1() {
                   <div className="inner-headline__breadcrumbs loading__fade">
                     <div className="breadcrumbs__nav">
                       <span>
-                        <Link href={`/`}>Home</Link>
+                        <Link href={`/`}>Acasă</Link>
                       </span>
-                      <span className="current-item">Insights</span>
+                      <span className="current-item">Blog</span>
                     </div>
                   </div>
                 </div>
@@ -196,7 +193,7 @@ export default function Blogs1() {
                     <div className="post-simple__btn">
                       <AnimatedButton
                         className="btn btn-anim btn-default btn-outline slide-right-up"
-                        text="Read More"
+                        text="Citește mai mult"
                         href={`/blog-article`}
                       >
                         <i className="ph ph-arrow-up-right" />
@@ -214,7 +211,7 @@ export default function Blogs1() {
                       href="#"
                       className="mxd-blog-pagination__item blog-pagination-control prev btn btn-anim btn-line-small btn-bright anim-no-delay slide-left"
                       as={"a"}
-                      text="Prev"
+                      text="Anterior"
                       position={"previous"}
                     >
                       <i className="ph ph-arrow-left" />
@@ -231,7 +228,7 @@ export default function Blogs1() {
                     ))}
                     <AnimatedButton
                       as={"a"}
-                      text="Next"
+                      text="Următor"
                       className="mxd-blog-pagination__item blog-pagination-control next btn btn-anim btn-line-small btn-bright anim-no-delay slide-right"
                       href="#"
                     >
@@ -253,7 +250,7 @@ export default function Blogs1() {
               {/* categories widget */}
               <div className="mxd-sidebar__widget bg-base-tint radius-m">
                 <div className="widget__title">
-                  <p>Categories</p>
+                  <p>Categorii</p>
                 </div>
                 <ul className="widget__categories">
                   {sidebarCategories.map((c) => (

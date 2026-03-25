@@ -20,24 +20,23 @@ export default function Features2() {
                           as="h2"
                           className="mxd-pinned__title centered-mobile h2-small anim-uni-in-up reveal-type"
                         >
-                          Top-notch features, build for you
+                          Componente bune, gata de reutilizare
                         </RevealText>
                         <div className="mxd-pinned__tags centered-mobile anim-uni-in-up">
                           <span className="tag tag-default tag-outline">
-                            Animations
+                            Animații
                           </span>
                           <span className="tag tag-default tag-outline">
-                            Plugins
+                            Componente
                           </span>
                           <span className="tag tag-default tag-outline">
-                            Services
+                            Secțiuni
                           </span>
                         </div>
                         <p className="anim-uni-in-up centered-mobile">
-                          Rayo template packed with smooth animations, modern
-                          design tools and clean code. It&apos;s a flexible,
-                          future-proof template that&apos;s easy to customize
-                          and a joy to use.
+                          Zona de preview grupează elementele care pot fi
+                          refolosite ușor: secțiuni animate, layout-uri, carduri
+                          și componente de prezentare pentru paginile site-ului.
                         </p>
                       </div>
                     </div>
@@ -47,7 +46,7 @@ export default function Features2() {
                 <div className="col-12 col-xl-7 mxd-features-promo__item">
                   <div className="mxd-features-promo__image anim-uni-in-up">
                     <Image
-                      alt="Rayo Image"
+                      alt="Preview componente"
                       width={1614}
                       height={800}
                       src="/img/demo/01_fea-img.webp"

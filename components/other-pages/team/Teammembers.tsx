@@ -22,15 +22,16 @@ export default function Teammembers() {
                           <div className="col-12">
                             <div className="mxd-section-title__title">
                               <h2 className="reveal-type">
-                                Dreamers and doers
+                                Oameni care construiesc
                               </h2>
                             </div>
                           </div>
                           <div className="col-12">
                             <div className="mxd-section-title__descr">
                               <p className="anim-uni-in-up">
-                                Creatives and strategists united by a passion
-                                for crafting impactful digital solutions.
+                                Specialiști în produs, design și dezvoltare,
+                                aliniați în jurul aceleiași idei: software bine
+                                făcut, cu impact real în business.
                               </p>
                             </div>
                           </div>
@@ -38,7 +39,7 @@ export default function Teammembers() {
                             <div className="mxd-section-title__controls anim-uni-in-up">
                               <AnimatedButton
                                 className="btn btn-anim btn-default btn-outline slide-right-up"
-                                text="View Works"
+                                text="Vezi portofoliul"
                                 href={`/portofoliu`}
                               >
                                 <i className="ph-bold ph-arrow-up-right" />
@@ -147,10 +148,10 @@ export default function Teammembers() {
                       </div>
                       <div className="career__caption">
                         <p className="mxd-team-cards__name t-large t-bright t-caption">
-                          Maybe you?
+                          Poate tu?
                         </p>
                         <p className="mxd-team-cards__position t-small t-medium t-140">
-                          Become a part of our team
+                          Hai să construim împreună
                         </p>
                       </div>
                     </Link>

@@ -1,6 +1,4 @@
-import Counter from "@/components/common/Counter";
-import Image from "next/image";
-import Link from "next/link";
+import AnimatedButton from "@/components/animation/AnimatedButton";
 
 export default function HeroAutomatizariAI() {
   return (
@@ -47,8 +45,38 @@ export default function HeroAutomatizariAI() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        Automatizări AI
+                        Automatizări AI care economisesc timp și reduc blocajele
                       </h1>
+                      <p className="inner-headline__text t-large t-bright loading__item">
+                        Integrăm AI acolo unde are impact real: preluare de
+                        date, clasificare, suport intern, workflow-uri repetitive
+                        și procese care consumă inutil timp din echipă. Scopul
+                        este eficiența, nu hype-ul.
+                      </p>
+                      <div
+                        className="loading__item"
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "12px",
+                          marginTop: "24px",
+                        }}
+                      >
+                        <AnimatedButton
+                          text="Planifică o discuție"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/contact"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                        <AnimatedButton
+                          text="Vezi serviciile"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/services"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                      </div>
                     </div>
                   </div>
                 </div>

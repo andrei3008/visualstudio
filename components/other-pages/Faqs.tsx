@@ -51,7 +51,7 @@ export default function Faqs() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                         />
                       </svg>
-                      <span>FAQ</span>
+                      <span>Întrebări frecvente</span>
                     </p>
                   </div>
                 </div>
@@ -61,13 +61,12 @@ export default function Faqs() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-02 loading__item">
-                        Everything you need to know
+                        Tot ce trebuie să știi înainte să începem
                       </h1>
                       <p className="inner-headline__text t-large t-bright loading__item">
-                        Have questions? We&apos;ve got the answers! Here,
-                        you&apos;ll find clear and concise information about our
-                        services, process, and what to expect when working with
-                        us. If you need more details, feel free to reach out!
+                        Am adunat aici răspunsuri la cele mai frecvente întrebări
+                        despre procesul nostru de lucru, estimări, mentenanță și
+                        modul în care construim proiecte software la comandă.
                       </p>
                     </div>
                   </div>
@@ -177,8 +176,8 @@ export default function Faqs() {
                   <text>
                     {/* button text here!!! */}
                     <textPath xlinkHref="#textPath">
-                      Let&apos;s start new project * Let&apos;s start new
-                      project *
+                      Hai să pornim proiectul tău * Hai să pornim proiectul
+                      tău *
                     </textPath>
                   </text>
                 </g>

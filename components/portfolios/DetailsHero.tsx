@@ -12,7 +12,7 @@ export default function DetailsHero() {
               <div className="col-12 col-xl-2 mxd-grid-item no-margin">
                 <div className="mxd-block__name name-project-link loading__fade">
                   <AnimatedButton
-                    text="Project Page"
+                    text="Pagina proiectului"
                     as={"a"}
                     className="btn btn-anim btn-line-small btn-muted slide-right-up"
                     href="#"
@@ -26,7 +26,7 @@ export default function DetailsHero() {
               <div className="col-12 col-xl-10 mxd-grid-item no-margin">
                 <div className="mxd-block__content">
                   <div className="mxd-block__inner-headline loading__item">
-                    <h1 className="inner-headline__title">Studio template</h1>
+                    <h1 className="inner-headline__title">Portal intern pentru operațiuni</h1>
                   </div>
                 </div>
               </div>
@@ -41,8 +41,9 @@ export default function DetailsHero() {
               <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                 <div className="inner-headline__paragraph loading__item">
                   <p>
-                    Inspiring ideas, creative insights, and the latest in design
-                    and tech. Fueling innovation for your digital journey.
+                    Studiu de caz pentru o platformă internă construită ca să
+                    reducă munca manuală, să centralizeze informația și să
+                    accelereze deciziile echipei.
                   </p>
                 </div>
                 <div className="inner-headline__data">
@@ -52,26 +53,26 @@ export default function DetailsHero() {
                         <div className="col-12 col-md-6 col-xl-5 mxd-data-list__column loading__item">
                           <div className="mxd-data-list__item">
                             <p className="mxd-data-list__name">Client</p>
-                            <p className="mxd-data-list__content">Mix Design</p>
+                            <p className="mxd-data-list__content">Companie de servicii B2B</p>
                           </div>
                           <div className="mxd-data-list__item">
-                            <p className="mxd-data-list__name">Services</p>
+                            <p className="mxd-data-list__name">Servicii</p>
                             <p className="mxd-data-list__content">
-                              Web development
+                              product discovery, UX/UI, dezvoltare full-stack
                             </p>
                           </div>
                         </div>
                         <div className="col-12 col-md-6 col-xl-5 mxd-data-list__column loading__item">
                           <div className="mxd-data-list__item">
-                            <p className="mxd-data-list__name">Industries</p>
+                            <p className="mxd-data-list__name">Industrie</p>
                             <p className="mxd-data-list__content">
-                              HTML template
+                              operațiuni și servicii
                             </p>
                           </div>
                           <div className="mxd-data-list__item">
-                            <p className="mxd-data-list__name">Date</p>
+                            <p className="mxd-data-list__name">Perioadă</p>
                             <p className="mxd-data-list__content">
-                              January 2025
+                              2025
                             </p>
                           </div>
                         </div>
@@ -85,16 +86,16 @@ export default function DetailsHero() {
               <div className="col-12 col-xl-4 mxd-grid-item no-margin">
                 <div className="inner-headline__tags loading__fade">
                   <span className="tag tag-default tag-outline-medium">
-                    Web design
+                    Product design
                   </span>
                   <span className="tag tag-default tag-outline-medium">
-                    UI/UX design
+                    UI/UX
                   </span>
                   <span className="tag tag-default tag-outline-medium">
                     Development
                   </span>
                   <span className="tag tag-default tag-outline-medium">
-                    Branding
+                    Workflow automation
                   </span>
                 </div>
               </div>

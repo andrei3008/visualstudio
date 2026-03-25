@@ -11,7 +11,7 @@ export default function NextPrevNavigation() {
           <div className="row g-0">
             <div className="col-6 mxd-project__navitem left mxd-grid-item no-margin anim-uni-in-up">
               <AnimatedButton
-                text="Prev"
+                text="Anterior"
                 className="btn btn-anim btn-line-small btn-muted anim-no-delay slide-left"
                 href={`/project-details`}
               >
@@ -21,12 +21,12 @@ export default function NextPrevNavigation() {
                 className="mxd-project__link anim-uni-in-up"
                 href={`/project-details`}
               >
-                <span>Mobile app design</span>
+                <span>Aplicație mobilă pentru operațiuni</span>
               </Link>
             </div>
             <div className="col-6 mxd-project__navitem right mxd-grid-item no-margin anim-uni-in-up">
               <AnimatedButton
-                text="Next"
+                text="Următor"
                 className="btn btn-anim btn-line-small btn-muted anim-no-delay slide-right"
                 href={`/project-details`}
               >
@@ -36,7 +36,7 @@ export default function NextPrevNavigation() {
                 className="mxd-project__link anim-uni-in-up"
                 href={`/project-details`}
               >
-                <span>AI experiments</span>
+                <span>Automatizări AI pentru vânzări</span>
               </Link>
             </div>
           </div>

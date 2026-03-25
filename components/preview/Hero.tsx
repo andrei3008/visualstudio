@@ -44,7 +44,7 @@ export default function Hero() {
                       key={index}
                       className="marquee__item item-regular text"
                     >
-                      <p>your work</p>
+                      <p>site-ul tău</p>
                       <svg
                         version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
@@ -71,9 +71,9 @@ export default function Hero() {
               {/* title text */}
               <h1 className="hero-00-title">
                 <span className="hero-00-title__row loading__item">
-                  <em className="hero-00-title__item">Make</em>
+                  <em className="hero-00-title__item">Fă ca</em>
                   <em className="hero-00-title__item title-item-transparent">
-                    your work
+                    produsul tău
                   </em>
                 </span>
                 <span className="hero-00-title__row loading__item">
@@ -87,7 +87,7 @@ export default function Hero() {
                     </svg>
                     {/* <img class="inject-me" src="/img/icons/20x20-rayo-star.svg" alt="Divider Icon"> */}
                   </em>
-                  <em className="hero-00-title__item">stand out</em>
+                  <em className="hero-00-title__item">să iasă în față</em>
                 </span>
               </h1>
             </div>
@@ -100,8 +100,9 @@ export default function Hero() {
                 as="p"
                 className="mxd-manifest reveal-type anim-uni-in-up"
               >
-                Elevate your digital presence with Rayo - dynamic and stylish
-                template designed for creative agencies and personal brands.
+                Zonă internă de preview pentru pagini, secțiuni și idei vizuale.
+                Aici poți vedea rapid ce suprafețe sunt deja construite și cum
+                arată componentele refolosibile din proiect.
               </RevealText>
             </div>
           </div>

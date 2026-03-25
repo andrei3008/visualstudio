@@ -2,50 +2,50 @@
   "projects1": [
     {
       "id": 1,
-      "title": "InkLab",
-      "description": "Studio Tatuaje",
+      "title": "Magazin online",
+      "description": "pentru un brand în creștere",
       "previewClass": "preview-image-1",
-      "tags": ["UI/UX", "Web design", "Illustrations"],
+      "tags": ["UI/UX", "eCommerce", "Frontend"],
       "anim": "anim-uni-in-up"
     },
     {
       "id": 2,
-      "title": "Interactive concept",
-      "description": "powered by AI",
+      "title": "Asistent AI",
+      "description": "pentru preluare și triere lead-uri",
       "previewClass": "preview-image-2",
-      "tags": ["Sora", "AI", "Editorial"],
+      "tags": ["AI", "Automatizare", "Business"],
       "anim": "anim-uni-in-up"
     },
     {
       "id": 3,
-      "title": "Mobile app design",
-      "description": "for a cross-platform solution",
+      "title": "Aplicație mobilă",
+      "description": "pentru echipe din teren",
       "previewClass": "preview-image-3",
-      "tags": ["UI/UX", "Design", "Android"],
+      "tags": ["UI/UX", "Mobile", "Android"],
       "anim": ""
     },
     {
       "id": 4,
-      "title": "NFT project",
-      "description": "branding",
+      "title": "Platformă internă",
+      "description": "pentru procese și aprobări",
       "previewClass": "preview-image-4",
-      "tags": ["Brand identity", "Style guides"],
+      "tags": ["Product", "Dashboard", "Workflow"],
       "anim": "anim-uni-in-up"
     },
     {
       "id": 5,
-      "title": "Illustrations set",
-      "description": "for digital and print use.",
+      "title": "Portal B2B",
+      "description": "pentru comenzi și relația cu partenerii",
       "previewClass": "preview-image-5",
-      "tags": ["Illustrations", "Design", "Packaging"],
+      "tags": ["B2B", "Portal", "Integrare"],
       "anim": "anim-uni-in-up"
     },
     {
       "id": 6,
-      "title": "VR Vision",
-      "description": "experience concept",
+      "title": "Migrare cloud",
+      "description": "cu deployment și monitorizare",
       "previewClass": "preview-image-6",
-      "tags": ["Midjourney", "AI Model"],
+      "tags": ["Cloud", "DevOps", "Observabilitate"],
       "anim": "anim-uni-in-up"
     }
   ],
@@ -94,8 +94,8 @@
   "projects3": [
     {
       "id": 11,
-      "title": "Tech Impress",
-      "subtitle": "Mobile app",
+      "title": "FieldOps",
+      "subtitle": "Aplicație mobilă",
       "preview": {
         "hover": "/img/works/preview/600x730_prv-06.webp",
         "full": "/img/works/preview/1200x800_prv-06.webp"
@@ -117,7 +117,7 @@
     },
     {
       "id": 12,
-      "title": "Rayo Studio",
+      "title": "North Pixel",
       "subtitle": "Website",
       "preview": {
         "hover": "/img/works/preview/600x730_prv-07.webp",
@@ -125,7 +125,7 @@
       },
       "tags": [
         {
-          "name": "Creative direction",
+          "name": "Direcție vizuală",
           "icon": true
         },
         {
@@ -140,15 +140,15 @@
     },
     {
       "id": 13,
-      "title": "AI Experiments",
-      "subtitle": "Illustrations",
+      "title": "SalesFlow AI",
+      "subtitle": "Automatizări",
       "preview": {
         "hover": "/img/works/preview/600x730_prv-05.webp",
         "full": "/img/works/preview/1200x800_prv-05.webp"
       },
       "tags": [
         {
-          "name": "Midjourney",
+          "name": "AI",
           "icon": true
         },
         {
@@ -163,15 +163,15 @@
     },
     {
       "id": 14,
-      "title": "VR Vision Project",
-      "subtitle": "Mobile app",
+      "title": "Service Hub",
+      "subtitle": "Aplicație mobilă",
       "preview": {
         "hover": "/img/works/preview/600x730_prv-03.webp",
         "full": "/img/works/preview/1200x800_prv-03.webp"
       },
       "tags": [
         {
-          "name": "Art direction",
+          "name": "Product direction",
           "icon": true
         },
         {
@@ -336,48 +336,48 @@
       "id": 34,
       "thumb": "/img/works/preview/600x730_prv-01.webp",
       "image": "/img/works/preview/1200x800_prv-01.webp",
-      "title": "E-commerce website",
-      "tags": ["UI/UX design", "Development"],
+      "title": "Platformă eCommerce",
+      "tags": ["UI/UX", "Dezvoltare"],
       "date": "2025"
     },
     {
       "id": 35,
       "thumb": "/img/works/preview/600x730_prv-02.webp",
       "image": "/img/works/preview/1200x800_prv-02.webp",
-      "title": "NFT project branding",
-      "tags": ["Brand identity", "Style guides"],
+      "title": "Identitate digitală și website",
+      "tags": ["Brand", "Style guide"],
       "date": "2025"
     },
     {
       "id": 36,
       "thumb": "/img/works/preview/600x730_prv-03.webp",
       "image": "/img/works/preview/1200x800_prv-03.webp",
-      "title": "VR vision project",
-      "tags": ["Midjourney", "AI model"],
+      "title": "Asistent AI pentru vânzări",
+      "tags": ["AI", "Automatizare"],
       "date": "2024"
     },
     {
       "id": 37,
       "thumb": "/img/works/preview/1200x800_prv-04.webp",
       "image": "/img/works/preview/1200x800_prv-04.webp",
-      "title": "Illustrations set",
-      "tags": ["Illustrations", "Design"],
+      "title": "Dashboard operațional",
+      "tags": ["Dashboard", "Design"],
       "date": "2024"
     },
     {
       "id": 38,
       "thumb": "/img/works/preview/600x730_prv-05.webp",
       "image": "/img/works/preview/1200x800_prv-05.webp",
-      "title": "Blockchain app design",
-      "tags": ["IU/UX design", "Development"],
+      "title": "Aplicație mobilă pentru operațiuni",
+      "tags": ["UI/UX", "Mobile"],
       "date": "2024"
     },
     {
       "id": 39,
       "thumb": "/img/works/preview/600x730_prv-06.webp",
       "image": "/img/works/preview/1200x800_prv-06.webp",
-      "title": "Rayo studio portfolio",
-      "tags": ["IU/UX design", "Development"],
+      "title": "Portal intern pentru echipă",
+      "tags": ["UI/UX", "Platformă internă"],
       "date": "2024"
     }
   ],
@@ -475,20 +475,20 @@
     {
       "id": 48,
       "image": "/img/works/preview/1920x1080_prv-04.webp",
-      "tags": ["Brand", "Illustrations", "Web"],
-      "title": "Studio template"
+      "tags": ["Brand", "Web", "Landing"],
+      "title": "Website de prezentare"
     },
     {
       "id": 49,
       "image": "/img/works/preview/1920x1080_prv-01.webp",
-      "tags": ["Sora", "AI", "Editorial"],
-      "title": "AI Experiments"
+      "tags": ["AI", "Automatizare", "Business"],
+      "title": "Automatizări AI"
     },
     {
       "id": 50,
       "image": "/img/works/preview/1920x1080_prv-05.webp",
       "tags": ["Design", "UI/UX", "Android"],
-      "title": "Mobile app design"
+      "title": "Aplicație mobilă"
     }
   ]
 }

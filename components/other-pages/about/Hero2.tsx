@@ -47,12 +47,12 @@ export default function Hero2() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-06 loading__item">
-                        Construim produse digitale care ajuta business-urile sa creasca
+                        Construim produse digitale care ajută business-urile să crească
                       </h1>
                       <p className="inner-headline__text t-large t-bright loading__item">
-                        Combinam strategie, design, dezvoltare si automatizare
-                        pentru a livra site-uri, aplicatii si sisteme care arata
-                        bine, se misca rapid si sustin vanzari reale.
+                        Combinăm strategie, design, dezvoltare și automatizare
+                        pentru a livra site-uri, aplicații și sisteme care arată
+                        bine, se mișcă rapid și susțin vânzări reale.
                       </p>
                       <div
                         className="loading__item"
@@ -64,7 +64,7 @@ export default function Hero2() {
                         }}
                       >
                         <AnimatedButton
-                          text="Programeaza o discutie"
+                          text="Programează o discuție"
                           className="btn btn-anim btn-default btn-outline slide-right-up"
                           href="/contact"
                         >
@@ -115,7 +115,7 @@ export default function Hero2() {
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Automatizari AI
+                                  Automatizări AI
                                 </p>
                               </li>
                               <li>
@@ -139,7 +139,7 @@ export default function Hero2() {
                             <ul>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Strategie digitala
+                                  Strategie digitală
                                 </p>
                               </li>
                               <li>
@@ -147,21 +147,21 @@ export default function Hero2() {
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Arhitectura scalabila
+                                  Arhitectură scalabilă
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Performanta tehnica
+                                  Performanță tehnică
                                 </p>
                               </li>
                               <li>
                                 <p className="t-small anim-uni-in-up">
-                                  Mentenanta
+                                  Mentenanță
                                 </p>
                               </li>
                               <li>
-                                <p className="t-small anim-uni-in-up">Crestere continua</p>
+                                <p className="t-small anim-uni-in-up">Creștere continuă</p>
                               </li>
                             </ul>
                           </div>
@@ -180,9 +180,9 @@ export default function Hero2() {
                         className="t-bright t-large reveal-type"
                       >
                         Suntem un partener tehnic pentru companii care vor mai
-                        mult decat un site frumos. Gandim procese, construim
-                        produse digitale solide si optimizam fiecare detaliu
-                        astfel incat tehnologia sa sustina obiectivele reale ale
+                        mult decât un site frumos. Gândim procese, construim
+                        produse digitale solide și optimizăm fiecare detaliu,
+                        astfel încât tehnologia să susțină obiectivele reale ale
                         afacerii.
                       </RevealText>
                     </div>

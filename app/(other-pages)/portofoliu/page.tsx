@@ -7,8 +7,9 @@ import PortofoliuHero from "@/components/portofoliu/PortofoliuHero";
 import Testimonials from "@/components/common/Testimonials";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Portofoliu || Visual Studio - Software Development Company",
-  description: "Portofoliu Visual Studio - proiecte de dezvoltare software, site-uri web, aplicații mobile și soluții digitale.",
+  title: "Portofoliu | Visual Studio Concept",
+  description:
+    "Vezi exemple de proiecte digitale, aplicații, site-uri și soluții software dezvoltate pentru companii cu obiective clare de creștere.",
 };
 export default function PortofoliuPage() {
   return (

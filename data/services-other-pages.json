@@ -1,55 +1,55 @@
 [
   {
-    "title": "Design",
+    "title": "Design de produs",
     "image": "/img/illustrations/360x440_list-01.webp",
-    "desc": "We create visually compelling designs that enhance user experience. From UI/UX design to stunning websites, mobile apps, and print materials, we make sure your brand’s visuals resonate with your audience.",
+    "desc": "Definim structura, interfața și logica vizuală a produsului astfel încât experiența să fie clară, coerentă și orientată spre obiective reale.",
     "tags": [
       "UI/UX",
       "Web design",
-      "Applications",
-      "Print design",
-      "Packaging",
+      "Aplicații",
+      "Design system",
+      "Prototipare",
       "Motion",
-      "3D models"
+      "Wireframes"
     ]
   },
   {
-    "title": "Development",
+    "title": "Dezvoltare",
     "image": "/img/illustrations/360x440_list-02.webp",
-    "desc": "We build high-performance websites and applications using modern technologies. Our solutions are designed to be scalable and functional for optimal performance.",
+    "desc": "Construim site-uri, aplicații și platforme interne pe o bază tehnică stabilă, scalabilă și ușor de extins în timp.",
     "tags": [
       "Frontend",
-      "Interactions",
+      "Integrări",
       "Backend",
-      "E-Commerce",
-      "Mobile Apps",
-      "Maintenance",
-      "Support"
+      "E-commerce",
+      "Aplicații mobile",
+      "Mentenanță",
+      "Suport"
     ]
   },
   {
-    "title": "Branding",
+    "title": "Brand și poziționare",
     "image": "/img/illustrations/360x440_list-03.webp",
-    "desc": "From logo design to comprehensive brand strategies, we ensure your business stands out with a unique visual identity and consistent messaging across all touchpoints.",
+    "desc": "Construim direcții vizuale și mesaje coerente astfel încât brandul să fie recognoscibil, profesionist și ușor de susținut în digital.",
     "tags": [
-      "Brand strategy",
-      "Logo design",
+      "Strategie de brand",
+      "Logo",
       "Guidelines",
-      "Visual identity",
+      "Identitate vizuală",
       "Rebranding"
     ]
   },
   {
-    "title": "Marketing",
+    "title": "Creștere și marketing",
     "image": "/img/illustrations/360x440_list-04.webp",
-    "desc": "We develop and execute tailored digital marketing strategies. SEO and content marketing, social media management and paid campaigns - we help you reach and engage your target audience effectively.",
+    "desc": "Legăm produsul și execuția tehnică de canale de creștere: SEO, conținut, campanii și automatizări care susțin atragerea și conversia lead-urilor.",
     "tags": [
-      "Strategy",
-      "Social media",
+      "Strategie",
+      "Canale sociale",
       "SEO",
-      "Optimization",
+      "Optimizare",
       "Email",
-      "Campaigns"
+      "Campanii"
     ]
   }
 ]

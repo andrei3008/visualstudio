@@ -14,7 +14,7 @@ export default function MarqueeSlider() {
                   key={index}
                   className="marquee__item one-line item-regular text"
                 >
-                  <p className="marquee__text">Clients Approve</p>
+                  <p className="marquee__text">Clienți mulțumiți</p>
                   <div className="marquee__image">
                     <svg
                       version="1.1"

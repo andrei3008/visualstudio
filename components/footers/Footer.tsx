@@ -1,10 +1,9 @@
-import Link from "next/link";
 import footerNav from "@/data/footer-nav.json";
 import socials from "@/data/socials.json";
 import AnimatedButton from "../animation/AnimatedButton";
 import SubscribeForm from "./SubscribeForm";
 
-export default function Footer({ text = "visualstudio" }: { text?: string }) {
+export default function Footer() {
   return (
     <footer id="mxd-footer" className="mxd-footer">
       {/* Footer Block - Fullwidth Text Start */}
@@ -108,6 +107,14 @@ export default function Footer({ text = "visualstudio" }: { text?: string }) {
               >
                 <i className="ph ph-arrow-right" />
               </AnimatedButton>
+              <AnimatedButton
+                text="Politica de cookie-uri"
+                as={"a"}
+                className="btn btn-line-xsmall btn-muted slide-right anim-no-delay"
+                href="/politica-de-cookie-uri"
+              >
+                <i className="ph ph-arrow-right" />
+              </AnimatedButton>
             </div>
           </div>
         </div>
@@ -166,28 +173,34 @@ export default function Footer({ text = "visualstudio" }: { text?: string }) {
             c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                 />
               </svg>
-              <a href="tel:+12127089400">+1 212-708-9400</a>
+              <a
+                href="https://wa.me/40770561719"
+                target="_blank"
+                rel="noreferrer"
+              >
+                0770 561 719
+              </a>
             </p>
           </div>
           {/* inner card */}
           <div className="footer-blocks__card fill-card notify">
             {/* card title */}
-            <div className="footer-blocks__title anim-uni-in-up">
-              <p className="footer-blocks__title-m">
-                Subscribe to our insights:
-              </p>
-            </div>
+              <div className="footer-blocks__title anim-uni-in-up">
+                <p className="footer-blocks__title-m">
+                  Primește noutăți și idei utile:
+                </p>
+              </div>
             {/* subscribe form container */}
             <div className="form-container anim-uni-in-up">
               {/* reply messages */}
               <div className="form__reply subscription-ok">
                 <span className="reply__text">
-                  Done! Thanks for subscribing.
+                  Mulțumim. Te-am înscris cu succes.
                 </span>
               </div>
               <div className="form__reply subscription-error">
                 <span className="reply__text">
-                  Ooops! Something went wrong. Please try again later.
+                  A apărut o problemă. Încearcă din nou mai târziu.
                 </span>
               </div>
               {/* subscribe form */}
@@ -203,7 +216,7 @@ export default function Footer({ text = "visualstudio" }: { text?: string }) {
             <div className="footer-blocks__block">
               {/* card title */}
               <div className="footer-blocks__title anim-uni-in-up">
-                <p className="footer-blocks__title-l">Social</p>
+                <p className="footer-blocks__title-l">Social media</p>
               </div>
               {/* footer socials */}
               <div className="footer-blocks__socials">
@@ -225,15 +238,12 @@ export default function Footer({ text = "visualstudio" }: { text?: string }) {
             {/* links */}
             <div className="footer-blocks__links anim-uni-in-up">
               <p className="t-xsmall t-muted">
-                <a
-                  className="no-effect"
-                  href="#"
-                >
-                  Visual Studio Concept SRL
-                </a>
+                <span className="no-effect">VISUAL STUDIO CONCEPT SRL</span>
                 <i className="ph-bold ph-copyright" />
                 {new Date().getFullYear()}
               </p>
+              <p className="t-xsmall t-muted">CUI 43527366</p>
+              <p className="t-xsmall t-muted">J16/53/2021</p>
             </div>
           </div>
         </div>

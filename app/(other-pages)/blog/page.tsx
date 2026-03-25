@@ -3,8 +3,9 @@ import Cta from "@/components/common/Cta";
 import Footer from "@/components/footers/Footer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Blog || Visual Studio - Software Development Company",
-  description: "Blog Visual Studio - articole despre dezvoltare software, tehnologie, AI și tendințe digitale.",
+  title: "Blog | Visual Studio Concept",
+  description:
+    "Articole despre dezvoltare software, automatizare, produs digital, AI și decizii tehnice care au impact într-un business real.",
 };
 export default function BlogPage() {
   return (

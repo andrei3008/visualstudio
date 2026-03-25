@@ -1,21 +1,21 @@
 [
   {
-    "author": "John Lemon",
+    "author": "Radu Matei",
     "avatar": "/img/avatars/300x300_ava-03.webp",
-    "position": "Brand Manager in",
+    "position": "Manager de produs la",
     "company": "Instant Design",
     "rating": 5,
-    "text": "Working with Alex was an absolute pleasure! He took the time to understand our business needs and translated them into a beautifully designed, user-friendly website.",
+    "text": "Am lucrat foarte bine împreună de la prima discuție până la lansare. Direcția a fost clară, iar soluția finală s-a potrivit exact cu nevoile operaționale ale echipei noastre.",
     "projectLink": "#",
     "illustration": "/img/illustrations/1400x1400_values-01.webp"
   },
   {
-    "author": "Alex Tomato",
+    "author": "Bianca Tudor",
     "avatar": "/img/avatars/300x300_ava-04.webp",
-    "position": "Brand Manager in",
-    "company": "Instant Design",
+    "position": "Operations Lead la",
+    "company": "North Pixel",
     "rating": 5,
-    "text": "Amazing job on our website! Alex understood exactly what we needed and made it look great and easy to use.",
+    "text": "Rezultatul a fost exact ce aveam nevoie: un produs mai clar, mai rapid și mai ușor de administrat. Comunicarea a rămas eficientă pe tot parcursul proiectului.",
     "projectLink": "#",
     "illustration": "/img/illustrations/1400x1400_values-02.webp"
   }

@@ -1,6 +1,4 @@
-import Counter from "@/components/common/Counter";
-import Image from "next/image";
-import Link from "next/link";
+import AnimatedButton from "@/components/animation/AnimatedButton";
 
 export default function HeroDezvoltareSoftware() {
   return (
@@ -47,8 +45,38 @@ export default function HeroDezvoltareSoftware() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        Dezvoltare Software
+                        Dezvoltare software la comandă pentru procese reale de business
                       </h1>
+                      <p className="inner-headline__text t-large t-bright loading__item">
+                        Construim aplicații web, platforme interne, portaluri și
+                        sisteme custom care reduc munca manuală, conectează
+                        datele și dau echipei tale instrumente mai bune pentru
+                        operare și creștere.
+                      </p>
+                      <div
+                        className="loading__item"
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "12px",
+                          marginTop: "24px",
+                        }}
+                      >
+                        <AnimatedButton
+                          text="Discută proiectul"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/contact"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                        <AnimatedButton
+                          text="Vezi toate serviciile"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/services"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -7,10 +7,9 @@ import MarqueeSlider from "@/components/other-pages/team/MarqueeSlider";
 import Teammembers from "@/components/other-pages/team/Teammembers";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Team || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Echipă | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Cunoaște echipa din spatele Visual Studio Concept: strategie, design, dezvoltare, automatizare și livrare software orientată spre rezultate.",
 };
 export default function TeamPage() {
   return (

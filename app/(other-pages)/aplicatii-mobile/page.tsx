@@ -4,10 +4,12 @@ import Footer from "@/components/footers/Footer";
 import HeroAplicatiiMobile from "@/components/service-heroes/HeroAplicatiiMobile";
 import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
 import Services from "@/components/other-pages/services/Services";
+import { servicePageGroups } from "@/data/service-page-groups";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Aplicații Mobile || Visual Studio - Software Development Company",
-  description: "Dezvoltare aplicații mobile iOS și Android - aplicații native, cross-platform, React Native, Flutter.",
+  title: "Aplicații mobile | Visual Studio Concept",
+  description:
+    "Construim aplicații mobile iOS și Android, MVP-uri și produse scalabile pentru companii care vor o experiență bună pe mobil și o bază tehnică solidă.",
 };
 export default function AplicatiiMobilePage() {
   return (
@@ -17,7 +19,11 @@ export default function AplicatiiMobilePage() {
         className="mxd-page-content inner-page-content"
       >
         <HeroAplicatiiMobile />
-        <Services />
+        <Services
+          items={servicePageGroups.aplicatiiMobile}
+          introTitle="Cum abordăm aplicațiile mobile"
+          introText="Punem accent pe experiența utilizatorului, claritatea funcțiilor și o bază tehnică suficient de solidă pentru update-uri și creștere ulterioară."
+        />
         <ParallaxDivider />
         <Blogs />
         <Cta />

@@ -3,32 +3,34 @@
     {
       "id": 17,
       "imageClass": "blog-preview-image-1",
-      "tags": ["Concept", "Editorial"],
+      "tags": ["Produs digital", "Strategie"],
       "imgSrc": "/img/blog/preview/1000x1250_prv-01.webp",
       "title": {
-        "before": "Frontend innovations",
-        "after": " and user journeys"
+        "before": "Cum influențează",
+        "highlight": "deciziile frontend",
+        "after": " experiența reală a utilizatorului"
       }
     },
     {
       "id": 18,
       "imageClass": "blog-preview-image-2",
-      "tags": ["UI/UX", "Development"],
+      "tags": ["UI/UX", "Dezvoltare"],
       "imgSrc": "/img/blog/preview/1000x1250_prv-02.webp",
       "title": {
-        "before": "Branding in creating",
-        "highlight": "digital experiences"
+        "before": "De ce contează",
+        "highlight": "arhitectura produsului",
+        "after": " înainte de prima linie de cod"
       }
     },
     {
       "id": 19,
       "imageClass": "blog-preview-image-3",
       "imgSrc": "/img/blog/preview/1000x1250_prv-03.webp",
-      "tags": ["News", "AI"],
+      "tags": ["AI", "Automatizare"],
       "title": {
-        "before": "Elevating ",
-        "highlight": "digital workshops",
-        "after": " with engaging design"
+        "before": "Unde ajută",
+        "highlight": "automatizările AI",
+        "after": " într-o companie care vrea eficiență"
       }
     }
   ],
@@ -36,11 +38,11 @@
     {
       "id": 1,
       "img": "/img/blog/1400x900_pf-01.webp",
-      "categories": ["Midjourney", "AI", "Editorial"],
-      "meta": ["Midjourney", "AI", "Editorial"],
-      "date": "January 22, 2025",
-      "title": "My journey into the future of art",
-      "excerpt": "Discover how artificial intelligence is transforming artistic processes, pushing boundaries, and inspiring new possibilities in digital design."
+      "categories": ["AI", "Business", "Editorial"],
+      "meta": ["AI", "Automatizare", "Business"],
+      "date": "22 ianuarie 2025",
+      "title": "Cum introduci AI în procese fără să creezi haos",
+      "excerpt": "Inteligența artificială aduce valoare doar când este integrată în procese clare. Articolul explică unde merită introdusă, ce trebuie măsurat și cum eviți implementările de vitrină."
     }
   ],
   "blogs3": [
@@ -50,14 +52,14 @@
       "imgAlt": "Post Simple Thumb",
       "meta": [
         {
-          "label": "Interactive design"
+          "label": "UX"
         },
         {
-          "label": "Web experience"
+          "label": "Produs digital"
         }
       ],
-      "date": "January 22, 2025",
-      "title": "Designing for the future of interactive digital spaces"
+      "date": "22 ianuarie 2025",
+      "title": "Cum proiectezi o experiență digitală care chiar reduce fricțiunea"
     },
     {
       "id": 3,
@@ -65,17 +67,17 @@
       "imgAlt": "Post Simple Thumb",
       "meta": [
         {
-          "label": "Web design"
+          "label": "Web"
         },
         {
-          "label": "Branding"
+          "label": "Arhitectură"
         },
         {
           "label": "UI"
         }
       ],
-      "date": "January 09, 2025",
-      "title": "Mastering the art of minimalist web design with impact"
+      "date": "09 ianuarie 2025",
+      "title": "De ce simplitatea bine executată vinde mai bine decât efectele inutile"
     },
     {
       "id": 4,
@@ -83,17 +85,17 @@
       "imgAlt": "Post Simple Thumb",
       "meta": [
         {
-          "label": "3D"
+          "label": "Automatizare"
         },
         {
-          "label": "Design"
+          "label": "Operațional"
         },
         {
-          "label": "Digital workshop"
+          "label": "AI"
         }
       ],
-      "date": "January 04, 2025",
-      "title": "Crafting immersive 3d worlds with modern tools"
+      "date": "04 ianuarie 2025",
+      "title": "Ce procese merită automatizate primele într-o firmă în creștere"
     },
     {
       "id": 5,
@@ -101,17 +103,17 @@
       "imgAlt": "Post Simple Thumb",
       "meta": [
         {
-          "label": "Motion design"
+          "label": "Cloud"
         },
         {
-          "label": "Branding"
+          "label": "DevOps"
         },
         {
-          "label": "Workshop"
+          "label": "Scalare"
         }
       ],
-      "date": "December 22, 2024",
-      "title": "Bringing ideas to life with motion design and creativity"
+      "date": "22 decembrie 2024",
+      "title": "Când are sens să investești în DevOps și când doar complici sistemul"
     },
     {
       "id": 6,
@@ -125,86 +127,86 @@
           "label": "Frontend"
         },
         {
-          "label": "Branding"
+          "label": "Performanță"
         }
       ],
-      "date": "December 10, 2024",
-      "title": "The role of branding in creating memorable digital experiences"
+      "date": "10 decembrie 2024",
+      "title": "Rolul interfeței în retenție, conversie și încrederea în produs"
     }
   ],
   "blogs4": [
     {
       "id": 7,
       "img": "/img/blog/300x300_rp-01.webp",
-      "category": "Design",
-      "title": "Mastering the art of minimalist web design with impact"
+      "category": "UI/UX",
+      "title": "De ce simplitatea bine executată vinde mai bine decât efectele inutile"
     },
     {
       "id": 8,
       "img": "/img/blog/300x300_rp-02.webp",
-      "category": "Technology",
-      "title": "Designing for the future of interactive digital spaces"
+      "category": "Tehnologie",
+      "title": "Cum proiectezi o experiență digitală care chiar reduce fricțiunea"
     },
     {
       "id": 9,
       "img": "/img/blog/300x300_rp-03.webp",
-      "category": "Technology",
-      "title": "Crafting immersive 3d worlds with modern tools"
+      "category": "Automatizare",
+      "title": "Ce procese merită automatizate primele într-o firmă în creștere"
     }
   ],
   "blogs5": [
     {
       "id": 10,
       "img": "/img/blog/1000x1250_psec-01.webp",
-      "categories": ["Interactive design", "Web experience"],
-      "meta": ["Interactive design", "Web experience"],
-      "date": "January 15, 2025",
-      "title": "Designing for the future of interactive digital spaces"
+      "categories": ["UX", "Produs digital"],
+      "meta": ["UX", "Produs digital"],
+      "date": "15 ianuarie 2025",
+      "title": "Ce înseamnă o experiență digitală bună într-un produs folosit zilnic"
     },
     {
       "id": 11,
       "img": "/img/blog/1000x1250_psec-02.webp",
-      "categories": ["Web design", "Branding", "UI"],
-      "meta": ["Web design", "Branding", "UI"],
-      "date": "January 09, 2025",
-      "title": "Mastering the art of minimalist web design with impact"
+      "categories": ["Web", "Brand", "UI"],
+      "meta": ["Web", "Brand", "UI"],
+      "date": "09 ianuarie 2025",
+      "title": "Cum păstrezi simplitatea într-un website fără să pierzi conversii"
     }
   ],
   "blogs6": [
     {
       "id": 12,
       "img": "/img/blog/1200x800_pa-01.webp",
-      "title": "Crafting immersive 3d worlds with modern tools",
-      "tags": ["3d", "Design", "Digital workshop"],
-      "date": "January 04, 2025"
+      "title": "Cum prioritizezi corect funcționalitățile într-un MVP",
+      "tags": ["MVP", "Produs", "Planning"],
+      "date": "04 ianuarie 2025"
     },
     {
       "id": 13,
       "img": "/img/blog/1200x800_pa-02.webp",
-      "title": "Bringing ideas to life with motion design and creativity",
-      "tags": ["Motion design", "Branding", "Workshop"],
-      "date": "December 22, 2024"
+      "title": "Când merită să refaci o platformă și când e suficient un refactor",
+      "tags": ["Refactor", "Platformă", "Arhitectură"],
+      "date": "22 decembrie 2024"
     },
     {
       "id": 14,
       "img": "/img/blog/1200x800_pa-03.webp",
-      "title": "The role of branding in creating memorable digital experiences",
-      "tags": ["UI/UX", "Frontend", "Branding"],
-      "date": "December 10, 2024"
+      "title": "Ce impact are interfața asupra încrederii într-un produs digital",
+      "tags": ["UI/UX", "Frontend", "Brand"],
+      "date": "10 decembrie 2024"
     },
     {
       "id": 15,
       "img": "/img/blog/1200x800_pa-04.webp",
-      "title": "How frontend innovations shape interactive user journeys",
+      "title": "Cum influențează frontend-ul viteza percepută și retenția",
       "tags": ["Frontend", "UX"],
-      "date": "November 22, 2024"
+      "date": "22 noiembrie 2024"
     },
     {
       "id": 16,
       "img": "/img/blog/1200x800_pa-05.webp",
-      "title": "Digital workshops with engaging and responsive design",
-      "tags": ["Digital workshop", "Interactive design", "UI"],
-      "date": "November 20, 2024"
+      "title": "Cum documentezi cerințele astfel încât dezvoltarea să meargă repede",
+      "tags": ["Workshop", "Discovery", "UI"],
+      "date": "20 noiembrie 2024"
     }
   ]
 }

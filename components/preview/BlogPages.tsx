@@ -14,21 +14,17 @@ export default function BlogPages() {
                 <div className="mxd-demo-cards__descr">
                   <h2 className="mxd-demo-cards__title h2-small">
                     <Link href={`/blog`} target="_blank">
-                      Blog Pages
+                      Pagini de blog
                     </Link>
                   </h2>
                   <div className="mxd-demo-cards__tags">
-                    <span className="tag tag-default tag-outline">Ideas</span>
-                    <span className="tag tag-default tag-outline">
-                      Thoughts
-                    </span>
-                    <span className="tag tag-default tag-outline">
-                      Inspiration
-                    </span>
+                    <span className="tag tag-default tag-outline">Idei</span>
+                    <span className="tag tag-default tag-outline">Articole</span>
+                    <span className="tag tag-default tag-outline">Insight</span>
                   </div>
                   <p>
-                    A blog that looks good, reads better, and brings your
-                    stories to life beautifully.
+                    O zonă de conținut gândită pentru articole clare, bine
+                    structurate și ușor de parcurs.
                   </p>
                 </div>
               </div>
@@ -89,19 +85,17 @@ export default function BlogPages() {
                 <div className="mxd-demo-cards__descr">
                   <h2 className="mxd-demo-cards__title h2-small">
                     <Link href={`/portofoliu`} target="_blank">
-                      Portfolio
+                      Portofoliu
                     </Link>
                   </h2>
                   <div className="mxd-demo-cards__tags">
-                    <span className="tag tag-default tag-outline">
-                      Showcase
-                    </span>
-                    <span className="tag tag-default tag-outline">Visions</span>
-                    <span className="tag tag-default tag-outline">Designs</span>
+                    <span className="tag tag-default tag-outline">Studii de caz</span>
+                    <span className="tag tag-default tag-outline">Proiecte</span>
+                    <span className="tag tag-default tag-outline">Rezultate</span>
                   </div>
                   <p>
-                    Bring your work to life with stunning layouts. Clear,
-                    stylish pages built to impress and inspire.
+                    Pagini pentru proiecte, arhivă și testimoniale, construite
+                    să susțină credibilitatea și prezentarea rezultatelor.
                   </p>
                 </div>
                 <div className="mxd-demo-cards__icons">
@@ -116,7 +110,7 @@ export default function BlogPages() {
                       </svg>
                       <i className="ph ph-cards-three" />
                     </div>
-                    <p className="demo-icons__caption">Stack cards</p>
+                    <p className="demo-icons__caption">Carduri</p>
                   </div>
                   <div className="demo-icons__item">
                     <div className="demo-icons__icon">
@@ -129,7 +123,7 @@ export default function BlogPages() {
                       </svg>
                       <i className="ph ph-squares-four" />
                     </div>
-                    <p className="demo-icons__caption">Grids</p>
+                    <p className="demo-icons__caption">Grid-uri</p>
                   </div>
                   <div className="demo-icons__item">
                     <div className="demo-icons__icon">
@@ -142,7 +136,7 @@ export default function BlogPages() {
                       </svg>
                       <i className="ph ph-list-star" />
                     </div>
-                    <p className="demo-icons__caption">Archive list</p>
+                    <p className="demo-icons__caption">Arhivă</p>
                   </div>
                   <div className="demo-icons__item">
                     <div className="demo-icons__icon">
@@ -155,7 +149,7 @@ export default function BlogPages() {
                       </svg>
                       <i className="ph ph-chat-circle-dots" />
                     </div>
-                    <p className="demo-icons__caption">Testimonials</p>
+                    <p className="demo-icons__caption">Testimoniale</p>
                   </div>
                   <div className="demo-icons__item">
                     <div className="demo-icons__icon">
@@ -168,7 +162,7 @@ export default function BlogPages() {
                       </svg>
                       <i className="ph ph-cherries" />
                     </div>
-                    <p className="demo-icons__caption">Project</p>
+                    <p className="demo-icons__caption">Proiect</p>
                   </div>
                 </div>
               </div>

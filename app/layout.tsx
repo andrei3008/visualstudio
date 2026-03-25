@@ -2,9 +2,9 @@ import "../public/css/styles.css";
 import ClientLayout from "@/components/layout/ClientLayout";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Visual Studio Concept - Software Development Company",
+  title: "Visual Studio Concept | Dezvoltare software la comandă",
   description:
-    "Visual Studio Concept - Software development company specializată în Next.js, React, CRM, E-commerce și soluții software custom.",
+    "Visual Studio Concept livrează dezvoltare software la comandă, aplicații web și mobile, automatizări AI, DevOps și mentenanță pentru companii care vor să scaleze.",
 };
 const setColorSchemeScript = `
 (function() {
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en" className="no-touch">
+    <html suppressHydrationWarning lang="ro" className="no-touch">
       <head>
         <script dangerouslySetInnerHTML={{ __html: setColorSchemeScript }} />
       </head>

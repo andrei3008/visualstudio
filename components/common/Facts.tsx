@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import factsData from "@/data/facts.json";
 import Counter from "@/components/common/Counter";
 import AnimatedButton from "../animation/AnimatedButton";
-import React from "react";
+import { Fragment } from "react";
 
 export default function Facts() {
   return (
@@ -90,13 +89,13 @@ export default function Facts() {
                         </p>
                         <p className={item.descrClass}>
                           {item.description.split("\n").map((line, i) => (
-                            <React.Fragment key={i}>
+                            <Fragment key={i}>
                               {line}
                               {i !==
                                 item.description.split("\n").length - 1 && (
                                 <br />
                               )}
-                            </React.Fragment>
+                            </Fragment>
                           ))}
                         </p>
                       </div>

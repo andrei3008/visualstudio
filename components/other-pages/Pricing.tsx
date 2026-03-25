@@ -36,7 +36,7 @@ export default function Pricing() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                         />
                       </svg>
-                      <span>Pricing</span>
+                      <span>Pachete orientative</span>
                     </p>
                   </div>
                 </div>
@@ -46,7 +46,7 @@ export default function Pricing() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-01 loading__item">
-                        Creative solutions made simple
+                        Exemple de investiție pentru proiecte digitale
                       </h1>
                       {/* <p class="inner-headline__text t-large t-bright">Subscriptions for continuous creative 
                   support or bundled projects to build or elevate your brand. We've got a package 
@@ -131,7 +131,7 @@ export default function Pricing() {
                                 href={p.btnHref || "contact.html"}
                               >
                                 <span className="btn-caption">
-                                  {p.btnText || "Start Project"}
+                                  {p.btnText || "Cere o estimare"}
                                 </span>
                                 <i className="ph-bold ph-arrow-up-right" />
                               </a>
@@ -142,7 +142,7 @@ export default function Pricing() {
                         {p.features && (
                           <div className="mxd-pricing-table__plan">
                             <p className="pricing-plan__caption t-semibold t-bright anim-uni-in-up">
-                              What&apos;s included:
+                              Ce este inclus:
                             </p>
                             <div className="pricing-plan__list">
                               <ul className="mxd-check-list">
@@ -158,7 +158,7 @@ export default function Pricing() {
                         )}
                         <div className="mxd-pricing-table__link anim-uni-in-up">
                           <a href={p.linkHref || "contact.html"}>
-                            {p.linkText || "Need more info? Let's talk."}
+                            {p.linkText || "Ai nevoie de mai multe detalii? Hai să vorbim."}
                           </a>
                         </div>
                       </div>

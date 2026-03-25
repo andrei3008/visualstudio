@@ -1,63 +1,63 @@
 [
   {
-    "tag": "🦄 Special Offer",
+    "tag": "Pachet popular",
     "tagClass": "tag-default tag-accent",
-    "title": "Custom Website",
-    "descr": "Inspiring ideas, creative insights, and the latest in design and tech. Fueling innovation for your digital journey.",
-    "currency": "$",
-    "amount": "8000",
-    "period": "/once",
-    "timeline": "Timeline: from 2 weeks to 1 month",
-    "btnText": "Start Project",
-    "btnHref": "contact.html",
+    "title": "Site sau landing page custom",
+    "descr": "Potrivit pentru companii care au nevoie de o prezență online modernă, rapidă și bine structurată pentru vânzări sau lead-uri.",
+    "currency": "€",
+    "amount": "2000+",
+    "period": "/proiect",
+    "timeline": "Durată orientativă: 2-6 săptămâni",
+    "btnText": "Cere o estimare",
+    "btnHref": "/contact",
     "features": [
-      "Custom design and development",
-      "Responsive layout",
-      "SEO optimization",
-      "CMS integration",
-      "Basic training"
+      "design și dezvoltare personalizată",
+      "layout responsive și optimizare mobil",
+      "SEO tehnic de bază",
+      "integrare formular, analytics sau CMS",
+      "training scurt pentru administrare"
     ],
-    "linkText": "Need more info? Let's talk.",
-    "linkHref": "contact.html"
+    "linkText": "Ai nevoie de altă structură? Hai să discutăm.",
+    "linkHref": "/contact"
   },
   {
-    "tag": "🔥 Best Choice",
+    "tag": "Cel mai cerut",
     "tagClass": "tag-default tag-additional",
-    "title": "Brand Support",
-    "descr": "Ongoing creative services to maintain, enhance, and grow your brand's visual identity.",
-    "currency": "$",
-    "amount": "399",
-    "period": "/month",
-    "timeline": "Timeline: monthly subscription",
-    "btnText": "Start Project",
-    "btnHref": "contact.html",
+    "title": "Aplicație custom sau platformă internă",
+    "descr": "Pentru companii care vor procese digitalizate, automatizare, dashboard-uri, CRM-uri sau produse software construite pe nevoile lor reale.",
+    "currency": "€",
+    "amount": "5000+",
+    "period": "/proiect",
+    "timeline": "Durată orientativă: 1-4 luni",
+    "btnText": "Discută proiectul",
+    "btnHref": "/contact",
     "features": [
-      "Digital and print design",
-      "Website updates & management",
-      "Social media branding",
-      "Brand strategy & consulting",
-      "Priority creative support"
+      "analiză și arhitectură funcțională",
+      "frontend și backend integrate",
+      "autentificare, roluri și fluxuri interne",
+      "integrare cu servicii externe și API-uri",
+      "suport prioritar la lansare"
     ],
-    "linkText": "Need more info? Let's talk.",
-    "linkHref": "contact.html",
+    "linkText": "Vrei o ofertă pe nevoia ta exactă? Scrie-ne.",
+    "linkHref": "/contact",
     "best": true
   },
   {
-    "title": "Customize your package, and get exactly what fits your vision.",
+    "title": "Mentenanță, DevOps și automatizări recurente",
     "descr": "",
     "currency": "",
     "amount": "",
     "period": "",
-    "btnText": "Start Project",
-    "btnHref": "contact.html",
+    "btnText": "Solicită abonament",
+    "btnHref": "/contact",
     "features": [
-      "Pick the services you need",
-      "Scalable projects",
-      "Flexible adjustments",
-      "Project management",
-      "Ongoing support"
+      "monitorizare și intervenții lunare",
+      "optimizări și ajustări iterative",
+      "pipeline-uri CI/CD și deployment",
+      "backup, update-uri și hardening",
+      "suport tehnic continuu"
     ],
-    "linkText": "Need more info? Let's talk.",
-    "linkHref": "contact.html"
+    "linkText": "Nu te încadrezi într-un pachet? Construim unul custom.",
+    "linkHref": "/contact"
   }
 ]

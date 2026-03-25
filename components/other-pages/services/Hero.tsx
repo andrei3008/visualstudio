@@ -37,7 +37,7 @@ export default function Hero() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                         />
                       </svg>
-                      <span>Services</span>
+                      <span>Servicii</span>
                     </p>
                   </div>
                 </div>
@@ -47,9 +47,14 @@ export default function Hero() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        New standards in digital excellence
+                        Servicii construite pentru rezultate, nu pentru vitrină
                       </h1>
-                      {/* <p class="inner-headline__text t-large t-bright"></p> */}
+                      <p className="inner-headline__text t-large t-bright loading__item">
+                        De la site-uri de prezentare și magazine online până la
+                        aplicații custom, platforme interne și automatizări,
+                        livrăm soluții care reduc blocajele și susțin creșterea
+                        business-ului.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -86,11 +91,10 @@ export default function Hero() {
                                     id="stats-counter-3"
                                     className="mxd-counter__number mxd-stats-number"
                                   >
-                                    <Counter max={5} />+
+                                  <Counter max={5} />+
                                   </p>
                                   <p className="mxd-counter__descr t-140 t-bright">
-                                    Years of professional experience in
-                                    designing digital products
+                                    Ani de experiență în produse digitale și implementare
                                   </p>
                                 </div>
                                 <div className="mxd-stats-cards__btngroup">
@@ -99,7 +103,7 @@ export default function Hero() {
                                     href={`/contact`}
                                   >
                                     <span className="btn-caption">
-                                      Start New Project
+                                      Începe un proiect nou
                                     </span>
                                     <i className="ph-bold ph-arrow-up-right" />
                                   </Link>
@@ -125,9 +129,9 @@ export default function Hero() {
                                     <Counter max={70} />+
                                   </p>
                                   <p className="mxd-counter__descr t-140 t-bright">
-                                    Successfully
+                                    Proiecte
                                     <br />
-                                    completed projects
+                                    finalizate cu succes
                                   </p>
                                 </div>
                                 <div className="mxd-stats-cards__btngroup">
@@ -135,7 +139,7 @@ export default function Hero() {
                                     className="btn btn-anim btn-default btn-outline slide-right-up"
                                     href={`/portofoliu`}
                                   >
-                                    <span className="btn-caption">Works</span>
+                                    <span className="btn-caption">Portofoliu</span>
                                     <i className="ph-bold ph-arrow-up-right" />
                                   </Link>
                                 </div>

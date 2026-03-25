@@ -29,21 +29,21 @@ export default function About() {
                   <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                     <div className="mxd-section-title__hrtitle">
                       <h2 className="opposite reveal-type anim-uni-in-up">
-                        Our culture and
+                        Cultura noastră și
                         <br />
-                        values
+                        valorile noastre
                       </h2>
                     </div>
                   </div>
                   <div className="col-12 col-xl-3 mxd-grid-item no-margin">
                     <div className="mxd-section-title__hrdescr">
                       <p className="t-opposite-medium anim-uni-in-up">
-                        Imagination
+                        Claritate
                       </p>
                       <p className="t-opposite-medium anim-uni-in-up">
-                        Strategy
+                        Rigoare
                       </p>
-                      <p className="t-opposite-medium anim-uni-in-up">Action</p>
+                      <p className="t-opposite-medium anim-uni-in-up">Execuție</p>
                     </div>
                   </div>
                   <div className="col-12 col-xl-3 mxd-grid-item no-margin">
@@ -51,7 +51,7 @@ export default function About() {
                       <AnimatedButton
                         className="btn btn-anim btn-default btn-outline opposite slide-right-down"
                         as={"a"}
-                        text="Testimonials"
+                        text="Testimoniale"
                         href="#testimonials"
                       >
                         <i className="ph-bold ph-arrow-down-right" />
@@ -78,9 +78,9 @@ export default function About() {
                         as="p"
                         className="t-bright opposite t-large reveal-type"
                       >
-                        We thrive on collaboration, creativity, and innovation.
-                        Our team values open communication, continuous learning,
-                        and delivering results that make a real impact.
+                        Lucrăm bine în proiecte unde lucrurile trebuie înțelese
+                        rapid și implementate corect. Punem preț pe comunicare
+                        directă, decizii argumentate și livrare constantă.
                       </RevealText>
                     </div>
                   </div>
@@ -105,7 +105,7 @@ export default function About() {
                     key={index}
                     className="marquee__item one-line item-regular text"
                   >
-                    <p className="marquee__text">Clients Approve</p>
+                    <p className="marquee__text">Clienți mulțumiți</p>
                     <div className="marquee__image">
                       <svg
                         version="1.1"
@@ -225,7 +225,7 @@ export default function About() {
                               <AnimatedButton
                                 className="btn btn-anim btn-default btn-small btn-base slide-right-up"
                                 as={"a"}
-                                text="Project Page"
+                                text="Vezi proiectul"
                                 href={t.projectLink}
                               >
                                 <i className="ph ph-arrow-up-right" />

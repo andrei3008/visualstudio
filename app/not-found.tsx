@@ -3,10 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Page Not Found || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Pagina nu a fost găsită | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Pagina solicitată nu există sau a fost mutată.",
 };
 export default function NotFoundPage() {
   return (
@@ -37,10 +36,10 @@ export default function NotFoundPage() {
                       <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                         <div className="mxd-error__caption loading__fade">
                           <p className="t-large t-medium t-120 t-bright">
-                            This page doesn&apos;t exist
+                            Pagina căutată nu există
                           </p>
                           <p className="t-large t-medium t-120 t-muted">
-                            Sorry.
+                            sau a fost mutată.
                           </p>
                         </div>
                       </div>
@@ -56,7 +55,7 @@ export default function NotFoundPage() {
                           href={`/`}
                         >
                           <span className="btn-caption">
-                            Let&apos;s Go Home
+                            Înapoi la pagina principală
                           </span>
                           <i className="ph-bold ph-arrow-up-right" />
                         </Link>

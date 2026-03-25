@@ -5,7 +5,6 @@ import {
   ComponentPropsWithoutRef,
   useMemo,
   useState,
-  useEffect,
 } from "react";
 import Link from "next/link";
 
@@ -62,12 +61,7 @@ export default function AnimatedButton<As extends ElementType = "div">(
   }
 
   const [play, setPlay] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const letters = useMemo(() => splitToLetters(text), [text]);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   // Build props based on tag type
   const tagProps = {
@@ -85,22 +79,6 @@ export default function AnimatedButton<As extends ElementType = "div">(
     onAnimationEnd: () => setPlay(false),
     onMouseLeave: () => setPlay(false),
   };
-
-  // Prevent hydration mismatch by rendering static content on server
-  if (!isMounted) {
-    return (
-      <Tag {...tagProps}>
-        {position === "previous" ? <> {children}</> : null}
-        <span className="btn-caption">
-          <div className="btn-anim__block">{text}</div>
-          <div className="btn-anim__block" aria-hidden="true">
-            {text}
-          </div>
-        </span>
-        {position === "next" ? <> {children}</> : null}
-      </Tag>
-    );
-  }
 
   return (
     <>

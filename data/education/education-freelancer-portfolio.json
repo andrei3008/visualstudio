@@ -1,23 +1,23 @@
 [
   {
-    "title": "Drawing Concentration",
+    "title": "Baze de desen și compoziție",
     "institution": "New York Academy of Art",
     "institutionUrl": "#",
-    "desc": "Intensive drawing courses that present the fundamental principles of drawing.",
+    "desc": "Curs intensiv axat pe fundamente vizuale, compoziție și disciplină de lucru în construcția imaginilor.",
     "year": "2015 - 2016"
   },
   {
     "title": "UI/UX Design Specialization",
     "institution": "California Institute of Arts",
     "institutionUrl": "#",
-    "desc": "Research, design, and prototype effective, visually-driven websites and apps.",
+    "desc": "Program orientat pe research, structură de produs, interfețe și prototipare pentru website-uri și aplicații.",
     "year": "2019 - 2021"
   },
   {
     "title": "UI/UX Designer",
     "institution": "Coursera",
     "institutionUrl": "#",
-    "desc": "This course is about how to complete the design process from beginning to end.",
+    "desc": "Program practic despre procesul complet de design, de la definirea problemei până la soluție și iterație.",
     "year": "2022"
   }
 ]

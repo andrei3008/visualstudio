@@ -7,10 +7,9 @@ import PortfolioMasonry from "@/components/portfolios/PortfolioMasonry";
 import Testimonials from "@/components/common/Testimonials";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Work Masonry || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Portofoliu extins | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Colecție extinsă de proiecte și exemple vizuale din portofoliul Visual Studio Concept.",
 };
 export default function WorksMasonryPage() {
   return (

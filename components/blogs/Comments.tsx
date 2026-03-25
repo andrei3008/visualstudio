@@ -6,7 +6,7 @@ export default function Comments() {
   return (
     <div className="mxd-article-comments">
       <div className="mxd-article-comments__container">
-        <h3>3 Comments</h3>
+        <h3>3 comentarii</h3>
         <div className="mxd-article-comments__list">
           <ul className="mxd-comment__main">
             <li className="mxd-comment">
@@ -28,17 +28,17 @@ export default function Comments() {
                       <a href="#">Lea Tomato</a>
                     </h6>
                   </div>
-                  <p className="t-small">
-                    AI-generated art is impressive, but I feel like it takes
-                    away the human touch. Illustration is about personal
-                    expression, and no algorithm can truly replace that.
+                    <p className="t-small">
+                    Automatizarea și AI-ul sunt impresionante, dar cred că
+                    diferența reală apare când sunt folosite de o echipă care
+                    înțelege bine și partea de business, nu doar tehnologia.
                   </p>
                   <div className="mxd-comment__reply">
                     <AnimatedButton
                       className="btn btn-anim btn-default btn-small btn-outline slide-right-up"
                       as={"a"}
                       position={"next"}
-                      text="Reply"
+                      text="Răspunde"
                       href="#"
                     >
                       <i className="ph ph-arrow-up-right" />
@@ -67,17 +67,16 @@ export default function Comments() {
                         </h6>
                       </div>
                       <p className="t-small">
-                        I get your point, Lea, but I think AI is more of a tool
-                        than a replacement. It speeds up workflows and helps
-                        artists experiment with new ideas they might not have
-                        considered before.
+                        Exact. Instrumentele bune accelerează munca și reduc
+                        blocajele, dar tot oamenii decid direcția, arhitectura
+                        și prioritățile care contează.
                       </p>
                       <div className="mxd-comment__reply">
                         <AnimatedButton
                           position={"next"}
                           as={"a"}
                           className="btn btn-anim btn-default btn-small btn-outline slide-right-up"
-                          text="Reply"
+                          text="Răspunde"
                           href="#"
                         >
                           <i className="ph ph-arrow-up-right" />
@@ -108,17 +107,16 @@ export default function Comments() {
                     </h6>
                   </div>
                   <p className="t-small">
-                    As a designer, I&apos;ve started using AI in my work, and
-                    it&apos;s actually helped me focus more on creativity. It
-                    handles the repetitive tasks, so I can put more time into
-                    refining concepts and storytelling.
+                    În proiectele digitale bune, tehnologia trebuie să lase loc
+                    pentru decizii mai bune, nu doar pentru viteză. Asta se
+                    vede imediat în rezultat și în experiența finală.
                   </p>
                   <div className="mxd-comment__reply">
                     <AnimatedButton
                       position={"next"}
                       as={"a"}
                       className="btn btn-anim btn-default btn-small btn-outline slide-right-up"
-                      text="Reply"
+                      text="Răspunde"
                       href="#"
                     >
                       <i className="ph ph-arrow-up-right" />
@@ -131,10 +129,10 @@ export default function Comments() {
         </div>
       </div>
       <div className="mxd-article-comments__respond">
-        <h3>What do you think?</h3>
+        <h3>Tu ce părere ai?</h3>
         <p>
-          Please leave a reply. Your email address will not be published.
-          Required fields are marked *
+          Poți lăsa un răspuns mai jos. Adresa de e-mail nu va fi publicată.
+          Câmpurile obligatorii sunt marcate cu *
         </p>
         <div className="comments-respond__form">
           <CommentForm />

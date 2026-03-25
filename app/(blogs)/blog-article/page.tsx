@@ -4,10 +4,9 @@ import Cta from "@/components/common/Cta";
 import Footer from "@/components/footers/Footer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Blog Details || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Articol | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Articol din blogul Visual Studio Concept despre dezvoltare software, automatizare, produs digital și tehnologie aplicată în business.",
 };
 export default function BlogSinglePage() {
   return (
@@ -17,7 +16,7 @@ export default function BlogSinglePage() {
         className="mxd-page-content inner-page-content"
       >
         <BlogDetails />
-        <Blogs desc="" title="More on topic" />
+        <Blogs desc="" title="Articole similare" />
         <Cta />
       </main>
       <Footer />

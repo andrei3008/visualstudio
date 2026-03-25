@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import RevealText from "../animation/RevealText";
@@ -36,7 +35,7 @@ export default function Cta() {
                 </p>
                 <div className="mxd-promo__controls anim-uni-in-up">
                   <AnimatedButton
-                    text="Programeaza o discutie"
+                    text="Programează o discuție"
                     className="btn btn-anim btn-default btn-large btn-additional slide-right-up"
                     href={`/contact`}
                   >

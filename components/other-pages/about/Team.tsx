@@ -1,4 +1,3 @@
-import Link from "next/link";
 import RevealText from "@/components/animation/RevealText";
 import Image from "next/image";
 import teamData from "@/data/team.json";

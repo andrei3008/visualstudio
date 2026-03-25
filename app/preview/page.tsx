@@ -13,10 +13,9 @@ import Cta from "@/components/preview/Cta";
 import Footer from "@/components/footers/Footer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Preview || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Preview intern | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Pagină internă de preview pentru secțiunile, paginile și componentele vizuale pregătite în proiectul Visual Studio Concept.",
 };
 export default function PreviewPage() {
   return (

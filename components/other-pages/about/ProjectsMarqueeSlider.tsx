@@ -8,22 +8,22 @@ const aboutProjects = [
   {
     id: 1,
     src: "/img/marquee/about/about-marquee-01.jpg",
-    title: "Developer workspace",
+    title: "Spațiu de lucru",
   },
   {
     id: 2,
     src: "/img/marquee/about/about-marquee-02.jpg",
-    title: "Product build session",
+    title: "Sesiune de produs",
   },
   {
     id: 3,
     src: "/img/marquee/about/about-marquee-03.jpg",
-    title: "Programming flow",
+    title: "Flux de dezvoltare",
   },
   {
     id: 4,
     src: "/img/marquee/about/about-marquee-04.jpg",
-    title: "Technical setup",
+    title: "Setup tehnic",
   },
 ];
 
@@ -32,9 +32,9 @@ export default function ProjectsMarqueeSlider() {
     <div className="mxd-section padding-pre-title">
       <div className="mxd-container fullwidth-container">
         <div className="mxd-container__circle circle-fit loading__fade">
-          <a
+          <Link
             className="btn-rotating btn-rotating-180 btn-rotating-blur-outline ver-03"
-            href="#"
+            href="/services"
           >
             {/* SVG rotating text */}
             <AnimateRotation
@@ -62,7 +62,8 @@ export default function ProjectsMarqueeSlider() {
                 <text>
                   {/* button text here!!! */}
                   <textPath xlinkHref="#textPath">
-                    Download CV * Download CV * Download CV *
+                    Vezi serviciile noastre * Vezi serviciile noastre * Vezi
+                    serviciile noastre *
                   </textPath>
                 </text>
               </g>
@@ -75,7 +76,7 @@ export default function ProjectsMarqueeSlider() {
               width={300}
               height={300}
             />
-          </a>
+          </Link>
         </div>
         {/* Block - Marquee Projects Links One Line Start */}
         <div className="mxd-block loading__fade">

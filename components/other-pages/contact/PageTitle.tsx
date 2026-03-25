@@ -39,15 +39,11 @@ export default function PageTitle() {
               {/* Inner Headline Content Start */}
               <div className="col-12 col-xl-8 mxd-grid-item no-margin">
                 <div className="mxd-block__content">
-                  <div className="mxd-block__inner-headline loading__item">
+                    <div className="mxd-block__inner-headline loading__item">
                     <h1 className="inner-headline__title">
-                      Let&apos;s talk
+                      Hai să vorbim
                       <br />
-                      about your project!
-                      {/* <a class="btn btn-line-headline slide-right-up anim-no-delay" href="mailto:salut@visualstudio.ro?subject=Message%20from%20your%20site">
-                    <span class="btn-caption">hello@rayo.com</span>
-                    <i class="ph-bold ph-arrow-up-right"></i>
-                  </a> */}
+                      despre proiectul tău
                     </h1>
                     <a
                       className="btn btn-line-headline slide-right-up anim-no-delay"
@@ -57,10 +53,10 @@ export default function PageTitle() {
                       <i className="ph-bold ph-arrow-up-right" />
                     </a>
                     <p className="inner-headline__text t-large t-bright loading__item">
-                      Have questions? We&apos;ve got the answers! Here,
-                      you&apos;ll find clear and concise information about our
-                      services, process, and what to expect when working with
-                      us. If you need more details, feel free to reach out!
+                      Dacă vrei un site nou, o aplicație, o platformă internă
+                      sau o automatizare care să economisească timp, scrie-ne.
+                      Îți răspundem clar, fără jargon inutil, și îți spunem
+                      rapid ce se poate face, în ce etapă și cu ce priorități.
                     </p>
                   </div>
                 </div>

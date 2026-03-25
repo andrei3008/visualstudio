@@ -21,6 +21,7 @@ export default function Hero() {
                       className="mxd-move"
                       alt="Image"
                       src="/img/hero/hero-15.png"
+                      loading="eager"
                       width={1000}
                       height={1532}
                     />
@@ -33,6 +34,7 @@ export default function Hero() {
                       className="mxd-move"
                       alt="Image"
                       src="/img/hero/hero-2.png"
+                      loading="eager"
                       width={1000}
                       height={1532}
                     />
@@ -81,6 +83,7 @@ export default function Hero() {
                       className="mxd-pulse-small"
                       alt="Image"
                       src="/img/hero/hero-14.png"
+                      loading="eager"
                       width={800}
                       height={780}
                     />

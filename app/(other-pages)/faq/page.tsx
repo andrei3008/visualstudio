@@ -4,10 +4,9 @@ import Footer from "@/components/footers/Footer";
 import Faqs from "@/components/other-pages/Faqs";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Faqs || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Întrebări frecvente | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Răspunsuri clare despre procesul de lucru, estimări, livrare, mentenanță și colaborarea pentru proiecte software la comandă.",
 };
 export default function FaqsPage() {
   return (

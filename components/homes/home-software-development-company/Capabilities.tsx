@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import capabilities from "@/data/capabilities.json";
@@ -45,8 +44,8 @@ export default function Capabilities() {
               <div className="row g-0">
                 <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrtitle">
-                    <RevealText as="h2" className="reveal-type" style={{ whiteSpace: 'nowrap' }}>
-                      Ce putem face pentru afacerea ta
+                    <RevealText as="h2" className="reveal-type">
+                      Servicii care mută proiectul din idee în produs lansat
                     </RevealText>
                   </div>
                 </div>

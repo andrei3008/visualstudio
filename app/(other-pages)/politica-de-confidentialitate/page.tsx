@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
         {
           title: "1. Cine suntem",
           paragraphs: [
-            "Site-ul este operat de Visual Studio Concept SRL. Pentru solicitari privind protectia datelor ne poti contacta la adresa salut@visualstudio.ro.",
+            "Site-ul este operat de VISUAL STUDIO CONCEPT SRL, cu sediul in Craiova, Romania, CUI 43527366, inregistrata la Registrul Comertului sub nr. J16/53/2021. Pentru solicitari privind protectia datelor ne poti contacta la adresa salut@visualstudio.ro sau la numarul 0770 561 719.",
             "Aceasta politica se aplica datelor colectate prin website, formularele de contact, comunicarile prin e-mail si interactiunile comerciale initiate prin site.",
           ],
         },
@@ -82,8 +82,9 @@ export default function PrivacyPolicyPage() {
         {
           title: "7. Cookie-uri si date tehnice",
           paragraphs: [
-            "Site-ul poate utiliza cookie-uri si tehnologii similare pentru functionare, analiza trafic si imbunatatirea experientei de navigare.",
-            "Poti controla cookie-urile din setarile browserului tau. Dezactivarea anumitor cookie-uri poate afecta functionarea unor parti ale site-ului.",
+            "In forma actuala, site-ul foloseste in principal mecanisme tehnice necesare functionarii si memorarii unor preferinte de afisare, cum ar fi preferinta pentru tema vizuala. Aceste preferinte pot fi stocate prin tehnologii precum local storage sau alti identificatori tehnici similari.",
+            "La momentul actual nu folosim, in mod evident pe suprafata publica a site-ului, cookie-uri de marketing comportamental sau instrumente de analiza de tip third-party precum Google Analytics, Meta Pixel ori alte trackere similare. Daca aceste instrumente vor fi adaugate ulterior, politica va fi actualizata, iar acolo unde legea impune, consimtamantul va fi solicitat inainte de activare.",
+            "Poti controla stocarea de cookie-uri din setarile browserului tau. Dezactivarea anumitor mecanisme strict necesare poate afecta functionarea unor parti ale site-ului.",
           ],
         },
         {
@@ -96,7 +97,8 @@ export default function PrivacyPolicyPage() {
         {
           title: "9. Contact",
           paragraphs: [
-            "Pentru intrebari privind aceasta politica sau pentru exercitarea drepturilor tale, ne poti scrie la salut@visualstudio.ro.",
+            "Pentru intrebari privind aceasta politica sau pentru exercitarea drepturilor tale, ne poti scrie la salut@visualstudio.ro sau ne poti suna la 0770 561 719.",
+            "Daca apreciezi ca drepturile tale au fost incalcate, ai posibilitatea de a te adresa si Autoritatii Nationale de Supraveghere a Prelucrarii Datelor cu Caracter Personal (ANSPDCP).",
             "Daca vor aparea modificari importante in modul de prelucrare, vom actualiza aceasta pagina.",
           ],
         },

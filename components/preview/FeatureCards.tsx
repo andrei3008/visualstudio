@@ -56,7 +56,7 @@ export default function FeatureCards() {
                     </div>
                     <div className="mxd-features-cards__image features-image-01">
                       <Image
-                        alt="Rayo Illustration"
+                        alt="Ilustrație preview"
                         width={1000}
                         height={843}
                         src="/img/demo/02_fea-img.webp"
@@ -64,7 +64,7 @@ export default function FeatureCards() {
                     </div>
                     <div className="mxd-features-cards__title">
                       <h3 className="anim-uni-in-up">
-                        Dynamic &amp; stylish design
+                        Design clar și bine controlat
                       </h3>
                     </div>
                     <div className="mxd-features-cards__info">
@@ -73,15 +73,15 @@ export default function FeatureCards() {
                           Design
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Layouts
+                          Layout-uri
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Visuals
+                          Interfețe
                         </span>
                       </div>
                       <p className="anim-uni-in-up">
-                        Modern, eye-catching layouts crafted to make your brand
-                        stand out and keep visitors engaged.
+                        Structuri vizuale pregătite pentru prezentări de servicii,
+                        portofoliu și pagini de conținut.
                       </p>
                     </div>
                   </div>
@@ -91,7 +91,7 @@ export default function FeatureCards() {
                   <div className="mxd-features-cards__inner justify-end bg-accent radius-l padding-4">
                     <div className="mxd-features-cards__image features-image-02">
                       <Image
-                        alt="Rayo Illustration"
+                        alt="Ilustrație preview"
                         width={800}
                         height={513}
                         src="/img/demo/03_fea-img.webp"
@@ -99,23 +99,23 @@ export default function FeatureCards() {
                     </div>
                     <div className="mxd-features-cards__title">
                       <h3 className="opposite anim-uni-in-up">
-                        Dark / light
+                        Variante
                         <br />
-                        mode
+                        vizuale
                       </h3>
                     </div>
                     <div className="mxd-features-cards__info">
                       <div className="mxd-features-cards__tags">
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          Theme Choice
+                          Contrast
                         </span>
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
                           Interactive
                         </span>
                       </div>
                       <p className="t-opposite anim-uni-in-up">
-                        Switch effortlessly between light and dark modes for a
-                        user-friendly experience.
+                        Blocuri pregătite pentru zone cu accent vizual puternic
+                        și secțiuni care trebuie să iasă imediat în evidență.
                       </p>
                     </div>
                   </div>
@@ -124,23 +124,23 @@ export default function FeatureCards() {
                 <div className="col-12 col-xl-4 mxd-features-cards__item mxd-grid-item anim-uni-scale-in-right">
                   <div className="mxd-features-cards__inner bg-additional radius-l padding-4">
                     <div className="mxd-features-cards__title">
-                      <h3 className="anim-uni-in-up">Easy to customize</h3>
+                      <h3 className="anim-uni-in-up">Ușor de adaptat</h3>
                     </div>
                     <div className="mxd-features-cards__info">
                       <div className="mxd-features-cards__tags">
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Flexible
+                          Flexibil
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Fast
+                          Rapid
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          User-friendly
+                          Clar
                         </span>
                       </div>
                       <p className="t-bright anim-uni-in-up">
-                        Adapt every detail to fit your vision — no fuss, just
-                        simple, clear editing.
+                        Secțiunile pot fi refolosite rapid în paginile existente,
+                        fără schimbări structurale complicate.
                       </p>
                     </div>
                     <div className="mxd-features-cards__image features-image-03">
@@ -158,7 +158,7 @@ export default function FeatureCards() {
                   <div className="mxd-features-cards__inner bg-base-opp radius-l padding-4">
                     <div className="mxd-features-cards__title">
                       <h3 className="opposite anim-uni-in-up">
-                        GSAP-powered animations
+                        Animații și ritm
                       </h3>
                     </div>
                     <div className="mxd-features-cards__info">
@@ -167,15 +167,15 @@ export default function FeatureCards() {
                           Motion
                         </span>
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          Smooth
+                          Fluid
                         </span>
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
                           Interactive
                         </span>
                       </div>
                       <p className="t-opposite anim-uni-in-up">
-                        Adding unique movement, scroll magic, and creative depth
-                        to your pages.
+                        Mișcare controlată pentru secțiuni de impact, scroll și
+                        interacțiuni care adaugă profunzime fără să aglomereze.
                       </p>
                     </div>
                     <div className="mxd-features-cards__image features-image-04">
@@ -235,26 +235,26 @@ export default function FeatureCards() {
                     </div>
                     <div className="mxd-features-cards__title">
                       <h3 className="anim-uni-in-up">
-                        Code
+                        Bază
                         <br />
-                        excellence
+                        tehnică solidă
                       </h3>
                     </div>
                     <div className="mxd-features-cards__info">
                       <div className="mxd-features-cards__tags">
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Clean
+                          Curat
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Reliable
+                          Fiabil
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Validated
+                          Structurat
                         </span>
                       </div>
                       <p className="anim-uni-in-up">
-                        Built with clean, well-structured code that&apos;s fast,
-                        secure, and easy to maintain.
+                        Componente organizate astfel încât să poată fi extinse,
+                        mutate și întreținute ușor în proiect.
                       </p>
                     </div>
                     <div className="mxd-features-cards__image features-image-05">
@@ -291,7 +291,7 @@ export default function FeatureCards() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                       />
                     </svg>
-                    <span>and much more</span>
+                    <span>și multe altele</span>
                     <svg
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,7 @@
     "img": "/img/demo/inner/03_services.webp",
     "imgWidth": 1000,
     "imgHeight": 1413,
-    "title": "Services"
+    "title": "Servicii"
   },
   {
     "href": "/team",
@@ -13,7 +13,7 @@
     "img": "/img/demo/inner/04_team.webp",
     "imgWidth": 1000,
     "imgHeight": 1413,
-    "title": "Our Team"
+    "title": "Echipa"
   },
   {
     "href": "/pricing",
@@ -21,7 +21,7 @@
     "img": "/img/demo/inner/05_pricing.webp",
     "imgWidth": 1000,
     "imgHeight": 1413,
-    "title": "Pricing Plans"
+    "title": "Pachete orientative"
   },
   {
     "href": "/about-me",
@@ -29,7 +29,7 @@
     "img": "/img/demo/inner/01_about-me.webp",
     "imgWidth": 1000,
     "imgHeight": 1413,
-    "title": "About Me"
+    "title": "Despre echipă"
   },
   {
     "href": "/despre-noi",
@@ -37,7 +37,7 @@
     "img": "/img/demo/inner/02_despre-noi.webp",
     "imgWidth": 1000,
     "imgHeight": 1413,
-    "title": "About Us"
+    "title": "Despre noi"
   },
   {
     "href": "/404",
@@ -45,7 +45,7 @@
     "img": "/img/demo/inner/08_404.webp",
     "imgWidth": 1000,
     "imgHeight": 628,
-    "title": "404 Error"
+    "title": "Eroare 404"
   },
   {
     "href": "/faq",
@@ -53,7 +53,7 @@
     "img": "/img/demo/inner/06_faq.webp",
     "imgWidth": 1000,
     "imgHeight": 1413,
-    "title": "FAQ Page"
+    "title": "Întrebări frecvente"
   },
   {
     "href": "/contact",

@@ -18,7 +18,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-01.webp"
@@ -29,7 +29,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-02.webp"
@@ -40,7 +40,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-03.webp"
@@ -51,7 +51,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-04.webp"
@@ -62,7 +62,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-05.webp"
@@ -73,7 +73,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-06.webp"
@@ -84,7 +84,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-07.webp"
@@ -95,7 +95,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-08.webp"
@@ -110,7 +110,7 @@ export default function PagesMarquee() {
                 <div className="mxd-demo-components__object obj-01 anim-uni-in-up">
                   <Image
                     className="mxd-move-slow"
-                    alt="Rayo Image"
+                    alt="Preview componentă"
                     width={700}
                     height={730}
                     src="/img/demo/01_comp-img.webp"
@@ -119,7 +119,7 @@ export default function PagesMarquee() {
                 <div className="mxd-demo-components__object obj-02 anim-uni-in-up">
                   <Image
                     className="mxd-rotate-slow"
-                    alt="Rayo Image"
+                    alt="Preview componentă"
                     width={700}
                     height={730}
                     src="/img/demo/01_comp-img.webp"
@@ -128,7 +128,7 @@ export default function PagesMarquee() {
                 <div className="mxd-demo-components__object obj-03 anim-uni-in-up">
                   <Image
                     className="mxd-move"
-                    alt="Rayo Image"
+                    alt="Preview componentă"
                     width={700}
                     height={730}
                     src="/img/demo/01_comp-img.webp"
@@ -137,9 +137,9 @@ export default function PagesMarquee() {
               </div>
               <div className="mxd-demo-components__title anim-uni-in-up">
                 <RevealText as="span" className="reveal-type">
-                  Functional
+                  Componente
                   <br />
-                  components
+                  funcționale
                 </RevealText>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-09.webp"
@@ -161,7 +161,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-10.webp"
@@ -172,7 +172,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-11.webp"
@@ -183,7 +183,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-04.webp"
@@ -194,7 +194,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-14.webp"
@@ -205,7 +205,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-06.webp"
@@ -216,7 +216,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-15.webp"
@@ -227,7 +227,7 @@ export default function PagesMarquee() {
             <div className="marquee__item overflow-visible one-line item-regular text">
               <div className="marquee__component">
                 <Image
-                  alt="Rayo Image"
+                  alt="Preview componentă"
                   width={800}
                   height={502}
                   src="/img/demo/components/sec-08.webp"

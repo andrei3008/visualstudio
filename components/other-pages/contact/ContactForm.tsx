@@ -24,9 +24,9 @@ export default function ContactForm() {
     try {
       await fsSubmit(data); // submit to Formspree
       reset(); // reset form fields
-      toast.success("Message sent — thanks!");
+      toast.success("Mesaj trimis. Revenim cât mai curând.");
     } catch {
-      toast.error("Submission failed — please try again later.");
+      toast.error("Trimiterea a eșuat. Încearcă din nou mai târziu.");
     }
   };
 
@@ -45,10 +45,10 @@ export default function ContactForm() {
                         {/* Reply Messages */}
                         <div className="form__reply centered text-center">
                           <i className="ph-fill ph-smiley-wink reply__icon" />
-                          <p className="reply__title">Done!</p>
+                          <p className="reply__title">Mesaj trimis</p>
                           <span className="reply__text">
-                            Thanks for your message. We&apos;ll get back as soon
-                            as possible.
+                            Mulțumim pentru mesaj. Revenim cât mai curând cu un
+                            răspuns.
                           </span>
                         </div>
                         {/* Contact Form */}
@@ -61,17 +61,17 @@ export default function ContactForm() {
                           <input
                             type="hidden"
                             name="project_name"
-                            defaultValue="Rayo Template"
+                            defaultValue="Visual Studio Concept"
                           />
                           <input
                             type="hidden"
                             name="admin_email"
-                            defaultValue="support@mixdesign.dev"
+                            defaultValue="salut@visualstudio.ro"
                           />
                           <input
                             type="hidden"
                             name="form_subject"
-                            defaultValue="Contact Form Message"
+                            defaultValue="Mesaj nou din formularul de contact"
                           />
                           {/* Visible Fields */}
                           <div className="container-fluid p-0">
@@ -79,7 +79,7 @@ export default function ContactForm() {
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
                                 <input
                                   type="text"
-                                  placeholder="Your name*"
+                                  placeholder="Numele tău*"
                                   {...register("Name")}
                                 />
                                 {errors.Name && (
@@ -91,14 +91,14 @@ export default function ContactForm() {
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
                                 <input
                                   type="text"
-                                  placeholder="Company name"
+                                  placeholder="Companie"
                                   {...register("Company")}
                                 />
                               </div>
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
                                 <input
                                   type="email"
-                                  placeholder="Email*"
+                                  placeholder="E-mail*"
                                   {...register("E-mail")}
                                 />
                                 {errors["E-mail"] && (
@@ -110,13 +110,13 @@ export default function ContactForm() {
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
                                 <input
                                   type="tel"
-                                  placeholder="Phone"
+                                  placeholder="Telefon"
                                   {...register("Phone")}
                                 />
                               </div>
                               <div className="col-12 mxd-grid-item anim-uni-in-up">
                                 <textarea
-                                  placeholder="A few words about your project*"
+                                  placeholder="Spune-ne pe scurt ce vrei să construim*"
                                   {...register("Message")}
                                 />
                                 {errors.Message && (
@@ -127,7 +127,7 @@ export default function ContactForm() {
                               </div>
                               <div className="col-12 mxd-grid-item anim-uni-in-up">
                                 <AnimatedButton
-                                  text="Submit"
+                                  text="Trimite mesajul"
                                   position={"next"}
                                   as={"button"}
                                   className="btn btn-anim btn-default btn-large btn-opposite slide-right-up"

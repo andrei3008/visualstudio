@@ -24,7 +24,7 @@ export default function TermsPage() {
         {
           title: "2. Descrierea serviciilor",
           paragraphs: [
-            "Visual Studio Concept poate prezenta pe site servicii de dezvoltare software, consultanta, automatizari, mentenanta, integrare si alte servicii digitale.",
+            "VISUAL STUDIO CONCEPT SRL poate prezenta pe site servicii de dezvoltare software, consultanta, automatizari, mentenanta, integrare si alte servicii digitale.",
             "Informatiile publicate au caracter orientativ si pot fi modificate fara notificare prealabila, pentru a reflecta evolutia ofertei sau a portofoliului.",
           ],
         },
@@ -69,7 +69,8 @@ export default function TermsPage() {
         {
           title: "8. Protectia datelor",
           paragraphs: [
-            "Prelucrarea datelor personale se realizeaza conform politicii de confidentialitate publicate pe site. Prin utilizarea formularelor sau prin contactarea noastra, confirmi ca datele furnizate sunt corecte si relevante.",
+            "Prelucrarea datelor personale se realizeaza conform politicii de confidentialitate publicate pe site. Prin utilizarea formularelor sau prin contactarea noastra, confirmi ca datele furnizate sunt corecte, actuale si relevante pentru solicitarea transmisa.",
+            "In ceea ce priveste cookie-urile si tehnologiile similare, vom solicita consimtamantul prealabil atunci cand acesta este necesar potrivit legislatiei aplicabile.",
           ],
         },
         {
@@ -81,7 +82,7 @@ export default function TermsPage() {
         {
           title: "10. Contact",
           paragraphs: [
-            "Pentru intrebari privind acesti termeni si conditii ne poti contacta la salut@visualstudio.ro.",
+            "Pentru intrebari privind acesti termeni si conditii ne poti contacta la salut@visualstudio.ro sau la 0770 561 719.",
             "Ne rezervam dreptul de a actualiza acest document ori de cate ori este necesar.",
           ],
         },

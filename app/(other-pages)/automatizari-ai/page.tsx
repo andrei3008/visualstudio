@@ -4,10 +4,12 @@ import Footer from "@/components/footers/Footer";
 import HeroAutomatizariAI from "@/components/service-heroes/HeroAutomatizariAI";
 import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
 import Services from "@/components/other-pages/services/Services";
+import { servicePageGroups } from "@/data/service-page-groups";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Automatizări AI || Visual Studio - Software Development Company",
-  description: "Servicii de automatizări AI și inteligență artificială - chatbots, automatizări procese, soluții AI personalizate.",
+  title: "Automatizări AI | Visual Studio Concept",
+  description:
+    "Implementăm automatizări AI, asistenți conversaționali, fluxuri operaționale și integrări inteligente care reduc munca manuală și timpul pierdut.",
 };
 export default function AutomatizariAIPage() {
   return (
@@ -17,7 +19,11 @@ export default function AutomatizariAIPage() {
         className="mxd-page-content inner-page-content"
       >
         <HeroAutomatizariAI />
-        <Services />
+        <Services
+          items={servicePageGroups.automatizariAI}
+          introTitle="Unde are sens să folosim AI"
+          introText="Selectăm procesele în care automatizarea chiar produce timp câștigat, mai puține erori și o experiență mai bună pentru echipă sau client."
+        />
         <ParallaxDivider />
         <Blogs />
         <Cta />

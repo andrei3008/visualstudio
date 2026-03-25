@@ -3,10 +3,9 @@ import Cta from "@/components/common/Cta";
 import Footer from "@/components/footers/Footer";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Blog Creative || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Blog extins | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Colecție extinsă de articole și resurse despre tehnologie, dezvoltare software, produs digital și automatizare.",
 };
 export default function BlogCreativePage() {
   return (

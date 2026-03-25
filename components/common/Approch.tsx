@@ -5,6 +5,7 @@ import AnimatedButton from "../animation/AnimatedButton";
 const approachIcons = [
   (
     <svg
+      key="approach-icon-1"
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -16,6 +17,7 @@ const approachIcons = [
   ),
   (
     <svg
+      key="approach-icon-2"
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +28,7 @@ const approachIcons = [
   ),
   (
     <svg
+      key="approach-icon-3"
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +41,7 @@ const approachIcons = [
   ),
   (
     <svg
+      key="approach-icon-4"
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +54,7 @@ const approachIcons = [
   ),
   (
     <svg
+      key="approach-icon-5"
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -73,21 +78,21 @@ export default function Approch() {
                 <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrtitle anim-uni-in-up">
                     <RevealText as="h2" className="reveal-type">
-                      Abordare și filosofie
+                      Cum abordăm fiecare proiect
                     </RevealText>
                   </div>
                 </div>
                 <div className="col-12 col-xl-3 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrdescr">
-                    <p className="anim-uni-in-up">Design</p>
-                    <p className="anim-uni-in-up">Dezvoltare</p>
-                    <p className="anim-uni-in-up">Infrastructura</p>
+                    <p className="anim-uni-in-up">Strategie</p>
+                    <p className="anim-uni-in-up">Execuție</p>
+                    <p className="anim-uni-in-up">Infrastructură</p>
                   </div>
                 </div>
                 <div className="col-12 col-xl-3 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrcontrols anim-uni-in-up">
                     <AnimatedButton
-                      text="Să discutăm"
+                      text="Discută cu noi"
                       className="btn btn-anim btn-default btn-outline slide-right-up"
                       href={`/contact`}
                     >

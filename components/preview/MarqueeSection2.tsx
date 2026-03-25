@@ -12,7 +12,7 @@ export default function MarqueeSection2() {
           >
             {/* single item */}
             <div className="marquee__item one-line item-regular text">
-              <p className="marquee__text">Inner Pages</p>
+              <p className="marquee__text">Pagini interne</p>
               <div className="marquee__image">
                 <svg
                   version="1.1"
@@ -36,7 +36,7 @@ export default function MarqueeSection2() {
             </div>
             {/* single item */}
             <div className="marquee__item one-line item-regular text">
-              <p className="marquee__text">Inner Pages</p>
+              <p className="marquee__text">Pagini interne</p>
               <div className="marquee__image">
                 <svg
                   version="1.1"
@@ -60,7 +60,7 @@ export default function MarqueeSection2() {
             </div>
             {/* single item */}
             <div className="marquee__item one-line item-regular text">
-              <p className="marquee__text">Inner Pages</p>
+              <p className="marquee__text">Pagini interne</p>
               <div className="marquee__image">
                 <svg
                   version="1.1"
@@ -84,7 +84,7 @@ export default function MarqueeSection2() {
             </div>
             {/* single item */}
             <div className="marquee__item one-line item-regular text">
-              <p className="marquee__text">Inner Pages</p>
+              <p className="marquee__text">Pagini interne</p>
               <div className="marquee__image">
                 <svg
                   version="1.1"
@@ -108,7 +108,7 @@ export default function MarqueeSection2() {
             </div>
             {/* single item */}
             <div className="marquee__item one-line item-regular text">
-              <p className="marquee__text">Inner Pages</p>
+              <p className="marquee__text">Pagini interne</p>
               <div className="marquee__image">
                 <svg
                   version="1.1"

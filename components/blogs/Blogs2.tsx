@@ -33,7 +33,7 @@ export default function Blogs2() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline loading__item">
                       <h1 className="inner-headline__title headline-img-before headline-img-06">
-                        Our digital digest
+                        Digest digital extins
                       </h1>
                     </div>
                   </div>
@@ -42,10 +42,9 @@ export default function Blogs2() {
                   <div className="mxd-block__content">
                     <div className="inner-headline__descr loading__item">
                       <p>
-                        Dive into the latest trends, uncover valuable industry
-                        insights, and explore practical advice designed to help
-                        you successfully navigate and thrive in the
-                        ever-evolving digital landscape.
+                        Articole, idei și observații practice despre produs
+                        digital, dezvoltare software, automatizare și decizii
+                        tehnice care influențează direct business-ul.
                       </p>
                     </div>
                   </div>
@@ -193,17 +192,17 @@ export default function Blogs2() {
                   <div className="col-12 col-xl-8 mxd-grid-item no-margin">
                     <div className="mxd-section-title__hrtitle">
                       <h2>
-                        All
+                        Toate
                         <br />
-                        resources
+                        resursele
                       </h2>
                     </div>
                   </div>
                   <div className="col-12 col-xl-4 mxd-grid-item no-margin">
                     <div className="mxd-section-title__hrdescr">
                       <p>
-                        Browse through all our articles, tutorials, roundups,
-                        and experiments.
+                        Parcurge toate articolele și materialele publicate până
+                        acum în zona de software, produs și tehnologie.
                       </p>
                     </div>
                   </div>

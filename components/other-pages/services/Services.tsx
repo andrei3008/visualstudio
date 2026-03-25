@@ -3,15 +3,27 @@ import Image from "next/image";
 import { useState } from "react";
 import services from "@/data/services-other-pages.json";
 import { Service2 } from "@/types/services";
+
+type ServicesProps = {
+  items?: Service2[];
+  introTitle?: string;
+  introText?: string;
+};
+
 type HoverState = {
   activeIndex: number | null;
   x: number;
 };
-export default function Services() {
+export default function Services({
+  items,
+  introTitle,
+  introText,
+}: ServicesProps) {
   const [hoverState, setHoverState] = useState<HoverState>({
     activeIndex: null,
     x: 0,
   });
+  const serviceItems = items ?? services;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>, index: number) => {
     setHoverState({
@@ -31,10 +43,33 @@ export default function Services() {
   return (
     <div className="mxd-section overflow-hidden padding-default">
       <div className="mxd-container grid-container">
+        {introTitle || introText ? (
+          <div className="mxd-block">
+            <div className="mxd-section-title">
+              <div className="container-fluid p-0">
+                <div className="row g-0">
+                  <div className="col-12 col-xl-5 mxd-grid-item no-margin">
+                    <div className="mxd-section-title__hrtitle anim-uni-in-up">
+                      {introTitle ? <h2>{introTitle}</h2> : null}
+                    </div>
+                  </div>
+                  <div className="col-12 col-xl-1 mxd-grid-item no-margin"></div>
+                  <div className="col-12 col-xl-6 mxd-grid-item no-margin">
+                    <div className="mxd-section-title__hrdescr anim-uni-in-up">
+                      {introText ? (
+                        <p className="t-large t-bright">{introText}</p>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null}
         {/* Block - Services List Start */}
         <div className="mxd-block">
           <div className="mxd-services-list grid-top hover-reveal">
-            {services.map((s: Service2, idx: number) => (
+            {serviceItems.map((s: Service2, idx: number) => (
               <div
                 key={idx}
                 onMouseMove={(e) => handleMouseMove(e, idx)}

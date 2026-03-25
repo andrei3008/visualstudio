@@ -8,10 +8,9 @@ import PageTitle from "@/components/other-pages/contact/PageTitle";
 import Socials from "@/components/other-pages/contact/Socials";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Contact || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Contact | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Trimite-ne detaliile proiectului tău și revenim cu direcția tehnică potrivită, estimare și pașii următori pentru implementare.",
 };
 export default function ContactPage() {
   return (
@@ -41,7 +40,7 @@ export default function ContactPage() {
                       key={idx}
                       className="marquee__item one-line item-regular text"
                     >
-                      <p className="marquee__text">Connect</p>
+                      <p className="marquee__text">Hai să discutăm</p>
                       <div className="marquee__image">
                         <svg
                           version="1.1"

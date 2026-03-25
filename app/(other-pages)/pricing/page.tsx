@@ -6,10 +6,9 @@ import Partners from "@/components/other-pages/Partners";
 import Pricing from "@/components/other-pages/Pricing";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Pricing || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Pachete și estimări | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Exemple orientative de pachete și niveluri de investiție pentru site-uri, aplicații, automatizări și servicii recurente.",
 };
 export default function PricingPage() {
   return (
@@ -31,7 +30,7 @@ export default function PricingPage() {
                       key={idx}
                       className="marquee__item one-line item-regular text"
                     >
-                      <p className="marquee__text">Our Partners</p>
+                      <p className="marquee__text">Tehnologii și parteneri</p>
                       <div className="marquee__image">
                         <svg
                           version="1.1"

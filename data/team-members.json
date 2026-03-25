@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Alex Berry",
+    "name": "Alexandru",
     "position": "Frontend Developer",
     "image": {
       "src": "/img/team/800x920_team-01.webp",
@@ -25,8 +25,8 @@
   },
   {
     "id": 2,
-    "name": "Helen Lemon",
-    "position": "Creative Designer",
+    "name": "Elena",
+    "position": "Product Designer",
     "image": {
       "src": "/img/team/800x920_team-04.webp",
       "alt": "Helen Lemon",
@@ -49,8 +49,8 @@
   },
   {
     "id": 3,
-    "name": "Sarah Olive",
-    "position": "Digital Marketing Strategist",
+    "name": "Sara",
+    "position": "Project & Growth Strategist",
     "image": {
       "src": "/img/team/800x920_team-02.webp",
       "alt": "Sarah Olive",
@@ -73,8 +73,8 @@
   },
   {
     "id": 4,
-    "name": "Johanna Cherry",
-    "position": "Brand Identity Expert",
+    "name": "Ioana",
+    "position": "Brand & Experience Lead",
     "image": {
       "src": "/img/team/800x920_team-03.webp",
       "alt": "Johanna Cherry",

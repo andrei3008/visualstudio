@@ -1,23 +1,23 @@
 [
   {
-    "role": "Illustrator",
+    "role": "Designer vizual",
     "agency": "Creative Mind",
     "agencyUrl": "#",
-    "desc": "I created original images for a range of digital and printed products.",
+    "desc": "Am lucrat pe identitate vizuală, elemente grafice și materiale digitale pentru proiecte comerciale și editoriale.",
     "year": "2019 - 2021"
   },
   {
     "role": "Graphic designer",
     "agency": "Moon Light",
     "agencyUrl": "#",
-    "desc": "My job was to create adverts, branding, signage and other media products.",
+    "desc": "Am dezvoltat materiale de comunicare, branding, vizuale pentru campanii și elemente de prezentare pentru produse și servicii.",
     "year": "2021 - 2024"
   },
   {
     "role": "UI/UX designer",
     "agency": "Moon Light",
     "agencyUrl": "#",
-    "desc": "I am actively involved in creating user interfaces for mobile apps and websites.",
-    "year": "2024 - now"
+    "desc": "Mă ocup de structurarea experienței și a interfețelor pentru aplicații web, produse digitale și fluxuri orientate spre conversie.",
+    "year": "2024 - prezent"
   }
 ]

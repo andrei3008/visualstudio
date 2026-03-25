@@ -6,10 +6,9 @@ import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
 import Services from "@/components/other-pages/services/Services";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Services || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Servicii | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Servicii complete de dezvoltare software la comandă: aplicații web, mobile, automatizări AI, DevOps, cloud, securitate și mentenanță.",
 };
 export default function ServicesPage() {
   return (

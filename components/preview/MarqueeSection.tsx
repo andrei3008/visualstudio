@@ -3,11 +3,11 @@ import VelocityMarquee from "../animation/VelocityMarquee";
 export default function MarqueeSection() {
   // Define your marquee items
   const marqueeItems = [
-    "Designer",
-    "Developer",
-    "Freelancer",
-    "Digital Agency",
-    "Creative Studio",
+    "Strategie",
+    "Design",
+    "Dezvoltare",
+    "Automatizare",
+    "Produs digital",
   ];
 
   return (

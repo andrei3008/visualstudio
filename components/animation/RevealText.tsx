@@ -37,18 +37,21 @@ export default function RevealText<T extends HtmlTag = "span">({
   const splitRef = useRef<SplitType | null>(null);
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
     const createAnimation = () => {
-      if (!elRef.current) return;
+      const element = elRef.current;
+      if (!element) return;
 
       // Revert previous split if exists
       splitRef.current?.revert();
 
-      const split = new SplitType(elRef.current, { types: "words,chars" });
+      const split = new SplitType(element, { types: "words,chars" });
       splitRef.current = split;
 
       const anim = gsap.from(split.chars, {
         scrollTrigger: {
-          trigger: elRef.current,
+          trigger: element,
           start,
           end,
           scrub,
@@ -63,14 +66,16 @@ export default function RevealText<T extends HtmlTag = "span">({
       animRef.current = anim;
     };
     // Small delay to ensure DOM is ready
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
       createAnimation();
     }, 100);
-
-    // Remove global refresh listener to prevent conflicts
-    // Individual components should handle their own refresh needs
+    const triggerElement = elRef.current;
 
     return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
       // Clean up animation
       animRef.current?.kill();
 
@@ -82,10 +87,8 @@ export default function RevealText<T extends HtmlTag = "span">({
 
       // Clean up ScrollTrigger instances for this element
       ScrollTrigger.getAll()
-        .filter((t) => t.vars.trigger === elRef.current)
+        .filter((t) => t.vars.trigger === triggerElement)
         .forEach((t) => t.kill());
-
-      // No global refresh listener to remove
     };
   }, [start, end, scrub, stagger, opacityFrom]);
 

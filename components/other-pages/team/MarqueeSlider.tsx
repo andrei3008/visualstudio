@@ -8,7 +8,7 @@ export default function MarqueeSlider() {
         <div className="mxd-block">
           <VelocityMarquee className="marquee marquee-right--gsap muted-extra">
             <div className="marquee__toright">
-              {["Talents", "Dreamers", "Thinkers", "Creatives"].map(
+              {["Strategy", "Design", "Code", "Delivery"].map(
                 (text, idx) => (
                   <div
                     key={idx}

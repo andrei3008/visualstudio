@@ -23,9 +23,9 @@ export default function PortfolioMasonry() {
                 <div className="col-12 col-xl-6 mxd-projects-masonry__item mxd-projects-masonry__title headline-title">
                   <div className="mxd-block__inner-headline">
                     <h1 className="inner-headline__title headline-img-before headline-img-07">
-                      Projects
+                      Proiecte
                       <br />
-                      to explore
+                      de explorat
                     </h1>
                   </div>
                 </div>
@@ -97,8 +97,8 @@ export default function PortfolioMasonry() {
                       <text>
                         {/* button text here!!! */}
                         <textPath xlinkHref="#textPath">
-                          Let&apos;s start new project * Let&apos;s start new
-                          project *
+                          Hai să pornim proiectul tău * Hai să pornim proiectul
+                          tău *
                         </textPath>
                       </text>
                     </g>

@@ -1,6 +1,4 @@
-import Counter from "@/components/common/Counter";
-import Image from "next/image";
-import Link from "next/link";
+import AnimatedButton from "@/components/animation/AnimatedButton";
 
 export default function HeroDevOpsCloud() {
   return (
@@ -47,8 +45,38 @@ export default function HeroDevOpsCloud() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        DevOps & Cloud
+                        DevOps și cloud pentru livrare stabilă și infrastructură scalabilă
                       </h1>
+                      <p className="inner-headline__text t-large t-bright loading__item">
+                        Automatizăm deploy-uri, organizăm infrastructura și
+                        optimizăm fluxul tehnic astfel încât produsul tău să fie
+                        mai sigur, mai rapid de lansat și mai ușor de susținut
+                        pe termen lung.
+                      </p>
+                      <div
+                        className="loading__item"
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "12px",
+                          marginTop: "24px",
+                        }}
+                      >
+                        <AnimatedButton
+                          text="Discută infrastructura"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/contact"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                        <AnimatedButton
+                          text="Vezi abordarea noastră"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/despre-noi"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                      </div>
                     </div>
                   </div>
                 </div>

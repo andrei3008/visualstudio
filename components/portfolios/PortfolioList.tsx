@@ -41,7 +41,7 @@ export default function PortfolioList() {
                 <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrtitle">
                     <RevealText as="h2" className="reveal-type anim-uni-in-up">
-                      Portfolio archive
+                      Arhivă portofoliu
                     </RevealText>
                   </div>
                 </div>
@@ -49,7 +49,7 @@ export default function PortfolioList() {
                 <div className="col-12 col-xl-4 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrcontrols pre-title anim-uni-in-up">
                     <AnimatedButton
-                      text="Clients Approve"
+                      text="Ce spun clienții"
                       as={"a"}
                       className="btn btn-anim btn-default btn-outline slide-right-down"
                       href="#testimonials"

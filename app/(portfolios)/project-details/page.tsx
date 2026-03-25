@@ -9,10 +9,9 @@ import ParallaxDivider2 from "@/components/portfolios/ParallaxDivider2";
 import Solutions from "@/components/portfolios/Solutions";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title:
-    "Project Details || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Detalii proiect | Visual Studio Concept",
   description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Exemplu de pagină de studiu de caz cu provocări, soluții și rezultate pentru un proiect digital livrat de Visual Studio Concept.",
 };
 export default function ProjectDetailsPage() {
   return (

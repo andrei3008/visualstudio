@@ -18,7 +18,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/01.webp"
@@ -26,7 +26,7 @@ export default function Demos() {
                   <div className="mxd-demo-list__screen screen-01" />
                 </div>
                 <div className="mxd-demo-list__caption">
-                  <span className="mxd-demo-list__link">Main Home</span>
+                  <span className="mxd-demo-list__link">Acasă principal</span>
                   <span className="mxd-demo-list__num">/01</span>
                 </div>
               </Link>
@@ -38,7 +38,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/02.webp"
@@ -47,12 +47,12 @@ export default function Demos() {
                 </div>
                 <div className="mxd-demo-list__caption">
                   <span className="mxd-demo-list__link opposite">
-                    Software Development Company
+                    Acasă software custom
                   </span>
                   <span className="mxd-demo-list__num opposite">/02</span>
                 </div>
                 <div className="mxd-pricing-table__tag">
-                  <span className="tag tag-default tag-additional">🔥 Hot</span>
+                  <span className="tag tag-default tag-additional">Activ</span>
                 </div>
               </Link>
             </div>
@@ -66,7 +66,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/03.webp"
@@ -75,7 +75,7 @@ export default function Demos() {
                 </div>
                 <div className="mxd-demo-list__caption">
                   <span className="mxd-demo-list__link small">
-                    Freelancer Portfolio
+                    Portofoliu freelancer
                   </span>
                   <span className="mxd-demo-list__num small">/03</span>
                 </div>
@@ -88,7 +88,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/04.webp"
@@ -97,7 +97,7 @@ export default function Demos() {
                 </div>
                 <div className="mxd-demo-list__caption">
                   <span className="mxd-demo-list__link small">
-                    Digital Agency
+                    Agenție digitală
                   </span>
                   <span className="mxd-demo-list__num small">/04</span>
                 </div>
@@ -110,7 +110,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/05.webp"
@@ -119,7 +119,7 @@ export default function Demos() {
                 </div>
                 <div className="mxd-demo-list__caption">
                   <span className="mxd-demo-list__link small">
-                    Creative Design Studio
+                    Studio de design
                   </span>
                   <span className="mxd-demo-list__num small">/05</span>
                 </div>
@@ -135,7 +135,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/06.webp"
@@ -144,12 +144,12 @@ export default function Demos() {
                 </div>
                 <div className="mxd-demo-list__caption">
                   <span className="mxd-demo-list__link opposite">
-                    Personal Portfolio
+                    Portofoliu personal
                   </span>
                   <span className="mxd-demo-list__num opposite">/06</span>
                 </div>
                 <div className="mxd-pricing-table__tag">
-                  <span className="tag tag-default tag-additional">🔥 Hot</span>
+                  <span className="tag tag-default tag-additional">Activ</span>
                 </div>
               </Link>
               {/* single item */}
@@ -160,7 +160,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/07.webp"
@@ -168,11 +168,11 @@ export default function Demos() {
                   <div className="mxd-demo-list__screen screen-07" />
                 </div>
                 <div className="mxd-demo-list__caption">
-                  <span className="mxd-demo-list__link">Web Agency</span>
+                  <span className="mxd-demo-list__link">Agenție web</span>
                   <span className="mxd-demo-list__num">/07</span>
                 </div>
                 <div className="mxd-pricing-table__tag">
-                  <span className="tag tag-default tag-accent">🦄 Trendy</span>
+                  <span className="tag tag-default tag-accent">Arhivă</span>
                 </div>
               </Link>
             </div>
@@ -186,7 +186,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/08.webp"
@@ -195,7 +195,7 @@ export default function Demos() {
                 </div>
                 <div className="mxd-demo-list__caption">
                   <span className="mxd-demo-list__link small">
-                    Creative Developer
+                    Developer creativ
                   </span>
                   <span className="mxd-demo-list__num small">/08</span>
                 </div>
@@ -208,7 +208,7 @@ export default function Demos() {
               >
                 <div className="mxd-demo-list__image">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/09.webp"
@@ -224,7 +224,7 @@ export default function Demos() {
               <div className="mxd-demo-list__item empty-item animate-card-3">
                 <div className="mxd-demo-list__image image-placeholder">
                   <Image
-                    alt="Rayo Demo Screen"
+                    alt="Ecran preview"
                     width={1000}
                     height={628}
                     src="/img/demo/screens/05.webp"
@@ -294,9 +294,9 @@ export default function Demos() {
                       </svg>
                     </div>
                     <p className="empty-item__caption">
-                      More demos coming
+                      Mai multe variante
                       <br />
-                      soon...
+                      în curând...
                     </p>
                   </div>
                 </div>

@@ -18,9 +18,9 @@ export default function Features() {
                       <div className="mxd-resp-promo__content">
                         <div className="mxd-resp-promo__manifest anim-uni-in-up">
                           <RevealText as="p" className="reveal-type">
-                            Fully responsive and pixel-perfect Rayo looks great
-                            on any device. Your site stays stunning and
-                            functional everywhere.
+                            Layout-urile din proiect sunt gândite să rămână
+                            stabile și lizibile pe orice dispozitiv, de la mobil
+                            până la desktop.
                           </RevealText>
                         </div>
                         <div className="mxd-demo-cards__icons justify-start-desktop">
@@ -35,7 +35,7 @@ export default function Features() {
                               </svg>
                               <i className="ph ph-device-mobile-camera" />
                             </div>
-                            <p className="demo-icons__caption">Smartphone</p>
+                            <p className="demo-icons__caption">Telefon</p>
                           </div>
                           <div className="demo-icons__item animate-card-4">
                             <div className="demo-icons__icon transparent">
@@ -48,7 +48,7 @@ export default function Features() {
                               </svg>
                               <i className="ph ph-device-tablet-camera" />
                             </div>
-                            <p className="demo-icons__caption">Tablet</p>
+                            <p className="demo-icons__caption">Tabletă</p>
                           </div>
                           <div className="demo-icons__item animate-card-4">
                             <div className="demo-icons__icon transparent">
@@ -85,7 +85,7 @@ export default function Features() {
                 <div className="col-12 col-xl-6 mxd-resp-promo__item">
                   <div className="mxd-resp-promo__image anim-uni-in-up">
                     <Image
-                      alt="Rayo Image"
+                      alt="Preview responsive"
                       width={1200}
                       height={767}
                       src="/img/demo/01_resp-img.webp"

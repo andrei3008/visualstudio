@@ -1,6 +1,4 @@
-import Counter from "@/components/common/Counter";
-import Image from "next/image";
-import Link from "next/link";
+import AnimatedButton from "@/components/animation/AnimatedButton";
 
 export default function HeroAplicatiiMobile() {
   return (
@@ -47,8 +45,38 @@ export default function HeroAplicatiiMobile() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        Aplicații Mobile
+                        Aplicații mobile care sunt rapide, clare și ușor de folosit
                       </h1>
+                      <p className="inner-headline__text t-large t-bright loading__item">
+                        Dezvoltăm aplicații mobile pentru iOS și Android cu
+                        focus pe experiență bună, retenție și integrare reală cu
+                        procesele din compania ta, nu doar pe o interfață care
+                        arată bine în prezentare.
+                      </p>
+                      <div
+                        className="loading__item"
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "12px",
+                          marginTop: "24px",
+                        }}
+                      >
+                        <AnimatedButton
+                          text="Solicită o estimare"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/contact"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                        <AnimatedButton
+                          text="Vezi portofoliul"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/portofoliu"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                      </div>
                     </div>
                   </div>
                 </div>

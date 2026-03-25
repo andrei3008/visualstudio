@@ -38,7 +38,7 @@ export default function Hero() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                         />
                       </svg>
-                      <span>Our team</span>
+                      <span>Echipa noastră</span>
                     </p>
                   </div>
                 </div>
@@ -48,13 +48,12 @@ export default function Hero() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-05 loading__item">
-                        Talented minds shaping our vision
+                        O echipă mică, orientată spre livrare
                       </h1>
                       <p className="inner-headline__text t-large t-bright loading__item">
-                        Our team is a blend of creative thinkers,
-                        problem-solvers, and tech enthusiasts dedicated to
-                        bringing your ideas to life. Together, we craft
-                        innovative solutions that inspire and deliver results.
+                        Combinăm strategie, design și dezvoltare pentru a livra
+                        produse digitale clare, utile și scalabile. Ne plac
+                        proiectele bine gândite și execuția fără ambiguități.
                       </p>
                     </div>
                   </div>
@@ -101,8 +100,8 @@ export default function Hero() {
                   <text>
                     {/* button text here!!! */}
                     <textPath xlinkHref="#textPath">
-                      Let&apos;s start new project * Let&apos;s start new
-                      project *{" "}
+                      Hai să pornim proiectul tău * Hai să pornim proiectul
+                      tău *{" "}
                     </textPath>
                   </text>
                 </g>

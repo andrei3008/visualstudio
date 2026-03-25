@@ -21,9 +21,9 @@ export default function Experiences() {
                           <div className="col-12 mxd-grid-item no-margin">
                             <div className="mxd-section-title__title card-split-title">
                               <RevealText as="h2" className="reveal-type">
-                                Work
+                                Experiență
                                 <br />
-                                Experience
+                                practică
                               </RevealText>
                             </div>
                           </div>
@@ -44,11 +44,10 @@ export default function Experiences() {
                               <div className="mxd-res-list__title">
                                 <h4 className="anim-uni-in-up">{item.role}</h4>
                                 <p className="mxd-res-list__source anim-uni-in-up">
-                                  in the{" "}
+                                  în{" "}
                                   <a href={item.agencyUrl} target="_blank">
                                     {item.agency}
-                                  </a>{" "}
-                                  agency
+                                  </a>
                                 </p>
                               </div>
                               <div className="mxd-res-list__descr">
