@@ -1,5 +1,7 @@
 "use client";
 
+import { Suspense } from "react";
+
 import MobileMenu from "@/components/headers/MobileMenu";
 import Header1 from "@/components/headers/Header1";
 import RouteScrollManager from "@/components/navigation/RouteScrollManager";
@@ -15,7 +17,9 @@ interface ClientLayoutProps {
 export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <>
-      <TrackingProvider />
+      <Suspense fallback={null}>
+        <TrackingProvider />
+      </Suspense>
       <MobileMenu />
       <Header1 />
       <RouteScrollManager />
