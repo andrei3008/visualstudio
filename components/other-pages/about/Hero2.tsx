@@ -64,7 +64,7 @@ export default function Hero2() {
                         }}
                       >
                         <AnimatedButton
-                          text="Programează o discuție"
+                          text="Cere o ofertă"
                           className="btn btn-anim btn-default btn-outline slide-right-up"
                           href="/contact"
                         >

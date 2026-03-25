@@ -144,14 +144,30 @@ export default function Hero() {
               </div>
               {/* message below video */}
               <div className="t-large t-bright anim-uni-in-up" style={{ textAlign: 'center', marginTop: '30px', fontSize: 'clamp(24px, 3vw, 36px)' }}>
-                Alături de tine de la primul pas până la scalare reală
+                Automatizări care reduc munca manuală și software custom pentru procese interne
               </div>
               {/* contact button */}
-              <div style={{ textAlign: 'center', marginTop: '20px' }}>
+              <div
+                style={{
+                  textAlign: "center",
+                  marginTop: "20px",
+                  display: "flex",
+                  gap: "12px",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                }}
+              >
                 <AnimatedButton
-                  text="Contactează-ne"
+                  text="Cere o ofertă"
                   className="btn btn-anim btn-default btn-outline slide-right"
                   href="/contact"
+                >
+                  <i className="ph-bold ph-arrow-up-right" />
+                </AnimatedButton>
+                <AnimatedButton
+                  text="Vezi serviciile principale"
+                  className="btn btn-anim btn-default btn-outline slide-right"
+                  href="/services"
                 >
                   <i className="ph-bold ph-arrow-up-right" />
                 </AnimatedButton>

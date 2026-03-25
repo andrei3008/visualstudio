@@ -1,3 +1,4 @@
+import AnimatedButton from "@/components/animation/AnimatedButton";
 import Image from "next/image";
 
 export default function Services() {
@@ -14,29 +15,43 @@ export default function Services() {
                   <div className="mxd-services-cards-s__inner justify-between bg-base-tint radius-l padding-4">
                     <div className="mxd-services-cards-s__title">
                       <h3 className="anim-uni-in-up">
-                        Site-uri &
+                        Site-uri de prezentare
                         <br />
-                        eCommerce
+                        și Magazine Online
                       </h3>
                     </div>
-                    <div className="mxd-services-cards-s__info width-50">
+                    <div className="mxd-services-cards-s__info width-50 vsc-services-card__info-main">
                       <div className="mxd-services-cards-s__tags">
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Next.js/Tailwind
+                          Generare lead-uri
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Shopify/Woo
+                          Pagini pentru reclame
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
                           SEO & Performanță
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Mobile-First
+                          Mobile-first
                         </span>
                       </div>
                       <p className="anim-uni-in-up">
-                        Site-uri moderne, magazine online rapide și sigure – integrări cu e-Factura, plăți și automatizări. Crește vânzările și vizibilitatea online.
+                        Facem site-uri care arată bine, se încarcă repede și au
+                        structură clară pentru cereri de ofertă, apeluri și
+                        conversii din reclame Meta sau Google.
                       </p>
+                      <div
+                        className="anim-uni-in-up"
+                        style={{ marginTop: "18px" }}
+                      >
+                        <AnimatedButton
+                          text="Vezi oferta"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/site-uri-prezentare-magazine-online"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                      </div>
                     </div>
                     <div className="mxd-services-cards-s__image image-right">
                       <Image
@@ -51,29 +66,40 @@ export default function Services() {
                 {/* item */}
                 <div className="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in-left">
                   <div className="mxd-services-cards-s__inner justify-end bg-accent radius-l padding-4">
+                    <div
+                      className="anim-uni-in-up vsc-services-card__cta-top-left"
+                    >
+                      <AnimatedButton
+                        text="Vezi oferta"
+                        className="btn btn-anim btn-default slide-right-up vsc-services-card__button-light"
+                        href="/automatizari-firme"
+                      >
+                          <i className="ph-bold ph-arrow-up-right" />
+                      </AnimatedButton>
+                    </div>
                     <div className="mxd-services-cards-s__title">
-                      <h3 className="opposite anim-uni-in-up">Digitalizare
-                        <br />
-                        PNRR
-                      </h3>
+                      <h3 className="opposite anim-uni-in-up">Automatizări</h3>
                     </div>
                     <div className="mxd-services-cards-s__info">
                       <div className="mxd-services-cards-s__tags">
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          e-Factura
+                          Email & formulare
                         </span>
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          ANAF Integrări
+                          WhatsApp & CRM
                         </span>
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          CRM Simplu
+                          Fluxuri repetitive
                         </span>
                       </div>
                       <p className="t-opposite anim-uni-in-up">
-                        Implementăm rapid soluțiile eligibile PNRR – site, e-Factura, automatizări de bază. Ajutăm IMM-urile să nu piardă grantul și să atingă minim 6-8 criterii DESI.
+                        Automatizăm task-urile care consumă timp inutil:
+                        preluare lead-uri, notificări, ofertare, centralizare de
+                        date și integrarea dintre instrumentele deja folosite în
+                        companie.
                       </p>
                     </div>
-                    <div className="mxd-services-cards-s__image image-top-right">
+                    <div className="mxd-services-cards-s__image image-top-right vsc-services-card__image-automatizari">
                       <Image
                         className="mxd-move"
                         alt="Illustration"
@@ -88,34 +114,45 @@ export default function Services() {
                 <div className="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in-right">
                   <div className="mxd-services-cards-s__inner bg-additional radius-l padding-4">
                     <div className="mxd-services-cards-s__title">
-                      <h3 className="anim-uni-in-up">Software Custom &
-                        <br />
-                        Dezvoltare
-                      </h3>
+                      <h3 className="anim-uni-in-up">Software custom</h3>
                     </div>
                     <div className="mxd-services-cards-s__info">
                       <div className="mxd-services-cards-s__tags">
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Full-Stack
+                          CRM intern
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Microservicii
+                          ERP light
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Web/Mobile Apps
+                          Portal client
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Backend Robust
-                        </span>
-                        <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Backend
+                          Dashboard-uri
                         </span>
                       </div>
                       <p className="t-bright anim-uni-in-up">
-                        Aplicații web/mobile la comandă, sisteme de gestiune (ERP light, CRM custom, tool-uri interne) – adaptate perfect business-ului tău.
+                        Construim aplicații și platforme interne pentru firme
+                        care au depășit Excel-ul, tool-urile împrăștiate și
+                        procesele manuale greu de controlat.
                       </p>
+                      <div
+                        className="anim-uni-in-up"
+                        style={{ marginTop: "18px" }}
+                      >
+                        <AnimatedButton
+                          text="Vezi oferta"
+                          className="btn btn-anim btn-default btn-outline slide-right-up"
+                          href="/software-custom-firme"
+                        >
+                          <i className="ph-bold ph-arrow-up-right" />
+                        </AnimatedButton>
+                      </div>
                     </div>
-                    <div className="mxd-services-cards-s__image image-bottom" style={{ bottom: '-60px' }}>
+                    <div
+                      className="mxd-services-cards-s__image image-bottom"
+                      style={{ bottom: "-60px" }}
+                    >
                       <Image
                         alt="Illustration"
                         src="/img/illustrations/vector-19.png"
@@ -129,31 +166,33 @@ export default function Services() {
                 <div className="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in">
                   <div className="mxd-services-cards-s__inner bg-base-opp radius-l padding-4">
                     <div className="mxd-services-cards-s__title">
-                      <h3 className="opposite anim-uni-in-up">DevOps &
+                      <h3 className="opposite anim-uni-in-up">DevOps
                         <br />
-                        Cloud
+                        și cloud
                       </h3>
                     </div>
                     <div className="mxd-services-cards-s__info">
                       <div className="mxd-services-cards-s__tags">
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          AWS/Azure
+                          Deploy stabil
                         </span>
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          CI/CD Pipelines
+                          CI/CD
                         </span>
                         <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          Optimizare Costuri
-                        </span>
-                        <span className="tag tag-default tag-outline-opposite anim-uni-in-up">
-                          Server Mgmt
+                          Infrastructură scalabilă
                         </span>
                       </div>
                       <p className="t-opposite anim-uni-in-up">
-                        Migrăm și optimizăm infrastructura în cloud, reducem costurile cu 30-50%, asigurăm uptime și securitate – inclusiv setup WSL/hybrid.
+                        Punem ordine în zona tehnică din spate, astfel încât
+                        produsul să fie mai sigur, mai ușor de lansat și mai
+                        simplu de susținut când business-ul crește.
                       </p>
                     </div>
-                    <div className="mxd-services-cards-s__image image-bottom image-bottom-2" style={{ bottom: '-60px' }}>
+                    <div
+                      className="mxd-services-cards-s__image image-bottom image-bottom-2"
+                      style={{ bottom: "-60px" }}
+                    >
                       <Image
                         alt="Illustration"
                         src="/img/illustrations/vector-18.png"
@@ -175,25 +214,25 @@ export default function Services() {
                     <div className="mxd-services-cards-s__info">
                       <div className="mxd-services-cards-s__tags">
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Cybersecurity
+                          Monitorizare
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Backup & Recovery
+                          Backup
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Abonament Lunar
+                          Actualizări
                         </span>
                         <span className="tag tag-default tag-outline anim-uni-in-up">
-                          Suport 24/7
+                          Suport lunar
                         </span>
                       </div>
                       <p className="anim-uni-in-up">
-                        Protecție date, monitorizare servere, backup automat și mentenanță lunară – ca să nu ai downtime sau atacuri.
-                        <br />
-                        Abonamente de la 400 €/lună.
+                        După lansare, rămânem aproape de proiect cu
+                        monitorizare, update-uri și intervenții rapide, ca să nu
+                        se transforme o problemă mică într-un blocaj scump.
                       </p>
                     </div>
-                    <div className="mxd-services-cards-s__image image-top" style={{ marginTop: '60px' }}>
+                    <div className="mxd-services-cards-s__image image-top vsc-services-card__image-top">
                       <Image
                         alt="Illustration"
                         src="/img/illustrations/vector-20.png"

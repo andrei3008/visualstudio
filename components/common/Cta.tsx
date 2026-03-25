@@ -35,7 +35,7 @@ export default function Cta() {
                 </p>
                 <div className="mxd-promo__controls anim-uni-in-up">
                   <AnimatedButton
-                    text="Programează o discuție"
+                    text="Cere o ofertă"
                     className="btn btn-anim btn-default btn-large btn-additional slide-right-up"
                     href={`/contact`}
                   >

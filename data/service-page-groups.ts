@@ -1,6 +1,84 @@
 import { Service2 } from "@/types/services";
 
 export const servicePageGroups: Record<string, Service2[]> = {
+  siteuriMagazine: [
+    {
+      title: "Structură clară și poziționare bună",
+      image: "/img/illustrations/360x440_list-01.webp",
+      desc: "Definim arhitectura site-ului astfel încât vizitatorul să înțeleagă rapid ce oferi, cui te adresezi și care este următorul pas.",
+      tags: ["Mesaj clar", "Structură", "UX", "Conversie", "Wireframe"],
+    },
+    {
+      title: "Design modern și experiență mobilă",
+      image: "/img/illustrations/360x440_list-02.webp",
+      desc: "Construim interfețe curate, rapide și coerente, gândite pentru mobil, desktop și pentru o primă impresie profesionistă.",
+      tags: ["UI design", "Mobile-first", "Branding", "Viteză", "Credibilitate"],
+    },
+    {
+      title: "Magazine online și integrări utile",
+      image: "/img/illustrations/360x440_list-03.webp",
+      desc: "Implementăm funcțiile esențiale pentru vânzare online: produse, checkout, plăți, formulare, notificări și integrarea cu alte sisteme.",
+      tags: ["eCommerce", "Plăți", "Formulare", "Integrări", "Automatizare"],
+    },
+    {
+      title: "Lansare, măsurare și îmbunătățire",
+      image: "/img/illustrations/360x440_list-04.webp",
+      desc: "După lansare, optimizăm performanța, pregătim terenul pentru reclame și lăsăm proiectul într-o formă ușor de crescut.",
+      tags: ["SEO tehnic", "Analytics-ready", "Optimizare", "Lansare", "Suport"],
+    },
+  ],
+  automatizariFirme: [
+    {
+      title: "Lead-uri și formulare fără muncă manuală",
+      image: "/img/illustrations/360x440_list-01.webp",
+      desc: "Conectăm formulare, emailuri, CRM-uri și notificări astfel încât lead-urile să ajungă mai repede unde trebuie și să nu se piardă pe drum.",
+      tags: ["Formulare", "CRM", "Email", "WhatsApp", "Lead routing"],
+    },
+    {
+      title: "Procese interne și operațiuni repetitive",
+      image: "/img/illustrations/360x440_list-02.webp",
+      desc: "Automatizăm pașii repetați din ofertare, raportare, aprobări, actualizare de status și centralizarea informațiilor.",
+      tags: ["Workflow", "Aprobări", "Rapoarte", "Status", "Operațiuni"],
+    },
+    {
+      title: "Integrări între tool-urile existente",
+      image: "/img/illustrations/360x440_list-03.webp",
+      desc: "Legăm aplicațiile și platformele pe care le folosești deja pentru a evita dublarea muncii și introducerea manuală de date.",
+      tags: ["API", "ERP", "CRM", "eCommerce", "Sisteme interne"],
+    },
+    {
+      title: "Vizibilitate și control",
+      image: "/img/illustrations/360x440_list-04.webp",
+      desc: "Pe lângă automatizare, lăsăm și claritate: notificări, status, pași de verificare și control mai bun asupra fluxului.",
+      tags: ["Dashboard", "Tracking", "Notificări", "Audit", "Control"],
+    },
+  ],
+  softwareCustomFirme: [
+    {
+      title: "Aplicații interne și platforme operaționale",
+      image: "/img/illustrations/360x440_list-01.webp",
+      desc: "Construim software intern pentru echipe care au nevoie de structură, claritate și control mai bun asupra operațiunilor zilnice.",
+      tags: ["Platforme interne", "Operațiuni", "Procese", "Utilizatori", "Roluri"],
+    },
+    {
+      title: "CRM, ERP light și dashboard-uri custom",
+      image: "/img/illustrations/360x440_list-02.webp",
+      desc: "Când soluțiile standard sunt prea rigide sau prea încărcate, livrăm variante custom adaptate modului tău de lucru.",
+      tags: ["CRM", "ERP light", "Dashboard", "Raportare", "Vânzări"],
+    },
+    {
+      title: "Integrări și centralizare de date",
+      image: "/img/illustrations/360x440_list-03.webp",
+      desc: "Conectăm sistemele existente și construim un flux coerent între departamente, tool-uri și informații critice.",
+      tags: ["Integrări", "API", "Centralizare", "Date", "Automatizare"],
+    },
+    {
+      title: "Scalare și evoluție pe termen lung",
+      image: "/img/illustrations/360x440_list-04.webp",
+      desc: "Gândim produsul astfel încât să poată crește în funcționalități, utilizatori și complexitate fără să devină un blocaj tehnic.",
+      tags: ["Scalare", "Arhitectură", "Mentenanță", "Refactor", "Creștere"],
+    },
+  ],
   dezvoltareSoftware: [
     {
       title: "Aplicații web și platforme interne",

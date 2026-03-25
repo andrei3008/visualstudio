@@ -103,7 +103,7 @@ export default function Hero() {
                                     href={`/contact`}
                                   >
                                     <span className="btn-caption">
-                                      Începe un proiect nou
+                                      Cere o ofertă
                                     </span>
                                     <i className="ph-bold ph-arrow-up-right" />
                                   </Link>

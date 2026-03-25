@@ -1,16 +1,13 @@
 import AnimatedButton from "@/components/animation/AnimatedButton";
 
-export default function HeroDezvoltareSoftware() {
+export default function HeroSoftwareCustomFirme() {
   return (
     <>
-      {/* Section - Inner Page Headline Start */}
       <div className="mxd-section mxd-section-inner-headline padding-s-headline-pre-grid">
         <div className="mxd-container grid-container">
-          {/* Block - Inner Page Headline Start */}
           <div className="mxd-block loading-wrap">
             <div className="container-fluid px-0">
               <div className="row gx-0">
-                {/* Inner Headline Name Start */}
                 <div className="col-12 col-xl-2 mxd-grid-item no-margin">
                   <div className="mxd-block__name name-inner-headline loading__item">
                     <p className="mxd-point-subtitle">
@@ -35,23 +32,22 @@ export default function HeroDezvoltareSoftware() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                         />
                       </svg>
-                      <span>Servicii</span>
+                      <span>Ofertă</span>
                     </p>
                   </div>
                 </div>
-                {/* Inner Headline Name Start */}
-                {/* Inner Headline Content Start */}
                 <div className="col-12 col-xl-10 mxd-grid-item no-margin">
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        Dezvoltare software la comandă pentru procese reale de business
+                        Software custom pentru firme care au nevoie de mai mult
+                        decât tool-uri generice
                       </h1>
                       <p className="inner-headline__text t-large t-bright loading__item">
-                        Construim aplicații web, platforme interne, portaluri și
-                        sisteme custom care reduc munca manuală, conectează
-                        datele și dau echipei tale instrumente mai bune pentru
-                        operare și creștere.
+                        Când procesele tale nu mai încap în Excel, CRM-uri
+                        standard sau tool-uri împrăștiate, construim aplicații
+                        și platforme interne care se potrivesc modului tău real
+                        de lucru.
                       </p>
                       <div
                         className="loading__item"
@@ -70,7 +66,7 @@ export default function HeroDezvoltareSoftware() {
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>
                         <AnimatedButton
-                          text="Vezi toate serviciile"
+                          text="Vezi serviciile"
                           className="btn btn-anim btn-default btn-outline slide-right-up"
                           href="/services"
                         >
@@ -80,14 +76,11 @@ export default function HeroDezvoltareSoftware() {
                     </div>
                   </div>
                 </div>
-                {/* Inner Headline Content End */}
               </div>
             </div>
           </div>
-          {/* Block - Inner Page Headline End */}
         </div>
       </div>
-      {/* Section - Inner Page Headline End */}
     </>
   );
 }

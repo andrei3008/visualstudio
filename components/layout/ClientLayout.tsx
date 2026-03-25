@@ -6,6 +6,7 @@ import RouteScrollManager from "@/components/navigation/RouteScrollManager";
 import InitScroll from "@/components/scroll/InitScroll";
 import LenisSmoothScroll from "@/components/scroll/LenisSmoothScroll";
 import ScrollTop from "@/components/scroll/ScrollTop";
+import TrackingProvider from "@/components/tracking/TrackingProvider";
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ interface ClientLayoutProps {
 export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <>
+      <TrackingProvider />
       <MobileMenu />
       <Header1 />
       <RouteScrollManager />

@@ -192,6 +192,156 @@ html {
   }
 }
 
+/* Contact form selects aligned with site theme */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  border-radius: 3rem;
+  background: rgba(255, 248, 243, 0.92);
+  color: #161616;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.contact-form input {
+  min-height: 6rem;
+  padding: 0 2rem;
+}
+
+.contact-form textarea {
+  min-height: 18rem;
+  padding: 1.8rem 2rem;
+  border-radius: 2.4rem;
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(22, 22, 22, 0.48);
+}
+
+.contact-form .error-message {
+  margin: 0.9rem 0 0;
+  padding-left: 0.6rem;
+  color: #b42318;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.contact-form__hint {
+  margin: 0 0 1.6rem;
+  padding-left: 0.4rem;
+  color: rgba(22, 22, 22, 0.68);
+  line-height: 1.5;
+}
+
+.contact-form .btn[type="submit"] {
+  min-width: 22rem;
+}
+
+.contact-form select {
+  width: 100%;
+  min-height: 6rem;
+  padding: 0 5.4rem 0 2rem;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  border-radius: 3rem;
+  background-color: rgba(255, 248, 243, 0.92);
+  background-image: linear-gradient(45deg, transparent 50%, #161616 50%),
+    linear-gradient(135deg, #161616 50%, transparent 50%);
+  background-position: calc(100% - 28px) calc(50% - 3px),
+    calc(100% - 20px) calc(50% - 3px);
+  background-size: 8px 8px, 8px 8px;
+  background-repeat: no-repeat;
+  color: #161616;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover,
+.contact-form select:hover {
+  border-color: rgba(22, 22, 22, 0.22);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: rgba(22, 22, 22, 0.34);
+  box-shadow: 0 0 0 4px rgba(22, 22, 22, 0.08);
+  background-color: #fffdfc;
+}
+
+.contact-form select:invalid {
+  color: rgba(22, 22, 22, 0.48);
+}
+
+.contact-form select option {
+  color: #161616;
+  background: #fffaf7;
+}
+
+html[color-scheme="dark"] .contact-form input,
+html[color-scheme="dark"] .contact-form textarea {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #faf7f6;
+  box-shadow: none;
+}
+
+html[color-scheme="dark"] .contact-form input::placeholder,
+html[color-scheme="dark"] .contact-form textarea::placeholder {
+  color: rgba(250, 247, 246, 0.5);
+}
+
+html[color-scheme="dark"] .contact-form .error-message {
+  color: #ff8a80;
+}
+
+html[color-scheme="dark"] .contact-form__hint {
+  color: rgba(250, 247, 246, 0.68);
+}
+
+html[color-scheme="dark"] .contact-form select {
+  border-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.04);
+  background-image: linear-gradient(45deg, transparent 50%, #faf7f6 50%),
+    linear-gradient(135deg, #faf7f6 50%, transparent 50%);
+  color: #faf7f6;
+  box-shadow: none;
+}
+
+html[color-scheme="dark"] .contact-form input:hover,
+html[color-scheme="dark"] .contact-form textarea:hover,
+html[color-scheme="dark"] .contact-form select:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+html[color-scheme="dark"] .contact-form input:focus,
+html[color-scheme="dark"] .contact-form textarea:focus,
+html[color-scheme="dark"] .contact-form select:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+html[color-scheme="dark"] .contact-form select:invalid {
+  color: rgba(250, 247, 246, 0.5);
+}
+
+html[color-scheme="dark"] .contact-form select option {
+  color: #faf7f6;
+  background: #161616;
+}
+
 /* Service page list: keep long Romanian titles readable and separated */
 .mxd-services-list__inner .row {
   align-items: flex-start;
@@ -205,6 +355,95 @@ html {
   line-height: 0.9;
   overflow-wrap: anywhere;
   hyphens: auto;
+}
+
+/* Homepage service cards: keep layout cleaner on mobile and tablet */
+.vsc-services-card__cta-top-left {
+  margin-top: -1.2rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.vsc-services-card__button-light {
+  background: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  color: #161616 !important;
+}
+
+.vsc-services-card__button-light i,
+.vsc-services-card__button-light .btn-caption,
+.vsc-services-card__button-light .btn__text {
+  color: #161616 !important;
+}
+
+.vsc-services-card__image-top {
+  margin-top: 60px;
+}
+
+.vsc-services-card__image-automatizari {
+  max-width: 78%;
+  right: -1rem;
+}
+
+@media (max-width: 1199px) {
+  .vsc-services-card__info-main {
+    width: 100%;
+  }
+
+  .vsc-services-card__image-top {
+    margin-top: 2.4rem;
+  }
+
+  .vsc-services-card__image-automatizari {
+    max-width: 62%;
+    right: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mxd-services-cards-s__image.image-top-right.vsc-services-card__image-automatizari {
+    width: 210px !important;
+    top: -58px !important;
+    right: -14px !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .mxd-services-cards-s__image.image-top-right.vsc-services-card__image-automatizari {
+    width: 300px !important;
+    top: -4px !important;
+    right: -10px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .mxd-services-cards-s__inner {
+    overflow: hidden;
+  }
+
+  .mxd-services-cards-s__title h3 {
+    max-width: 11ch;
+    overflow-wrap: anywhere;
+  }
+
+  .vsc-services-card__image-top {
+    position: relative;
+    margin-top: 2rem;
+    inset: auto;
+  }
+
+  .mxd-services-cards-s__image.image-right,
+  .mxd-services-cards-s__image.image-top-right,
+  .mxd-services-cards-s__image.image-bottom,
+  .mxd-services-cards-s__image.image-top {
+    max-width: 70%;
+    margin-left: auto;
+  }
+
+  .vsc-services-card__image-automatizari {
+    max-width: 56%;
+  }
 }
 
 @media (min-width: 1200px) {
