@@ -1,11 +1,26 @@
 import "../public/css/styles.css";
 import ClientLayout from "@/components/layout/ClientLayout";
 import { Metadata } from "next";
+
 export const metadata: Metadata = {
   title: "Visual Studio Concept | Dezvoltare software la comandă",
   description:
-    "Visual Studio Concept livrează dezvoltare software la comandă, aplicații web și mobile, automatizări AI, DevOps și mentenanță pentru companii care vor să scaleze.",
+    "Visual Studio Concept construiește site-uri de prezentare, magazine online, automatizări și software custom pentru firme care vor mai multe lead-uri, mai puțină muncă manuală și procese mai clare.",
+  metadataBase: new URL("https://visualstudio.ro"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Visual Studio Concept | Site-uri, automatizări și software custom",
+    description:
+      "Construim site-uri de prezentare, magazine online, automatizări și software custom pentru firme care vor rezultate reale.",
+    url: "https://visualstudio.ro",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+  },
 };
+
 const setColorSchemeScript = `
 (function() {
   try {
@@ -14,6 +29,7 @@ const setColorSchemeScript = `
   } catch(e) {}
 })();
 `;
+
 export default function RootLayout({
   children,
 }: Readonly<{

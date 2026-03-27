@@ -19,9 +19,9 @@ export default function Cta() {
                   <span className="mxd-promo__icon">
                     <Image
                       alt="Icon"
-                      src="/img/icons/300x300_obj-cta-01.webp"
-                      width={300}
-                      height={300}
+                      src="/img/icons/96x96-decor-01.svg"
+                      width={96}
+                      height={96}
                     />
                   </span>
                   <RevealText
@@ -48,16 +48,9 @@ export default function Cta() {
                 <Image
                   className="promo-image promo-image-1"
                   alt="Image"
-                  src="/img/illustrations/cta-img-01.jpg"
-                  width={800}
-                  height={912}
-                />
-                <Image
-                  className="promo-image promo-image-2"
-                  alt="Image"
-                  src="/img/illustrations/cta-img-02.jpg"
-                  width={600}
-                  height={601}
+                  src="/img/cta/cta-robots.png"
+                  width={1800}
+                  height={720}
                 />
               </div>
             </div>

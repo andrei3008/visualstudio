@@ -167,7 +167,7 @@ export default function Hero() {
                 <AnimatedButton
                   text="Vezi serviciile principale"
                   className="btn btn-anim btn-default btn-outline slide-right"
-                  href="/services"
+                  href="/servicii"
                 >
                   <i className="ph-bold ph-arrow-up-right" />
                 </AnimatedButton>

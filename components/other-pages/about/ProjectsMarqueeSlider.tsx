@@ -34,7 +34,7 @@ export default function ProjectsMarqueeSlider() {
         <div className="mxd-container__circle circle-fit loading__fade">
           <Link
             className="btn-rotating btn-rotating-180 btn-rotating-blur-outline ver-03"
-            href="/services"
+            href="/servicii"
           >
             {/* SVG rotating text */}
             <AnimateRotation

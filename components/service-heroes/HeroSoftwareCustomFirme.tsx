@@ -68,7 +68,7 @@ export default function HeroSoftwareCustomFirme() {
                         <AnimatedButton
                           text="Vezi serviciile"
                           className="btn btn-anim btn-default btn-outline slide-right-up"
-                          href="/services"
+                          href="/servicii"
                         >
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>

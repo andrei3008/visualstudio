@@ -52,42 +52,42 @@
   "projects2": [
     {
       "id": 7,
-      "title": "AI Experiments",
+      "title": "Asistent AI pentru vânzări",
       "images": {
         "mobile": "/img/works/preview/1080x1920_prv-01.webp",
         "desktop": "/img/works/preview/1920x1080_prv-01.webp"
       },
-      "tags": ["Midjourney", "AI", "Editorial"],
+      "tags": ["AI", "Lead-uri", "Automatizare"],
       "justify": "justify-end"
     },
     {
       "id": 8,
-      "title": "VR vision project",
+      "title": "Platformă pentru operațiuni",
       "images": {
         "mobile": "/img/works/preview/1080x1920_prv-07.webp",
         "desktop": "/img/works/preview/1920x1080_prv-07.webp"
       },
-      "tags": ["Development", "Web", "Editorial"],
+      "tags": ["Software custom", "Web", "Business"],
       "justify": "justify-end"
     },
     {
       "id": 9,
-      "title": "NFT project branding",
+      "title": "Website pentru servicii premium",
       "images": {
         "mobile": "/img/works/preview/1080x1920_prv-03.webp",
         "desktop": "/img/works/preview/1920x1080_prv-03.webp"
       },
-      "tags": ["Branding", "Web", "Packaging"],
+      "tags": ["Branding", "Web", "Conversie"],
       "justify": "justify-end"
     },
     {
       "id": 10,
-      "title": "Studio template",
+      "title": "Magazin online optimizat",
       "images": {
         "mobile": "/img/works/preview/1080x1920_prv-04.webp",
         "desktop": "/img/works/preview/1920x1080_prv-04.webp"
       },
-      "tags": ["UI/UX", "Development"],
+      "tags": ["UI/UX", "eCommerce"],
       "justify": "justify-end"
     }
   ],
@@ -118,7 +118,7 @@
     {
       "id": 12,
       "title": "North Pixel",
-      "subtitle": "Website",
+      "subtitle": "Website de prezentare",
       "preview": {
         "hover": "/img/works/preview/600x730_prv-07.webp",
         "full": "/img/works/preview/1200x800_prv-07.webp"
@@ -129,11 +129,11 @@
           "icon": true
         },
         {
-          "name": "Visual",
+          "name": "Web",
           "icon": true
         },
         {
-          "name": "Motion",
+          "name": "Conversie",
           "icon": false
         }
       ]
@@ -152,11 +152,11 @@
           "icon": true
         },
         {
-          "name": "Visual",
+          "name": "Automatizare",
           "icon": true
         },
         {
-          "name": "Graphics",
+          "name": "Business",
           "icon": false
         }
       ]
@@ -164,7 +164,7 @@
     {
       "id": 14,
       "title": "Service Hub",
-      "subtitle": "Aplicație mobilă",
+      "subtitle": "Platformă internă",
       "preview": {
         "hover": "/img/works/preview/600x730_prv-03.webp",
         "full": "/img/works/preview/1200x800_prv-03.webp"
@@ -175,11 +175,11 @@
           "icon": true
         },
         {
-          "name": "Visual",
+          "name": "Workflow",
           "icon": true
         },
         {
-          "name": "Motion",
+          "name": "Dashboard",
           "icon": false
         }
       ]
@@ -188,32 +188,32 @@
   "projects4": [
     {
       "id": 15,
-      "title": "Studio template",
+      "title": "Portal pentru clienți",
       "images": {
         "mobile": "/img/works/preview/1080x1920_prv-04.webp",
         "desktop": "/img/works/preview/1920x1080_prv-04.webp"
       },
-      "tags": ["Brand", "Illustrations", "Web"],
+      "tags": ["Portal", "Integrări", "Web"],
       "justify": "justify-between"
     },
     {
       "id": 16,
-      "title": "AI Experiments",
+      "title": "Automatizare documente",
       "images": {
         "mobile": "/img/works/preview/1080x1920_prv-01.webp",
         "desktop": "/img/works/preview/1920x1080_prv-01.webp"
       },
-      "tags": ["Sora", "AI", "Editorial"],
+      "tags": ["AI", "Procese", "Automatizare"],
       "justify": "justify-between"
     },
     {
       "id": 17,
-      "title": "Mobile app design",
+      "title": "Aplicație pentru echipe mobile",
       "images": {
         "mobile": "/img/works/preview/1080x1920_prv-05.webp",
         "desktop": "/img/works/preview/1920x1080_prv-05.webp"
       },
-      "tags": ["Design", "UI/UX", "Android"],
+      "tags": ["Mobile", "UI/UX", "Android"],
       "justify": "justify-between"
     }
   ],

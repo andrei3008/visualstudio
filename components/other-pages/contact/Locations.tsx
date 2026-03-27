@@ -34,7 +34,7 @@ export default function Locations() {
                             <ul>
                               <li className="anim-uni-in-up">
                                 <span className="anim-uni-in-up">
-                                  Craiova, România
+                                  București, România
                                   <br />
                                   colaborare remote pentru clienți
                                   <br />

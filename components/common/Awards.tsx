@@ -1,35 +1,9 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
-import awardsData from "@/data/awards.json";
+import servicesData from "@/data/about-services.json";
 import RevealText from "@/components/animation/RevealText";
 import AnimatedButton from "@/components/animation/AnimatedButton";
-type HoverState = {
-  activeIndex: number | null;
-  x: number;
-};
+
 export default function Awards() {
-  const [hoverState, setHoverState] = useState<HoverState>({
-    activeIndex: null,
-    x: 0,
-  });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>, index: number) => {
-    setHoverState({
-      activeIndex: index,
-      x: e.clientX,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setHoverState((pre) => {
-      return {
-        activeIndex: null,
-        x: pre.x,
-      };
-    });
-  };
-
   return (
     <div className="mxd-section overflow-hidden padding-default mobile-title">
       <div className="mxd-container grid-container">
@@ -41,9 +15,9 @@ export default function Awards() {
                 <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrtitle anim-uni-in-up">
                     <RevealText as="h2" className="reveal-type">
-                      Premii și
+                      Servicii
                       <br />
-                      publicații
+                      principale
                     </RevealText>
                   </div>
                 </div>
@@ -51,9 +25,9 @@ export default function Awards() {
                 <div className="col-12 col-xl-3 mxd-grid-item no-margin">
                   <div className="mxd-section-title__hrcontrols pre-title anim-uni-in-up">
                     <AnimatedButton
-                      text="Vezi mai multe"
+                      text="Vezi serviciile"
                       className="btn btn-anim btn-default btn-outline slide-right-up"
-                      href={`/despre-noi`}
+                      href={`/servicii`}
                     >
                       <i className="ph-bold ph-arrow-up-right" />
                     </AnimatedButton>
@@ -67,42 +41,13 @@ export default function Awards() {
         {/* Block - Approach and Philosophy List Start */}
         <div className="mxd-block">
           <div className="mxd-awards-list hover-reveal">
-            {awardsData.map((item, idx) => (
+            {servicesData.map((item, idx) => (
               <a
-                className="mxd-awards-list__item hover-reveal__item"
+                className="mxd-awards-list__item"
                 href={item.url}
-                target="_blank"
                 key={idx}
-                onMouseMove={(e) => handleMouseMove(e, idx)}
-                onMouseLeave={handleMouseLeave}
               >
                 <div className="mxd-awards-list__border anim-uni-in-up" />
-                <div
-                  style={{
-                    opacity: hoverState.activeIndex === idx ? 1 : 0,
-                    transform: "translate(-80%, -50%)",
-                    left: hoverState.x,
-
-                    pointerEvents: "none",
-                    transition: "opacity 0.3s ease",
-                  }}
-                  className="hover-reveal__content overflow-visible hover-reveal-260x260"
-                >
-                  <Image
-                    className="hover-reveal__image"
-                    style={{
-                      transform:
-                        hoverState.activeIndex === idx
-                          ? "scale(1,1)"
-                          : "scale(1,1.4)",
-                      transition: "transform 0.3s ease",
-                    }}
-                    alt="Project Preview"
-                    src={item.image}
-                    width={item.imageWidth}
-                    height={item.imageHeight}
-                  />
-                </div>
                 <div className="mxd-awards-list__inner">
                   <div className="container-fluid px-0">
                     <div className="row gx-0">
@@ -127,7 +72,7 @@ export default function Awards() {
                       </div>
                       <div className="col-6 col-md-6 col-xl-2 mxd-grid-item no-margin">
                         <div className="mxd-awards-list__date anim-uni-in-up">
-                          <p className="t-small">{item.date}</p>
+                          <p className="t-small">{item.meta}</p>
                         </div>
                       </div>
                     </div>

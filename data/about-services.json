@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Site-uri de prezentare și magazine online",
+    "url": "/site-uri-prezentare-magazine-online",
+    "image": "/img/illustrations/800x800_service-image-01.webp",
+    "imageWidth": 800,
+    "imageHeight": 800,
+    "tags": ["Prezentare", "E-commerce"],
+    "meta": "Lead-uri și vânzări"
+  },
+  {
+    "title": "Automatizări pentru firme",
+    "url": "/automatizari-firme",
+    "image": "/img/illustrations/800x800_service-image-02.webp",
+    "imageWidth": 800,
+    "imageHeight": 800,
+    "tags": ["Workflow-uri", "AI util"],
+    "meta": "Mai puțină muncă manuală"
+  },
+  {
+    "title": "Software custom pentru procese interne",
+    "url": "/software-custom-firme",
+    "image": "/img/illustrations/800x800_service-image-03.webp",
+    "imageWidth": 800,
+    "imageHeight": 800,
+    "tags": ["Platforme", "Integrări"],
+    "meta": "Procese mai clare"
+  },
+  {
+    "title": "DevOps, cloud și mentenanță",
+    "url": "/devops-cloud",
+    "image": "/img/illustrations/800x800_service-image-04.webp",
+    "imageWidth": 800,
+    "imageHeight": 800,
+    "tags": ["Infrastructură", "Suport"],
+    "meta": "Stabilitate și scalare"
+  }
+]
