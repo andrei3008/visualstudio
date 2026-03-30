@@ -93,6 +93,7 @@ export default function MobileMenu() {
     <nav
       className={`mxd-nav__wrap  ${isActive ? "active_menu" : ""} `}
       data-lenis-prevent=""
+      aria-label="Navigare principală"
     >
       {/* Hamburger Start */}
       <div className="mxd-nav__contain loading__fade">
@@ -104,6 +105,10 @@ export default function MobileMenu() {
           }}
           className={`mxd-nav__hamburger ${isMenuOpen ? "nav-open" : ""}`}
           ref={hamburgerBtnRef}
+          role="button"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu-panel"
+          aria-label={isMenuOpen ? "Închide meniul" : "Deschide meniul"}
         >
           {/* flip element */}
           <div className="hamburger__base" ref={flipBaseRef} />
@@ -113,7 +118,7 @@ export default function MobileMenu() {
       </div>
       {/* Hamburger End */}
       {/* Main Navigation Start */}
-      <div className={`mxd-menu__wrapper ${isActive ? "active_menu" : ""} `}>
+      <div className={`mxd-menu__wrapper ${isActive ? "active_menu" : ""} `} id="mobile-menu-panel">
         {/* background active layer */}
         <div className="mxd-menu__base" />
         {/* menu container */}
@@ -142,11 +147,23 @@ export default function MobileMenu() {
                           <>
                             <div
                               className="main-menu__toggle"
+                              role="button"
+                              tabIndex={0}
+                              aria-expanded={activeSubmenu === index}
+                              aria-controls={`submenu-${index}`}
                               onClick={() =>
                                 setActiveSubmenu((pre) =>
                                   pre == index ? -1 : index
                                 )
                               }
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter" || e.key === " ") {
+                                  e.preventDefault();
+                                  setActiveSubmenu((pre) =>
+                                    pre == index ? -1 : index
+                                  );
+                                }
+                              }}
                             >
                               <AnimatedButton
                                 text={item.title}
@@ -163,6 +180,7 @@ export default function MobileMenu() {
                               </svg>
                             </div>
                             <ul
+                              id={`submenu-${index}`}
                               className="submenu"
                               style={{
                                 height:

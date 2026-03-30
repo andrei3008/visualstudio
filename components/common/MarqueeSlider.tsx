@@ -18,7 +18,7 @@ export default function MarqueeSlider() {
                 <div className="marquee__item image">
                   <Link className="marquee__link" href={`/project-details`}>
                     <Image
-                      alt="Image"
+                      alt={item.title || "Proiect portofoliu"}
                       src={item.src}
                       width={1200}
                       height={1000}
@@ -45,7 +45,7 @@ export default function MarqueeSlider() {
                 <div className="marquee__item image">
                   <Link className="marquee__link" href={`/project-details`}>
                     <Image
-                      alt="Image"
+                      alt={item.title || "Proiect portofoliu"}
                       src={item.src}
                       width={1200}
                       height={1000}

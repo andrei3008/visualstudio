@@ -19,8 +19,8 @@ export default function Hero() {
                   <div className="hero-03-marquee__image">
                     <Image
                       className="mxd-move"
-                      alt="Image"
-                      src="/img/hero/hero-15.png"
+                      alt=""
+                      src="/img/hero/hero-15.webp"
                       loading="eager"
                       width={1000}
                       height={1532}
@@ -32,8 +32,8 @@ export default function Hero() {
                   <div className="hero-03-marquee__image">
                     <Image
                       className="mxd-move"
-                      alt="Image"
-                      src="/img/hero/hero-2.png"
+                      alt=""
+                      src="/img/hero/hero-2.webp"
                       loading="eager"
                       width={1000}
                       height={1532}
@@ -45,8 +45,8 @@ export default function Hero() {
                   <div className="hero-03-marquee__image">
                     <Image
                       className="mxd-pulse-small"
-                      alt="Image"
-                      src="/img/hero/hero-16.png"
+                      alt=""
+                      src="/img/hero/hero-16.webp"
                       width={800}
                       height={780}
                     />
@@ -57,8 +57,8 @@ export default function Hero() {
                   <div className="hero-03-marquee__image">
                     <Image
                       className="mxd-rotate-slow"
-                      alt="Image"
-                      src="/img/hero/hero-13.png"
+                      alt=""
+                      src="/img/hero/hero-13.webp"
                       width={1410}
                       height={1056}
                     />
@@ -69,8 +69,8 @@ export default function Hero() {
                   <div className="hero-03-marquee__image">
                     <Image
                       className="mxd-move"
-                      alt="Image"
-                      src="/img/hero/hero-11.png"
+                      alt=""
+                      src="/img/hero/hero-11.webp"
                       width={2152}
                       height={2015}
                     />
@@ -81,8 +81,8 @@ export default function Hero() {
                   <div className="hero-03-marquee__image">
                     <Image
                       className="mxd-pulse-small"
-                      alt="Image"
-                      src="/img/hero/hero-14.png"
+                      alt=""
+                      src="/img/hero/hero-14.webp"
                       loading="eager"
                       width={800}
                       height={780}

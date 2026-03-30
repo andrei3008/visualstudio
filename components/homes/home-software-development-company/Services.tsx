@@ -56,7 +56,7 @@ export default function Services() {
                     <div className="mxd-services-cards-s__image image-right">
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-15.png"
+                        src="/img/illustrations/vector-15.webp"
                         width={910}
                         height={1200}
                       />
@@ -103,7 +103,7 @@ export default function Services() {
                       <Image
                         className="mxd-move"
                         alt="Illustration"
-                        src="/img/illustrations/vector-16.png"
+                        src="/img/illustrations/vector-16.webp"
                         width={1200}
                         height={1200}
                       />
@@ -155,7 +155,7 @@ export default function Services() {
                     >
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-19.png"
+                        src="/img/illustrations/vector-19.webp"
                         width={1200}
                         height={1200}
                       />
@@ -195,7 +195,7 @@ export default function Services() {
                     >
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-18.png"
+                        src="/img/illustrations/vector-18.webp"
                         width={891}
                         height={1200}
                       />
@@ -235,7 +235,7 @@ export default function Services() {
                     <div className="mxd-services-cards-s__image image-top vsc-services-card__image-top">
                       <Image
                         alt="Illustration"
-                        src="/img/illustrations/vector-20.png"
+                        src="/img/illustrations/vector-20.webp"
                         width={1200}
                         height={996}
                       />

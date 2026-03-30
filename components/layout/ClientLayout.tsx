@@ -17,6 +17,9 @@ interface ClientLayoutProps {
 export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <>
+      <a href="#mxd-page-content" className="skip-link">
+        Sari la conținutul principal
+      </a>
       <Suspense fallback={null}>
         <TrackingProvider />
       </Suspense>

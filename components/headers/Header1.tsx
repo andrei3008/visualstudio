@@ -16,10 +16,10 @@ export default function Header1() {
   }, []);
 
   return (
-    <header id="header" className={`mxd-header ${isHidden ? "is-hidden" : ""}`}>
+    <header id="header" className={`mxd-header ${isHidden ? "is-hidden" : ""}`} role="banner">
       {/* header logo */}
       <div className="mxd-header__logo loading__fade">
-        <Link href={`/`} className="mxd-logo">
+        <Link href={`/`} className="mxd-logo" aria-label="Visual Studio Concept — Pagina principală">
           {/* logo icon */}
           <svg
             className="mxd-logo__image"

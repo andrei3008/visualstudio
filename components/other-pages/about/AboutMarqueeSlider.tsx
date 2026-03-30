@@ -5,17 +5,17 @@ import React from "react";
 import VelocityMarquee from "@/components/animation/VelocityMarquee";
 
 const aboutMarqueeTop = [
-  "/img/marquee/about/about-marquee-01.jpg",
-  "/img/marquee/about/about-marquee-02.jpg",
-  "/img/marquee/about/about-marquee-03.jpg",
-  "/img/marquee/about/about-marquee-04.jpg",
+  "/img/marquee/about/about-marquee-01.webp",
+  "/img/marquee/about/about-marquee-02.webp",
+  "/img/marquee/about/about-marquee-03.webp",
+  "/img/marquee/about/about-marquee-04.webp",
 ];
 
 const aboutMarqueeBottom = [
-  "/img/marquee/about/about-marquee-05.jpg",
-  "/img/marquee/about/about-marquee-06.jpg",
-  "/img/marquee/about/about-marquee-07.jpg",
-  "/img/marquee/about/about-marquee-08.jpg",
+  "/img/marquee/about/about-marquee-05.webp",
+  "/img/marquee/about/about-marquee-06.webp",
+  "/img/marquee/about/about-marquee-07.webp",
+  "/img/marquee/about/about-marquee-08.webp",
 ];
 
 function MarqueeLine({ images }: { images: string[] }) {

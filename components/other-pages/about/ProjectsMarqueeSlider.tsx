@@ -7,22 +7,22 @@ import AnimateRotation from "@/components/animation/AnimateRotation";
 const aboutProjects = [
   {
     id: 1,
-    src: "/img/marquee/about/about-marquee-01.jpg",
+    src: "/img/marquee/about/about-marquee-01.webp",
     title: "Spațiu de lucru",
   },
   {
     id: 2,
-    src: "/img/marquee/about/about-marquee-02.jpg",
+    src: "/img/marquee/about/about-marquee-02.webp",
     title: "Sesiune de produs",
   },
   {
     id: 3,
-    src: "/img/marquee/about/about-marquee-03.jpg",
+    src: "/img/marquee/about/about-marquee-03.webp",
     title: "Flux de dezvoltare",
   },
   {
     id: 4,
-    src: "/img/marquee/about/about-marquee-04.jpg",
+    src: "/img/marquee/about/about-marquee-04.webp",
     title: "Setup tehnic",
   },
 ];

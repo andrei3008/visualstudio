@@ -47,8 +47,8 @@ export default function Cta() {
               <div className="mxd-promo__images">
                 <Image
                   className="promo-image promo-image-1"
-                  alt="Image"
-                  src="/img/cta/cta-robots.png"
+                  alt=""
+                  src="/img/cta/cta-robots.webp"
                   width={1800}
                   height={720}
                 />

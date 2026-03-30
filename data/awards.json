@@ -2,7 +2,7 @@
   {
     "title": "Articol pe Medium",
     "url": "https://medium.com/",
-    "image": "/img/awards/award-01.jpg",
+    "image": "/img/awards/award-01.webp",
     "imageWidth": 601,
     "imageHeight": 600,
     "tags": ["UI/UX design", "Dezvoltare"],
@@ -11,7 +11,7 @@
   {
     "title": "Nominalizare Awwwards",
     "url": "https://www.awwwards.com/",
-    "image": "/img/awards/award-02.jpg",
+    "image": "/img/awards/award-02.webp",
     "imageWidth": 600,
     "imageHeight": 601,
     "tags": ["UI/UX", "Frontend"],
@@ -20,7 +20,7 @@
   {
     "title": "Lucrare curated pe Behance",
     "url": "https://www.behance.net/",
-    "image": "/img/awards/award-03.jpg",
+    "image": "/img/awards/award-03.webp",
     "imageWidth": 600,
     "imageHeight": 600,
     "tags": ["Ilustrații", "Design Grafic"],
@@ -29,7 +29,7 @@
   {
     "title": "Articol pe Medium",
     "url": "https://medium.com/",
-    "image": "/img/awards/award-04.jpg",
+    "image": "/img/awards/award-04.webp",
     "imageWidth": 600,
     "imageHeight": 600,
     "tags": ["UI/UX", "Frontend"],

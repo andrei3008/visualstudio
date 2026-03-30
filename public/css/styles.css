@@ -23,6 +23,34 @@
 html {
   scroll-behavior: smooth;
 }
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: #161616;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .mxd-nav__wrap {
   display: block;
   pointer-events: none;
@@ -168,7 +196,7 @@ html {
 
 /* Custom background image for first project */
 .mxd-project-item__preview.preview-image-custom {
-  background-image: url(/img/illustrations/site-1.png) !important;
+  background-image: url(/img/illustrations/site-1.webp) !important;
   position: relative !important;
 }
 
@@ -219,7 +247,7 @@ html {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: rgba(22, 22, 22, 0.48);
+  color: rgba(22, 22, 22, 0.6);
 }
 
 .contact-form .error-message {
@@ -281,7 +309,7 @@ html {
 }
 
 .contact-form select:invalid {
-  color: rgba(22, 22, 22, 0.48);
+  color: rgba(22, 22, 22, 0.6);
 }
 
 .contact-form select option {
@@ -918,7 +946,7 @@ html[color-scheme="dark"] .mxd-promo__caption {
 }
 
 .divider-image-3 {
-  background-image: url(/img/illustrations/2400x1600_divider-09.jpg);
+  background-image: url(/img/illustrations/2400x1600_divider-09.webp);
 }
 
 /* Service page list: smaller titles for long sub-services */

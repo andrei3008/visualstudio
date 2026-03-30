@@ -140,7 +140,7 @@ export default function Teammembers() {
                     <Link className="mxd-team-cards__career" href={`/contact`}>
                       <div className="career__image">
                         <Image
-                          alt="Image"
+                          alt="Ilustrație carieră - Alătură-te echipei"
                           width={800}
                           height={800}
                           src="/img/illustrations/800x800_card-image-04.webp"
