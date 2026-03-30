@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useCookieConsent } from "./CookieConsentProvider";
 
@@ -17,6 +17,8 @@ export default function CookieConsentUI() {
     savePreferences,
   } = useCookieConsent();
 
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const [preferences, setPreferences] = useState({
     preferences: false,
     analytics: false,
@@ -30,6 +32,47 @@ export default function CookieConsentUI() {
       marketing: consent?.categories.marketing ?? false,
     });
   };
+
+  // Focus trap + ESC close for modal
+  useEffect(() => {
+    if (!isModalOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeModal();
+        return;
+      }
+      if (e.key !== "Tab" || !modalRef.current) return;
+
+      const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    // Focus first element when modal opens
+    const timer = setTimeout(() => {
+      const first = modalRef.current?.querySelector<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      first?.focus();
+    }, 100);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      clearTimeout(timer);
+    };
+  }, [isModalOpen, closeModal]);
 
   if (!isLoaded) {
     return null;
@@ -97,7 +140,7 @@ export default function CookieConsentUI() {
       </button>
 
       {isModalOpen ? (
-        <div className="vsc-cookie-modal" role="dialog" aria-modal="true">
+        <div className="vsc-cookie-modal" role="dialog" aria-modal="true" ref={modalRef}>
           <div className="vsc-cookie-modal__backdrop" onClick={closeModal} />
           <div className="vsc-cookie-modal__panel">
             <div className="vsc-cookie-modal__header">
