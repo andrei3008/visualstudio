@@ -23,10 +23,21 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const landingPages = [
+    "/site-uri-prezentare-magazine-online",
+    "/automatizari-firme",
+    "/software-custom-firme",
+  ];
+
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.7,
+    priority:
+      route === ""
+        ? 1
+        : landingPages.includes(route)
+          ? 0.9
+          : 0.7,
   }));
 }

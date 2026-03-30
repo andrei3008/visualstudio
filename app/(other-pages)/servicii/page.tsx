@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   title: "Servicii | Visual Studio Concept",
   description:
     "Servicii complete de dezvoltare software la comandă: aplicații web, mobile, automatizări AI, DevOps, cloud, securitate și mentenanță.",
+  alternates: {
+    canonical: "https://visualstudio.ro/servicii",
+  },
+  openGraph: {
+    title: "Servicii | Visual Studio Concept",
+    description:
+      "Servicii complete de dezvoltare software la comandă: aplicații web, mobile, automatizări AI, DevOps, cloud, securitate și mentenanță.",
+    url: "https://visualstudio.ro/servicii",
+  },
 };
 
 const faqSchema = {

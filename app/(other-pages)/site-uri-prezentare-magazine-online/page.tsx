@@ -14,6 +14,25 @@ export const metadata: Metadata = {
   title: "Site-uri de prezentare și magazine online | Visual Studio Concept",
   description:
     "Construim site-uri de prezentare și magazine online rapide, moderne și orientate pe conversie pentru companii care vor mai mult decât o simplă prezență online.",
+  alternates: {
+    canonical:
+      "https://visualstudio.ro/site-uri-prezentare-magazine-online",
+  },
+  openGraph: {
+    title:
+      "Site-uri de prezentare și magazine online | Visual Studio Concept",
+    description:
+      "Construim site-uri și magazine online rapide, moderne și orientate pe conversie.",
+    url: "https://visualstudio.ro/site-uri-prezentare-magazine-online",
+    images: [
+      {
+        url: "/img/illustrations/1920x1080_divider-01.webp",
+        width: 1920,
+        height: 1080,
+        alt: "Site-uri de prezentare și magazine online",
+      },
+    ],
+  },
 };
 
 const faqSchema = {

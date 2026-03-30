@@ -14,6 +14,23 @@ export const metadata: Metadata = {
   title: "Software custom pentru firme | Visual Studio Concept",
   description:
     "Construim aplicații și platforme interne custom pentru companii care vor control mai bun asupra operațiunilor, datelor și fluxurilor interne.",
+  alternates: {
+    canonical: "https://visualstudio.ro/software-custom-firme",
+  },
+  openGraph: {
+    title: "Software custom pentru firme | Visual Studio Concept",
+    description:
+      "Construim aplicații și platforme interne custom pentru companii care vor control mai bun asupra operațiunilor.",
+    url: "https://visualstudio.ro/software-custom-firme",
+    images: [
+      {
+        url: "/img/illustrations/1920x1080_divider-03.webp",
+        width: 1920,
+        height: 1080,
+        alt: "Software custom pentru firme",
+      },
+    ],
+  },
 };
 
 const faqSchema = {

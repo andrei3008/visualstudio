@@ -14,6 +14,23 @@ export const metadata: Metadata = {
   title: "Automatizări pentru firme | Visual Studio Concept",
   description:
     "Automatizăm task-uri repetitive, fluxuri de lead-uri, operațiuni și procese interne pentru companii care vor mai puțin haos și mai multă eficiență.",
+  alternates: {
+    canonical: "https://visualstudio.ro/automatizari-firme",
+  },
+  openGraph: {
+    title: "Automatizări pentru firme | Visual Studio Concept",
+    description:
+      "Automatizăm task-uri repetitive și procese interne pentru companii care vor mai multă eficiență.",
+    url: "https://visualstudio.ro/automatizari-firme",
+    images: [
+      {
+        url: "/img/illustrations/1920x1080_divider-02.webp",
+        width: 1920,
+        height: 1080,
+        alt: "Automatizări pentru firme",
+      },
+    ],
+  },
 };
 
 const faqSchema = {
