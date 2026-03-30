@@ -6,6 +6,31 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div className="mxd-section mxd-hero-section padding-grid-pre-mtext">
+      {/* Mobile fix: images above, text below */}
+      <style>{`
+        @media only screen and (max-width: 991px) {
+          .mxd-hero-03__marquee {
+            top: 30% !important;
+            z-index: 3 !important;
+          }
+          .mxd-hero-03__headline {
+            bottom: 2rem !important;
+            z-index: 2 !important;
+            mix-blend-mode: normal !important;
+          }
+          .mxd-hero-03__headline svg {
+            mix-blend-mode: normal !important;
+          }
+          .custom-visualstudio-text {
+            color: #161616 !important;
+            text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 0 0 10px rgba(255,255,255,0.8) !important;
+          }
+          .hero-03-headline__caption {
+            color: #161616 !important;
+            text-shadow: 0 0 8px rgba(255,255,255,0.8) !important;
+          }
+        }
+      `}</style>
       <div className="mxd-hero-03">
         <div className="mxd-hero-03__wrap loading-wrap">
           {/* top part */}
