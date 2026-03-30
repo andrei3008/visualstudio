@@ -15,7 +15,21 @@ export default function TrustSection() {
       <div className="mxd-container grid-container">
         <div className="mxd-block">
           <div className="container-fluid px-0">
-            {/* Row 1: Stats */}
+            {/* Row 1: Title + Description */}
+            <div className="row gx-0 align-items-center">
+              <div className="col-12 col-xl-5 mxd-grid-item no-margin anim-uni-in-up">
+                <h2 className="inner-headline__title headline-img-before headline-img-02">
+                  De ce Visual Studio Concept
+                </h2>
+              </div>
+              <div className="col-12 col-xl-7 mxd-grid-item no-margin anim-uni-in-up">
+                <p className="inner-headline__text t-large t-bright">
+                  Suntem un partener tehnic, nu o agenție care vinde iluzii.
+                  Construim soluții reale, livrăm la timp și răspundem prompt.
+                </p>
+              </div>
+            </div>
+            {/* Row 2: Stats */}
             <div className="row gx-0 anim-uni-in-up">
               {stats.map((s, idx) => (
                 <div key={idx} className="col-6 col-xl-3 mxd-grid-item">
@@ -36,20 +50,6 @@ export default function TrustSection() {
                   </div>
                 </div>
               ))}
-            </div>
-            {/* Row 2: Title + Description */}
-            <div className="row gx-0 align-items-center">
-              <div className="col-12 col-xl-5 mxd-grid-item no-margin anim-uni-in-up">
-                <h2 className="inner-headline__title headline-img-before headline-img-02">
-                  De ce Visual Studio Concept
-                </h2>
-              </div>
-              <div className="col-12 col-xl-7 mxd-grid-item no-margin anim-uni-in-up">
-                <p className="inner-headline__text t-large t-bright">
-                  Suntem un partener tehnic, nu o agenție care vinde iluzii.
-                  Construim soluții reale, livrăm la timp și răspundem prompt.
-                </p>
-              </div>
             </div>
           </div>
         </div>
