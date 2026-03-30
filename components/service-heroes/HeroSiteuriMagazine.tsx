@@ -59,20 +59,30 @@ export default function HeroSiteuriMagazine() {
                         }}
                       >
                         <AnimatedButton
-                          text="Cere o ofertă"
+                          text="Discută despre proiectul tău"
                           className="btn btn-anim btn-default btn-outline slide-right-up"
                           href="/contact"
                         >
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>
                         <AnimatedButton
-                          text="Vezi serviciile"
+                          text="Vezi ce livrăm"
                           className="btn btn-anim btn-default btn-outline slide-right-up"
                           href="/servicii"
                         >
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>
                       </div>
+                      <p
+                        className="loading__item"
+                        style={{
+                          marginTop: "1.2rem",
+                          fontSize: "0.85rem",
+                          opacity: 0.6,
+                        }}
+                      >
+                        Răspundem în maxim 48 de ore cu o propunere clară.
+                      </p>
                     </div>
                   </div>
                 </div>

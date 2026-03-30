@@ -1,9 +1,12 @@
 import Cta from "@/components/common/Cta";
+import LandingFaq from "@/components/common/LandingFaq";
+import TrustSection from "@/components/common/TrustSection";
 import Footer from "@/components/footers/Footer";
 import ContactForm from "@/components/other-pages/contact/ContactForm";
 import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
 import Services from "@/components/other-pages/services/Services";
 import HeroAutomatizariFirme from "@/components/service-heroes/HeroAutomatizariFirme";
+import { automatizariFaqs } from "@/data/landing-faqs";
 import { servicePageGroups } from "@/data/service-page-groups";
 import { Metadata } from "next";
 
@@ -13,6 +16,33 @@ export const metadata: Metadata = {
     "Automatizăm task-uri repetitive, fluxuri de lead-uri, operațiuni și procese interne pentru companii care vor mai puțin haos și mai multă eficiență.",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: automatizariFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.answer,
+    },
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Automatizări pentru firme",
+  provider: {
+    "@type": "Organization",
+    name: "Visual Studio Concept",
+    url: "https://visualstudio.ro",
+  },
+  description:
+    "Automatizăm task-uri repetitive, fluxuri de lead-uri, operațiuni și procese interne pentru companii.",
+  areaServed: "RO",
+};
+
 export default function AutomatizariFirmePage() {
   return (
     <>
@@ -20,12 +50,22 @@ export default function AutomatizariFirmePage() {
         id="mxd-page-content"
         className="mxd-page-content inner-page-content"
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
         <HeroAutomatizariFirme />
+        <TrustSection />
         <Services
           items={servicePageGroups.automatizariFirme}
           introTitle="Ce automatizăm în practică"
           introText="Ne uităm la task-urile care consumă timp, creează erori sau depind prea mult de intervenție manuală și le transformăm în fluxuri mai rapide, mai clare și mai ușor de urmărit."
         />
+        <LandingFaq items={automatizariFaqs} />
         <ParallaxDivider />
         <ContactForm />
         <Cta />
