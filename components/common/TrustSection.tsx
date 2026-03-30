@@ -30,7 +30,7 @@ export default function TrustSection() {
               </div>
             </div>
             {/* Row 2: Stats */}
-            <div className="row gx-0 anim-uni-in-up">
+            <div className="row gx-0 anim-uni-in-up" style={{ marginTop: "3.2rem" }}>
               {stats.map((s, idx) => (
                 <div key={idx} className="col-6 col-xl-3 mxd-grid-item">
                   <div style={{ padding: "2.4rem 1.6rem", textAlign: "center" }}>
