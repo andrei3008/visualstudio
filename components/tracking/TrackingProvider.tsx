@@ -5,6 +5,7 @@ import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 
 import { trackContactClick, trackPageView } from "@/lib/marketing";
+import { useCookieConsent } from "@/components/cookies/CookieConsentProvider";
 
 const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 const googleTagId = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID;
@@ -14,15 +15,23 @@ const googleLoaderId = googleTagId || googleAdsId;
 export default function TrackingProvider() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const { canUse, isLoaded } = useCookieConsent();
+
+  const canTrack = isLoaded && canUse("analytics");
+  const canMarket = isLoaded && canUse("marketing");
 
   useEffect(() => {
+    if (!canTrack) return;
+
     const search = searchParams.toString();
     const path = search ? `${pathname}?${search}` : pathname;
 
     trackPageView(path);
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, canTrack]);
 
   useEffect(() => {
+    if (!canTrack) return;
+
     const handleClick = (event: MouseEvent) => {
       const target = event.target;
       if (!(target instanceof Element)) return;
@@ -43,11 +52,11 @@ export default function TrackingProvider() {
 
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
-  }, []);
+  }, [canTrack]);
 
   return (
     <>
-      {googleLoaderId ? (
+      {googleLoaderId && canTrack ? (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${googleLoaderId}`}
@@ -68,7 +77,7 @@ export default function TrackingProvider() {
                     : ""
                 }
                 ${
-                  googleAdsId
+                  googleAdsId && canMarket
                     ? `gtag('config', '${googleAdsId}', { send_page_view: false });`
                     : ""
                 }
@@ -78,7 +87,7 @@ export default function TrackingProvider() {
         </>
       ) : null}
 
-      {metaPixelId ? (
+      {metaPixelId && canMarket ? (
         <>
           <Script
             id="vsc-meta-pixel-init"

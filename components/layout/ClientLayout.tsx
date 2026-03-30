@@ -9,6 +9,8 @@ import InitScroll from "@/components/scroll/InitScroll";
 import LenisSmoothScroll from "@/components/scroll/LenisSmoothScroll";
 import ScrollTop from "@/components/scroll/ScrollTop";
 import TrackingProvider from "@/components/tracking/TrackingProvider";
+import { CookieConsentProvider } from "@/components/cookies/CookieConsentProvider";
+import CookieConsentUI from "@/components/cookies/CookieConsentUI";
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -20,9 +22,12 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
       <a href="#mxd-page-content" className="skip-link">
         Sari la conținutul principal
       </a>
-      <Suspense fallback={null}>
-        <TrackingProvider />
-      </Suspense>
+      <CookieConsentProvider>
+        <Suspense fallback={null}>
+          <TrackingProvider />
+        </Suspense>
+        <CookieConsentUI />
+      </CookieConsentProvider>
       <MobileMenu />
       <Header1 />
       <RouteScrollManager />
