@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState("");
@@ -14,18 +13,28 @@ export default function AdminLoginPage() {
     setError("");
     setLoading(true);
 
-    const result = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    });
+    try {
+      const res = await fetch("/api/auth/callback/credentials", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          email,
+          password,
+          callbackUrl: "/admin",
+          json: "true",
+        }),
+      });
 
-    if (result?.error) {
-      setError("Email sau parolă incorectă.");
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setError("Email sau parolă incorectă.");
+        setLoading(false);
+      }
+    } catch {
+      setError("A apărut o eroare. Încearcă din nou.");
       setLoading(false);
-    } else {
-      // Successful login — redirect manually
-      window.location.href = "/admin";
     }
   };
 

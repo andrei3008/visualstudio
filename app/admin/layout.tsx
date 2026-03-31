@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useSession } from "next-auth/react";
-import { SessionProvider } from "next-auth/react";
 import { SidebarToggle } from "./sidebar-toggle";
 import "./admin.css";
 
@@ -11,17 +9,6 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <SessionProvider>
-      <AdminLayoutInner>{children}</AdminLayoutInner>
-    </SessionProvider>
-  );
-}
-
-function AdminLayoutInner({ children }: { children: React.ReactNode }) {
-  const { data: session } = useSession();
-  const userName = session?.user?.name ?? "Admin";
-
   return (
     <div className="admin-layout">
       <SidebarToggle />
@@ -56,7 +43,6 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
       <div className="admin-main">
         <header className="admin-topbar">
           <h1>Administrare</h1>
-          <span className="admin-topbar-user">👤 {userName}</span>
         </header>
         <main className="admin-content">{children}</main>
       </div>
