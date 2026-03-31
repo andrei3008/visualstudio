@@ -7,7 +7,76 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AnimatedButton from "@/components/animation/AnimatedButton";
 import { trackLead } from "@/lib/marketing";
+import { useState, useEffect, useCallback, useRef } from "react";
 
+// ── Rate-limiting helpers ──────────────────────────────────────────
+const STORAGE_KEY = "contact_form_submissions";
+const MAX_PER_15MIN = 3;
+const MAX_PER_HOUR = 5;
+const COOLDOWN_MS = 10_000;
+
+interface SubmissionRecord {
+  timestamp: number;
+}
+
+function getSubmissions(): SubmissionRecord[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed as SubmissionRecord[];
+  } catch {
+    return [];
+  }
+}
+
+function saveSubmissions(records: SubmissionRecord[]): void {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+}
+
+function pruneOlderThan(records: SubmissionRecord[], ms: number): SubmissionRecord[] {
+  const cutoff = Date.now() - ms;
+  return records.filter((r) => r.timestamp > cutoff);
+}
+
+function checkRateLimit(): { allowed: boolean; message?: string } {
+  let records = getSubmissions();
+  // Keep only last hour of data
+  records = pruneOlderThan(records, 60 * 60 * 1000);
+
+  const last15min = pruneOlderThan(records, 15 * 60 * 1000);
+
+  if (last15min.length >= MAX_PER_15MIN) {
+    const oldest = last15min[0].timestamp;
+    const waitSec = Math.ceil((15 * 60 * 1000 - (Date.now() - oldest)) / 1000);
+    return {
+      allowed: false,
+      message: `Ai trimis prea multe mesaje recent. Te rugăm să aștepți aproximativ ${waitSec} secunde înainte de a trimite din nou.`,
+    };
+  }
+
+  if (records.length >= MAX_PER_HOUR) {
+    const oldest = records[0].timestamp;
+    const waitMin = Math.ceil((60 * 60 * 1000 - (Date.now() - oldest)) / 60_000);
+    return {
+      allowed: false,
+      message: `Ai atins limita de trimitere pe oră. Te rugăm să încerci din nou peste aproximativ ${waitMin} minut${waitMin !== 1 ? "e" : ""}.`,
+    };
+  }
+
+  return { allowed: true };
+}
+
+function recordSubmission(): void {
+  let records = getSubmissions();
+  records = pruneOlderThan(records, 60 * 60 * 1000);
+  records.push({ timestamp: Date.now() });
+  saveSubmissions(records);
+}
+
+// ── Component ──────────────────────────────────────────────────────
 export default function ContactForm() {
   const {
     register,
@@ -21,9 +90,50 @@ export default function ContactForm() {
   // Formspree submit hook
   const [fsState, fsSubmit] = useForm<ContactForm>("meoljlry");
 
+  // Honeypot ref — if a bot fills this, we silently reject
+  const honeypotRef = useRef<HTMLInputElement>(null);
+
+  // Submit cooldown state
+  const [cooldownActive, setCooldownActive] = useState(false);
+  const cooldownTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Clean up timer on unmount
+  useEffect(() => {
+    return () => {
+      if (cooldownTimerRef.current) {
+        clearTimeout(cooldownTimerRef.current);
+      }
+    };
+  }, []);
+
+  const startCooldown = useCallback(() => {
+    setCooldownActive(true);
+    cooldownTimerRef.current = setTimeout(() => {
+      setCooldownActive(false);
+      cooldownTimerRef.current = null;
+    }, COOLDOWN_MS);
+  }, []);
+
   const onSubmit = async (data: ContactForm) => {
+    // ── Honeypot check ──
+    if (honeypotRef.current && honeypotRef.current.value) {
+      // Bot detected — pretend success to fool them
+      reset();
+      toast.success("Mesaj trimis. Revenim cât mai curând.");
+      startCooldown();
+      return;
+    }
+
+    // ── Rate-limit check ──
+    const rateCheck = checkRateLimit();
+    if (!rateCheck.allowed) {
+      toast.error(rateCheck.message);
+      return;
+    }
+
     try {
       await fsSubmit(data); // submit to Formspree
+      recordSubmission();
       trackLead({
         projectType: data.ProjectType,
         budget: data.Budget,
@@ -31,10 +141,13 @@ export default function ContactForm() {
       });
       reset(); // reset form fields
       toast.success("Mesaj trimis. Revenim cât mai curând.");
+      startCooldown();
     } catch {
       toast.error("Trimiterea a eșuat. Încearcă din nou mai târziu.");
     }
   };
+
+  const isDisabled = isSubmitting || fsState.submitting || cooldownActive;
 
   return (
     <>
@@ -79,6 +192,18 @@ export default function ContactForm() {
                             name="form_subject"
                             defaultValue="Lead nou din formularul de contact"
                           />
+                          {/* Honeypot — invisible to humans, bots auto-fill it */}
+                          <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px", opacity: 0, height: 0, width: 0, overflow: "hidden" }}>
+                            <label htmlFor="contact-website">Website</label>
+                            <input
+                              ref={honeypotRef}
+                              id="contact-website"
+                              type="text"
+                              name="website"
+                              tabIndex={-1}
+                              autoComplete="off"
+                            />
+                          </div>
                           {/* Visible Fields */}
                           <div className="container-fluid p-0">
                             <div className="row gx-0">
@@ -215,7 +340,7 @@ export default function ContactForm() {
                                   as={"button"}
                                   className="btn btn-anim btn-default btn-large btn-opposite slide-right-up"
                                   type="submit"
-                                  disabled={isSubmitting || fsState.submitting}
+                                  disabled={isDisabled}
                                 >
                                   <i className="ph-bold ph-arrow-up-right" />
                                 </AnimatedButton>
