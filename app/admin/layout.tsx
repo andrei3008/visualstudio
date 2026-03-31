@@ -1,21 +1,26 @@
-import { auth } from "@/lib/auth";
-import { redirect } from "next/navigation";
+"use client";
+
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { SessionProvider } from "next-auth/react";
 import { SidebarToggle } from "./sidebar-toggle";
 import "./admin.css";
 
-export default async function AdminLayout({
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
+  return (
+    <SessionProvider>
+      <AdminLayoutInner>{children}</AdminLayoutInner>
+    </SessionProvider>
+  );
+}
 
-  if (!session?.user) {
-    redirect("/admin/login");
-  }
-
-  const userName = session.user.name ?? "";
+function AdminLayoutInner({ children }: { children: React.ReactNode }) {
+  const { data: session } = useSession();
+  const userName = session?.user?.name ?? "Admin";
 
   return (
     <div className="admin-layout">

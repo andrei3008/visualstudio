@@ -1,19 +1,38 @@
-import { prisma } from "@/lib/prisma";
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
+interface Message {
+  id: string;
+  name: string;
+  email: string;
+  projectType: string | null;
+  createdAt: string;
+  isRead: boolean;
+}
 
-export default async function AdminDashboardPage() {
-  const [total, unread, recent] = await Promise.all([
-    prisma.contactMessage.count(),
-    prisma.contactMessage.count({ where: { isRead: false } }),
-    prisma.contactMessage.findMany({
-      orderBy: { createdAt: "desc" },
-      take: 5,
-    }),
-  ]);
+export default function AdminDashboardPage() {
+  const [stats, setStats] = useState({ total: 0, unread: 0, read: 0 });
+  const [recent, setRecent] = useState<Message[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const readCount = total - unread;
+  useEffect(() => {
+    fetch("/api/contact-messages")
+      .then((r) => r.json())
+      .then((data) => {
+        const messages: Message[] = data.messages ?? [];
+        const unread = messages.filter((m) => !m.isRead).length;
+        setStats({ total: messages.length, unread, read: messages.length - unread });
+        setRecent(messages.slice(0, 5));
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <div className="empty-state"><p>Se încarcă...</p></div>;
+  }
 
   return (
     <>
@@ -21,15 +40,15 @@ export default async function AdminDashboardPage() {
       <div className="stats-grid">
         <div className="stat-card">
           <div className="stat-card-label">Total mesaje</div>
-          <div className="stat-card-value">{total}</div>
+          <div className="stat-card-value">{stats.total}</div>
         </div>
         <div className="stat-card">
           <div className="stat-card-label">Mesaje noi</div>
-          <div className="stat-card-value new">{unread}</div>
+          <div className="stat-card-value new">{stats.unread}</div>
         </div>
         <div className="stat-card">
           <div className="stat-card-label">Mesaje citite</div>
-          <div className="stat-card-value read">{readCount}</div>
+          <div className="stat-card-value read">{stats.read}</div>
         </div>
       </div>
 
