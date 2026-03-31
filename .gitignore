@@ -36,3 +36,9 @@ next-env.d.ts
 docker-compose.override.yml
 # Build info
 tsconfig.tsbuildinfo
+
+/lib/generated/prisma
+
+# Prisma
+dev.db
+dev.db-journal
