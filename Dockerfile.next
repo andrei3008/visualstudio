@@ -12,6 +12,9 @@ RUN npm ci
 # Copy all files (including .env.local for NEXT_PUBLIC_ vars)
 COPY . .
 
+# Generate Prisma client
+RUN npx prisma generate
+
 # Build application
 RUN npm run build
 
@@ -27,11 +30,24 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
+# Copy Prisma schema and migrations for runtime
+COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+COPY --from=builder /app/node_modules/better-sqlite3 ./node_modules/better-sqlite3
+
+# Create data directory for SQLite
+RUN mkdir -p /app/data
+
+# Environment
+ENV DATABASE_URL="file:/app/data/prod.db"
+ENV HOSTNAME="0.0.0.0"
+
+# Run migrations on startup, then start server
+COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
+
 # Expose port
 EXPOSE 3000
 
-# Set hostname
-ENV HOSTNAME="0.0.0.0"
-
-# Start server
-CMD ["node", "server.js"]
+# Start: migrate then serve
+CMD npx prisma migrate deploy && node server.js
