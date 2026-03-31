@@ -16,11 +16,8 @@ export default function Footer() {
               fontSize: 'clamp(60px, 15vw, 120px)',
               fontWeight: '900',
               lineHeight: '1',
-              color: '#161616',
-              textShadow: '0 0 2px rgba(0,0,0,0.8)'
             }}
           >
-            
           </span>
           <span
             className="mxd-footer__svg-v2 custom-visualstudio-text"
@@ -28,8 +25,6 @@ export default function Footer() {
               fontSize: 'clamp(125px, 25vw, 285px)',
               fontWeight: '900',
               lineHeight: '1',
-              color: '#161616',
-              textShadow: '0 0 2px rgba(0,0,0,0.8)'
             }}
           >
             

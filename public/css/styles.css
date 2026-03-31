@@ -146,6 +146,20 @@ html {
 .loading__fade {
   opacity: 0;
 }
+/* Disable mix-blend-mode on hero headline so text color works correctly */
+.mxd-hero-03__headline {
+  mix-blend-mode: normal !important;
+}
+.mxd-hero-03__headline svg,
+.mxd-hero-03__headline span {
+  mix-blend-mode: normal !important;
+}
+
+/* Fix caption color after disabling mix-blend-mode */
+.hero-03-headline__caption {
+  color: var(--base-opp) !important;
+}
+
 .custom-visualstudio-text { color: var(--base-opp) !important; }
 
 /* Force visualstudio text color */
@@ -156,6 +170,15 @@ html {
   color: #161616 !important;
   text-shadow: 0 0 2px rgba(0,0,0,0.8) !important;
   filter: none !important;
+}
+
+/* Dark mode for visualstudio text */
+html[color-scheme="dark"] .hero-03-headline__svg-mobile.custom-visualstudio-text,
+html[color-scheme="dark"] .hero-03-headline__svg.custom-visualstudio-text,
+html[color-scheme="dark"] .mxd-footer__svg-v2-mobile.custom-visualstudio-text,
+html[color-scheme="dark"] .mxd-footer__svg-v2.custom-visualstudio-text {
+  color: #faf7f6 !important;
+  text-shadow: 0 0 2px rgba(255,255,255,0.8) !important;
 }
 
 /* Show/hide mobile vs desktop elements */
@@ -183,16 +206,7 @@ html {
   }
 }
 
-/* Dark mode override */
-@media (prefers-color-scheme: dark) {
-  .hero-03-headline__svg-mobile.custom-visualstudio-text,
-  .hero-03-headline__svg.custom-visualstudio-text,
-  .mxd-footer__svg-v2-mobile.custom-visualstudio-text,
-  .mxd-footer__svg-v2.custom-visualstudio-text {
-    color: #faf7f6 !important;
-    text-shadow: 0 0 2px rgba(255,255,255,0.8) !important;
-  }
-}
+/* Dark mode override - uses html[color-scheme] instead of prefers-color-scheme */
 
 /* Custom background image for first project */
 .mxd-project-item__preview.preview-image-custom {
