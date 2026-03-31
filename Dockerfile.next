@@ -9,7 +9,7 @@ COPY package.json package-lock.json ./
 # Install dependencies
 RUN npm ci
 
-# Copy all files
+# Copy all files (including .env.local for NEXT_PUBLIC_ vars)
 COPY . .
 
 # Build application
