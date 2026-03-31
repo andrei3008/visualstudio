@@ -9,7 +9,7 @@ COPY package.json package-lock.json ./
 # Install dependencies
 RUN npm ci
 
-# Copy all files (including .env.local for NEXT_PUBLIC_ vars)
+# Copy all files
 COPY . .
 
 # Generate Prisma client
@@ -30,10 +30,11 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
-# Copy Prisma schema, migrations, and generated client
+# Copy ALL node_modules for runtime (prisma, bcryptjs, etc.)
+COPY --from=builder /app/node_modules ./node_modules
+
+# Copy prisma schema + migrations
 COPY --from=builder /app/prisma ./prisma
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 
 # Create data directory for SQLite
 RUN mkdir -p /app/data
