@@ -19,16 +19,16 @@ export default function Solutions() {
               <div className="mxd-project__content">
                 <div className="mxd-project__paragraph medium-text">
                   <p className="anim-uni-in-up">
-                    Orci varius natoque penatibus et magnis dis parturient
-                    montes, nascetur ridiculus mus. Quisque ut arcu pulvinar,
-                    rhoncus libero id, lobortis metus. Morbi tristique dolor sit
-                    amet turpis faucibus malesuada.
+                    Am construit o arhitectură modulară care separă frontend-ul
+                    de backend, permițând scalare independentă și dezvoltare
+                    rapidă. Am folosit Next.js pentru performanță optimă și SEO,
+                    cu o bază de date PostgreSQL gestionată în cloud.
                   </p>
                   <p className="anim-uni-in-up">
-                    Morbi non ipsum vel risus scelerisque sagittis nec a ipsum.
-                    Nulla odio neque, feugiat a arcu et, tristique cursus diam.
-                    Duis consectetur massa nibh, ut rhoncus nibh vestibulum in.
-                    Sed imperdiet metus sed arcu efficitur posuere.
+                    Procesul a inclus definirea arhitecturii, prototipare rapidă
+                    cu feedback continuu de la client, și o strategie de deployment
+                    automat prin CI/CD. Rezultatul: o aplicație stabilă, rapidă și
+                    ușor de extins pe viitor.
                   </p>
                 </div>
               </div>

@@ -20,15 +20,15 @@ export default function Challages() {
               <div className="mxd-project__content">
                 <div className="mxd-project__paragraph">
                   <p className="t-large t-bright anim-uni-in-up">
-                    Donec maximus lorem quam, a aliquam erat aliquam quis. Sed
-                    accumsan sagittis condimentum. Proin eu nulla.
+                    Clientul avea nevoie de o soluție digitală care să
+                    automatizeze procesele interne și să ofere o experiență
+                    fluidă utilizatorilor finali.
                   </p>
                   <p className="anim-uni-in-up">
-                    Nunc vel ligula tincidunt, fermentum velit ac, sodales eros.
-                    Vivamus ac leo in arcu accumsan condimentum. Nullam ac est
-                    quis dolor scelerisque interdum in at risus. Pellentesque
-                    mattis est vel maximus posuere. Integer tristique ipsum
-                    velit, vitae gravida purus laoreet.
+                    Provocarea principală a fost integrarea cu sistemele existente
+                    și migrarea datelor fără downtime. Am optat pentru o abordare
+                    incrementală, cu teste riguroase la fiecare etapă, asigurând
+                    continuitatea operațională pe toată durata proiectului.
                   </p>
                 </div>
               </div>
