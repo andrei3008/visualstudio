@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://visualstudio.ro/sitemap.xml
+
+# Disallow internal pages
+Disallow: /preview
+Disallow: /api/

@@ -13,6 +13,25 @@ export const metadata: Metadata = {
   title: "Despre Noi | Visual Studio Concept",
   description:
     "Afla cum lucreaza Visual Studio Concept: strategie, design, dezvoltare software si automatizari pentru companii care vor crestere reala.",
+  alternates: {
+    canonical: "https://visualstudio.ro/despre-noi",
+  },
+  openGraph: {
+    title: "Despre Noi | Visual Studio Concept",
+    description: "15+ ani în programare, 5+ ani în DevOps. O echipă care transformă ideile în soluții digitale funcționale.",
+    url: "https://visualstudio.ro/despre-noi",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Despre Noi | Visual Studio Concept",
+      },
+    ],
+  },
 };
 export default function AboutUsPage() {
   return (

@@ -18,6 +18,25 @@ export const metadata: Metadata = {
   title: "Despre echipă | Visual Studio Concept",
   description:
     "O pagină extinsă despre modul de lucru, experiență, tehnologiile și principiile după care livrează Visual Studio Concept.",
+  alternates: {
+    canonical: "https://visualstudio.ro/about-me",
+  },
+  openGraph: {
+    title: "Despre Mine | Visual Studio Concept",
+    description: "15+ ani în programare. Povestea și experiența din spatele Visual Studio Concept.",
+    url: "https://visualstudio.ro/about-me",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Despre Mine | Visual Studio Concept",
+      },
+    ],
+  },
 };
 export default function AboutMePage() {
   return (

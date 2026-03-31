@@ -5,6 +5,25 @@ export const metadata: Metadata = {
   title: "Politica de Cookie-uri | Visual Studio Concept",
   description:
     "Informatii despre cookie-uri, local storage si preferintele de consimtamant folosite pe site-ul Visual Studio Concept.",
+  alternates: {
+    canonical: "https://visualstudio.ro/politica-de-cookie-uri",
+  },
+  openGraph: {
+    title: "Politica de Cookie-uri | Visual Studio Concept",
+    description: "Informații despre cum folosim cookie-urile pe site-ul Visual Studio Concept.",
+    url: "https://visualstudio.ro/politica-de-cookie-uri",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Politica de Cookie-uri | Visual Studio Concept",
+      },
+    ],
+  },
 };
 
 export default function CookiePolicyPage() {

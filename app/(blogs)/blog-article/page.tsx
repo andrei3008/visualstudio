@@ -7,6 +7,25 @@ export const metadata: Metadata = {
   title: "Articol | Visual Studio Concept",
   description:
     "Articol din blogul Visual Studio Concept despre dezvoltare software, automatizare, produs digital și tehnologie aplicată în business.",
+  alternates: {
+    canonical: "https://visualstudio.ro/blog-article",
+  },
+  openGraph: {
+    title: "Articol Blog | Visual Studio Concept",
+    description: "Articole și insight-uri din lumea dezvoltării software.",
+    url: "https://visualstudio.ro/blog-article",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Articol Blog | Visual Studio Concept",
+      },
+    ]
+  },
 };
 export default function BlogSinglePage() {
   return (

@@ -16,6 +16,25 @@ export const metadata: Metadata = {
   title: "Software la comandă | Visual Studio Concept",
   description:
     "Pagină principală alternativă pentru prezentarea serviciilor Visual Studio Concept: software custom, aplicații, automatizări și infrastructură cloud.",
+  alternates: {
+    canonical: "https://visualstudio.ro",
+  },
+  openGraph: {
+    title: "Software Development Company | Visual Studio Concept",
+    description: "Firmă de dezvoltare software cu 15+ ani experiență. Site-uri, aplicații, automatizări și DevOps pentru afacerea ta.",
+    url: "https://visualstudio.ro",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Software Development Company | Visual Studio Concept",
+      },
+    ]
+  },
 };
 export default function HomeSoftwareDevelopmentCompanyPage() {
   return (

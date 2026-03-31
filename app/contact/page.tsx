@@ -11,6 +11,25 @@ export const metadata: Metadata = {
   title: "Contact | Visual Studio Concept",
   description:
     "Trimite-ne detaliile proiectului tău și revenim cu direcția tehnică potrivită, estimare și pașii următori pentru implementare.",
+  alternates: {
+    canonical: "https://visualstudio.ro/contact",
+  },
+  openGraph: {
+    title: "Contact | Visual Studio Concept",
+    description: "Ai un proiect în minte? Scrie-ne și discutăm cum putem construi soluția perfectă pentru afacerea ta.",
+    url: "https://visualstudio.ro/contact",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Contact | Visual Studio Concept",
+      },
+    ],
+  },
 };
 export default function ContactPage() {
   return (

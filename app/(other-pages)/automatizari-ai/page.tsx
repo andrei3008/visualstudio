@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   title: "Automatizări AI | Visual Studio Concept",
   description:
     "Implementăm automatizări AI, asistenți conversaționali, fluxuri operaționale și integrări inteligente care reduc munca manuală și timpul pierdut.",
+  alternates: {
+    canonical: "https://visualstudio.ro/automatizari-ai",
+  },
+  openGraph: {
+    title: "Automatizări cu AI | Visual Studio Concept",
+    description: "Integrăm inteligență artificială în procesele de business. Chatbots, analiză de date, generare de conținut.",
+    url: "https://visualstudio.ro/automatizari-ai",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Automatizări cu AI | Visual Studio Concept",
+      },
+    ],
+  },
 };
 export default function AutomatizariAIPage() {
   return (

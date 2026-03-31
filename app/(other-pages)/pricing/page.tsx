@@ -9,6 +9,25 @@ export const metadata: Metadata = {
   title: "Pachete și estimări | Visual Studio Concept",
   description:
     "Exemple orientative de pachete și niveluri de investiție pentru site-uri, aplicații, automatizări și servicii recurente.",
+  alternates: {
+    canonical: "https://visualstudio.ro/pricing",
+  },
+  openGraph: {
+    title: "Prețuri | Visual Studio Concept",
+    description: "Pachete transparente pentru site-uri de prezentare, magazine online și dezvoltare software custom.",
+    url: "https://visualstudio.ro/pricing",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Prețuri | Visual Studio Concept",
+      },
+    ],
+  },
 };
 export default function PricingPage() {
   return (

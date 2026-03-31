@@ -5,6 +5,25 @@ export const metadata: Metadata = {
   title: "Politica de Confidentialitate | Visual Studio Concept",
   description:
     "Politica de confidentialitate pentru site-ul si serviciile Visual Studio Concept.",
+  alternates: {
+    canonical: "https://visualstudio.ro/politica-de-confidentialitate",
+  },
+  openGraph: {
+    title: "Politica de Confidențialitate | Visual Studio Concept",
+    description: "Politica de confidențialitate și protecția datelor personale.",
+    url: "https://visualstudio.ro/politica-de-confidentialitate",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Politica de Confidențialitate | Visual Studio Concept",
+      },
+    ],
+  },
 };
 
 export default function PrivacyPolicyPage() {

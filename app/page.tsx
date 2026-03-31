@@ -26,6 +26,25 @@ export const metadata: Metadata = {
     "DevOps",
     "cloud",
   ],
+  alternates: {
+    canonical: "https://visualstudio.ro",
+  },
+  openGraph: {
+    title: "Visual Studio Concept | Dezvoltare Software la Comandă",
+    description: "Construim site-uri, aplicații mobile, automatizări și software custom. 15+ ani experiență. Lead-uri, conversii și procese digitale care funcționează.",
+    url: "https://visualstudio.ro",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Visual Studio Concept | Dezvoltare Software la Comandă",
+      },
+    ],
+  },
 };
 
 export default function Home() {

@@ -5,6 +5,25 @@ export const metadata: Metadata = {
   title: "Termeni si Conditii | Visual Studio Concept",
   description:
     "Termeni si conditii de utilizare pentru site-ul si serviciile Visual Studio Concept.",
+  alternates: {
+    canonical: "https://visualstudio.ro/termeni-si-conditii",
+  },
+  openGraph: {
+    title: "Termeni și Condiții | Visual Studio Concept",
+    description: "Termenii și condițiile de utilizare a serviciilor Visual Studio Concept.",
+    url: "https://visualstudio.ro/termeni-si-conditii",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "Termeni și Condiții | Visual Studio Concept",
+      },
+    ],
+  },
 };
 
 export default function TermsPage() {

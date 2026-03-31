@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   title: "DevOps și Cloud | Visual Studio Concept",
   description:
     "Configurăm infrastructură cloud, CI/CD, deployment, observabilitate și optimizare de cost pentru aplicații care trebuie să ruleze stabil și sigur.",
+  alternates: {
+    canonical: "https://visualstudio.ro/devops-cloud",
+  },
+  openGraph: {
+    title: "DevOps & Cloud | Visual Studio Concept",
+    description: "Infrastructură cloud, CI/CD pipelines, containerizare și monitoring. 5+ ani experiență DevOps.",
+    url: "https://visualstudio.ro/devops-cloud",
+    siteName: "Visual Studio Concept",
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero/hero-11.webp",
+        width: 1200,
+        height: 630,
+        alt: "DevOps & Cloud | Visual Studio Concept",
+      },
+    ],
+  },
 };
 export default function DevOpsCloudPage() {
   return (
