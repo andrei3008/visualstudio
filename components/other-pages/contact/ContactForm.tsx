@@ -83,7 +83,9 @@ export default function ContactForm() {
                           <div className="container-fluid p-0">
                             <div className="row gx-0">
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <label htmlFor="contact-name" className="sr-only">Numele tău</label>
                                 <input
+                                  id="contact-name"
                                   type="text"
                                   placeholder="Numele tău*"
                                   {...register("Name")}
@@ -95,14 +97,18 @@ export default function ContactForm() {
                                 )}
                               </div>
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <label htmlFor="contact-company" className="sr-only">Companie / brand</label>
                                 <input
+                                  id="contact-company"
                                   type="text"
                                   placeholder="Companie / brand"
                                   {...register("Company")}
                                 />
                               </div>
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <label htmlFor="contact-email" className="sr-only">E-mail</label>
                                 <input
+                                  id="contact-email"
                                   type="email"
                                   placeholder="E-mail*"
                                   {...register("E-mail")}
@@ -114,7 +120,9 @@ export default function ContactForm() {
                                 )}
                               </div>
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <label htmlFor="contact-phone" className="sr-only">Telefon</label>
                                 <input
+                                  id="contact-phone"
                                   type="tel"
                                   placeholder="Telefon*"
                                   {...register("Phone")}
@@ -126,7 +134,9 @@ export default function ContactForm() {
                                 )}
                               </div>
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <label htmlFor="contact-project-type" className="sr-only">Tip proiect</label>
                                 <select
+                                  id="contact-project-type"
                                   defaultValue=""
                                   {...register("ProjectType")}
                                 >
@@ -156,7 +166,8 @@ export default function ContactForm() {
                                 )}
                               </div>
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <select defaultValue="" {...register("Budget")}>
+                                <label htmlFor="contact-budget" className="sr-only">Buget orientativ</label>
+                                <select id="contact-budget" defaultValue="" {...register("Budget")}>
                                   <option value="" disabled>
                                     Buget orientativ
                                   </option>
@@ -181,7 +192,9 @@ export default function ContactForm() {
                                 </select>
                               </div>
                               <div className="col-12 mxd-grid-item anim-uni-in-up">
+                                <label htmlFor="contact-message" className="sr-only">Mesaj</label>
                                 <textarea
+                                  id="contact-message"
                                   placeholder="Spune-ne pe scurt ce vrei să construim, ce obiectiv ai și în cât timp ai vrea să pornim*"
                                   {...register("Message")}
                                 />

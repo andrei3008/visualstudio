@@ -34,3 +34,5 @@ next-env.d.ts
 
 # Docker
 docker-compose.override.yml
+# Build info
+tsconfig.tsbuildinfo

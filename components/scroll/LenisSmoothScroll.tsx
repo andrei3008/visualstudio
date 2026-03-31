@@ -1,10 +1,12 @@
 "use client";
 import ReactLenis, { useLenis } from "lenis/react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function LenisSmoothScroll() {
   const lenis = useLenis();
+  const refreshTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const resizeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (!lenis) return;
@@ -40,32 +42,37 @@ export default function LenisSmoothScroll() {
     // Update ScrollTrigger when Lenis scrolls
     lenis.on("scroll", ScrollTrigger.update);
 
-    // Centralized refresh handler for all animations
-    const handleRefresh = () => {
-      // Small delay to ensure all components are ready
-      setTimeout(() => {
+    // Debounced refresh - prevents recursive refresh loop
+    const debouncedRefresh = () => {
+      if (refreshTimeout.current) return; // Already scheduled, skip
+      refreshTimeout.current = setTimeout(() => {
+        refreshTimeout.current = null;
         ScrollTrigger.refresh();
       }, 100);
     };
 
-    // Handle window resize
+    // Handle window resize with debounce
     const handleResize = () => {
-      handleRefresh();
+      if (resizeTimeout.current) clearTimeout(resizeTimeout.current);
+      resizeTimeout.current = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 250);
     };
 
-    // Listen for ScrollTrigger refresh events
-    ScrollTrigger.addEventListener("refresh", handleRefresh);
+    // Initial refresh after mount
+    debouncedRefresh();
+
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      ScrollTrigger.removeEventListener("refresh", handleRefresh);
-      // Revert scrollerProxy
+      if (refreshTimeout.current) clearTimeout(refreshTimeout.current);
+      if (resizeTimeout.current) clearTimeout(resizeTimeout.current);
       ScrollTrigger.scrollerProxy(document.body, {});
-      // Reset body overflow
       document.body.style.overflow = "";
     };
   }, [lenis]);
+
   // return null for ios
   if (
     typeof window !== "undefined" &&

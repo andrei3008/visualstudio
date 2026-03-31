@@ -17,7 +17,7 @@ export default function VideoModal({ videoSrc, open, setOpen }: Props) {
       className="videoModal__content"
       overlayClassName="videoModal__overlay"
       bodyOpenClassName="videoModal__bodyOpen" // <— body scroll lock
-      ariaHideApp={false}
+      ariaHideApp={true}
       shouldCloseOnEsc
       shouldCloseOnOverlayClick
     >

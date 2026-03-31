@@ -13,30 +13,43 @@ export default function MasonryGrid({
   itemSelector?: string;
 }) {
   const isotopContainer = useRef<HTMLDivElement | null>(null);
+  const isotopeRef = useRef<any>(null);
 
   useEffect(() => {
-    /////////////////////////////////////////////////////
-    // Magnate Animation
+    let destroyed = false;
 
-    setTimeout(() => {
-      const initIsotop = async () => {
-        const Isotope = (await import("isotope-layout")).default;
-        const imagesloaded = (await import("imagesloaded")).default;
+    const timeoutId = setTimeout(async () => {
+      if (destroyed || !isotopContainer.current) return;
 
-        if (!isotopContainer.current) return;
-        // Initialize Isotope in the mounted hook
-        const isotope = new Isotope(isotopContainer.current, {
-          itemSelector: itemSelector,
-          layoutMode: "masonry", // or 'fitRows', depending on your layout needs
-        });
-        imagesloaded(isotopContainer.current).on("progress", function () {
-          // Trigger Isotope layout
-          isotope.layout();
-        });
+      const Isotope = (await import("isotope-layout")).default;
+      const imagesloaded = (await import("imagesloaded")).default;
+
+      if (!isotopContainer.current) return;
+
+      const isotope = new Isotope(isotopContainer.current, {
+        itemSelector: itemSelector,
+        layoutMode: "masonry",
+      });
+      isotopeRef.current = isotope;
+
+      const imgLoader = imagesloaded(isotopContainer.current);
+      const onProgress = () => {
+        if (!destroyed) {
+          isotope.layout?.();
+        }
       };
-      initIsotop();
+      imgLoader.on("progress", onProgress);
     }, 100);
+
+    return () => {
+      destroyed = true;
+      if (isotopeRef.current) {
+        isotopeRef.current.destroy();
+        isotopeRef.current = null;
+      }
+    };
   }, [itemSelector]);
+
   return (
     <div className={className} ref={isotopContainer} {...rest}>
       {children}

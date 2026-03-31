@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Preview intern | Visual Studio Concept",
   description:
     "Pagină internă de preview pentru secțiunile, paginile și componentele vizuale pregătite în proiectul Visual Studio Concept.",
+  robots: "noindex, nofollow",
 };
 export default function PreviewPage() {
   return (
