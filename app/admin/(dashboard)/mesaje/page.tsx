@@ -35,7 +35,7 @@ export default function AdminMesajePage() {
     const res = await fetch(`/api/contact-messages?${params}`);
     if (res.ok) {
       const data = await res.json();
-      setMessages(data.messages);
+      setMessages(Array.isArray(data) ? data : data.messages ?? []);
     }
     setLoading(false);
   }, [filter, search]);
@@ -66,7 +66,6 @@ export default function AdminMesajePage() {
         <h2>Mesaje</h2>
       </div>
 
-      {/* Filters + Search */}
       <div className="admin-table-header" style={{ marginBottom: 20 }}>
         <div className="btn-group">
           <button
@@ -88,23 +87,33 @@ export default function AdminMesajePage() {
             Citite
           </button>
         </div>
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Caută după nume sau email..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <div className="search-wrap">
+          <svg className="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Caută după nume sau email..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
       </div>
 
-      {/* Table */}
       <div className="admin-table-wrap">
         {loading ? (
-          <div className="empty-state">
+          <div className="loading-state">
+            <div className="loading-spinner" />
             <p>Se încarcă...</p>
           </div>
         ) : messages.length === 0 ? (
           <div className="empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity=".4">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
             <p>Nu sunt mesaje.</p>
           </div>
         ) : (
@@ -113,7 +122,7 @@ export default function AdminMesajePage() {
               <tr>
                 <th>Nume</th>
                 <th>Email</th>
-                <th className="hide-mobile">Tip Proiect</th>
+                <th className="hide-mobile">Tip proiect</th>
                 <th className="hide-mobile">Buget</th>
                 <th className="hide-mobile">Dată</th>
                 <th>Status</th>
@@ -123,19 +132,20 @@ export default function AdminMesajePage() {
               {messages.map((msg) => (
                 <Fragment key={msg.id}>
                   <tr
-                    key={msg.id}
                     className={msg.isRead ? "" : "unread"}
                     onClick={() =>
                       setExpandedId(expandedId === msg.id ? null : msg.id)
                     }
                     style={{ cursor: "pointer" }}
                   >
-                    <td>{msg.name}</td>
-                    <td>{msg.email}</td>
+                    <td><div className="cell-name">{msg.name}</div></td>
+                    <td className="cell-email">{msg.email}</td>
                     <td className="hide-mobile">{msg.projectType ?? "—"}</td>
                     <td className="hide-mobile">{msg.budget ?? "—"}</td>
                     <td className="hide-mobile">
-                      {new Date(msg.createdAt).toLocaleDateString("ro-RO")}
+                      {new Date(msg.createdAt).toLocaleDateString("ro-RO", {
+                        day: "numeric", month: "short", year: "numeric",
+                      })}
                     </td>
                     <td>
                       {msg.isRead ? (
@@ -149,21 +159,26 @@ export default function AdminMesajePage() {
                     <tr>
                       <td colSpan={6} style={{ padding: 0 }}>
                         <div className="msg-detail">
-                          {msg.company && (
-                            <p>
-                              <strong>Companie:</strong> {msg.company}
-                            </p>
-                          )}
-                          {msg.phone && (
-                            <p>
-                              <strong>Telefon:</strong> {msg.phone}
-                            </p>
-                          )}
-                          {msg.source && (
-                            <p>
-                              <strong>Sursă:</strong> {msg.source}
-                            </p>
-                          )}
+                          <div className="msg-detail-grid">
+                            {msg.company && (
+                              <div className="msg-detail-field">
+                                <span className="msg-detail-label">Companie</span>
+                                <span>{msg.company}</span>
+                              </div>
+                            )}
+                            {msg.phone && (
+                              <div className="msg-detail-field">
+                                <span className="msg-detail-label">Telefon</span>
+                                <span>{msg.phone}</span>
+                              </div>
+                            )}
+                            {msg.source && (
+                              <div className="msg-detail-field">
+                                <span className="msg-detail-label">Sursă</span>
+                                <span>{msg.source}</span>
+                              </div>
+                            )}
+                          </div>
                           <div className="msg-body">{msg.message}</div>
                           <div className="msg-actions">
                             <button
@@ -182,7 +197,7 @@ export default function AdminMesajePage() {
                                 deleteMessage(msg.id);
                               }}
                             >
-                              🗑 Șterge
+                              Șterge
                             </button>
                           </div>
                         </div>

@@ -2,7 +2,6 @@
 import { type ContactForm, contactSchema } from "@/schemas/contact";
 import { useForm as useHookForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "@formspree/react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AnimatedButton from "@/components/animation/AnimatedButton";
@@ -87,9 +86,6 @@ export default function ContactForm() {
     resolver: zodResolver(contactSchema),
   });
 
-  // Formspree submit hook
-  const [fsState, fsSubmit] = useForm<ContactForm>("meoljlry");
-
   // Honeypot ref — if a bot fills this, we silently reject
   const honeypotRef = useRef<HTMLInputElement>(null);
 
@@ -132,14 +128,31 @@ export default function ContactForm() {
     }
 
     try {
-      await fsSubmit(data); // submit to Formspree
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.Name,
+          email: data["E-mail"],
+          phone: data.Phone,
+          company: data.Company,
+          projectType: data.ProjectType,
+          budget: data.Budget,
+          message: data.Message,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Server error");
+      }
+
       recordSubmission();
       trackLead({
         projectType: data.ProjectType,
         budget: data.Budget,
         source: "contact_form",
       });
-      reset(); // reset form fields
+      reset();
       toast.success("Mesaj trimis. Revenim cât mai curând.");
       startCooldown();
     } catch {
@@ -147,7 +160,7 @@ export default function ContactForm() {
     }
   };
 
-  const isDisabled = isSubmitting || fsState.submitting || cooldownActive;
+  const isDisabled = isSubmitting || cooldownActive;
 
   return (
     <>
