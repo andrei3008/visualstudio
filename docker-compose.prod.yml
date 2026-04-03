@@ -21,8 +21,8 @@ services:
       - NODE_ENV=production
       - HOSTNAME=0.0.0.0
       - DATABASE_URL=file:/app/data/prod.db
-      - AUTH_SECRET=1e9b6483d87aa60e5e7f68e91f86e3a10adc851cc347d5813da71b18dbb6acd8
-      - AUTH_URL=https://visualstudio.ro
+      - AUTH_SECRET=${AUTH_SECRET}
+      - AUTH_URL=${AUTH_URL}
     volumes:
       - visualstudio-data:/app/data
     networks:
