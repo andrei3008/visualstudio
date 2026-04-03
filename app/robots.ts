@@ -1,15 +1,14 @@
-import { MetadataRoute } from "next";
-
-const siteUrl = "https://visualstudio.ro";
+import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/preview"],
-    },
-    sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl,
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/admin/", "/api/"],
+      },
+    ],
+    sitemap: "https://visualstudio.ro/sitemap.xml",
   };
 }

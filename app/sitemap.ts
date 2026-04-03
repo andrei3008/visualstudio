@@ -1,43 +1,36 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
-const siteUrl = "https://visualstudio.ro";
-
-const routes = [
-  "",
-  "/despre-noi",
-  "/servicii",
-  "/contact",
-  "/portofoliu",
-  "/blog",
-  "/dezvoltare-software",
-  "/automatizari-ai",
-  "/aplicatii-mobile",
-  "/devops-cloud",
-  "/securitate-mentenanta",
-  "/site-uri-prezentare-magazine-online",
-  "/automatizari-firme",
-  "/software-custom-firme",
-  "/politica-de-confidentialitate",
-  "/politica-de-cookie-uri",
-  "/termeni-si-conditii",
-];
+const BASE_URL = "https://visualstudio.ro";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const landingPages = [
-    "/site-uri-prezentare-magazine-online",
-    "/automatizari-firme",
+  const lastModified = new Date();
+
+  const staticPages = [
+    "",
+    "/contact",
+    "/servicii",
+    "/despre-noi",
+    "/portofoliu",
+    "/preturi",
     "/software-custom-firme",
+    "/site-uri-prezentare-magazine-online",
+    "/aplicatii-mobile",
+    "/automatizari-ai",
+    "/automatizari-firme",
+    "/devops-cloud",
+    "/dezvoltare-software",
+    "/securitate-mentenanta",
+    "/blog",
+    "/faq",
+    "/termeni-si-conditii",
+    "/politica-de-confidentialitate",
+    "/politica-de-cookie-uri",
   ];
 
-  return routes.map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority:
-      route === ""
-        ? 1
-        : landingPages.includes(route)
-          ? 0.9
-          : 0.7,
+  return staticPages.map((page) => ({
+    url: `${BASE_URL}${page}`,
+    lastModified,
+    changeFrequency: page === "" ? "weekly" : "monthly",
+    priority: page === "" ? 1.0 : page === "/contact" ? 0.9 : page === "/servicii" ? 0.9 : 0.7,
   }));
 }
