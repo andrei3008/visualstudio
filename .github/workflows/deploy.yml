@@ -11,6 +11,8 @@ env:
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
+
+    # Explicit permissions
     permissions:
       contents: read
       packages: write
@@ -28,11 +30,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test
-
       - name: Generate Prisma client
         run: npx prisma generate
+
+      - name: Run tests
+        run: npm test
 
       - name: Build check
         run: npm run build
@@ -52,6 +54,9 @@ jobs:
           tags: |
             type=raw,value=latest
             type=sha,prefix=
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
