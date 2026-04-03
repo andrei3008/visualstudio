@@ -28,12 +28,12 @@ const nextConfig: NextConfig = {
               // Scripts: allow inline (for Next.js hydration, color scheme, tracking init)
               // and specific external domains
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net",
-              // Styles: allow inline (Next.js CSS, admin styles) and self
-              "style-src 'self' 'unsafe-inline'",
+              // Styles: allow inline (Next.js CSS, admin styles), self, and Google Fonts
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               // Images: allow self, data: URIs (SVGs, base64), blob: (Next.js image opt)
               "img-src 'self' data: blob: https://www.facebook.com https://www.googletagmanager.com",
-              // Fonts: allow self
-              "font-src 'self'",
+              // Fonts: allow self, data: URIs (icon fonts, base64), and Google Fonts CDN
+              "font-src 'self' data: https://fonts.gstatic.com",
               // Connections (fetch, XHR): allow self (API calls) and analytics endpoints
               "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://graph.facebook.com",
               // Frames: disallow embedding by default (admin protection)
