@@ -172,6 +172,15 @@ export default function ContactForm() {
                 <div className="col-12 col-xl-2 mxd-grid-item no-margin" />
                 <div className="col-12 col-xl-8">
                   <div className="mxd-block__content contact">
+                    {/* Section Title */}
+                    <div className="contact-form__header">
+                      <h2 className="inner-headline__title headline-img-before headline-img-02">
+                        Hai să discutăm despre proiectul tău
+                      </h2>
+                      <p className="contact-form__subtitle">
+                        Completează formularul și revenim cu un răspuns clar în maxim 48 de ore.
+                      </p>
+                    </div>
                     <div className="mxd-block__inner-form loading__fade">
                       <div className="form-container">
                         {/* Reply Messages */}

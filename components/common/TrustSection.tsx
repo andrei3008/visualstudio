@@ -11,7 +11,7 @@ const stats = [
 
 export default function TrustSection() {
   return (
-    <div className="mxd-section padding-default">
+    <div className="mxd-section padding-default" style={{ paddingTop: "10rem" }}>
       <div className="mxd-container grid-container">
         <div className="mxd-block">
           <div className="container-fluid px-0">
@@ -30,10 +30,10 @@ export default function TrustSection() {
               </div>
             </div>
             {/* Row 2: Stats */}
-            <div className="row gx-0 anim-uni-in-up" style={{ marginTop: "3.2rem" }}>
+            <div className="row gx-0 anim-uni-in-up" style={{ marginTop: "5rem" }}>
               {stats.map((s, idx) => (
                 <div key={idx} className="col-6 col-xl-3 mxd-grid-item">
-                  <div style={{ padding: "2.4rem 1.6rem", textAlign: "center" }}>
+                  <div style={{ padding: "3.2rem 1.6rem", textAlign: "center" }}>
                     <p
                       className="mxd-counter__number mxd-stats-number"
                       style={{ fontSize: "4rem", lineHeight: 1 }}

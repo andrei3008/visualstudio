@@ -5,8 +5,27 @@ import VideoModal from "@/components/common/VideoModal";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function ParallaxDivider() {
+interface ParallaxDividerProps {
+  scrollToContact?: boolean;
+}
+
+export default function ParallaxDivider({
+  scrollToContact = false,
+}: ParallaxDividerProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (scrollToContact) {
+      const contactSection = document.querySelector("#contact-form");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      setIsOpen(true);
+    }
+  };
+
   return (
     <>
       <div className="mxd-section padding-pre-title">
@@ -19,14 +38,10 @@ export default function ParallaxDivider() {
                 poster="/video/1920x1080_video-07.webp"
               />
             </div>
-            {/* <div class="mxd-divider__image divider-image-1 parallax-img"></div> */}
             <div className="mxd-divider__trigger">
               <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsOpen(true);
-                }}
-                href="#"
+                onClick={handleClick}
+                href="#contact-form"
                 id="showreel-trigger"
                 className="btn-rotating btn-rotating-blur-outline showreel-trigger"
               >
@@ -54,31 +69,61 @@ export default function ParallaxDivider() {
                   <g>
                     <use xlinkHref="#textPath" fill="none" />
                     <text>
-                      {/* button text here!!! */}
                       <textPath xlinkHref="#textPath">
-                        Play showreel * Play showreel * Play showreel *
+                        {scrollToContact
+                          ? "Hai să vorbim * Hai să vorbim * Hai să vorbim * "
+                          : "Play showreel * Play showreel * Play showreel * "}
                       </textPath>
                     </text>
                   </g>
                 </AnimateRotation>
-                {/* image */}
-                <Image
-                  className="btn-rotating__image"
-                  alt="Object"
-                  src="/img/icons/300x300_obj-btn-02.webp"
-                  width={300}
-                  height={300}
-                />
+                {/* image or play icon */}
+                {scrollToContact ? (
+                  <div
+                    className="btn-rotating__play"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--color-text, #fff)",
+                    }}
+                  >
+                    <svg
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={60}
+                      height={60}
+                    >
+                      <polygon
+                        points="28,18 62,40 28,62"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                ) : (
+                  <Image
+                    className="btn-rotating__image"
+                    alt="Object"
+                    src="/img/icons/300x300_obj-btn-02.webp"
+                    width={300}
+                    height={300}
+                  />
+                )}
               </a>
             </div>
           </div>
         </div>
       </div>
-      <VideoModal
-        videoSrc="https://vimeo.com/65036292"
-        open={isOpen}
-        setOpen={setIsOpen}
-      />
+      {!scrollToContact && (
+        <VideoModal
+          videoSrc="https://vimeo.com/65036292"
+          open={isOpen}
+          setOpen={setIsOpen}
+        />
+      )}
     </>
   );
 }

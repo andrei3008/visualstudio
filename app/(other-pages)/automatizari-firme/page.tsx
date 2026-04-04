@@ -4,9 +4,11 @@ import TrustSection from "@/components/common/TrustSection";
 import Footer from "@/components/footers/Footer";
 import ContactForm from "@/components/other-pages/contact/ContactForm";
 import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
+import Pricing from "@/components/other-pages/Pricing";
 import Services from "@/components/other-pages/services/Services";
 import HeroAutomatizariFirme from "@/components/service-heroes/HeroAutomatizariFirme";
 import { automatizariFaqs } from "@/data/landing-faqs";
+import pricingAutomatizari from "@/data/pricing-automatizari.json";
 import { servicePageGroups } from "@/data/service-page-groups";
 import { Metadata } from "next";
 
@@ -82,8 +84,13 @@ export default function AutomatizariFirmePage() {
           introTitle="Ce automatizăm în practică"
           introText="Ne uităm la task-urile care consumă timp, creează erori sau depind prea mult de intervenție manuală și le transformăm în fluxuri mai rapide, mai clare și mai ușor de urmărit."
         />
+        <Pricing
+          items={pricingAutomatizari}
+          sectionLabel="Prețuri"
+          sectionTitle="Investiția pentru automatizările tale"
+        />
         <LandingFaq items={automatizariFaqs} />
-        <ParallaxDivider />
+        <ParallaxDivider scrollToContact />
         <ContactForm />
         <Cta />
       </main>

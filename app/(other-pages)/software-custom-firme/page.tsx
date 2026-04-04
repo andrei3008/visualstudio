@@ -4,9 +4,11 @@ import TrustSection from "@/components/common/TrustSection";
 import Footer from "@/components/footers/Footer";
 import ContactForm from "@/components/other-pages/contact/ContactForm";
 import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
+import Pricing from "@/components/other-pages/Pricing";
 import Services from "@/components/other-pages/services/Services";
 import HeroSoftwareCustomFirme from "@/components/service-heroes/HeroSoftwareCustomFirme";
 import { softwareCustomFaqs } from "@/data/landing-faqs";
+import pricingSoftwareCustom from "@/data/pricing-software-custom.json";
 import { servicePageGroups } from "@/data/service-page-groups";
 import { Metadata } from "next";
 
@@ -82,8 +84,13 @@ export default function SoftwareCustomFirmePage() {
           introTitle="Ce tip de software custom construim"
           introText="Pornim de la procesele tale reale, nu de la un template. Scopul este să simplificăm operațiunile, să conectăm datele și să îți dăm un instrument care se potrivește cu modul în care lucrează echipa."
         />
+        <Pricing
+          items={pricingSoftwareCustom}
+          sectionLabel="Prețuri"
+          sectionTitle="Investiția pentru platforma ta software"
+        />
         <LandingFaq items={softwareCustomFaqs} />
-        <ParallaxDivider />
+        <ParallaxDivider scrollToContact />
         <ContactForm />
         <Cta />
       </main>

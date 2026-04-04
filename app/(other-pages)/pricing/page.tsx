@@ -4,6 +4,7 @@ import Cta from "@/components/common/Cta";
 import Footer from "@/components/footers/Footer";
 import Partners from "@/components/other-pages/Partners";
 import Pricing from "@/components/other-pages/Pricing";
+import pricing from "@/data/pricing.json";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pachete și estimări | Visual Studio Concept",
@@ -36,7 +37,7 @@ export default function PricingPage() {
         id="mxd-page-content"
         className="mxd-page-content inner-page-content"
       >
-        <Pricing />
+        <Pricing items={pricing} />
         <div className="mxd-section padding-mtext-pre-grid mobile-grid-s">
           <div className="mxd-container fullwidth-container">
             {/* Block - Marquee Text One Line Start */}

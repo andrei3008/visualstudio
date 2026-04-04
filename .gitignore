@@ -43,3 +43,7 @@ tsconfig.tsbuildinfo
 # Prisma
 dev.db
 dev.db-journal
+PROIECT.md
+
+# Project documentation (local only)
+PROIECT.md

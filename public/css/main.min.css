@@ -397,25 +397,25 @@
   background-image: url(/img/blog/preview/1000x1250_prv-03.webp);
 }
 .headline-img-01::before {
-  background-image: url(/img/illustrations/400x200_hdl-01.webp);
+  background-image: url(/img/icons/96x96-decor-01.svg);
 }
 .headline-img-02::before {
-  background-image: url(/img/illustrations/400x200_hdl-02.webp);
+  background-image: url(/img/icons/96x96-decor-01.svg);
 }
 .headline-img-03::after {
-  background-image: url(/img/illustrations/400x200_hdl-03.webp);
+  background-image: url(/img/icons/96x96-decor-01.svg);
 }
 .headline-img-04::before {
-  background-image: url(/img/illustrations/400x200_hdl-04.webp);
+  background-image: url(/img/icons/96x96-decor-01.svg);
 }
 .headline-img-05::before {
-  background-image: url(/img/illustrations/400x200_hdl-05.webp);
+  background-image: url(/img/icons/96x96-decor-01.svg);
 }
 .headline-img-06::before {
-  background-image: url(/img/illustrations/400x200_hdl-06.webp);
+  background-image: url(/img/icons/96x96-decor-01.svg);
 }
 .headline-img-07::before {
-  background-image: url(/img/illustrations/400x200_hdl-07.webp);
+  background-image: url(/img/icons/96x96-decor-01.svg);
 }
 .image-values-1 {
   background-image: url(/img/team/1200x1600_team-01.webp);
@@ -1301,63 +1301,61 @@ html.lenis body {
 .inner-headline__title.headline-img-before::before {
   content: "";
   display: inline-block;
-  width: 8rem;
-  height: 4.3rem;
-  -moz-border-radius: 4.2rem;
-  border-radius: 4.2rem;
-  margin-right: 1.6rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0;
+  margin-right: 1.2rem;
   background-repeat: no-repeat;
   background-position: center;
-  -moz-background-size: cover;
-  background-size: cover;
+  -moz-background-size: contain;
+  background-size: contain;
 }
 .inner-headline__title.headline-img-after::after {
   content: "";
   display: inline-block;
-  width: 8rem;
-  height: 4.3rem;
-  -moz-border-radius: 4.2rem;
-  border-radius: 4.2rem;
-  margin-left: 1.6rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0;
+  margin-left: 1.2rem;
   background-repeat: no-repeat;
   background-position: center;
-  -moz-background-size: cover;
-  background-size: cover;
+  -moz-background-size: contain;
+  background-size: contain;
 }
 @media only screen and (min-width: 768px) {
   .inner-headline__title.headline-img-before::before {
-    width: 11rem;
-    height: 5.8rem;
-    margin-right: 2.2rem;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.6rem;
   }
   .inner-headline__title.headline-img-after::after {
-    width: 11rem;
-    height: 5.8rem;
-    margin-left: 2.2rem;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 1.6rem;
   }
 }
 @media only screen and (min-width: 1200px) {
   .inner-headline__title.headline-img-before::before {
-    width: 14rem;
-    height: 7rem;
-    margin-right: 2.6rem;
+    width: 6rem;
+    height: 6rem;
+    margin-right: 2rem;
   }
   .inner-headline__title.headline-img-after::after {
-    width: 14rem;
-    height: 7rem;
-    margin-left: 2.6rem;
+    width: 6rem;
+    height: 6rem;
+    margin-left: 2rem;
   }
 }
 @media only screen and (min-width: 1600px) {
   .inner-headline__title.headline-img-before::before {
-    width: 16rem;
-    height: 8.4rem;
-    margin-right: 3.3rem;
+    width: 7rem;
+    height: 7rem;
+    margin-right: 2.4rem;
   }
   .inner-headline__title.headline-img-after::after {
-    width: 16rem;
-    height: 8.4rem;
-    margin-left: 3.3rem;
+    width: 7rem;
+    height: 7rem;
+    margin-left: 2.4rem;
   }
 }
 .inner-headline__descr {
@@ -18057,6 +18055,7 @@ form textarea:required:valid {
 }
 .mxd-pricing-table__item {
   position: relative;
+  display: flex;
 }
 .mxd-pricing-table__inner {
   position: relative;
@@ -18164,9 +18163,11 @@ form textarea:required:valid {
 }
 .pricing-header__title {
   margin-bottom: 1rem;
+  min-height: 3.6rem;
 }
 .pricing-header__descr {
   font-size: 1.8rem;
+  min-height: 6rem;
 }
 @media only screen and (min-width: 1600px) {
   .pricing-header__descr {
@@ -18200,6 +18201,7 @@ form textarea:required:valid {
   flex-direction: column;
   gap: 0.6rem;
   margin-bottom: 1.2rem;
+  min-height: 12rem;
 }
 .pricing-data__num {
   display: -webkit-box;
@@ -18280,6 +18282,7 @@ form textarea:required:valid {
   display: flex;
   gap: 1rem;
   width: 100%;
+  min-height: 4rem;
 }
 .mxd-pricing-table__link a {
   font: normal var(--fw-regular) 1.8rem/1.2 var(--_font-accent);

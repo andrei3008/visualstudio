@@ -4,9 +4,11 @@ import TrustSection from "@/components/common/TrustSection";
 import Footer from "@/components/footers/Footer";
 import ContactForm from "@/components/other-pages/contact/ContactForm";
 import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
+import Pricing from "@/components/other-pages/Pricing";
 import Services from "@/components/other-pages/services/Services";
 import HeroSiteuriMagazine from "@/components/service-heroes/HeroSiteuriMagazine";
 import { siteuriMagazineFaqs } from "@/data/landing-faqs";
+import pricingSiteuri from "@/data/pricing-siteuri.json";
 import { servicePageGroups } from "@/data/service-page-groups";
 import { Metadata } from "next";
 
@@ -84,8 +86,13 @@ export default function SiteuriPrezentareMagazinePage() {
           introTitle="Ce livrăm în proiectele web și eCommerce"
           introText="Punem accent pe claritate, încredere și conversie. Scopul nu este doar un design frumos, ci un site care explică bine oferta, răspunde rapid și transformă vizitele în cereri sau vânzări."
         />
+        <Pricing
+          items={pricingSiteuri}
+          sectionLabel="Prețuri"
+          sectionTitle="Investiția pentru site-ul sau magazinul tău online"
+        />
         <LandingFaq items={siteuriMagazineFaqs} />
-        <ParallaxDivider />
+        <ParallaxDivider scrollToContact />
         <ContactForm />
         <Cta />
       </main>

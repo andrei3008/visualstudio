@@ -1,0 +1,66 @@
+[
+  {
+    "tag": "Popular",
+    "tagClass": "tag-default tag-accent",
+    "title": "Site de prezentare",
+    "descr": "Pentru companii care au nevoie de o prezență online profesională, rapidă și orientată pe generare de lead-uri.",
+    "currency": "€",
+    "amount": "1.500+",
+    "period": "/proiect",
+    "timeline": "Durată orientativă: 2-4 săptămâni",
+    "btnText": "Cere o estimare",
+    "btnHref": "/contact",
+    "features": [
+      "design și dezvoltare personalizată",
+      "layout responsive și optimizare mobil",
+      "SEO tehnic de bază",
+      "integrare formular de contact și analytics",
+      "suport 30 zile după lansare"
+    ],
+    "linkText": "Ai nevoie de altă structură? Hai să discutăm.",
+    "linkHref": "/contact"
+  },
+  {
+    "tag": "Cel mai cerut",
+    "tagClass": "tag-default tag-additional",
+    "title": "Magazin online",
+    "descr": "Platformă eCommerce completă cu produse, checkout, plăți, notificări și integrări — gata pentru vânzări din prima zi.",
+    "currency": "€",
+    "amount": "3.000+",
+    "period": "/proiect",
+    "timeline": "Durată orientativă: 4-8 săptămâni",
+    "btnText": "Discută proiectul",
+    "btnHref": "/contact",
+    "features": [
+      "design custom și experiență de cumpărare optimizată",
+      "catalog produse, coș, checkout și plăți online",
+      "integrări curieri, facturare, notificări",
+      "SEO tehnic și pregătire pentru reclame",
+      "training administrare + suport 30 zile"
+    ],
+    "linkText": "Vrei o ofertă pe nevoia ta exactă? Scrie-ne.",
+    "linkHref": "/contact",
+    "best": true
+  },
+  {
+    "tag": "Abonament lunar",
+    "tagClass": "tag-default",
+    "title": "Mentenanță + Hosting + Suport",
+    "descr": "Ne ocupăm de tot ce ține de tehnic: hosting, actualizări, backup, securitate și intervenții rapide când ai nevoie.",
+    "currency": "€",
+    "amount": "150+",
+    "period": "/lună",
+    "timeline": "Include hosting, SSL, backup zilnic și monitorizare",
+    "btnText": "Solicită abonament",
+    "btnHref": "/contact",
+    "features": [
+      "hosting performanță + certificat SSL",
+      "backup zilnic și monitorizare uptime",
+      "actualizări de securitate și mentenanță",
+      "intervenții rapide (maxim 24h răspuns)",
+      "raport lunar de performanță"
+    ],
+    "linkText": "Nu te încadrezi într-un pachet? Construim unul custom.",
+    "linkHref": "/contact"
+  }
+]
