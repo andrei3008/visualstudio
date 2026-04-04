@@ -4764,6 +4764,25 @@ form textarea:required:valid {
   background-size: cover;
   overflow: hidden;
 }
+.mxd-divider__css-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: dividerGradient 12s ease infinite;
+  border-radius: inherit;
+  z-index: 0;
+}
+@keyframes dividerGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+[data-bs-theme="light"] .mxd-divider__css-bg {
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe, #ddd6fe);
+  background-size: 400% 400%;
+  animation: dividerGradient 12s ease infinite;
+}
 .mxd-divider__video video {
   display: block;
   position: absolute;

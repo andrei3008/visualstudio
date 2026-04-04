@@ -1,7 +1,5 @@
 "use client";
 import AnimateRotation from "@/components/animation/AnimateRotation";
-import VideoParallax from "@/components/animation/VideoParallax";
-import VideoModal from "@/components/common/VideoModal";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -31,13 +29,7 @@ export default function ParallaxDivider({
       <div className="mxd-section padding-pre-title">
         <div className="mxd-container">
           <div className="mxd-divider">
-            <div className="mxd-divider__video">
-              <VideoParallax
-                className="video parallax-video"
-                src="/video/1920x1080_video-07.webm"
-                poster="/video/1920x1080_video-07.webp"
-              />
-            </div>
+            <div className="mxd-divider__css-bg" />
             <div className="mxd-divider__trigger">
               <a
                 onClick={handleClick}
@@ -117,13 +109,6 @@ export default function ParallaxDivider({
           </div>
         </div>
       </div>
-      {!scrollToContact && (
-        <VideoModal
-          videoSrc="https://vimeo.com/65036292"
-          open={isOpen}
-          setOpen={setIsOpen}
-        />
-      )}
     </>
   );
 }
