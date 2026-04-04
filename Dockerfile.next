@@ -27,6 +27,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV HOSTNAME="0.0.0.0"
 
+RUN apk add --no-cache openssl
+
 # Don't run as root
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs
@@ -37,14 +39,14 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 # Copy public folder
 COPY --from=builder /app/public ./public
-# Copy Prisma schema + migrations for prisma migrate deploy
+# Copy Prisma schema + migrations
 COPY --from=builder /app/prisma ./prisma
-# Copy the Prisma CLI (needed for migrate deploy)
-COPY --from=builder /app/node_modules/.bin/prisma ./node_modules/.bin/prisma
-COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+# Copy ALL of node_modules from builder (includes prisma CLI + engines)
+COPY --from=builder /app/node_modules ./node_modules
 
-# Create data directory for SQLite
-RUN mkdir -p /app/data && chown nextjs:nodejs /app/data
+# Create data directory for SQLite and fix permissions
+RUN mkdir -p /app/data && chown -R nextjs:nodejs /app/data && \
+    chown -R nextjs:nodejs /app/node_modules/.prisma
 
 USER nextjs
 
