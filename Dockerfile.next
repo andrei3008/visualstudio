@@ -45,7 +45,9 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/node_modules ./node_modules
 
 # Create data directory for SQLite and fix permissions
-RUN mkdir -p /app/data && chown -R nextjs:nodejs /app/data && \
+RUN mkdir -p /app/data /app/.next/cache && \
+    chown -R nextjs:nodejs /app/data && \
+    chown -R nextjs:nodejs /app/.next/cache && \
     chown -R nextjs:nodejs /app/node_modules/.prisma
 
 USER nextjs
