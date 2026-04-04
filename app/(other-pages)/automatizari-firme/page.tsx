@@ -81,8 +81,8 @@ export default function AutomatizariFirmePage() {
         <TrustSection />
         <Services
           items={servicePageGroups.automatizariFirme}
-          introTitle="Ce automatizăm în practică"
-          introText="Ne uităm la task-urile care consumă timp, creează erori sau depind prea mult de intervenție manuală și le transformăm în fluxuri mai rapide, mai clare și mai ușor de urmărit."
+          introTitle="Ce automatizăm"
+          introText="Eliminăm procesele care consumă timp și creăm fluxuri mai rapide, mai clare și mai ușor de urmărit."
         />
         <Pricing
           items={pricingAutomatizari}

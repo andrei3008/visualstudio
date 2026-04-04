@@ -14,7 +14,7 @@ export default function Pricing({
   return (
     <>
       {/* Section - Pricing Cards Start */}
-      <div className="mxd-section padding-grid-pre-mtext">
+      <div className="mxd-section padding-grid-pre-mtext" id="pricing">
         <div className="mxd-container grid-container">
           {/* Block - Pricing Cards Start */}
           <div className="mxd-block">
@@ -78,7 +78,7 @@ export default function Pricing({
                             )}
                             <div className="pricing-data__btnholder anim-uni-in-up">
                               <a
-                                className="btn btn-anim btn-default btn-opposite btn-fullwidth slide-right-up"
+                                className={`btn btn-anim btn-default ${p.best ? "btn-filled" : "btn-opposite"} btn-fullwidth slide-right-up`}
                                 href={p.btnHref || "contact.html"}
                               >
                                 <span className="btn-caption">

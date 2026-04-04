@@ -81,8 +81,8 @@ export default function SoftwareCustomFirmePage() {
         <TrustSection />
         <Services
           items={servicePageGroups.softwareCustomFirme}
-          introTitle="Ce tip de software custom construim"
-          introText="Pornim de la procesele tale reale, nu de la un template. Scopul este să simplificăm operațiunile, să conectăm datele și să îți dăm un instrument care se potrivește cu modul în care lucrează echipa."
+          introTitle="Ce construim"
+          introText="Aplicații și platforme pe măsură — simplifică operațiunile, conectează datele și se potrivesc modului tău de lucru."
         />
         <Pricing
           items={pricingSoftwareCustom}

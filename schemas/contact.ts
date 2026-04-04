@@ -5,7 +5,7 @@ export const contactSchema = z.object({
   Company: z.string().optional(),
   "E-mail": z.string().email("Completează un e-mail valid."),
   Phone: z.string().min(6, "Completează un număr de telefon."),
-  ProjectType: z.string().min(1, "Alege tipul proiectului."),
+  ProjectType: z.string().optional(),
   Budget: z.string().optional(),
   Message: z.string().min(10, "Spune-ne câteva detalii despre proiect."),
 });

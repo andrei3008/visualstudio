@@ -40,14 +40,11 @@ export default function HeroAutomatizariFirme() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        Automatizări care reduc munca manuală și pun ordine în
-                        operațiunile repetitive
+                        Procese manuale? Le automatizăm.
                       </h1>
                       <p className="inner-headline__text t-large t-bright loading__item">
-                        Dacă echipa pierde timp în emailuri, Excel-uri,
-                        formulare, copiere de date și follow-up manual,
-                        automatizarea poate elimina blocajele și poate crește
-                        viteza de lucru fără să mărești echipa.
+                        Conectăm tool-urile tale, eliminăm munca repetitivă și
+                        lăsăm echipa să se concentreze pe ce contează.
                       </p>
                       <div
                         className="loading__item"
@@ -59,16 +56,16 @@ export default function HeroAutomatizariFirme() {
                         }}
                       >
                         <AnimatedButton
-                          text="Discută despre proiectul tău"
-                          className="btn btn-anim btn-default btn-outline slide-right-up"
-                          href="/contact"
+                          text="Discută proiectul tău"
+                          className="btn btn-anim btn-default btn-filled slide-right-up"
+                          href="#contact-form"
                         >
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>
                         <AnimatedButton
                           text="Vezi ce automatizăm"
                           className="btn btn-anim btn-default btn-outline slide-right-up"
-                          href="/servicii"
+                          href="#services"
                         >
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>
@@ -81,7 +78,7 @@ export default function HeroAutomatizariFirme() {
                           opacity: 0.6,
                         }}
                       >
-                        Răspundem în maxim 48 de ore cu o propunere clară.
+                        Gratuit. Fără obligații. Răspundem în 24h.
                       </p>
                     </div>
                   </div>

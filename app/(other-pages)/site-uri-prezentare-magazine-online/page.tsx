@@ -83,8 +83,8 @@ export default function SiteuriPrezentareMagazinePage() {
         <TrustSection />
         <Services
           items={servicePageGroups.siteuriMagazine}
-          introTitle="Ce livrăm în proiectele web și eCommerce"
-          introText="Punem accent pe claritate, încredere și conversie. Scopul nu este doar un design frumos, ci un site care explică bine oferta, răspunde rapid și transformă vizitele în cereri sau vânzări."
+          introTitle="Ce livrăm"
+          introText="Site-uri și magazine online care arată bine, se încarcă rapid și aduc clienți."
         />
         <Pricing
           items={pricingSiteuri}

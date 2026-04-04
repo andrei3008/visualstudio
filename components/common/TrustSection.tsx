@@ -19,13 +19,12 @@ export default function TrustSection() {
             <div className="row gx-0 align-items-center">
               <div className="col-12 col-xl-5 mxd-grid-item no-margin anim-uni-in-up">
                 <h2 className="inner-headline__title headline-img-before headline-img-02">
-                  De ce Visual Studio Concept
+                  15 ani. 70+ proiecte. Răspundem în 48h.
                 </h2>
               </div>
               <div className="col-12 col-xl-7 mxd-grid-item no-margin anim-uni-in-up">
                 <p className="inner-headline__text t-large t-bright">
-                  Suntem un partener tehnic, nu o agenție care vinde iluzii.
-                  Construim soluții reale, livrăm la timp și răspundem prompt.
+                  Nu promitem ce nu putem face. Comunicăm clar, livrăm la timp.
                 </p>
               </div>
             </div>

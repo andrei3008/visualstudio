@@ -3,42 +3,42 @@
     "tag": "Quick win",
     "tagClass": "tag-default tag-accent",
     "title": "Automatizare simplă",
-    "descr": "Un flux automat cu 1-2 integrări: de exemplu formular → CRM + email de notificare. Rapid de implementat, impact imediat.",
+    "descr": "Un flux cu 1-2 integrări. Rapid de implementat, impact imediat.",
     "currency": "€",
     "amount": "500+",
     "period": "/automatizare",
-    "timeline": "Durată orientativă: 3-5 zile",
+    "timeline": "Livrat în 3-5 zile",
     "btnText": "Cere o estimare",
     "btnHref": "/contact",
     "features": [
-      "analiza procesului actual și recomandări",
+      "analiza procesului + recomandări",
       "conectarea tool-urilor existente",
       "testare și validare completă",
       "documentație scurtă de utilizare",
       "suport 14 zile după livrare"
     ],
-    "linkText": "Nu ești sigur ce poți automatiza? Hai să vorbim.",
+    "linkText": "Nu știi ce poți automatiza? Hai să vorbim.",
     "linkHref": "/contact"
   },
   {
     "tag": "Cel mai cerut",
     "tagClass": "tag-default tag-additional",
     "title": "Flux complex cu integrări",
-    "descr": "Automatizări cu logici condiționale, multiple integrări (CRM, ERP, email, WhatsApp), aprobări și rapoarte.",
+    "descr": "Logici condiționale, multiple integrări, aprobări și rapoarte.",
     "currency": "€",
     "amount": "3.000+",
     "period": "/proiect",
-    "timeline": "Durată orientativă: 2-4 săptămâni",
+    "timeline": "Livrat în 2-4 săptămâni",
     "btnText": "Discută proiectul",
     "btnHref": "/contact",
     "features": [
       "audit complet al proceselor interne",
-      "arhitectură flux cu logici condiționale",
-      "integrări multiple (CRM, ERP, email, WhatsApp)",
+      "arhitectură cu logici condiționale",
+      "integrări multiple (CRM, ERP, WhatsApp)",
       "dashboard vizibilitate + notificări",
       "suport prioritar 30 zile"
     ],
-    "linkText": "Vrei o ofertă pe nevoia ta exactă? Scrie-ne.",
+    "linkText": "Vrei o ofertă pe măsură? Scrie-ne.",
     "linkHref": "/contact",
     "best": true
   },
@@ -46,7 +46,7 @@
     "tag": "Abonament lunar",
     "tagClass": "tag-default",
     "title": "Suport + Optimizare continuă",
-    "descr": "Monitorizare, ajustări, noi automatizări și asistență tehnică pe termen lung — fără griji operaționale.",
+    "descr": "Monitorizare, ajustări, noi automatizări — fără griji operaționale.",
     "currency": "€",
     "amount": "200+",
     "period": "/lună",
@@ -56,11 +56,11 @@
     "features": [
       "monitorizare și intervenții lunare",
       "optimizări și ajustări iterative",
-      " noi automatizări incluse (până la 2/lună)",
+      "noi automatizări incluse (până la 2/lună)",
       "suport tehnic prioritar (răspuns în 24h)",
       "raport lunar de performanță"
     ],
-    "linkText": "Nu te încadrezi într-un pachet? Construim unul custom.",
+    "linkText": "Nu te încadrezi? Construim un pachet custom.",
     "linkHref": "/contact"
   }
 ]

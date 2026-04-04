@@ -40,14 +40,10 @@ export default function HeroSiteuriMagazine() {
                   <div className="mxd-block__content">
                     <div className="mxd-block__inner-headline">
                       <h1 className="inner-headline__title headline-img-before headline-img-04 loading__item">
-                        Site-uri de prezentare și magazine online care inspiră
-                        încredere și aduc cereri
+                        Site-ul tău, făcut să vândă
                       </h1>
                       <p className="inner-headline__text t-large t-bright loading__item">
-                        Dacă site-ul tău arată vechi, se încarcă greu sau nu
-                        explică clar ce oferi, pierzi lead-uri înainte să
-                        vorbești cu ele. Construim website-uri și magazine
-                        online rapide, curate și orientate pe conversie.
+                        Prezentare sau magazin online — rapid, modern, gata de clienți.
                       </p>
                       <div
                         className="loading__item"
@@ -59,16 +55,16 @@ export default function HeroSiteuriMagazine() {
                         }}
                       >
                         <AnimatedButton
-                          text="Discută despre proiectul tău"
-                          className="btn btn-anim btn-default btn-outline slide-right-up"
-                          href="/contact"
+                          text="Cere o estimare gratuită"
+                          className="btn btn-anim btn-default btn-filled slide-right-up"
+                          href="#contact-form"
                         >
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>
                         <AnimatedButton
-                          text="Vezi ce livrăm"
+                          text="Vezi prețuri"
                           className="btn btn-anim btn-default btn-outline slide-right-up"
-                          href="/servicii"
+                          href="#pricing"
                         >
                           <i className="ph-bold ph-arrow-up-right" />
                         </AnimatedButton>
@@ -81,7 +77,7 @@ export default function HeroSiteuriMagazine() {
                           opacity: 0.6,
                         }}
                       >
-                        Răspundem în maxim 48 de ore cu o propunere clară.
+                        Gratuit. Fără obligații. Răspundem în 24h.
                       </p>
                     </div>
                   </div>

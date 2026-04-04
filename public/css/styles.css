@@ -1029,6 +1029,46 @@ html[color-scheme="dark"] .mxd-promo__caption {
 /* Align header sections (title + description) across cards */
 @media only screen and (min-width: 1200px) {
   .mxd-pricing-table__inner .pricing-data__header {
-    min-height: 12rem;
+    min-height: 10rem;
   }
+}
+
+/* ===== Best Choice (Recommended) Card ===== */
+.mxd-pricing-table__inner.best-choice {
+  border-color: var(--pt-base, #c9a96e);
+  position: relative;
+  transform: scale(1.03);
+  box-shadow: 0 8px 32px rgba(201, 169, 110, 0.15);
+  z-index: 2;
+}
+.mxd-pricing-table__inner.best-choice::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 169, 110, 0.08) 0%,
+    rgba(201, 169, 110, 0.02) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.mxd-pricing-table__inner.best-choice > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Filled CTA Button (Hero) ===== */
+.btn-filled {
+  background-color: var(--base-opp) !important;
+  border-color: var(--base-opp) !important;
+  color: var(--t-opp-bright) !important;
+}
+.btn-filled .btn-caption,
+.btn-filled i {
+  color: var(--t-opp-bright) !important;
+}
+.no-touch .btn-filled:hover {
+  opacity: 0.85;
 }

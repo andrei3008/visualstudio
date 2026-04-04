@@ -3,42 +3,42 @@
     "tag": "Start",
     "tagClass": "tag-default tag-accent",
     "title": "MVP sau aplicație simplă",
-    "descr": "O aplicație internă sau un MVP funcțional construit rapid, cu funcțiile esențiale necesare pentru a valida și porni.",
+    "descr": "Aplicație funcțională construită rapid, cu ce e esențial pentru a valida și porni.",
     "currency": "€",
     "amount": "3.000+",
     "period": "/proiect",
-    "timeline": "Durată orientativă: 4-8 săptămâni",
+    "timeline": "Livrat în 4-8 săptămâni",
     "btnText": "Cere o estimare",
     "btnHref": "/contact",
     "features": [
-      "analiză cerințe și arhitectură funcțională",
+      "analiză cerințe + arhitectură funcțională",
       "frontend și backend integrate",
       "autentificare și roluri de bază",
       "deploy pe infrastructura ta",
       "suport 30 zile după lansare"
     ],
-    "linkText": "Ai nevoie de altceva? Hai să discutăm.",
+    "linkText": "Altceva? Hai să discutăm.",
     "linkHref": "/contact"
   },
   {
     "tag": "Cel mai cerut",
     "tagClass": "tag-default tag-additional",
     "title": "Platformă completă",
-    "descr": "Aplicație complexă cu multiple module, integrări, dashboard-uri, raportare și fluxuri custom pentru operațiunile tale.",
+    "descr": "Aplicație complexă cu module, integrări, dashboard-uri și fluxuri custom.",
     "currency": "€",
     "amount": "7.000+",
     "period": "/proiect",
-    "timeline": "Durată orientativă: 3-6 luni",
+    "timeline": "Livrat în 3-6 luni",
     "btnText": "Discută proiectul",
     "btnHref": "/contact",
     "features": [
-      "audit procese + arhitectură tehnică completă",
+      "audit procese + arhitectură completă",
       "module multiple cu fluxuri custom",
       "integrări API cu sistemele existente",
       "dashboard-uri, rapoarte și vizibilitate",
       "suport prioritar + demo-uri regulate"
     ],
-    "linkText": "Vrei o ofertă pe nevoia ta exactă? Scrie-ne.",
+    "linkText": "Vrei o ofertă pe măsură? Scrie-ne.",
     "linkHref": "/contact",
     "best": true
   },
@@ -46,7 +46,7 @@
     "tag": "Abonament lunar",
     "tagClass": "tag-default",
     "title": "Mentenanță + Evoluție",
-    "descr": "Ne ocupăm de stabilitate, securitate și dezvoltare continuă — aplicația ta crește fără să devină blocaj tehnic.",
+    "descr": "Stabilitate, securitate și dezvoltare continuă — aplicația crește fără blocaje.",
     "currency": "€",
     "amount": "300+",
     "period": "/lună",
@@ -54,13 +54,13 @@
     "btnText": "Solicită abonament",
     "btnHref": "/contact",
     "features": [
-      "monitorizare, backup și actualizări de securitate",
-      "rezolvare bug-uri și intervenții urgente",
+      "monitorizare, backup și actualizări",
+      "rezolvare bug-uri + intervenții urgente",
       "ore de dezvoltare incluse (până la 4/lună)",
       "suport tehnic prioritar (răspuns în 24h)",
       "raport lunar + plan de evoluție"
     ],
-    "linkText": "Nu te încadrezi într-un pachet? Construim unul custom.",
+    "linkText": "Nu te încadrezi? Construim un pachet custom.",
     "linkHref": "/contact"
   }
 ]

@@ -5,7 +5,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AnimatedButton from "@/components/animation/AnimatedButton";
-import { trackLead } from "@/lib/marketing";
 import { useState, useEffect, useCallback, useRef } from "react";
 
 // ── Rate-limiting helpers ──────────────────────────────────────────
@@ -135,9 +134,6 @@ export default function ContactForm() {
           name: data.Name,
           email: data["E-mail"],
           phone: data.Phone,
-          company: data.Company,
-          projectType: data.ProjectType,
-          budget: data.Budget,
           message: data.Message,
         }),
       });
@@ -147,11 +143,6 @@ export default function ContactForm() {
       }
 
       recordSubmission();
-      trackLead({
-        projectType: data.ProjectType,
-        budget: data.Budget,
-        source: "contact_form",
-      });
       reset();
       toast.success("Mesaj trimis. Revenim cât mai curând.");
       startCooldown();
@@ -244,15 +235,6 @@ export default function ContactForm() {
                                 )}
                               </div>
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <label htmlFor="contact-company" className="sr-only">Companie / brand</label>
-                                <input
-                                  id="contact-company"
-                                  type="text"
-                                  placeholder="Companie / brand"
-                                  {...register("Company")}
-                                />
-                              </div>
-                              <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
                                 <label htmlFor="contact-email" className="sr-only">E-mail</label>
                                 <input
                                   id="contact-email"
@@ -280,69 +262,11 @@ export default function ContactForm() {
                                   </p>
                                 )}
                               </div>
-                              <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <label htmlFor="contact-project-type" className="sr-only">Tip proiect</label>
-                                <select
-                                  id="contact-project-type"
-                                  defaultValue=""
-                                  {...register("ProjectType")}
-                                >
-                                  <option value="" disabled>
-                                    Tip proiect*
-                                  </option>
-                                  <option value="site-prezentare">
-                                    Site de prezentare
-                                  </option>
-                                  <option value="magazin-online">
-                                    Magazin online
-                                  </option>
-                                  <option value="automatizare">
-                                    Automatizare
-                                  </option>
-                                  <option value="software-custom">
-                                    Software custom
-                                  </option>
-                                  <option value="altceva">
-                                    Alt tip de proiect
-                                  </option>
-                                </select>
-                                {errors.ProjectType && (
-                                  <p className="error-message">
-                                    {errors.ProjectType.message}
-                                  </p>
-                                )}
-                              </div>
-                              <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <label htmlFor="contact-budget" className="sr-only">Buget orientativ</label>
-                                <select id="contact-budget" defaultValue="" {...register("Budget")}>
-                                  <option value="" disabled>
-                                    Buget orientativ
-                                  </option>
-                                  <option value="sub-1000">
-                                    Sub 1.000 EUR
-                                  </option>
-                                  <option value="1000-3000">
-                                    1.000 - 3.000 EUR
-                                  </option>
-                                  <option value="3000-7000">
-                                    3.000 - 7.000 EUR
-                                  </option>
-                                  <option value="7000-15000">
-                                    7.000 - 15.000 EUR
-                                  </option>
-                                  <option value="peste-15000">
-                                    Peste 15.000 EUR
-                                  </option>
-                                  <option value="neclar">
-                                    Nu știu încă
-                                  </option>
-                                </select>
-                              </div>
                               <div className="col-12 mxd-grid-item anim-uni-in-up">
                                 <label htmlFor="contact-message" className="sr-only">Mesaj</label>
                                 <textarea
                                   id="contact-message"
-                                  placeholder="Spune-ne pe scurt ce vrei să construim, ce obiectiv ai și în cât timp ai vrea să pornim*"
+                                  placeholder="Spune-ne pe scurt ce vrei să construim*"
                                   {...register("Message")}
                                 />
                                 {errors.Message && (
@@ -352,15 +276,11 @@ export default function ContactForm() {
                                 )}
                               </div>
                               <div className="col-12 mxd-grid-item anim-uni-in-up">
-                                <p className="contact-form__hint t-small">
-                                  Cu cât ne dai mai mult context, cu atât îți
-                                  putem răspunde mai clar și mai rapid.
-                                </p>
                                 <AnimatedButton
                                   text="Trimite cererea"
                                   position={"next"}
                                   as={"button"}
-                                  className="btn btn-anim btn-default btn-large btn-opposite slide-right-up"
+                                  className="btn btn-anim btn-default btn-large btn-filled slide-right-up"
                                   type="submit"
                                   disabled={isDisabled}
                                 >
