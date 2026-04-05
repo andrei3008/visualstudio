@@ -2,11 +2,15 @@ import Cta from "@/components/common/Cta";
 import LandingFaq from "@/components/common/LandingFaq";
 import TrustSection from "@/components/common/TrustSection";
 import Footer from "@/components/footers/Footer";
+import HowItWorks from "@/components/landing/HowItWorks";
+import PainPoints from "@/components/landing/PainPoints";
+import Testimonials from "@/components/landing/Testimonials";
 import ContactForm from "@/components/other-pages/contact/ContactForm";
 import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
 import Pricing from "@/components/other-pages/Pricing";
 import Services from "@/components/other-pages/services/Services";
 import HeroSiteuriMagazine from "@/components/service-heroes/HeroSiteuriMagazine";
+import { landingContent } from "@/data/landing-content";
 import { siteuriMagazineFaqs } from "@/data/landing-faqs";
 import pricingSiteuri from "@/data/pricing-siteuri.json";
 import { servicePageGroups } from "@/data/service-page-groups";
@@ -65,6 +69,8 @@ const serviceSchema = {
 };
 
 export default function SiteuriPrezentareMagazinePage() {
+  const content = landingContent.siteuriMagazine;
+
   return (
     <>
       <main
@@ -79,17 +85,24 @@ export default function SiteuriPrezentareMagazinePage() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
-        <HeroSiteuriMagazine />
+        <HeroSiteuriMagazine stats={content.heroStats} />
+        <PainPoints items={content.painPoints} />
         <TrustSection />
+        <Testimonials items={content.testimonials} />
         <Services
           items={servicePageGroups.siteuriMagazine}
-          introTitle="Ce livrăm"
-          introText="Site-uri și magazine online care arată bine, se încarcă rapid și aduc clienți."
+          introTitle="Ce construim"
+          introText="Site-uri și magazine online care arată profesional, se încarcă rapid și aduc lead-uri."
+        />
+        <HowItWorks
+          items={content.steps}
+          sectionTitle="Cum funcționează"
+          sectionSubtitle="De la idee la site live — proces clar, fără surprize."
         />
         <Pricing
           items={pricingSiteuri}
           sectionLabel="Prețuri"
-          sectionTitle="Investiția pentru site-ul sau magazinul tău online"
+          sectionTitle="Investiția pentru site-ul tău"
         />
         <LandingFaq items={siteuriMagazineFaqs} />
         <ParallaxDivider scrollToContact />

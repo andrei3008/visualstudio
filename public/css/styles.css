@@ -1072,3 +1072,166 @@ html[color-scheme="dark"] .mxd-promo__caption {
 .no-touch .btn-filled:hover {
   opacity: 0.85;
 }
+
+/* ===== Landing Page Components ===== */
+
+/* Pain Points */
+.landing-pain-point {
+  padding: 2rem 1.5rem;
+  height: 100%;
+}
+.landing-pain-point__icon {
+  font-size: 2rem;
+  color: var(--accent, #c9a96e);
+  margin-bottom: 1rem;
+}
+.landing-pain-point__icon i {
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  text-align: center;
+  background: rgba(201, 169, 110, 0.1);
+  border-radius: 0.75rem;
+}
+.landing-pain-point__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.landing-pain-point__desc {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+/* Testimonials */
+.landing-testimonial {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.landing-testimonial__stars {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--accent, #c9a96e);
+}
+.landing-testimonial__stars .star-empty {
+  opacity: 0.2;
+}
+.landing-testimonial__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+.landing-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.landing-testimonial__avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--accent, #c9a96e);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.landing-testimonial__name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+.landing-testimonial__role {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-bottom: 0;
+}
+
+/* How It Works - Steps */
+.landing-step {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+.landing-step__number {
+  font-size: 4rem;
+  font-weight: 800;
+  opacity: 0.06;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  line-height: 1;
+}
+.landing-step__icon {
+  font-size: 2rem;
+  color: var(--accent, #c9a96e);
+  margin-bottom: 1rem;
+}
+.landing-step__icon i {
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  text-align: center;
+  background: rgba(201, 169, 110, 0.1);
+  border-radius: 50%;
+}
+.landing-step__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.landing-step__desc {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+.landing-step__connector {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .landing-step__connector {
+    display: block;
+    position: absolute;
+    top: 3.5rem;
+    right: -0.5rem;
+    width: 1rem;
+    height: 2px;
+    background: rgba(201, 169, 110, 0.3);
+  }
+}
+
+/* Hero Stats */
+.landing-hero-stats__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.landing-hero-stats__value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent, #c9a96e);
+}
+.landing-hero-stats__label {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+.landing-hero-stats__separator {
+  color: var(--accent, #c9a96e);
+  opacity: 0.3;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-left: 1rem;
+}
+

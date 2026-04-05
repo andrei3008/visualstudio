@@ -2,11 +2,15 @@ import Cta from "@/components/common/Cta";
 import LandingFaq from "@/components/common/LandingFaq";
 import TrustSection from "@/components/common/TrustSection";
 import Footer from "@/components/footers/Footer";
+import HowItWorks from "@/components/landing/HowItWorks";
+import PainPoints from "@/components/landing/PainPoints";
+import Testimonials from "@/components/landing/Testimonials";
 import ContactForm from "@/components/other-pages/contact/ContactForm";
 import ParallaxDivider from "@/components/other-pages/services/ParallaxDivider";
 import Pricing from "@/components/other-pages/Pricing";
 import Services from "@/components/other-pages/services/Services";
 import HeroAutomatizariFirme from "@/components/service-heroes/HeroAutomatizariFirme";
+import { landingContent } from "@/data/landing-content";
 import { automatizariFaqs } from "@/data/landing-faqs";
 import pricingAutomatizari from "@/data/pricing-automatizari.json";
 import { servicePageGroups } from "@/data/service-page-groups";
@@ -34,6 +38,8 @@ export const metadata: Metadata = {
     ],
   },
 };
+
+const content = landingContent.automatizariFirme;
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -77,12 +83,19 @@ export default function AutomatizariFirmePage() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
-        <HeroAutomatizariFirme />
+        <HeroAutomatizariFirme stats={content.heroStats} />
+        <PainPoints items={content.painPoints} />
         <TrustSection />
+        <Testimonials items={content.testimonials} />
         <Services
           items={servicePageGroups.automatizariFirme}
           introTitle="Ce automatizăm"
           introText="Eliminăm procesele care consumă timp și creăm fluxuri mai rapide, mai clare și mai ușor de urmărit."
+        />
+        <HowItWorks
+          items={content.steps}
+          sectionTitle="Cum funcționează"
+          sectionSubtitle="De la discuție la automatizări care rulează singure — în 4 pași simpli."
         />
         <Pricing
           items={pricingAutomatizari}
