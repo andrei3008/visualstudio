@@ -3,6 +3,7 @@ import LandingFaq from "@/components/common/LandingFaq";
 import TrustSection from "@/components/common/TrustSection";
 import Footer from "@/components/footers/Footer";
 import HowItWorks from "@/components/landing/HowItWorks";
+import MobileStickyCta from "@/components/landing/MobileStickyCta";
 import PainPoints from "@/components/landing/PainPoints";
 import Testimonials from "@/components/landing/Testimonials";
 import ContactForm from "@/components/other-pages/contact/ContactForm";
@@ -84,30 +85,51 @@ export default function SoftwareCustomFirmePage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
         <HeroSoftwareCustomFirme stats={content.heroStats} />
-        <PainPoints items={content.painPoints} />
-        <TrustSection />
-        <Testimonials items={content.testimonials} />
-        <Services
-          items={servicePageGroups.softwareCustomFirme}
-          introTitle="Ce construim"
-          introText="Aplicații și platforme pe măsură — simplifică operațiunile, conectează datele și se potrivesc modului tău de lucru."
-        />
-        <HowItWorks
-          items={content.steps}
-          sectionTitle="Cum funcționează"
-          sectionSubtitle="De la audit la platformă live — iterativ, transparent, fără surprize."
-        />
-        <Pricing
-          items={pricingSoftwareCustom}
-          sectionLabel="Prețuri"
-          sectionTitle="Investiția pentru platforma ta software"
-        />
-        <LandingFaq items={softwareCustomFaqs} />
-        <ParallaxDivider scrollToContact />
-        <ContactForm />
-        <Cta />
+        <div className="landing-section-alt landing-section-alt--even">
+          <PainPoints items={content.painPoints} />
+        </div>
+        <div className="landing-section-alt">
+          <TrustSection />
+        </div>
+        <div className="landing-section-alt landing-section-alt--even">
+          <Testimonials items={content.testimonials} />
+        </div>
+        <div className="landing-section-alt">
+          <Services
+            items={servicePageGroups.softwareCustomFirme}
+            introTitle="Ce construim"
+            introText="Aplicații și platforme pe măsură — simplifică operațiunile, conectează datele și se potrivesc modului tău de lucru."
+          />
+        </div>
+        <div className="landing-section-alt landing-section-alt--even">
+          <HowItWorks
+            items={content.steps}
+            sectionTitle="Cum funcționează"
+            sectionSubtitle="De la audit la platformă live — iterativ, transparent, fără surprize."
+          />
+        </div>
+        <div className="landing-section-alt">
+          <Pricing
+            items={pricingSoftwareCustom}
+            sectionLabel="Prețuri"
+            sectionTitle="Investiția pentru platforma ta software"
+          />
+        </div>
+        <div className="landing-section-alt landing-section-alt--even">
+          <LandingFaq items={softwareCustomFaqs} />
+        </div>
+        <div className="landing-section-alt">
+          <ParallaxDivider scrollToContact />
+        </div>
+        <div className="landing-section-alt landing-section-alt--even">
+          <ContactForm />
+        </div>
+        <div className="landing-section-alt">
+          <Cta />
+        </div>
       </main>
       <Footer />
+      <MobileStickyCta />
     </>
   );
 }

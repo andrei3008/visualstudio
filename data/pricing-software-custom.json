@@ -9,16 +9,16 @@
     "period": "/proiect",
     "timeline": "Livrat în 4-8 săptămâni",
     "btnText": "Cere o estimare",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
-      "analiză cerințe + arhitectură funcțională",
+      "Analiză cerințe + arhitectură funcțională",
       "frontend și backend integrate",
       "autentificare și roluri de bază",
       "deploy pe infrastructura ta",
       "suport 30 zile după lansare"
     ],
     "linkText": "Altceva? Hai să discutăm.",
-    "linkHref": "/contact"
+    "linkHref": "#contact-form"
   },
   {
     "tag": "Cel mai cerut",
@@ -30,7 +30,7 @@
     "period": "/proiect",
     "timeline": "Livrat în 3-6 luni",
     "btnText": "Discută proiectul",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
       "audit procese + arhitectură completă",
       "module multiple cu fluxuri custom",
@@ -39,7 +39,7 @@
       "suport prioritar + demo-uri regulate"
     ],
     "linkText": "Vrei o ofertă pe măsură? Scrie-ne.",
-    "linkHref": "/contact",
+    "linkHref": "#contact-form",
     "best": true
   },
   {
@@ -52,7 +52,7 @@
     "period": "/lună",
     "timeline": "Include mentenanță, suport și ore de dezvoltare",
     "btnText": "Solicită abonament",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
       "monitorizare, backup și actualizări",
       "rezolvare bug-uri + intervenții urgente",
@@ -61,6 +61,6 @@
       "raport lunar + plan de evoluție"
     ],
     "linkText": "Nu te încadrezi? Construim un pachet custom.",
-    "linkHref": "/contact"
+    "linkHref": "#contact-form"
   }
 ]

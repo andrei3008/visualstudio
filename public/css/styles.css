@@ -1235,3 +1235,85 @@ html[color-scheme="dark"] .mxd-promo__caption {
   margin-left: 1rem;
 }
 
+/* ===== Alternating Section Backgrounds (Landing Pages) ===== */
+.landing-section-alt {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.landing-section-alt--even {
+  background-color: rgba(22, 22, 22, 0.02);
+}
+
+html[color-scheme="dark"] .landing-section-alt--even {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ===== Mobile Sticky CTA ===== */
+.vsc-mobile-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  padding: 0.8rem 1rem;
+  background: rgba(250, 247, 246, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  border-top: 1px solid rgba(22, 22, 22, 0.06);
+}
+
+.vsc-mobile-sticky-cta--visible {
+  transform: translateY(0);
+}
+
+html[color-scheme="dark"] .vsc-mobile-sticky-cta {
+  background: rgba(22, 22, 22, 0.92);
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+.vsc-mobile-sticky-cta__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  min-height: 4.4rem;
+  padding: 0 2rem;
+  border: none;
+  border-radius: 999px;
+  background: #161616;
+  color: #faf7f6;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.vsc-mobile-sticky-cta__btn:hover {
+  opacity: 0.88;
+}
+
+html[color-scheme="dark"] .vsc-mobile-sticky-cta__btn {
+  background: #faf7f6;
+  color: #161616;
+}
+
+.vsc-mobile-sticky-cta__btn i {
+  font-size: 1.2rem;
+}
+
+/* Only show on mobile */
+@media (min-width: 768px) {
+  .vsc-mobile-sticky-cta {
+    display: none;
+  }
+}
+

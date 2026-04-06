@@ -9,7 +9,7 @@
     "period": "/proiect",
     "timeline": "2-4 săptămâni",
     "btnText": "Cere estimare",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
       "design și dezvoltare personalizată",
       "responsive + optimizare mobil",
@@ -18,7 +18,7 @@
       "suport 30 zile după lansare"
     ],
     "linkText": "Altă structură? Hai să discutăm.",
-    "linkHref": "/contact"
+    "linkHref": "#contact-form"
   },
   {
     "tag": "Cel mai cerut",
@@ -30,7 +30,7 @@
     "period": "/proiect",
     "timeline": "4-8 săptămâni",
     "btnText": "Discută proiectul",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
       "design custom + UX optimizat",
       "catalog, coș, checkout, plăți online",
@@ -39,7 +39,7 @@
       "training admin + suport 30 zile"
     ],
     "linkText": "Vrei ofertă pe măsură? Scrie-ne.",
-    "linkHref": "/contact",
+    "linkHref": "#contact-form",
     "best": true
   },
   {
@@ -52,7 +52,7 @@
     "period": "/lună",
     "timeline": "Hosting, SSL, backup, monitorizare",
     "btnText": "Solicită abonament",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
       "hosting performanță + SSL",
       "backup zilnic + monitorizare uptime",
@@ -61,6 +61,6 @@
       "raport lunar de performanță"
     ],
     "linkText": "Nu te încadrezi? Construim un pachet.",
-    "linkHref": "/contact"
+    "linkHref": "#contact-form"
   }
 ]

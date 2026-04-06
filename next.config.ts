@@ -7,6 +7,17 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Landing pages for paid ads - short cache so changes show quickly
+        source:
+          "/(site-uri-prezentare-magazine-online|automatizari-firme|software-custom-firme)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
           {

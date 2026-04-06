@@ -9,7 +9,7 @@
     "period": "/automatizare",
     "timeline": "Livrat în 3-5 zile",
     "btnText": "Cere o estimare",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
       "analiza procesului + recomandări",
       "conectarea tool-urilor existente",
@@ -18,7 +18,7 @@
       "suport 14 zile după livrare"
     ],
     "linkText": "Nu știi ce poți automatiza? Hai să vorbim.",
-    "linkHref": "/contact"
+    "linkHref": "#contact-form"
   },
   {
     "tag": "Cel mai cerut",
@@ -30,7 +30,7 @@
     "period": "/proiect",
     "timeline": "Livrat în 2-4 săptămâni",
     "btnText": "Discută proiectul",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
       "audit complet al proceselor interne",
       "arhitectură cu logici condiționale",
@@ -39,7 +39,7 @@
       "suport prioritar 30 zile"
     ],
     "linkText": "Vrei o ofertă pe măsură? Scrie-ne.",
-    "linkHref": "/contact",
+    "linkHref": "#contact-form",
     "best": true
   },
   {
@@ -52,7 +52,7 @@
     "period": "/lună",
     "timeline": "Include monitorizare, ajustări și suport prioritar",
     "btnText": "Solicită abonament",
-    "btnHref": "/contact",
+    "btnHref": "#contact-form",
     "features": [
       "monitorizare și intervenții lunare",
       "optimizări și ajustări iterative",
@@ -61,6 +61,6 @@
       "raport lunar de performanță"
     ],
     "linkText": "Nu te încadrezi? Construim un pachet custom.",
-    "linkHref": "/contact"
+    "linkHref": "#contact-form"
   }
 ]
