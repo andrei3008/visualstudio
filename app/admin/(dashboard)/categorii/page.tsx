@@ -8,7 +8,7 @@ interface Category {
   slug: string;
   description: string;
   color: string;
-  _count?: { posts: number };
+  postCount?: number;
 }
 
 const emptyForm = { name: "", slug: "", description: "", color: "#7c6bc4" };
@@ -292,7 +292,7 @@ export default function CategoriesPage() {
                   </td>
                   <td>
                     <span className="badge">
-                      {cat._count?.posts ?? 0}
+                      {cat.postCount ?? 0}
                     </span>
                   </td>
                   <td>

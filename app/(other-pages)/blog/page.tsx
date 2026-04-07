@@ -68,7 +68,7 @@ export default async function BlogPage({
   const categorySlug = params.category || undefined;
 
   const [{ posts, totalPages }, categories] = await Promise.all([
-    getPublishedPosts(currentPage, 9, categorySlug),
+    getPublishedPosts(currentPage, 5, categorySlug),
     getAllCategories(),
   ]);
 

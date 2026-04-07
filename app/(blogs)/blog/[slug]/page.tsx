@@ -71,7 +71,9 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const categoryIds = post.categories.map((c) => c.id);
   const relatedPosts = await getRelatedPosts(post.id, categoryIds, 3);
-  const contentHtml = await marked(post.content || "");
+  // Strip leading H1 from markdown — the title is already rendered in the headline section
+  const strippedContent = (post.content || "").replace(/^#\s+.+\n*/m, "");
+  const contentHtml = await marked(strippedContent);
 
   return (
     <>
@@ -174,10 +176,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
                     </a>
                     <div className="mxd-article-author__info">
                       <h5 className="mxd-article-author__name">
-                        <a href="#">{post.authorName}</a>
-                        <small className="mxd-article-author__position">
-                          Visual Studio Concept
-                        </small>
+                        <a href="#">{post.authorName || "Visual Studio Concept"}</a>
                       </h5>
                     </div>
                   </div>
