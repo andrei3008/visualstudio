@@ -18,6 +18,27 @@ async function main() {
   });
 
   console.log(`Admin user created: ${admin.email}`);
+
+  const categories = [
+    { name: "Dezvoltare", slug: "dezvoltare", description: "Articole despre dezvoltare software și programare" },
+    { name: "Automatizare", slug: "automatizare", description: "Automatizări și optimizări de procese" },
+    { name: "AI", slug: "ai", description: "Inteligentă artificială și machine learning" },
+    { name: "Produs Digital", slug: "produs-digital", description: "Crearea și lansarea de produse digitale" },
+    { name: "DevOps", slug: "devops", description: "DevOps, CI/CD și infrastructură" },
+    { name: "UX/UI", slug: "ux-ui", description: "Design UX/UI și experiența utilizatorului" },
+    { name: "Tendințe", slug: "tendinte", description: "Tendințe și noutăți din industria tech" },
+    { name: "Studii de caz", slug: "studii-de-caz", description: "Studii de caz și proiecte realizate" },
+  ];
+
+  for (const cat of categories) {
+    await prisma.category.upsert({
+      where: { slug: cat.slug },
+      update: {},
+      create: cat,
+    });
+  }
+
+  console.log(`Seeded ${categories.length} categories`);
 }
 
 main()
