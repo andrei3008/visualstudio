@@ -1,0 +1,15 @@
+{
+  "timestamp": "20260407T100111Z",
+  "total_posts": 12,
+  "failures": 0,
+  "success_rate": 1.0,
+  "channels": [
+    "blog",
+    "x",
+    "instagram",
+    "youtube_shorts"
+  ],
+  "posts_per_channel": 3,
+  "mode": "dry-run",
+  "max_retries": 2
+}

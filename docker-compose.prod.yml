@@ -1,36 +1,24 @@
 # ============================================================================
-# DOCKER COMPOSE - PRODUCTION
+# DOCKER COMPOSE - PRODUCTION LOCAL
 # ============================================================================
-# Această configurație este pentru PRODUCȚIE (Portainer)
-#
-# Porturi:
-#   - Web: http://localhost:8007
+# Port: http://localhost:8008
 #
 # Comenzi:
 #   docker compose -f docker-compose.prod.yml up -d --build
+#   docker compose -f docker-compose.prod.yml down
+#   docker compose -f docker-compose.prod.yml logs -f web
 # ============================================================================
 
+name: visualstudio-prod
+
 services:
-  web:
-    image: ghcr.io/andrei3008/visualstudio:latest
-    container_name: visualstudio-web
+  web-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.next
     ports:
       - "8007:3000"
-    restart: unless-stopped
     environment:
       - NODE_ENV=production
-      - HOSTNAME=0.0.0.0
-      - DATABASE_URL=file:/app/data/prod.db
-      - AUTH_SECRET=${AUTH_SECRET}
-      - AUTH_URL=${AUTH_URL}
-    volumes:
-      - visualstudio-data:/app/data
-    networks:
-      - visualstudio-net
-
-networks:
-  visualstudio-net:
-    driver: bridge
-
-volumes:
-  visualstudio-data:
+    stdin_open: true
+    tty: true

@@ -268,6 +268,8 @@ export default function useGsapScrollScaleAnimations() {
       const loadingItems = loadingWrap.querySelectorAll(".loading__item");
       const fadeInItems = document.querySelectorAll(".loading__fade");
 
+      console.log("[GSAP] loading-wrap found. Items:", loadingItems.length, "Fade items:", fadeInItems.length);
+
       gsap.set(loadingItems, { opacity: 0 });
       gsap.to(loadingItems, {
         duration: 1.1,
@@ -277,6 +279,7 @@ export default function useGsapScrollScaleAnimations() {
         opacity: 1,
         delay: 0.8,
         stagger: 0.08,
+        onComplete: () => console.log("[GSAP] loading__item animation COMPLETE"),
       });
 
       gsap.set(fadeInItems, { opacity: 0 });
@@ -285,7 +288,10 @@ export default function useGsapScrollScaleAnimations() {
         ease: "none",
         opacity: 1,
         delay: 1.2,
+        onComplete: () => console.log("[GSAP] loading__fade animation COMPLETE"),
       });
+    } else {
+      console.warn("[GSAP] NO .loading-wrap found in DOM!");
     }
 
     return () => {

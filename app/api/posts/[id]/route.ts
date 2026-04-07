@@ -65,7 +65,7 @@ export async function PUT(
     body = postUpdateSchema.parse(await request.json());
   } catch (e) {
     if (e instanceof z.ZodError) {
-      return NextResponse.json({ error: "Validation failed", details: e.errors }, { status: 400 });
+      return NextResponse.json({ error: "Validation failed", details: e.issues }, { status: 400 });
     }
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }

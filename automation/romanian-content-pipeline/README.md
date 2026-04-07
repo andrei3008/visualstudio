@@ -27,8 +27,16 @@ Acceptance gate for dry-run output:
 
 ## Run
 
+From the repository root:
+
 ```bash
 python3 vis_pipeline.py --workspace .
+```
+
+Or call the package script directly from the repository root:
+
+```bash
+python3 automation/romanian-content-pipeline/vis_pipeline.py --workspace .
 ```
 
 Dry-run validation is deterministic by default. To exercise retry handling locally, set:
