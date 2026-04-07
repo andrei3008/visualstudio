@@ -46,7 +46,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
+  // Skip static generation when DATABASE_URL is unavailable (e.g. CI)
+  if (!process.env.DATABASE_URL) return [];
   const slugs = await getAllPublishedSlugs();
   return slugs.map((s) => ({ slug: s.slug }));
 }
