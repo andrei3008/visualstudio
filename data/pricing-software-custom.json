@@ -9,7 +9,7 @@
     "period": "/proiect",
     "timeline": "Livrat în 4-8 săptămâni",
     "btnText": "Cere o estimare",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "Analiză cerințe + arhitectură funcțională",
       "frontend și backend integrate",
@@ -30,7 +30,7 @@
     "period": "/proiect",
     "timeline": "Livrat în 3-6 luni",
     "btnText": "Discută proiectul",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "audit procese + arhitectură completă",
       "module multiple cu fluxuri custom",
@@ -52,7 +52,7 @@
     "period": "/lună",
     "timeline": "Include mentenanță, suport și ore de dezvoltare",
     "btnText": "Solicită abonament",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "monitorizare, backup și actualizări",
       "rezolvare bug-uri + intervenții urgente",

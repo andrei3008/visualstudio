@@ -9,7 +9,7 @@
     "period": "/automatizare",
     "timeline": "Livrat în 3-5 zile",
     "btnText": "Cere o estimare",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "analiza procesului + recomandări",
       "conectarea tool-urilor existente",
@@ -30,7 +30,7 @@
     "period": "/proiect",
     "timeline": "Livrat în 2-4 săptămâni",
     "btnText": "Discută proiectul",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "audit complet al proceselor interne",
       "arhitectură cu logici condiționale",
@@ -52,7 +52,7 @@
     "period": "/lună",
     "timeline": "Include monitorizare, ajustări și suport prioritar",
     "btnText": "Solicită abonament",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "monitorizare și intervenții lunare",
       "optimizări și ajustări iterative",

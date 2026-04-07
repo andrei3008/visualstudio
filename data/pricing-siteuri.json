@@ -9,7 +9,7 @@
     "period": "/proiect",
     "timeline": "2-4 săptămâni",
     "btnText": "Cere estimare",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "design și dezvoltare personalizată",
       "responsive + optimizare mobil",
@@ -30,7 +30,7 @@
     "period": "/proiect",
     "timeline": "4-8 săptămâni",
     "btnText": "Discută proiectul",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "design custom + UX optimizat",
       "catalog, coș, checkout, plăți online",
@@ -52,7 +52,7 @@
     "period": "/lună",
     "timeline": "Hosting, SSL, backup, monitorizare",
     "btnText": "Solicită abonament",
-    "btnHref": "#contact-form",
+    "btnHref": "/contact",
     "features": [
       "hosting performanță + SSL",
       "backup zilnic + monitorizare uptime",
