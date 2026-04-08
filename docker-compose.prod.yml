@@ -16,6 +16,8 @@ services:
     environment:
       - NODE_ENV=production
       - DATABASE_URL=file:/app/data/dev.db
+      - AUTH_SECRET=${AUTH_SECRET:-change-me-to-a-long-random-string-at-least-32-chars}
+      - AUTH_TRUST_HOST=true
     volumes:
       - vs-data:/app/data
     restart: unless-stopped
