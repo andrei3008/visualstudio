@@ -1,0 +1,25 @@
+# ============================================================================
+# DOCKER COMPOSE - PORTAINER DEPLOY
+# ============================================================================
+# Trage imaginea gata construita din GHCR (fara build local).
+# In Portainer: Stacks > Add stack > paste this content > Deploy
+#
+# NOTA: Nu pune "build:" aici - Portainer va incerca sa faca build local
+#       si va esenta cu eroarea BuildKit/http2.
+# ============================================================================
+
+name: visualstudio-prod
+
+services:
+  web-prod:
+    image: ghcr.io/andrei3008/visualstudio:latest
+    ports:
+      - "8007:3000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - vs-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  vs-data:
