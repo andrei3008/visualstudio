@@ -18,6 +18,7 @@ services:
       - DATABASE_URL=file:/app/data/dev.db
       - AUTH_SECRET=${AUTH_SECRET:-change-me-to-a-long-random-string-at-least-32-chars}
       - AUTH_TRUST_HOST=true
+      - AUTH_URL=https://visualstudio.ro
     volumes:
       - vs-data:/app/data
     restart: unless-stopped
