@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   output: "standalone",
   transpilePackages: ["next-auth"],
   serverExternalPackages: ["@prisma/client", "bcryptjs"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
   async headers() {
     return [
       {
@@ -43,7 +51,7 @@ const nextConfig: NextConfig = {
               // Styles: allow inline (Next.js CSS, admin styles), self, and Google Fonts
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               // Images: allow self, data: URIs (SVGs, base64), blob: (Next.js image opt)
-              "img-src 'self' data: blob: https://www.facebook.com https://www.googletagmanager.com",
+              "img-src 'self' data: blob: https://www.facebook.com https://www.googletagmanager.com https://images.unsplash.com",
               // Fonts: allow self, data: URIs (icon fonts, base64), and Google Fonts CDN
               "font-src 'self' data: https://fonts.gstatic.com",
               // Connections (fetch, XHR): allow self (API calls) and analytics endpoints
