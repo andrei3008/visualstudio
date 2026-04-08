@@ -1,24 +1,23 @@
 # ============================================================================
-# DOCKER COMPOSE - PRODUCTION LOCAL
+# DOCKER COMPOSE - PRODUCTION
 # ============================================================================
-# Port: http://localhost:8008
-#
-# Comenzi:
-#   docker compose -f docker-compose.prod.yml up -d --build
-#   docker compose -f docker-compose.prod.yml down
-#   docker compose -f docker-compose.prod.yml logs -f web
+# Trage imaginea din GHCR (construita de CI/CD).
+# Local:  docker compose -f docker-compose.prod.yml up -d
+# Server: paste in Portainer Stacks
 # ============================================================================
 
 name: visualstudio-prod
 
 services:
   web-prod:
-    build:
-      context: .
-      dockerfile: Dockerfile.next
+    image: ghcr.io/andrei3008/visualstudio:latest
     ports:
       - "8007:3000"
     environment:
       - NODE_ENV=production
-    stdin_open: true
-    tty: true
+    volumes:
+      - vs-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  vs-data:

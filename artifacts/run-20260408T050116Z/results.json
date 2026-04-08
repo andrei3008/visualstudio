@@ -1,0 +1,86 @@
+[
+  {
+    "channel": "blog",
+    "post_id": "blog-2026-04-08-1",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "blog",
+    "post_id": "blog-2026-04-08-2",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "blog",
+    "post_id": "blog-2026-04-08-3",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "x",
+    "post_id": "x-2026-04-08-1",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "x",
+    "post_id": "x-2026-04-08-2",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "x",
+    "post_id": "x-2026-04-08-3",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "instagram",
+    "post_id": "instagram-2026-04-08-1",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "instagram",
+    "post_id": "instagram-2026-04-08-2",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "instagram",
+    "post_id": "instagram-2026-04-08-3",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "youtube_shorts",
+    "post_id": "youtube_shorts-2026-04-08-1",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "youtube_shorts",
+    "post_id": "youtube_shorts-2026-04-08-2",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  },
+  {
+    "channel": "youtube_shorts",
+    "post_id": "youtube_shorts-2026-04-08-3",
+    "attempt": 1,
+    "success": true,
+    "error": null
+  }
+]
