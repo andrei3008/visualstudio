@@ -15,6 +15,7 @@ services:
       - "8007:3000"
     environment:
       - NODE_ENV=production
+      - DATABASE_URL=file:/app/data/dev.db
     volumes:
       - vs-data:/app/data
     restart: unless-stopped
