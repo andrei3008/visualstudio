@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -20,13 +21,26 @@ type BlogPost = {
 export default function BlogsClient({
   title,
   desc,
-  posts,
 }: {
   title: string;
   desc: string;
-  posts: BlogPost[];
 }) {
-  const hasPosts = posts && posts.length > 0;
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/posts?limit=3")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.posts && data.posts.length > 0) {
+          setPosts(data.posts);
+        }
+      })
+      .catch(() => {})
+      .finally(() => setLoaded(true));
+  }, []);
+
+  const hasPosts = posts.length > 0;
 
   return (
     <div className="mxd-section padding-blog">
