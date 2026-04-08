@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { signOut } from "next-auth/react";
 import { SidebarToggle } from "./sidebar-toggle";
 
 export default function AdminLayout({
@@ -76,12 +77,13 @@ export default function AdminLayout({
         <div className="sidebar-spacer" />
 
         <div className="sidebar-logout">
-          <form action="/api/auth/signout" method="POST">
-            <button type="submit">
-              <LogoutIcon />
-              Deconectare
-            </button>
-          </form>
+          <button
+            type="button"
+            onClick={() => signOut({ callbackUrl: "/admin/login" })}
+          >
+            <LogoutIcon />
+            Deconectare
+          </button>
         </div>
       </aside>
 
