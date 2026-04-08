@@ -60,3 +60,20 @@ export async function getAllPublishedSlugs() {
     select: { slug: true, updatedAt: true },
   });
 }
+
+export async function getLatestPosts(limit = 3) {
+  try {
+    const posts = await prisma.post.findMany({
+      where: { status: "PUBLISHED" },
+      orderBy: { publishedAt: "desc" },
+      take: limit,
+      include: { categories: { include: { category: true } } },
+    });
+    return posts.map((p) => ({
+      ...p,
+      categories: p.categories.map((pc) => pc.category),
+    }));
+  } catch {
+    return [];
+  }
+}
