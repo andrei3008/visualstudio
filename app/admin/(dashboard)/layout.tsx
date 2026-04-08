@@ -63,14 +63,16 @@ export default function AdminLayout({
             active={pathname === "/admin/categorii"}
           />
           <SidebarLink
+            href="/admin/utilizatori"
             icon={<UsersIcon />}
             label="Utilizatori"
-            disabled
+            active={pathname === "/admin/utilizatori"}
           />
           <SidebarLink
+            href="/admin/setari"
             icon={<SettingsIcon />}
             label="Setări"
-            disabled
+            active={pathname === "/admin/setari"}
           />
         </nav>
 
@@ -90,7 +92,7 @@ export default function AdminLayout({
       <div className="admin-main">
         <header className="admin-topbar">
           <h1>
-            {pathname === "/admin" ? "Dashboard" : pathname === "/admin/mesaje" ? "Mesaje" : pathname === "/admin/categorii" ? "Categorii" : pathname.startsWith("/admin/articole") ? "Articole" : "Administrare"}
+            {pathname === "/admin" ? "Dashboard" : pathname === "/admin/mesaje" ? "Mesaje" : pathname === "/admin/categorii" ? "Categorii" : pathname === "/admin/utilizatori" ? "Utilizatori" : pathname === "/admin/setari" ? "Setări" : pathname.startsWith("/admin/articole") ? "Articole" : "Administrare"}
           </h1>
         </header>
         <main className="admin-content">{children}</main>

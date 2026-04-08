@@ -1,3 +1,0 @@
-# Example cron cadence for VIS pipeline (UTC)
-# Run 3 times per day at 09:00, 13:00, 17:00 UTC
-0 9,13,17 * * * cd /home/node/Proiecte/visualstudio && python3 vis_pipeline.py --workspace .
