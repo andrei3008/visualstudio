@@ -139,7 +139,6 @@ export default function PortofoliuLista() {
                     </div>
                   </div>
                 </div>
-                <div className="mxd-projects-list__border anim-uni-in-up" />
               </Link>
             ))}
           </div>

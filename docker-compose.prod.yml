@@ -16,9 +16,10 @@ services:
     environment:
       - NODE_ENV=production
       - DATABASE_URL=file:/app/data/dev.db
-      - AUTH_SECRET=${AUTH_SECRET:-change-me-to-a-long-random-string-at-least-32-chars}
+      - AUTH_SECRET=${AUTH_SECRET}
       - AUTH_TRUST_HOST=true
       - AUTH_URL=https://visualstudio.ro
+      - PAPERCLIP_API_KEY=${PAPERCLIP_API_KEY}
     volumes:
       - vs-data:/app/data
     restart: unless-stopped
