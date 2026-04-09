@@ -77,7 +77,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
   const relatedPosts = await getRelatedPosts(post.id, categoryIds, 3);
   // Strip leading H1 from markdown — the title is already rendered in the headline section
   const strippedContent = (post.content || "").replace(/^#\s+.+\n*/m, "");
-  const contentHtml = await marked(strippedContent);
+  const contentHtml = (await marked(strippedContent)).replace(/<li>\s*<\/li>/g, "");
 
   return (
     <>
