@@ -13,16 +13,27 @@ const webhookPostSchema = z.object({
   publish: z.boolean().default(false),
 });
 
-export async function POST(request: NextRequest) {
-  // API key auth check
+const webhookPutSchema = z.object({
+  title: z.string().min(1).max(300).optional(),
+  content: z.string().min(1).optional(),
+  excerpt: z.string().max(500).optional(),
+  categorySlugs: z.array(z.string()).optional(),
+  authorName: z.string().max(100).optional(),
+  featuredImage: z.string().optional(),
+  publish: z.boolean().optional(),
+});
+
+function checkAuth(request: NextRequest): boolean {
   const authHeader = request.headers.get("Authorization");
   const apiKey = process.env.PAPERCLIP_API_KEY;
+  return !!authHeader && authHeader === `Bearer ${apiKey}`;
+}
 
-  if (!authHeader || authHeader !== `Bearer ${apiKey}`) {
+export async function POST(request: NextRequest) {
+  if (!checkAuth(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  // Body validation
   let body: z.infer<typeof webhookPostSchema>;
   try {
     body = webhookPostSchema.parse(await request.json());
@@ -36,7 +47,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
-  // Resolve categorySlugs to category IDs
   let categoryIds: string[] = [];
   if (body.categorySlugs && body.categorySlugs.length > 0) {
     const categories = await prisma.category.findMany({
@@ -91,4 +101,77 @@ export async function POST(request: NextRequest) {
     }
     throw e;
   }
+}
+
+export async function PUT(request: NextRequest) {
+  if (!checkAuth(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  // slug from query param: PUT /api/posts/webhook?slug=the-slug
+  const slug = request.nextUrl.searchParams.get("slug");
+  if (!slug) {
+    return NextResponse.json({ error: "Missing ?slug= query param" }, { status: 400 });
+  }
+
+  let body: z.infer<typeof webhookPutSchema>;
+  try {
+    body = webhookPutSchema.parse(await request.json());
+  } catch (e) {
+    if (e instanceof z.ZodError) {
+      return NextResponse.json(
+        { error: "Validation failed", details: e.issues },
+        { status: 400 }
+      );
+    }
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
+
+  const existing = await prisma.post.findUnique({ where: { slug } });
+  if (!existing) {
+    return NextResponse.json({ error: "Post not found" }, { status: 404 });
+  }
+
+  // Resolve categories if provided
+  if (body.categorySlugs !== undefined) {
+    await prisma.postCategory.deleteMany({ where: { postId: existing.id } });
+    if (body.categorySlugs.length > 0) {
+      const categories = await prisma.category.findMany({
+        where: { slug: { in: body.categorySlugs } },
+        select: { id: true },
+      });
+      await prisma.postCategory.createMany({
+        data: categories.map((c) => ({ postId: existing.id, categoryId: c.id })),
+      });
+    }
+  }
+
+  const status = body.publish ? "PUBLISHED" : undefined;
+  const publishedAt =
+    body.publish && existing.status !== "PUBLISHED" ? new Date() : undefined;
+
+  const post = await prisma.post.update({
+    where: { id: existing.id },
+    data: {
+      ...(body.title !== undefined ? { title: body.title } : {}),
+      ...(body.content !== undefined ? { content: body.content } : {}),
+      ...(body.excerpt !== undefined ? { excerpt: body.excerpt } : {}),
+      ...(body.authorName !== undefined ? { authorName: body.authorName } : {}),
+      ...(body.featuredImage !== undefined ? { featuredImage: body.featuredImage } : {}),
+      ...(status !== undefined ? { status } : {}),
+      ...(publishedAt !== undefined ? { publishedAt } : {}),
+    },
+    include: {
+      categories: {
+        include: { category: true },
+      },
+    },
+  });
+
+  const flattened = {
+    ...post,
+    categories: post.categories.map((pc) => pc.category),
+  };
+
+  return NextResponse.json(flattened);
 }

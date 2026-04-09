@@ -55,7 +55,6 @@ export default function Capabilities() {
                           <span>{item.num}</span>
                         </div>
                       </div>
-                      <div className="mxd-cpb-list__divider anim-uni-in-up" />
                     </div>
                   ))}
                 </div>
