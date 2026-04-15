@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth-guard";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
@@ -76,7 +75,8 @@ async function handleOptimizeDb() {
   const sizeBefore = fs.existsSync(dbPath) ? fs.statSync(dbPath).size : 0;
 
   // Run SQLite VACUUM to reclaim space and optimize
-  await prisma.$executeRawUnsafe("PRAGMA wal_checkpoint(TRUNCATE)");
+  // wal_checkpoint returns a result row, so use $queryRawUnsafe to consume it
+  await prisma.$queryRawUnsafe("PRAGMA wal_checkpoint(TRUNCATE)");
   await prisma.$executeRawUnsafe("VACUUM");
 
   // Get DB size after
