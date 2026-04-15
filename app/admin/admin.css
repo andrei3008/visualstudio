@@ -1,8 +1,9 @@
 /* Admin Panel Styles — Visual Studio Concept */
 /* Aligned with main site design: Funnel Sans, warm palette, soft purple accent */
 
-/* ── Variables ── */
-:root {
+/* ── Variables (scoped to admin only) ── */
+.admin-layout,
+.login-page {
   --sidebar-width: 260px;
   --sidebar-bg: #161616;
   --primary: #9f8be7;
@@ -295,7 +296,7 @@
   flex: 1;
 }
 
-.stat-card-label {
+.stat-card-.admin-layout label {
   font-size: 12px;
   color: var(--text-muted);
   margin-bottom: 6px;
@@ -337,12 +338,12 @@
   color: var(--text);
 }
 
-.admin-table {
+.admin-.admin-layout table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.admin-table th {
+.admin-table .admin-layout th {
   text-align: left;
   padding: 14px 20px;
   font-size: 11px;
@@ -354,7 +355,7 @@
   background: var(--surface-alt);
 }
 
-.admin-table td {
+.admin-table .admin-layout td {
   padding: 16px 20px;
   font-size: 14px;
   color: var(--text-medium);
@@ -365,7 +366,7 @@
   transition: background 0.15s;
 }
 
-.admin-table tbody tr:hover {
+.admin-table tbody .admin-layout tr:hover {
   background: var(--surface-alt);
 }
 
@@ -389,7 +390,7 @@
 }
 
 /* ── Badges ── */
-.badge {
+.admin-layout .badge {
   display: inline-block;
   padding: 4px 12px;
   border-radius: 2rem;
@@ -399,18 +400,18 @@
   letter-spacing: 0.5px;
 }
 
-.badge-new {
+.admin-layout .badge-new {
   background: rgba(159, 139, 231, 0.12);
   color: var(--primary);
 }
 
-.badge-read {
+.admin-layout .badge-read {
   background: rgba(16, 185, 129, 0.1);
   color: var(--success);
 }
 
 /* ── Buttons ── */
-.btn {
+.admin-layout .btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -428,44 +429,44 @@
   font-family: var(--font);
 }
 
-.btn:hover {
+.admin-layout .btn:hover {
   background: var(--surface-alt);
   border-color: rgba(22, 22, 22, 0.2);
 }
 
-.btn-primary {
+.admin-layout .btn-primary {
   background: var(--primary);
   color: var(--sidebar-bg);
   border-color: var(--primary);
 }
 
-.btn-primary:hover {
+.admin-layout .btn-primary:hover {
   background: var(--primary-hover);
   border-color: var(--primary-hover);
 }
 
-.btn-danger {
+.admin-layout .btn-danger {
   color: var(--danger);
   border-color: #fecaca;
 }
 
-.btn-danger:hover {
+.admin-layout .btn-danger:hover {
   background: #fef2f2;
   border-color: #f87171;
 }
 
-.btn-sm {
+.admin-layout .btn-sm {
   padding: 6px 16px;
   font-size: 12px;
 }
 
-.btn-group {
+.admin-layout .btn-group {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
 }
 
-.btn-group .btn.active {
+.admin-layout .btn-group .btn.active {
   background: var(--primary);
   color: var(--sidebar-bg);
   border-color: var(--primary);
@@ -485,7 +486,7 @@
   pointer-events: none;
 }
 
-.search-input {
+.search-.admin-layout input {
   padding: 10px 16px 10px 40px;
   border-radius: 3rem;
   border: 1px solid var(--border);
@@ -498,7 +499,7 @@
   font-family: var(--font);
 }
 
-.search-input:focus {
+.search-.admin-layout input:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-light);
 }
@@ -523,7 +524,7 @@
   gap: 3px;
 }
 
-.msg-detail-label {
+.msg-detail-.admin-layout label {
   font-size: 10px;
   font-weight: 700;
   color: var(--text-light);
@@ -679,7 +680,7 @@
   gap: 20px;
 }
 
-.form-group label {
+.form-group .admin-layout label {
   display: block;
   font-size: 12px;
   font-weight: 700;
@@ -702,7 +703,7 @@
   pointer-events: none;
 }
 
-.input-icon input {
+.input-icon .admin-layout input {
   width: 100%;
   padding: 14px 16px 14px 48px;
   border: 1px solid var(--border);
@@ -716,7 +717,7 @@
   color: var(--text);
 }
 
-.input-icon input:focus {
+.input-icon .admin-layout input:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-light);
   background: var(--surface);
@@ -813,16 +814,16 @@
     align-items: stretch;
   }
 
-  .search-input {
+  .search-.admin-layout input {
     width: 100%;
   }
 
-  .admin-table {
+  .admin-.admin-layout table {
     font-size: 13px;
   }
 
-  .admin-table th,
-  .admin-table td {
+  .admin-table .admin-layout th,
+  .admin-table .admin-layout td {
     padding: 12px 16px;
   }
 
@@ -928,7 +929,7 @@
 }
 
 /* ── Title input ── */
-.post-editor-title-input {
+.post-editor-title-.admin-layout input {
   width: 100%;
   border: none;
   outline: none;
@@ -971,7 +972,7 @@
   white-space: nowrap;
 }
 
-.post-editor-slug-input {
+.post-editor-slug-.admin-layout input {
   flex: 1;
   border: none;
   outline: none;
@@ -1098,7 +1099,7 @@
   gap: 8px;
 }
 
-.sidebar-label {
+.sidebar-.admin-layout label {
   font-size: 11px;
   font-weight: 700;
   color: var(--text-light);
@@ -1106,7 +1107,7 @@
   letter-spacing: 0.8px;
 }
 
-.sidebar-input {
+.sidebar-.admin-layout input {
   width: 100%;
   padding: 10px 14px;
   border: 1px solid var(--border);
@@ -1120,13 +1121,13 @@
   font-family: var(--font);
 }
 
-.sidebar-input:focus {
+.sidebar-.admin-layout input:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-light);
   background: var(--surface);
 }
 
-.sidebar-textarea {
+.sidebar-.admin-layout textarea {
   width: 100%;
   padding: 10px 14px;
   border: 1px solid var(--border);
@@ -1142,7 +1143,7 @@
   line-height: 1.6;
 }
 
-.sidebar-textarea:focus {
+.sidebar-.admin-layout textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-light);
   background: var(--surface);
@@ -1227,7 +1228,7 @@
   color: var(--text-medium);
 }
 
-.sidebar-category-chip input {
+.sidebar-category-chip .admin-layout input {
   display: none;
 }
 
@@ -1544,12 +1545,12 @@
 }
 
 /* ── Badge for published/draft ── */
-.badge-new {
+.admin-layout .badge-new {
   background: rgba(159, 139, 231, 0.12);
   color: var(--primary);
 }
 
-.badge-read {
+.admin-layout .badge-read {
   background: rgba(16, 185, 129, 0.1);
   color: var(--success);
 }
@@ -1682,11 +1683,11 @@
   padding-top: 20px;
 }
 
-.form-group {
+.admin-layout .form-group {
   margin-bottom: 18px;
 }
 
-.form-group label {
+.form-group .admin-layout label {
   display: block;
   margin-bottom: 6px;
   font-size: 13px;
@@ -1694,9 +1695,9 @@
   color: var(--text-medium);
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-group .admin-layout input,
+.form-group .admin-layout select,
+.form-group .admin-layout textarea {
   width: 100%;
   padding: 10px 14px;
   border: 1px solid var(--border);
@@ -1709,20 +1710,20 @@
   box-sizing: border-box;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-group .admin-layout input:focus,
+.form-group .admin-layout select:focus,
+.form-group .admin-layout textarea:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-light);
 }
 
-.form-group textarea {
+.form-group .admin-layout textarea {
   resize: vertical;
   min-height: 80px;
 }
 
-.form-error {
+.admin-layout .form-error {
   background: rgba(239, 68, 68, 0.08);
   color: var(--danger);
   padding: 10px 14px;
@@ -1736,7 +1737,7 @@
 }
 
 /* Danger button */
-.btn-danger {
+.admin-layout .btn-danger {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1752,7 +1753,7 @@
   transition: background var(--anim-speed);
 }
 
-.btn-danger:hover {
+.admin-layout .btn-danger:hover {
   background: #dc2626;
 }
 
@@ -1889,7 +1890,7 @@
   gap: 2px;
 }
 
-.maintenance-info-label {
+.maintenance-info-.admin-layout label {
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
